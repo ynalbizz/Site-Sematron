@@ -1,0 +1,115 @@
+.desktop-cadastro {
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  font-family: 'BankGothic Lt BT';
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  background-color: #000;
+  border-top: 4px solid #fb9a03;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 84px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-nav {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 15px;
+}
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.info {
+  background-color: #000;
+  border-radius: 22px;
+  max-width: 560px;
+  width: 100%;
+  padding: 3rem;
+  color: #fb9a03;
+  font-family: 'BankGothic Md BT';
+}
+
+.faa-o-cadastro {
+  margin-top: 1rem;
+  font-size: 14px;
+  color: #fff;
+}
+.form-container {
+  border-radius: 22px;
+  border: 1px solid #fb9a03;
+  max-width: 460px;
+  width: 100%;
+  padding: 2rem;
+}
+
+.form-container h2 {
+  margin-bottom: 2rem;
+  font-family: 'BankGothic Md BT';
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group input {
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid #fb9a03;
+  background: transparent;
+  color: #fff;
+  padding: 0 1rem;
+}
+
+.form-container button {
+  margin-top: 1.5rem;
+  height: 46px;
+  border-radius: 14px;
+  background-color: #fb9a03;
+  color: #000;
+  border: none;
+  cursor: pointer;
+}
+.footer {
+  background-color: #000;
+  padding: 2rem;
+  font-family: Inter;
+  color: #fb9a03;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.social {
+  display: flex;
+  gap: 1rem;
+}
+
+.social a {
+  border: 1px solid #fb9a03;
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  color: #fb9a03;
+  text-decoration: none;
+}

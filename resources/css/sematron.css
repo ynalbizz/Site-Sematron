@@ -1,0 +1,61 @@
+/*
+    Primeiro vou importar todos os outros arquivos css na pasta css para deixar mais organizado
+*/
+
+@import url("cssDaSematron/header.css");
+@import url("cssDaSematron/centro-inicio.css");
+@import url("cssDaSematron/atividades-inicio.css");
+@import url("cssDaSematron/programacao-inicio.css");
+@import url("cssDaSematron/footer.css");
+
+/*
+    Como a Rafa 024 da Engenharia de Materiais e 025 da Engenharia Mecânica usou uma fonte que não tem no 
+    Google Fonts, eu vou ter que fazer essa porrinha aqui pra importar ela
+*/
+
+@font-face {
+    font-family: 'Mecanica-Inferior';
+    src: url('Fonte/unicode.bankgotm.ttf') format('truetype');
+}
+
+/*
+    Esse root aqui é pra definir algumas cores e fontes que serão mais usadas no código pra deixar mais fácil de entender
+*/
+
+:root{
+    --fonte-Gotica: "Mecanica-Inferior";
+    --fonte-inter: "Inter";
+    --laranja: #FB9A03;
+    --preto: #000000;
+    --branco: #FFFFFF;
+}
+
+/*
+    Só defini que todo o body tem fundo preto
+*/
+
+.Corpo{
+    background-color: var(--preto);
+}
+
+/*
+    Classe pra usar em tudo que centraliza os bagulho
+*/
+
+.Centraliza{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+/*
+    Pra todo link vir sem o sublinhado
+*/
+
+a{
+    text-decoration: none;
+}
+
+
+
