@@ -2,7 +2,7 @@
         .main-container {
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: top;
             min-height: 80vh; /* Altura mínima para ocupar a tela */
             padding: 40px 20px;
             gap: 50px;
@@ -13,6 +13,9 @@
         .intro-section {
             max-width: 500px;
             position: relative;
+			text-align: center;
+			align-items: center;
+
         }
 
         .intro-title {
