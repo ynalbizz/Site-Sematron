@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Participantes - SEMATRON</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-
-    <style>
         * { box-sizing: border-box; }
 
         body {
@@ -121,50 +111,3 @@
             background-color: #fb9a03;
             color: #000;
         }
-
-    </style>
-</head>
-<body>
-
-    <main class="main-container">
-        
-        <div class="page-header">
-            <h1 class="page-title">Inscritos</h1>
-            <div class="page-subtitle">Visualização de dados do banco</div>
-        </div>
-
-        <div class="table-card">
-            <table class="cyber-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome Completo</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if(count($participantes) > 0)
-                        @foreach($participantes as $p)
-                        <tr>
-                            <td>#{{ $p->uid ?? $p->id_usuario }}</td>
-                            <td>{{ $p->name ?? $p->nome_usuario ?? $p->nome }}</td> 
-                            <td>{{ $p->email ?? $p->email_usuario }}</td>
-                        </tr>
-                        @endforeach
-                    @else
-                        <tr>
-                            <td colspan="3" class="empty-state">
-                                Nenhum registro encontrado no banco de dados.
-                            </td>
-                        </tr>
-                    @endif
-                </tbody>
-            </table>
-        </div>
-
-        <a href="/" class="btn-back">VOLTAR PARA HOME</a>
-
-    </main>
-
-    </body>
-</html>

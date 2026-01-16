@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
+use App\Http\Controllers\testeController;
+
 Route::get('/', fn () => view('inicio'))->name('home');
 
 Route::get('/inicio', fn () => view('inicio'))->name('inicio');
@@ -21,7 +23,9 @@ Route::get('/maisSematron', fn () => view('maisSematron'))->name('maisSematron')
 
 Route::get('/contato', fn () => view('contato'))->name('contato');
 
-Route::get('/teste', fn () => view('teste'))->name('teste');
+Route::get('/adm/list', [App\Http\Controllers\admController::class, 'showInscList'])->name('adm.list');
+
+Route::get('/teste',[testeController::class,'show']);
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
