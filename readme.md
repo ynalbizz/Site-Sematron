@@ -19,8 +19,7 @@ Certifique-se de ter as seguintes ferramentas instaladas:
    ```bash
    git clone [https://github.com/SEU-USUARIO/NOME-DO-PROJETO.git](https://github.com/SEU-USUARIO/NOME-DO-PROJETO.git)
    cd NOME-DO-PROJETO
-
-```
+    ```
 
 2. **Instale as dependências do PHP**
 ```bash
