@@ -58,7 +58,7 @@ php artisan key:generate
 ```
 
 
-6. **Configure o Banco de Dados**
+6. **Configure o Banco de Dados (NO VSCODE)**
 Crie um banco de dados vazio no seu gerenciador (phpMyAdmin, Workbench, DBeaver). Em seguida, abra o arquivo `.env` e ajuste as credenciais:
 ```ini
 DB_CONNECTION=mysql
@@ -72,14 +72,13 @@ DB_PASSWORD=sua_senha
 
 
 7. **Rode as Migrations**
-Para criar as tabelas no banco de dados:
+Para criar as tabelas no banco de dados e inserir os dados Teste:
 ```bash
-php artisan migrate
+php artisan migrate:fresh --seed
 
 ```
 
 
-*(Opcional: Se houver dados de teste, use `php artisan migrate --seed`)*
 8. **Inicie o Servidor**
 Em um terminal, compile os assets (CSS/JS) em tempo real:
 ```bash
