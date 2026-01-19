@@ -6262,7 +6262,7 @@ INSERT INTO `sematrons` (`sid`, `name`, `insc`, `pre`) VALUES
 
 CREATE TABLE `sessions` (
   `token` varchar(64) NOT NULL,
-  `uid` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -6270,7 +6270,7 @@ CREATE TABLE `sessions` (
 -- Extraindo dados da tabela `sessions`
 --
 
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('001cX2MHS6kNICJ0NTS49LORZ6xEQ0IHrAjE2vMKrxY00irD2981LNJkK6pbxxif', 103, '2018-04-08 23:18:14'),
 ('008D4XSnSnk7ZFijo9Q7EMAJi8Ex9RY0HX3CuMpCzQAPViyAiF7nR7wz61n5IBwQ', 893, '2017-05-02 19:44:23'),
 ('00PSQGUt2XdEWZS4ggzqN2fi3lF6bXX3kMi8zhq8oR2lyq4Fo9kWhskAahW7fJj0', 1753, '2024-05-27 10:31:58'),
@@ -6788,7 +6788,7 @@ INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
 ('3jYjwzciC6WpQqkcBfPUrgFwtwIX3jcwJ1W6qyetv1YCh8ejet3MP889vHWprzc0', 986, '2017-05-10 20:06:07'),
 ('3KAWklkbhBVmraUpasbNNJ2382GtY4ERFFoqqPHNQd083KnT2EhFNZ9MRF5pAA7G', 791, '2019-04-18 12:18:49'),
 ('3KLH7wCiJtPpCFuOnFpQtwej0DRUBnX4yiCvUFTeyiJ0o3ES9titgDTWGkrHOECC', 1102, '2018-04-19 11:53:55');
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('3kLxKFJzmixa6Gr1oNdwCtDpUS0g07IOoKSPrDQySUwD0ujOfVDS5pnoVzIkvKlB', 1975, '2024-05-27 11:20:35'),
 ('3KTVpvkEdmT9z6CWXYFFE7q945jD63KgCupugj3drBbIWoDj1ZkZBTIA5rNPZljd', 1835, '2023-11-24 12:32:15'),
 ('3kzoN7w8dX5SEiRHNCCa3Fxmbp6jPJJIu8x86k6Z72sCaAKoCNE5S2iuhfTwpd5Z', 119, '2018-04-12 16:14:28'),
@@ -7306,7 +7306,7 @@ INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
 ('6uahKRwPJpM3Ft1A7CWhhieCVJeX5iW1SwYcDLrN14H6n87lATIi2nlNwFlrn7j6', 1142, '2018-04-12 11:14:30'),
 ('6UDjayu7qPvc3zoFYh8hTNcSXaYdyJMueQU5EE2uUnNNd1S1ZRYse1B1RZVFjh0D', 1261, '2019-04-18 16:13:24'),
 ('6UdVVTY8NwpumBSsmymZdsHUecXTwtZtE3EaMdYZQEK2FdlsRNIu6QEbtbvfLKPQ', 529, '2018-04-11 16:19:19');
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('6vI1L8FIQmUCoaypmgDS2vEBOet3v6qxGhGrMnnt7Qc2OUKvZr5ERkIKvh9KjKH0', 1904, '2024-05-22 00:40:02'),
 ('6vNif0KTevgtqqxYr3IahJpZmCgnmVx1LQdfwIdVszsX9NqXQocUCk0l1zaUK0ic', 1799, '2022-10-03 13:14:32'),
 ('6vwjMT6KxjZBfxXg0bmdQcSggyBLjOaMqZwFyrJZmcnGpSpEHzws2rBncqVaoKG7', 1751, '2022-10-04 14:59:20'),
@@ -7824,7 +7824,7 @@ INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
 ('A9uqLP01rlFAhLt7TwGarvmaTqCsgUvgTfNfvDXdpcdMoMK89QYrCAHVqKDNezuy', 1, '2016-07-19 12:40:29'),
 ('A9XlIx8SBf0vYc7aQ74qgAIdzRDUIdHJdfumSt4TOvFmODDeB7Kh8TBxlEHuiP3C', 1001, '2020-11-10 14:44:38'),
 ('a9ZWCekkAmI3F28hVWN76aXu5sc1wQCMQcjT6K37xB024zaPMnNIEl3ATW1Gn3T3', 988, '2017-05-08 16:40:56');
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('AaD5PewdJibaSfa5iH2YfYtQonWXXJGWd06EdlvRauZsXuMVEJFY2HPLLi707n24', 1586, '2024-05-14 20:51:29'),
 ('aaE5bmz64nh9Fli3JXikjciIvqE3ANRboVXF8NB20i25KazTyY4Y0cgmIlgJyxld', 671, '2017-05-03 16:31:39'),
 ('aAj05SLp4Fh3WOGdmESS8MU4CrMHSojtoIjkbvQV1yPNCVrpa97ZMSTPAgWSK5Bz', 200, '2016-05-09 02:58:23'),
@@ -8342,7 +8342,7 @@ INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
 ('bT82YgAj1NVQ8TxSodG8jDAdGPIpS30wjCEdncgvfc8xBtqLa1DxJCBbgK1y3UL7', 1548, '2021-10-25 14:30:34'),
 ('btA4A3V5uvYe1ZpNjtUEKdODtaNQGMmh5mb6gx1QiQvapanPJ7UTbiXL9lcFxEmt', 9, '2017-05-18 22:16:26'),
 ('BtAWea7wdAhtdkBhloWg2Fg0MCCBf5BgoC3Jc0560dpUDr1oVOLNUrEguHhQCjwq', 817, '2018-04-10 18:06:31');
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('bthRRS4y38m4HZVQZmSd8hQfYNvRyCmQvJiDcc1VadQi2lyROHuNpBsDOdVDg7US', 935, '2017-05-03 16:45:18'),
 ('Btk2uNO27GCUFnHga3MgIyTo3K8gVffXPFQ9Se1Pl3jqhqM8kZesNyXH9WoV2JsH', 541, '2019-10-29 21:34:24'),
 ('BTpuNQZb9eQtNh80k2eghTVAflsf2kEZPBKnhwqLPJ8Shmw51U3m4NoTn2yjS2Iv', 1765, '2023-11-23 15:22:57'),
@@ -8860,7 +8860,7 @@ INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
 ('dL7lljwHybG3yunRU9MIOoLqbtkHxhWQtU2U4pcsGil5TPMnPYwdC7KdquldS8uB', 1144, '2019-04-18 15:31:02'),
 ('dl9zvwQ7lOdLkSnfkr4EYvjzVXVNTffGMNZxqz8JevMyadjLa5X4Wr4mwU6vuBao', 1597, '2021-10-13 16:57:41'),
 ('dlasbQEUe6rUzHhebMTRzobzkMWZ5bPYCqHd6MxbIfw7nTcEfvVUZxKA9gZ47pT9', 1038, '2018-05-31 15:53:42');
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('DlASH1L99WI7wGmN36vQugMDD9yheSch4c0CTBBSYKQKQ3YKzKajqnmumbSHuupo', 642, '2017-05-03 02:08:52'),
 ('dLb2GiETJiG0ZsLtsjepfcykr5C3Z7RswwkV4EumQM1jMicFtAu7lC4O8GEY0rUf', 1966, '2024-05-27 11:16:46'),
 ('dLbn7y70MfOm7kt3zTQL3qAF13X8LhSosuSqiPguuuXrUGlKa1WTiWZaQxZbVsGD', 16, '2016-04-27 22:25:19'),
@@ -9378,7 +9378,7 @@ INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
 ('fBB3uEGVfILytga8QTgRdm5vC9ewDm2in3cY7judr5RacsZtB6Bei6Ql5uX8XQhA', 530, '2017-05-09 21:01:19'),
 ('FBcNRjHSQZQfRPNgnynXHsKMjta9FNBKOdYgDfyU5FzNUCt71XV9GfMpOmoU0pfF', 806, '2020-08-11 17:22:42'),
 ('fbiPB4fOM7y56qIVKJR44VKcak8opZuL1Tb2O6Ha46V1mdMwneriz2APc84IYoTQ', 940, '2019-04-23 14:11:55');
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('FbNhs2vGrbH7A5mv9ZFx2nFhvwlwkgNp8bNqT8xAZ58a1kL0ARn25tZqgBcGiqwg', 683, '2016-04-27 17:21:29'),
 ('fBqd7pvkNC9KrVh4VZJ8HGZZePKyN6it8OM638gHAfRs1ymMOvLV1kvWz5KD2sx0', 23, '2016-04-28 02:44:07'),
 ('fBqW4kQyeFTsYo1syv3VjVihXJUqnvpnWESaSRkez6yOk86cnRRhgZkcmOHEgWta', 1593, '2021-10-25 02:46:14'),
@@ -9896,7 +9896,7 @@ INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
 ('gwXX1jHPEzyWE9fBmoFNYOJYxguLJ7oquBEmlL1qBqCFpiHSNMflbpAOLuaUsEAc', 541, '2019-10-28 21:23:29'),
 ('gwyyqnFG3GlkxAw5JTlmpzdMSRkhcphzo0l0nu7Hx0IWztTL2vAa0EOQPhMYUNg2', 232, '2023-11-22 13:22:58'),
 ('gx0IM5bVVFsVJf04iJlemj2loCWivshRgXasT1Ep7wBHS1B0BnVnNNP2PlaAU7R0', 1079, '2018-04-10 13:09:48');
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('gxEDMZbL7MxuNEMeR1IRF8ucceUJ6XvzDArZwa00BBJRwcMrd70IvwXO3uJq7rTi', 2008, '2024-05-27 10:41:08'),
 ('gXJJWdiHXwbvoxqzWNgHgar7S9nocry9F8JbcrizeAlIxR7KeeRB498M8l1bTpaY', 913, '2017-05-03 02:48:41'),
 ('GXKeX9gThOOoNtMg3YvSdEJjJzEUnrRuFcPcbww9ABnOu0unPg6skGSu5WEjDWUJ', 1, '2017-03-27 16:38:03'),
@@ -10414,7 +10414,7 @@ INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
 ('iP80AvAqhCwgxkz1nlGU8IX0DUgsXkt1bemCKepJdd4HiYFjdZ6VP84PfpdoyoOs', 2027, '2024-05-07 00:30:49'),
 ('ip9honcjhIUfxavcRaIoWbBuKzh6AJGVi56TVJtDibWtdBwLZMITcAgajQF7ccbw', 1965, '2024-05-27 17:46:13'),
 ('ipDLFsPh3Q8nIIzTYsprMm9Wth4GNUlwAo7FXNnQdm3lut4IbkzoMyB5V5CjQnWQ', 93, '2018-05-09 02:21:55');
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('iPdn6VzfGgCNIc9R2oBpXj6Rm73qo2fQEZMB0WP8H8ShxsXbOs0G8PTfvbIOkf0l', 1979, '2024-04-24 13:24:35'),
 ('ipHJPUiN2Nrdy6HyUrWD7bG3v2MWJechxyN1PAybcJZ7Bl9Nroots8wQFBZZRqS9', 1934, '2024-05-27 10:45:56'),
 ('iPJJ0ZlWF7XlKo3DaH95WZv0usCQVIzdb3AXJve0iXKYfT7apEFKdjnAG3ZlbyWT', 1857, '2023-11-25 02:21:02'),
@@ -10932,7 +10932,7 @@ INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
 ('Kc4WHojl9gcJyMQ7eSVD1AnpF0FQm2j5PRB4zraSIe437aEx9lMuk9rIdNmdAHAw', 1611, '2021-10-25 14:43:56'),
 ('KCcSQsMOCJG9OfYWVDKzvP6G51DRAiLLknd1VqFY0LYFrxbC0l2l1zrwqvDrTO34', 1076, '2018-04-11 15:52:49'),
 ('kCKLmAwsyeqwOzDuCSmSlZJZ7xK2KTxvV8779upxOWkcLoMO6zgiPp8NdIFob3ax', 119, '2018-04-04 14:55:04');
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('KcP0rZTRE48xK7yVQlGc7jKwnF7buB44eJuLjEdo8cbJZQeq1lIzLSlyYiQIkKDE', 1208, '2018-05-06 07:18:14'),
 ('KcqgEECjUjI7qqhERME8BZszpgqwBJvLmcsrguR0UZxAGVEYhJWjjFYPlFBmPxy2', 10, '2016-07-06 15:40:24'),
 ('Kcxqm3UnkuDicV4285MuYvRYrHAND9YObM4EFOrq9uObGJUFEgzdRG19O1NS1mgT', 671, '2016-04-27 16:16:21'),
@@ -11450,7 +11450,7 @@ INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
 ('m2QfO3eOTcabkfoeF6RftU946O8ZiiPKbfqpZK4smUKN0zr5v9afUaZRoYrM66XX', 652, '2016-05-13 16:44:08'),
 ('M2w0hW0O20Pq7t3o2U90TzBHDRh7FqBRjxHHJ8VBylsvUlZM6ZCPOEWSV3QbkRsJ', 1007, '2018-04-11 01:42:14'),
 ('M35CS4YR0tl6ukh7wTQ7nZL8VYYviRDL2OOdWk2EPFqUQH4LH9hhpG0gVApmgigN', 2130, '2025-05-22 13:32:50');
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('m38TCyTE1rx79b3hOKaOw85f8XMNaLH58z4xsZPoaNSYRmrF1w5eHRJLOR1K8wPW', 1657, '2021-10-19 15:48:41'),
 ('m3edMwvf1BJVCkqZRnqpCowqk6U28oTkhxEtjzOb1Yw38cTQGA6IoszOoJGmxZNV', 774, '2017-05-03 23:12:01'),
 ('M3ozEX4EKGlMxPSCENuDLVQTMpNi3mJGgy5kL0oW7Pivf1xkFhnQ34kFjyodayj6', 541, '2019-05-21 00:05:43'),
@@ -11968,7 +11968,7 @@ INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
 ('nvo4bhPDl1ARC9rVGC4U4TSsJLDVVKx96b3X9Ibk9b2CbjXimR3hkLQuWTGsd3rZ', 541, '2019-04-24 16:37:27'),
 ('nvrl6sLKA5cOyi1HQtJBgOsl1iE9znYcZFEVxPgyK9C9h4HxnRzJghvXFzX5cvX2', 867, '2019-04-15 21:33:43'),
 ('Nvtg9uZu6JsQH0s4NCaEEpAkCGGZMiRaTA7SvWDrgw8omqi0t84xn4YqBeGOCXpV', 1287, '2019-05-28 19:56:06');
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('nVWVxUn5p4UPdTKyfMbn3YvEvgirGdPCDm34K0zxIxewGu5ZJX8bT8fsad64vrOL', 1892, '2024-04-22 15:44:43'),
 ('nvYY9BKFmpHyZ3XbrbcVXPQKo9w9Nti0e7Pe9ZklFraeky6SQZono4yT4kTHU18z', 739, '2018-04-08 23:32:38'),
 ('nW2tpH7HfaJai04rBPMcMY0EcI5Z56B8EiqzKohj6slAZyHkNXQrES78Rx7Quwgm', 1586, '2024-05-27 10:05:05'),
@@ -12486,7 +12486,7 @@ INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
 ('pQbuxDNrxOMpu6FUz6EwV7l2nnnjTCe9S5tF96xxL9c55iQueVh0SIs6vWfFYAEr', 1267, '2019-04-21 01:27:54'),
 ('PqeRUtXyWtZBciFEmE1tjT8XZlaxi1bxi6F2pcqBMFDpnItQNkAw48KTjlHHdi5B', 827, '2018-04-18 00:35:30'),
 ('PQiTycg5PU7kvYrIWAe5HTj972WU2QmyQVZppg6mRiKfEUS06HuBacpffOiX77Ry', 1823, '2024-05-02 18:31:53');
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('PqkgXoPIPMlG7aNTTgDIApoeYBYMDjY4jcTMAN66HUNbgVepVgwDPI6jSNnehaae', 1898, '2024-05-31 10:51:13'),
 ('pQMcCp1BfbpRosTaMqHt0PyFVnsqeT85C2HcQq4TXhf6iLoWK1FbgYGesjiaCcGl', 1540, '2022-09-13 11:36:13'),
 ('pQP6lpND5FK21g2p6bzAOsuMXhhDGinvz2rai5ddAoV2LOhIpWJ3F3GcbnghMJTB', 953, '2017-05-17 12:37:58'),
@@ -13004,7 +13004,7 @@ INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
 ('RlBxLdUhKsNChDExXkTTDi6C1TaoLfUaId8b5KTtuPIdW6bjjB7pNpMLltY1hAJp', 1808, '2022-10-04 17:53:36'),
 ('rLDmHQZaI9iB5gfoTs4wYbEhW9rZgV6Oh7VnKut8ZdsMzMjRLlD4wfIlxkRBtvsT', 1966, '2024-04-23 11:32:11'),
 ('rLDY7chaMEYcploZzzmnr8i8tmpB58gnKjBHCjiOn6rThVtXLWB2Uj1ELgFHfmup', 550, '2017-05-03 15:08:28');
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('RlF5S81ezd3FzWVrwK9wN7Yuc4SG0mAdhy0Egg7sPYDOqKvTkh0NuamLyFpn9mSx', 1908, '2024-04-22 15:22:43'),
 ('Rlge4F1YmZ0HnTjxMu8501JtvmjEpCV7n1bi7S7jsxrVGQITAHO08YktBJyqLJoz', 539, '2016-04-27 16:05:46'),
 ('rLKnXtaQzzRJHivLGc8O9h3SirWOWquyBakITyFhALuAIrA1g63SO8WSH0UaLv4r', 1964, '2025-05-09 23:07:16'),
@@ -13522,7 +13522,7 @@ INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
 ('TdNPzMtWi1VrbvNCGfnN3fviDSNqu9GEcTURgDoE59vWv9Z2fDGYj17mKLT5KZ9m', 1332, '2019-04-25 04:56:46'),
 ('Tdp21ouPRAoVG1Wu6hQYa2WAD5hSS5PmZ4eQjOg0PKLVBiF7FWWgPtgToEl790jZ', 1053, '2018-04-16 23:58:59'),
 ('tDy8YVvrWw8iMQPqswshmATqKTCRCWbwZPuylgf7TegfvvMdi5BK6U1Gn4YqQzcq', 695, '2016-05-02 18:54:43');
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('te9c5DKLMhbn7cdnL26IxR9Pm4Fg4ihoDhG8kRKwzlZwE3ZPwVYjmYzOS5vMdS1h', 1135, '2018-04-11 17:21:29'),
 ('tEHxMFyVd5Wl070cFZGpeXS6xvF3OF7mgGLsWh2Knw0k9YfEUNmdeFFqE5yEkdkQ', 2139, '2025-05-26 03:40:57'),
 ('TEJrNufJCy3P0GwG632pqSyBvxElo2kRmibLvYJFTFbILbmiFkTYhYWfBbKlgKV8', 1856, '2023-11-27 17:26:44'),
@@ -14040,7 +14040,7 @@ INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
 ('v1PQKKs7xhbuVrwowYJGW3p2816J0yempu204lxsJPce6OItnRz9Lf1JWxSNmxzS', 590, '2016-04-29 00:34:45'),
 ('v1QTThUbhzjUtfVosPnePj7tU5NmljqXb6qveBMC0vWjRrO972eMbb6wXKY9tFWK', 119, '2018-05-29 17:22:08'),
 ('V1tLc4wA9qtFKWcWTxdplmNdNCKOR3kmvUxNOkOOQ8TbUvyoiRTK4gnIjxW0r7dc', 60, '2017-05-04 13:31:30');
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('V285J7TO8C1B0tBmsuSaBZnwvha5pfpp1tMx3sLaORkdWQ0pkrQREy1TdTWZJNgO', 1899, '2024-05-27 13:07:40'),
 ('v2P0weMDSTadjCilopkoBScQ84kcg25RvKHhpUl7nBaNE8ysoYXqrz7quiJQbEhM', 1289, '2019-04-25 15:04:17'),
 ('v2srfVosWdttGW2ehbcb0vO1FaNjDWqyOZguuKdGoN0ujsOGKqiAcx1hNFHRbxFq', 581, '2017-05-15 18:58:24'),
@@ -14558,7 +14558,7 @@ INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
 ('wSpWUdGgJVoFULpfrIQZih5KYpg79VxwncI86PeFkJL5U1bCArbiOXsnDPkDkYzN', 1355, '2019-05-23 10:56:01'),
 ('WSR1XrgVnYXk6EpcE0AL5PHRGucr9eUWwmOJTuf7J3hG8NjCDjO9zWR6GuoGO8dB', 940, '2018-04-15 00:40:59'),
 ('wSU26e3mkvCaFmrtcO5NO694JPZdab55WBXwadKVUbkk0m29m7cNWAzFY9r7FdcW', 1910, '2024-05-28 11:11:20');
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('WsW2mHg3nIUk8hJg2gK4pq6IzjpUjuj5c5yECV7qdSQcza8s7Jnm0jupIaAsKjon', 1017, '2017-05-24 14:44:39'),
 ('WSzmjrGW4eE1OzcphXaNLF4vSnTdXgqw6osUpjz5JL00iIXwz6tGJwOlPgdhSXjl', 1729, '2023-11-20 16:23:26'),
 ('Wt64mHkhrwdAYX1C4vRJsvYvMYXNsGXWEFZOOOMJ5df3d4eUH2IIj2VMqs4Uqwr8', 1757, '2022-09-14 15:24:01'),
@@ -15076,7 +15076,7 @@ INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
 ('yiym76JdvgoZcqdrz7c1fMofTG3dbZEQ73240CYliCAAtericKZ8WEdqLXJnwO3u', 1166, '2018-04-16 18:31:46'),
 ('yJ42ffuHNJkyI2eF7XBORa7w5Zdx0dbomVhI1SPFb04ksYpqvr5CH2zCRS0IvRxY', 107, '2019-06-03 11:03:38'),
 ('YJ4Q3OpNvPkT96JdRvUAfxYATQUW2kI9mz8qYu2Q63DR8c8Lf5m0K2Nn5ZqJmx0G', 1901, '2025-05-09 21:13:18');
-INSERT INTO `sessions` (`token`, `uid`, `date`) VALUES
+INSERT INTO `sessions` (`token`, `id`, `date`) VALUES
 ('yJAfMeT6TyPVfD97OjYlHpnIPyT2Qn0xDCwIP27mWpdZWGRaf2fthkVPfx29Bpgv', 1878, '2024-05-31 00:27:20'),
 ('yJfAsNSZ4IIs4AdUhDBqAY9p7LnzOrfD0AEiNW8IfH1aHVuoYwVZKUEIgs7vZdzQ', 1235, '2019-04-17 20:42:36'),
 ('yjMHY7Qny5JDQacRAPW0Pzval7rV7c2k16FkL1DXaXytb3BW3QPGEn8Mjn9OpLGm', 509, '2023-07-31 12:28:53'),
