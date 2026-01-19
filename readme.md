@@ -17,7 +17,7 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
 1. **Clone o repositório**
    ```bash
-   git clone [https://github.com/ynalbizz/Site-Sematron](https://github.com/ynalbizz/Site-Sematron)
+   git clone https://github.com/ynalbizz/Site-Sematron
    cd NOME-DO-PROJETO
     ```
 
