@@ -21,7 +21,7 @@
     background: url("/Imagens/logo-Photoroom.png") center / contain no-repeat;
     opacity: 0.4;
     pointer-events: none; 
-    z-index: 0;
+    z-index: -10;
 }
 
 .Login-grande{
