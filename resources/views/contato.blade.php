@@ -33,7 +33,7 @@
                     <a class="Link-Do-Topo" href="/login">Login</a>
                     <a class="Link-Do-Topo" href="/cadastro">Cadastro</a>
                     <a class="Link-Do-Topo" href="/maisSematron">Mais Sematron</a>
-                    <a class="Link-Do-Topo" href="/contato">Contato</a>
+                    <a class="Link-Do-Topo Direita" href="/contato">Contato</a>
                 </div>
             </div>
         </header>

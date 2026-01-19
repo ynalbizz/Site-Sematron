@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +19,7 @@
             <!--É literal só a listra laranja-->
             <div class="listra-laranja"></div>
 
-            <!--Aqui estão os links, na versão desktop-->
+
 
             <div class="Parte-De-Cima">
 
@@ -34,82 +34,93 @@
                     <a class="Link-Do-Topo" href="/login">Login</a>
                     <a class="Link-Do-Topo" href="/cadastro">Cadastro</a>
                     <a class="Link-Do-Topo" href="/maisSematron">Mais Sematron</a>
-                    <a class="Link-Do-Topo" href="/contato">Contato</a>
+                    <a class="Link-Do-Topo Direita" href="/contato">Contato</a>
                 </div>
             </div>
         </header>
-        
 
-        <main class="main-container">
-            <section class="intro-section">
-                <div class="intro-title">Cadastro</div>
-                <div class="intro-subtitle">Faça o cadastro para SEMATRON XXII</div>
-                <img class="logo-central" src="{{asset('/Imagens/logo-Photoroom.png')}}" alt="Logo da Sematron">
-           
-            </section>
 
-            <section class="form-card">
-                    <form action="#" method="POST">
-                        
-                        <div class="form-header">Dados de Acesso</div>
-                        <div class="form-grid">
-                            <div class="input-group full-width">
-                                <label>Email</label>
-                                <input type="email" name="email" required placeholder="ex: aluno@usp.br">
-                            </div>
-                            <div class="input-group">
-                                <label>Usuário</label>
-                                <input type="text" name="usuario" required>
-                            </div>
-                            <div class="input-group">
-                                <label>Senha</label>
-                                <input type="password" name="senha" required>
-                            </div>
+
+
+
+        <section class="bagulho-principal">
+            <div class="Parte-da-Esquerda">
+                <h1 class="Cadastro-grande">CADASTRO</h1>
+                <h1 class="Sub-Cadastro">Faça o cadastro para SEMATRON XXII</h1>
+            </div>
+
+
+
+            <form action="#" method="POST" class="duas-colunas-cadastro">
+                <div class="borda-cadastro">
+
+                    <h1 class="Champions-do-Forms">Dados de Acesso</h1>
+
+                    <div>
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="email" name="email" required placeholder="ex: aluno@usp.br">
+                        </div>
+                        <div class="input-group">
+                            <label>Usuário</label>
+                            <input type="text" name="usuario" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Senha</label>
+                            <input type="password" name="senha" required>
+                        </div>
+                    </div>
+
+                    <h1 class="Champions-do-Forms" style="margin-top: 30px;">Dados Pessoais</h1>
+
+                    <div>
+                        <div class="input-group full-width">
+                            <label>Nome Completo</label>
+                            <input type="text" name="nome" required>
                         </div>
 
-                        <div class="form-header" style="margin-top: 30px;">Dados Pessoais</div>
-                        <div class="form-grid">
-                            <div class="input-group full-width">
-                                <label>Nome Completo</label>
-                                <input type="text" name="nome" required>
-                            </div>
-
-                            <div class="input-group">
-                                <label>CPF</label>
-                                <input type="text" name="cpf" placeholder="000.000.000-00" required>
-                            </div>
-                            <div class="input-group">
-                                <label>RG</label>
-                                <input type="text" name="rg" required>
-                            </div>
-
-                            <div class="input-group">
-                                <label>Data de Nascimento</label>
-                                <input type="date" name="nascimento" required style="color-scheme: dark;"> 
-                            </div>
-                            <div class="input-group">
-                                <label>Telefone / WhatsApp</label>
-                                <input type="tel" name="telefone" placeholder="(00) 00000-0000" required>
-                            </div>
+                        <div class="input-group">
+                            <label>CPF</label>
+                            <input type="text" name="cpf" placeholder="000.000.000-00" required>
+                        </div>
+                        <div class="input-group">
+                            <label>RG</label>
+                            <input type="text" name="rg" required>
                         </div>
 
-                        <div class="form-header" style="margin-top: 30px;">Endereço</div>
-                        <div class="form-grid">
-                            <div class="input-group">
-                                <label>CEP</label>
-                                <input type="text" name="cep" required>
-                            </div>
-                            <div class="input-group">
-                                <label>Cidade</label>
+                        <div class="input-group">
+                            <label>Data de Nascimento</label>
+                            <input type="date" name="nascimento" required style="color-scheme: dark;"> 
+                        </div>
+                        <div class="input-group">
+                            <label>Telefone / WhatsApp</label>
+                            <input type="tel" name="telefone" placeholder="(00) 00000-0000" required>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="borda-cadastro">
+
+                    <h1 class="Champions-do-Forms">Endereço</h1>
+
+                    <div>
+                        <div class="input-group">
+                            <label>CEP</label>
+                            <input type="text" name="cep" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Cidade</label>
                                 <input type="text" name="cidade" required>
                             </div>
-                            <div class="input-group full-width">
+                            <div class="input-group">
                                 <label>Endereço Completo</label>
                                 <input type="text" name="endereco" placeholder="Rua, Número, Bairro" required>
                             </div>
                         </div>
 
-                        <div class="form-header" style="margin-top: 30px;">Escolaridade</div>
+                        <h1 class="Champions-do-Forms" style="margin-top: 30px;">Escolaridade</h1>
                         <div class="form-grid">
                             <div class="input-group">
                                 <label>Grau de Escolaridade</label>
@@ -126,29 +137,25 @@
                                 <input type="text" name="num_usp" placeholder="Se outra inst., use a matrícula">
                             </div>
 
-                            <div class="input-group full-width">
+                            <div class="input-group">
                                 <label>Instituição de Ensino</label>
                                 <input type="text" name="instituicao" placeholder="Ex: EESC - USP" required>
                             </div>
 
-                            <div class="input-group full-width">
+                            <div class="input-group">
                                 <label>Curso</label>
                                 <input type="text" name="curso" placeholder="Ex: Eng. Mecatrônica, Técnico em Eletrotécnica..." required>
                             </div>
                         </div>
 
                     <button type="submit" class="submit-btn">FINALIZAR CADASTRO</button>
-                </form>
-            </section>
-
-        </main>
-
-
-
+                </div>
+            </form>
+        </section>
 
 
         <!--É literal só a listra laranja-->
-        <div class="listra-laranja espacamento-rodape"></div>
+        <div class="listra-laranja espacamento-rodape-Cadastro"></div>
 
         <footer class="Rodape">
 

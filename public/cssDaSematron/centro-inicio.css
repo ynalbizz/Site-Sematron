@@ -71,6 +71,12 @@
     color: var(--preto);
     font-size: 20px;
     font-family: var(--fonte-inter);
+    transition: transform 0.3s ease;
+}
+
+.Inscrições-Bloco:hover{
+    transform: translateX(2vw) scale(1.25);
+
 }
 
 .Ver-Atividade-Bloco{
@@ -84,6 +90,11 @@
     color: var(--laranja);
     font-size: 20px;
     font-family: var(--fonte-inter);
+    transition: transform 0.3s ease;
+}
+
+.Ver-Atividade-Bloco:hover{
+    transform: translateX(2vw) scale(1.25);
 }
 
 .top{

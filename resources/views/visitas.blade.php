@@ -34,13 +34,68 @@
                     <a class="Link-Do-Topo" href="/login">Login</a>
                     <a class="Link-Do-Topo" href="/cadastro">Cadastro</a>
                     <a class="Link-Do-Topo" href="/maisSematron">Mais Sematron</a>
-                    <a class="Link-Do-Topo" href="/contato">Contato</a>
+                    <a class="Link-Do-Topo Direita" href="/contato">Contato</a>
                 </div>
             </div>
         </header>
 
 
 
+
+
+        <!--SLK NUM COMPENSA FAZER DNV-->
+        <section class="Palavra-Atividades_Traco-Laranja Palavra-Programacao">
+            <h1 class="Palavra-Atividades">Visitas</h1>
+            <div class="traco-laranja"></div>
+        </section>
+
+
+
+
+
+        <section class="espaco-no-topo margem-esquerda">
+            <div class="imagem-de-fundo">
+                
+                <div class="borda-visitas">
+
+                    <div class="texto-na-esquerda">
+                        <h1 class="nome-da-visita">Visita Técnica — XXXXXXX</h1>
+                        <h1 class="horarios-visitas">Saída: 14:00 • Retorno: 18:00 • Vagas: 30</h1>
+                    </div>
+                    
+                    <a href="" class="botao-inscrever">Inscrever</a>
+
+                </div>
+
+
+
+                <div class="borda-visitas">
+
+                    <div class="texto-na-esquerda">
+                        <h1 class="nome-da-visita">Visita Técnica — XXXXXXX</h1>
+                        <h1 class="horarios-visitas">Saída: 14:00 • Retorno: 18:00 • Vagas: 30</h1>
+                    </div>
+                    
+                    <a href="" class="botao-inscrever">Inscrever</a>
+
+                </div>
+
+
+
+                <div class="borda-visitas">
+
+                    <div class="texto-na-esquerda">
+                        <h1 class="nome-da-visita">Visita Técnica — XXXXXXX</h1>
+                        <h1 class="horarios-visitas">Saída: 14:00 • Retorno: 18:00 • Vagas: 30</h1>
+                    </div>
+                    
+                    <a href="" class="botao-inscrever">Inscrever</a>
+
+                </div>
+
+            </div>
+        </section>
+        
 
 
 

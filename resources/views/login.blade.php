@@ -14,7 +14,6 @@
     </head>
 
     <body class="Corpo">
-
         <header>
             <!--É literal só a listra laranja-->
             <div class="listra-laranja"></div>
@@ -34,7 +33,7 @@
                     <a class="Link-Do-Topo" href="/login">Login</a>
                     <a class="Link-Do-Topo" href="/cadastro">Cadastro</a>
                     <a class="Link-Do-Topo" href="/maisSematron">Mais Sematron</a>
-                    <a class="Link-Do-Topo" href="/contato">Contato</a>
+                    <a class="Link-Do-Topo Direita" href="/contato">Contato</a>
                 </div>
             </div>
         </header>
@@ -42,8 +41,31 @@
 
 
 
+        <!--Muito dos css estão no cadastro.css, pq fiquei com preguiça de copiar tudo dnv-->
+        <section class="trem-principal">
+            <div class="teste Parte-da-Esquerda">
+                <h1 class="Login-grande">Login</h1>
+                <h1 class="Sub-Login">Acesse sua conta para XXXX e XXXX.</h1>
+            </div>
+            <div class="teste borda-cadastro">
+                <h1 class="Champions-do-Forms">LOGIN</h1>
 
-
+                    <form action="#" method="POST">
+                        <div>
+                            <div class="input-group">
+                                <label>Email</label>
+                                <input type="email" name="email" required placeholder="ex: aluno@usp.br">
+                            </div>
+                            <div class="input-group">
+                                <label>Senha</label>
+                                <input type="password" name="senha" required>
+                            </div>
+                        </div>
+                    <button type="submit" class="submit-btn cima-espacamento">ENTRAR</button>
+                    </form>
+                <div class="display-flex"><a href="" class="Esqueceu-Senha">Esqueceu a senha?</a></div>
+            </div>
+        </section>
 
 
         <!--É literal só a listra laranja-->

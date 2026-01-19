@@ -49,4 +49,9 @@
     color: var(--preto);
     font-family: var(--fonte-inter);
     font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.Borda-Detalhes-Programacao:hover{
+    transform: scale(1.25);
 }

@@ -1,0 +1,56 @@
+.trem-principal{
+    width: 100%;
+    min-height: 57vh;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 24% 40%;
+    gap: 25vw;
+}
+
+.trem-principal::before {
+    content: "";
+    position: fixed;        
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    
+    width: 110vh;
+    height: 110vh;
+
+    background: url("/Imagens/logo-Photoroom.png") center / contain no-repeat;
+    opacity: 0.4;
+    pointer-events: none; 
+    z-index: 0;
+}
+
+.Login-grande{
+    color: var(--laranja);
+    font-family: var(--fonte-Gotica);
+    font-size: 50px;
+}
+
+.Sub-Login{
+    font-family: var(--fonte-inter);
+    color: var(--branco);
+    font-size: 14px;
+    margin-left: 0.5vw;
+    margin-top: 3vh;
+}
+
+.cima-espacamento{
+    margin-top: 19vh;
+}
+
+.display-flex{
+    display: flex;
+}
+
+.Esqueceu-Senha{
+    margin-left: auto;
+    font-family: var(--fonte-inter);
+    font-size: 12px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: var(--branco);
+}

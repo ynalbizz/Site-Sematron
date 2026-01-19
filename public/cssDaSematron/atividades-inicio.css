@@ -87,6 +87,11 @@
     font-family: var(--fonte-inter);
     font-size: 13px;
     color: var(--preto);
+    transition: transform 0.3s ease;
+}
+
+.Saiba-Mais-Botao:hover{
+    transform: scale(1.25);
 }
 
 .Borda-Atividades{

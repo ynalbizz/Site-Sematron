@@ -52,6 +52,11 @@
     color: var(--laranja);
     font-family: var(--fonte-inter);
     font-size: 11px;
+    transition: transform 0.3s ease;
+}
+
+.Borda-Rodape:hover{
+    transform: scale(1.25);
 }
 
 .Borda-Rodape-Gigante{

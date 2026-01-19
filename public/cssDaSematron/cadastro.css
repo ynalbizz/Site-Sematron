@@ -1,151 +1,131 @@
-/* Container Principal que segura o conteúdo central */
-        .main-container {
-            display: flex;
-            justify-content: center;
-            align-items: top;
-            min-height: 80vh; /* Altura mínima para ocupar a tela */
-            padding: 40px 20px;
-            gap: 50px;
-            flex-wrap: wrap; /* Permite quebrar linha em telas menores */
-        }
+.bagulho-principal{
+    width: 100%;
+    min-height: 60vh;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 25% 74%;
+    gap: 1vw;
+}
 
-        /* Lado Esquerdo: Texto e Imagem */
-        .intro-section {
-            max-width: 500px;
-            position: relative;
-			text-align: center;
-			align-items: center;
+.bagulho-principal::before {
+    content: "";
+    position: fixed;        
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -50%);
+    
+    width: 110vh;
+    height: 110vh;
 
-        }
+    background: url("/Imagens/logo-Photoroom.png") center / contain no-repeat;
+    opacity: 0.4;
+    pointer-events: none; 
+    z-index: 0;
+}
 
-        .intro-title {
-			font-family: var(--fonte-Gotica);
-            font-size: 50px;
-            color: #fb9a03;
-            margin-bottom: 10px;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
+.duas-colunas-cadastro{
+    width: 100%;
+    min-height: 60vh;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
 
-        .intro-subtitle {
-            font-family: var(--fonte-inter);
-            font-size: 16px;
-            color: #fff;
-            margin-bottom: 30px;
-        }
+.Cadastro-grande{
+    color: var(--laranja);
+    font-family: var(--fonte-Gotica);
+    font-size: 50px;
+}
 
-        .intro-image {
-            width: 100%;
-            max-width: 400px;
-            opacity: 0.4;
-            display: block;
-            /* Placeholder para a imagem de fundo */
-            background: radial-gradient(circle, #fb9a03 0%, transparent 70%); 
-            height: 300px; /* Remova isso quando colocar sua imagem real */
-            border-radius: 20px;
-        }
+.Sub-Cadastro{
+    font-family: var(--fonte-inter);
+    color: var(--branco);
+    font-size: 14px;
+    margin-left: 0.5vw;
+    margin-top: 3vh;
+}
 
-        /* Lado Direito: O Formulário */
-        .form-card {
-            background-color: #000;
-            border: 1px solid #fb9a03;
-            border-radius: 22px;
-            padding: 40px;
-            width: 100%;
-            max-width: 460px;
-            box-shadow: 0 0 15px rgba(251, 154, 3, 0.1);
-        }
+.Parte-da-Esquerda{
+    display: flex;         
+    flex-direction: column;     
+    justify-content: center;   
+    align-items: center;        
+    text-align: center;         
+}
 
-        .form-header {
-			font-family: var(--fonte-Gotica);
-            font-size: 24px;
-            color: #fff;
-            margin-bottom: 30px;
-            font-weight: 500;
-            text-align: left;
-        }
+.Champions-do-Forms{
+    font-family: var(--fonte-Gotica);
+    font-size: 24px;
+    color: var(--branco);
+    margin-bottom: 2vh;
+    font-weight: 500;
+    text-align: left;
+}
 
-        /* Estilização dos Inputs */
-        .input-group {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+.input-group input {
+    width: 70%;
+    height: 44px;
+    background-color: transparent;
+    border: 1px solid #fb9a03;
+    border-radius: 12px;
+    color: #fff;
+    padding: 0 15px;
+    font-family: var(--fonte-inter);
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
 
-        .input-group label {
-            font-family: var(--fonte-inter);
-            font-weight: 300;
-            font-size: 14px;
-            color: #fff;
-            width: 30%; /* Espaço para o label */
-            text-align: right;
-            padding-right: 15px;
-        }
+.input-group input:focus {
+    box-shadow: 0 0 8px rgba(251, 154, 3, 0.6);
+    border-color: #fff;
+}
 
-        .input-group input {
-            width: 70%;
-            height: 44px;
-            background-color: transparent;
-            border: 1px solid #fb9a03;
-            border-radius: 12px;
-            color: #fff;
-            padding: 0 15px;
-            font-family: var(--fonte-inter);
-            outline: none;
-            transition: box-shadow 0.3s ease;
-        }
+.borda-cadastro{
+    margin: 2vw 3vw;
+    border: 1px solid var(--laranja);
+    border-radius: 22px;
+    padding: 2vw;
+}
 
-        .input-group input:focus {
-            box-shadow: 0 0 8px rgba(251, 154, 3, 0.6);
-            border-color: #fff;
-        }
+.espacamento-rodape-Cadastro{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
 
-        /* Botão de Enviar */
-        .submit-btn {
-            width: 100%;
-            height: 46px;
-            background-color: #fb9a03;
-            border: none;
-            border-radius: 14px;
-            color: #000;
-            font-family: var(--fonte-inter);
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
+.submit-btn {
+    width: 100%;
+    height: 46px;
+    background-color: #fb9a03;
+    border: none;
+    border-radius: 14px;
+    color: #000;
+    font-family: var(--fonte-inter);
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
 
-        .submit-btn:hover {
-            background-color: #ffaa33;
-            transform: scale(1.02);
-        }
+.submit-btn:hover {
+    background-color: #ffaa33;
+    transform: scale(1.10);
+}
 
-        /* Responsividade para Mobile */
-        @media (max-width: 768px) {
-            .main-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .intro-section {
-                margin-bottom: 40px;
-                text-align: center;
-            }
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-            .input-group {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .input-group label {
-                width: 100%;
-                text-align: left;
-                margin-bottom: 8px;
-            }
-
-            .input-group input {
-                width: 100%;
-            }
-        }
+.input-group label {
+    font-family: var(--fonte-inter);
+    font-weight: 300;
+    font-size: 14px;
+    color: #fff;
+    width: 30%; /* Espaço para o label */
+    text-align: right;
+    padding-right: 15px;
+}

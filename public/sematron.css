@@ -9,6 +9,8 @@
 @import url("cssDaSematron/footer.css");
 @import url("cssDaSematron/cadastro.css");
 @import url("cssDaSematron/adm_list_insc.css");
+@import url("cssDaSematron/login.css");
+@import url("cssDaSematron/visitasEminicursos.css");
 
 /*
     Como a Rafa 024 da Engenharia de Materiais e 025 da Engenharia Mecânica usou uma fonte que não tem no 
@@ -38,6 +40,7 @@
 
 .Corpo{
     background-color: var(--preto);
+    z-index: -2;
 }
 
 /*
