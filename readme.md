@@ -97,12 +97,3 @@ php artisan serve
 
 
 🎉 **Pronto!** O projeto estará rodando em: `http://localhost:8000`
-
-```
-
-### Dica rápida:
-Se este README for para os membros do grupo que você está treinando, talvez seja útil adicionar uma linha no final com o seu contato ou o canal do Discord/WhatsApp onde eles podem tirar dúvidas caso o `composer install` dê erro.
-
-Quer que eu adicione uma seção de "Comandos Úteis" (como limpar cache ou criar controllers) nesse README?
-
-```
