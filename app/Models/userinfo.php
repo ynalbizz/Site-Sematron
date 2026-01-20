@@ -7,11 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class userinfo extends Model
 {
+    public $timestamps = false;
+
     use HasFactory;
     protected $table = 'userinfos';
     protected $fillable = [
-        'email', 'usuario', 'senha', 'nome', 'cpf', 'rg', 
-        'nascimento', 'telefone', 'cep', 'cidade', 'endereco',
-        'escolaridade', 'num_usp', 'instituicao', 'curso'
+        'email', 'uid', 'senha', 'name', 'cpf', 'rg', 
+        'nasc', 'tel', 'cep', 'cidade', 'uf', 'address',
+        'grau', 'nusp', 'inst', 'curso', 'verified',
+        'visibility', 'picture', 'badges',
     ];
 }
