@@ -75,11 +75,11 @@ DB_PASSWORD=
 
 7. **Configuração do XAMPP e Migrations**
 ⚠️ **Atenção (Usuários de XAMPP):** Antes de rodar as migrations, é necessário aumentar o limite de pacotes do MySQL para evitar erros.
-1. Abra o painel do XAMPP.
-2. Clique no botão **Config** na linha do MySQL e selecione **my.ini**.
-3. Pressione `Ctrl + F` e procure por: `max_allowed_packet`.
-4. Altere o valor para: `max_allowed_packet=256M`.
-5. Salve o arquivo e **reinicie o módulo MySQL** no painel do XAMPP (Stop > Start).
+    7.1. Abra o painel do XAMPP.
+    7.2. Clique no botão **Config** na linha do MySQL e selecione **my.ini**.
+    7.3. Pressione `Ctrl + F` e procure por: `max_allowed_packet`.
+    7.4. Altere o valor para: `max_allowed_packet=256M`.
+    7.5. Salve o arquivo e **reinicie o módulo MySQL** no painel do XAMPP (Stop > Start).
 
 
 Agora, rode o comando para criar as tabelas e inserir os dados de teste:
