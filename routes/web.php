@@ -6,6 +6,8 @@ use Laravel\Fortify\Features;
 use App\Http\Controllers\testeController;
 use App\Http\Controllers\admController; 
 use App\Http\Controllers\CadastroController;
+use App\Http\Controllers\LoginController;
+
 
 Route::get('/', fn () => view('inicio'))->name('home');
 
@@ -19,7 +21,10 @@ Route::get('/visitas', fn () => view('visitas'))->name('visitas');
 
 Route::get('/login', fn () => view('login'))->name('login');
 
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login.autenticar');
+
 Route::get('/cadastro', [CadastroController::class, 'index'])->name('cadastro');
+
 Route::post('/cadastro', [CadastroController::class, 'store'])->name('cadastro.salvar');
 
 Route::get('/maisSematron', fn () => view('maisSematron'))->name('maisSematron');

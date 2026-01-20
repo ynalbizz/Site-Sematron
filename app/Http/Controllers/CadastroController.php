@@ -45,7 +45,7 @@ class CadastroController extends Controller
         userlogin::create([
             'username' => $request->usuario,
             'salt' =>  $salt,
-            'pass' => hash('sha256', $request->senha . $salt),
+            'password' => hash('sha256', $request->senha . $salt),
         ]);
         
         return redirect()->back()->with('success', 'Cadastro realizado com sucesso!');
