@@ -1,120 +1,117 @@
 
----
+# Tutorial Completo: Atualizar PHP no XAMPP, Corrigir DLLs e Ativar ZIP
 
-# Tutorial: Atualização do PHP e Ativação da Extensão ZIP
+Este guia cobre a atualização do PHP para uma versão mais recente (ex: 8.2, 8.3 ou superior), corrigindo os conflitos de biblioteca do Apache e ativando a extensão `.zip`.
 
-Este guia cobre a atualização manual do PHP instalado no Windows (standalone) e dentro do pacote XAMPP, além de como configurar a extensão `.zip`.
+## ⚠️ Pré-requisitos
 
-## ⚠️ Pré-requisitos e Avisos
-
-* **Versão Correta:** Para o XAMPP, você **deve** baixar a versão **Thread Safe** (TS). Para uso geral no Windows, a Thread Safe também é recomendada se você pretende usar com Apache.
-* **Arquitetura:** Certifique-se de baixar a versão x64 (ou x86 se seu sistema for muito antigo).
-
----
-
-## Passo 1: Baixar o Novo PHP
-
-1. Acesse o site oficial: [windows.php.net/download](https://windows.php.net/download/).
-2. Procure a versão desejada (ex: PHP 8.x).
-3. Baixe o arquivo **Zip** da versão **VS16 x64 Thread Safe** (ou a mais recente VS disponível).
+1. **Backup:** Faça uma cópia das pastas `C:\xampp\php` e `C:\xampp\apache\bin`.
+2. **Versão:** Baixe o PHP **VS17 x64 Thread Safe** em [windows.php.net](https://windows.php.net/download/).
+3. **Visual C++:** Garanta que você tenha o [Visual C++ Redistributable x64](https://www.google.com/search?q=https://aka.ms/vs/17/release/vc_redist.x64.exe) instalado.
 
 ---
 
-## Passo 2: Atualizar o PHP Standalone (`C:\php`)
+## Passo 1: Substituir os Arquivos do PHP
 
-Se você usa o PHP adicionado ao PATH do Windows para rodar scripts via terminal:
-
-1. **Parar processos:** Certifique-se de que nenhum script PHP está rodando.
-2. **Renomear a pasta antiga:** Vá até `C:\` e renomeie a pasta `php` para `php_backup`.
-3. **Extrair o novo:** Crie uma nova pasta `C:\php` e extraia todo o conteúdo do arquivo `.zip` que você baixou dentro dela.
-4. **Configurar o `php.ini`:**
-* Na nova pasta, procure o arquivo `php.ini-development`.
-* Renomeie-o para `php.ini`.
-* *Opcional:* Se você tinha configurações personalizadas no backup, abra o `php.ini` antigo e replique as mudanças no novo arquivo. **Não** apenas copie e cole o arquivo antigo, pois configurações podem ter mudado entre versões.
-
-
+1. Pare o Apache no painel do XAMPP.
+2. Vá em `C:\xampp` e renomeie a pasta `php` para `php_old`.
+3. Crie uma nova pasta `php` e extraia o conteúdo do `.zip` baixado nela.
+4. Na nova pasta, renomeie o arquivo `php.ini-development` para `php.ini`.
+5. *(Opcional)* Se tiver configurações antigas, replique-as manualmente neste novo arquivo.
 
 ---
 
-## Passo 3: Atualizar o PHP no XAMPP (`C:\xampp\php`)
+## Passo 2: Atualizar DLLs do Apache (Correção do "Entry Point Error")
 
-O XAMPP é sensível a mudanças de versão, então siga com atenção:
+O Apache do XAMPP vem com bibliotecas OpenSSL antigas que entram em conflito com o novo PHP. Precisamos atualizar o Apache usando as DLLs que vieram no PHP novo.
 
-1. **Parar o XAMPP:** Abra o XAMPP Control Panel e pare o Apache e o MySQL.
-2. **Renomear a pasta antiga:** Vá em `C:\xampp` e renomeie a pasta `php` para `php_old`.
-3. **Extrair o novo:** Crie uma nova pasta `php` dentro de `C:\xampp` e extraia o conteúdo do `.zip` baixado (o mesmo do passo 1).
-4. **Migrar Configurações:**
-* Copie o arquivo `php.ini` da pasta `php_old` e cole na nova pasta `php`.
-* *Nota:* Se a atualização for de uma versão muito antiga (ex: PHP 7 para 8), o ideal é usar o `php.ini-development` novo e reconfigurá-lo manualmente, pois diretivas podem ter mudado.
-
-
-5. **Ajuste do Apache (Apenas se mudar a versão principal):**
-* Se você atualizou, por exemplo, do PHP 8.2 para o 8.3, geralmente não precisa mexer aqui.
-* Se o Apache não iniciar, edite o arquivo `C:\xampp\apache\conf\extra\httpd-xampp.conf`. Procure por referências como `php8_module` e verifique se o nome da DLL na nova pasta `php` corresponde ao que está escrito lá (ex: `php8ts.dll`).
+1. Acesse a pasta do seu **NOVO PHP** (`C:\xampp\php`).
+2. Copie (**Ctrl + C**) os seguintes arquivos (os nomes podem variar levemente na numeração):
+* `libcrypto-*.dll` (ex: `libcrypto-3-x64.dll` ou `libcrypto-1_1-x64.dll`)
+* `libssl-*.dll` (ex: `libssl-3-x64.dll` ou `libssl-1_1-x64.dll`)
+* `libssh2.dll`
+* `nghttp2.dll` (se existir)
 
 
+3. Vá para a pasta de executáveis do **Apache**: `C:\xampp\apache\bin`.
+4. Cole os arquivos (**Ctrl + V**).
+5. O Windows perguntará se deseja substituir. Escolha **Sim/Substituir arquivos no destino**.
 
 ---
 
-## Passo 4: Ativar a Extensão `.zip` (No XAMPP)
+## Passo 3: Desativar o SSL (Correção do "Key too Small")
 
-Agora vamos ativar a extensão necessária para lidar com arquivos zip (muito usada pelo Laravel e Composer).
+As novas bibliotecas de segurança (OpenSSL 3.x) rejeitam o certificado padrão antigo do XAMPP, impedindo o Apache de iniciar. Vamos desativar o HTTPS local para resolver isso.
 
-1. Vá até `C:\xampp\php`.
-2. Abra o arquivo `php.ini` com um editor de texto (Bloco de Notas, VS Code, etc).
-3. Use `Ctrl + F` para procurar por: `extension=zip`.
-4. Você provavelmente encontrará a linha assim:
-```ini
-;extension=zip
+1. Vá até `C:\xampp\apache\conf`.
+2. Abra o arquivo `httpd.conf` com um editor de texto.
+3. Procure pela linha (geralmente próxima à linha 520):
+```apache
+Include conf/extra/httpd-ssl.conf
 
 ```
 
 
-5. **Remova o ponto e vírgula (;)** do início da linha para descomentá-la. Deve ficar assim:
+4. Adicione um `#` no início para comentar a linha:
+```apache
+# Include conf/extra/httpd-ssl.conf
+
+```
+
+
+5. Salve o arquivo.
+
+---
+
+## Passo 4: Ativar a Extensão ZIP e Ajustar Caminhos
+
+1. Abra o arquivo `C:\xampp\php\php.ini`.
+2. **Corrigir o diretório de extensões:**
+* Procure por `extension_dir`.
+* Mude para o caminho absoluto (Windows):
+```ini
+extension_dir = "C:\xampp\php\ext"
+
+```
+
+
+
+
+3. **Ativar o Zip:**
+* Procure por `;extension=zip`.
+* Remova o ponto e vírgula inicial:
 ```ini
 extension=zip
 
 ```
 
 
-6. Salve o arquivo.
+* *(Aproveite para ativar outras comuns como `extension=curl`, `extension=mbstring`, `extension=openssl` e `extension=pdo_mysql` removendo o `;` da frente delas).*
 
-### Dica Importante
 
-Verifique também se a linha `extension_dir` está apontando corretamente para a pasta de extensões. Procure por `extension_dir` no arquivo e garanta que ela esteja assim (no Windows):
-
-```ini
-extension_dir = "ext"
-
-```
-
-Ou caminho absoluto:
-
-```ini
-extension_dir = "C:\xampp\php\ext"
-
-```
+4. Salve o arquivo.
 
 ---
 
 ## Passo 5: Teste Final
 
-1. Abra o painel do XAMPP e inicie o **Apache**.
-2. Crie um arquivo chamado `info.php` em `C:\xampp\htdocs` com o seguinte conteúdo:
+1. Abra o **XAMPP Control Panel**.
+2. Inicie o **Apache**. Ele deve ficar verde sem erros.
+3. Crie um arquivo `teste.php` em `htdocs` com:
 ```php
 <?php phpinfo(); ?>
 
 ```
 
 
-3. Acesse `http://localhost/info.php` no navegador.
-4. Busque na página por "zip". Se aparecer uma seção detalhando a versão do Zip, a extensão está ativa.
-5. Para testar o PHP do terminal (`C:\php`), abra o CMD e digite:
-```bash
-php -v
+4. Acesse `http://localhost/teste.php`.
+5. Verifique se a versão no topo é a nova e busque na página por **"zip"** para confirmar que está `enabled`.
 
-```
+### 💡 Resumo para atualização do PHP Standalone (`C:\php`)
 
+Para atualizar o PHP que roda direto no terminal (sem XAMPP):
 
-
-Deseja que eu te ajude a criar um script `.bat` para alternar rapidamente entre as versões do PHP no PATH do sistema?
+1. Renomeie `C:\php` para `C:\php_backup`.
+2. Extraia o novo zip numa nova pasta `C:\php`.
+3. Configure o `php.ini` (ative o zip e arrume o `extension_dir` igual ao passo 4).
+4. Teste no CMD com `php -v`.
