@@ -81,15 +81,13 @@ php artisan migrate:fresh --seed
 
 
 8. **Inicie o Servidor**
-Em um terminal, compile os assets (CSS/JS) em tempo real:
-```bash
-npm run dev
-```
-
-
-Em outro terminal, inicie o servidor do Laravel:
+inicie o servidor do Laravel usnado o:
 ```bash
 php artisan serve
+```
+ou
+```bash
+composer run dev
 ```
 
 
