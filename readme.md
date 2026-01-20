@@ -1,4 +1,3 @@
-
 ## 🚀 Como rodar o projeto localmente
 
 Siga os passos abaixo para clonar e configurar o projeto na sua máquina.
@@ -17,23 +16,20 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
 1. **Clone o repositório**
    ```bash
-   git clone [https://github.com/ynalbizz/Site-Sematron](https://github.com/ynalbizz/Site-Sematron)
+   git clone https://github.com/ynalbizz/Site-Sematron
    cd Site-Sematron
-
-    ```
+   ```
 
 2. **Instale as dependências do PHP**
 Caso o comando abaixo mostre algum erro ou aviso, tente atualizar o PHP seguindo o tutorial presente no arquivo [phpupdate.md](https://github.com/ynalbizz/Site-Sematron/blob/main/phpupdate.md) e, após isso, rode `composer update`.
 ```bash
 composer install
-
 ```
 
 
 3. **Instale as dependências do Frontend**
 ```bash
 npm install
-
 ```
 
 
@@ -42,21 +38,18 @@ Faça uma cópia do arquivo `.env.example` e renomeie para `.env`:
 *No Windows:*
 ```bash
 copy .env.example .env
-
 ```
 
 
 *No Linux/Mac:*
 ```bash
 cp .env.example .env
-
 ```
 
 
 5. **Gere a chave da aplicação**
 ```bash
 php artisan key:generate
-
 ```
 
 
@@ -69,23 +62,21 @@ DB_PORT=3306
 DB_DATABASE=nome_do_seu_banco
 DB_USERNAME=root
 DB_PASSWORD=
-
 ```
 
 
 7. **Configuração do XAMPP e Migrations**
 ⚠️ **Atenção (Usuários de XAMPP):** Antes de rodar as migrations, é necessário aumentar o limite de pacotes do MySQL para evitar erros.
-    7.1. Abra o painel do XAMPP.
-    7.2. Clique no botão **Config** na linha do MySQL e selecione **my.ini**.
-    7.3. Pressione `Ctrl + F` e procure por: `max_allowed_packet`.
-    7.4. Altere o valor para: `max_allowed_packet=256M`.
-    7.5. Salve o arquivo e **reinicie o módulo MySQL** no painel do XAMPP (Stop > Start).
+- 7.1. Abra o painel do XAMPP.
+- 7.2. Clique no botão **Config** na linha do MySQL e selecione **my.ini**.
+- 7.3. Pressione `Ctrl + F` e procure por: `max_allowed_packet`.
+- 7.4. Altere o valor para: `max_allowed_packet=256M`.
+- 7.5. Salve o arquivo e **reinicie o módulo MySQL** no painel do XAMPP (Stop > Start).
 
 
 Agora, rode o comando para criar as tabelas e inserir os dados de teste:
 ```bash
 php artisan migrate:fresh --seed
-
 ```
 
 
@@ -93,14 +84,12 @@ php artisan migrate:fresh --seed
 Em um terminal, compile os assets (CSS/JS) em tempo real:
 ```bash
 npm run dev
-
 ```
 
 
 Em outro terminal, inicie o servidor do Laravel:
 ```bash
 php artisan serve
-
 ```
 
 
