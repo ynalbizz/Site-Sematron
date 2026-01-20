@@ -6276,28 +6276,6 @@ INSERT INTO `sematrons` (`sid`, `name`, `insc`, `pre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `sessions`
---
-
-CREATE TABLE `sessions` (
-  `id` varchar(255) NOT NULL,
-  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `ip_address` varchar(45) DEFAULT NULL,
-  `user_agent` text DEFAULT NULL,
-  `payload` longtext NOT NULL,
-  `last_activity` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Extraindo dados da tabela `sessions`
---
-
-INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('f2rRX8mOMHzpsmEIa5pKTnDzhG3aTA7TEiD5JH1G', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36 Edg/144.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUk5sc0Fvdnd5bGRpMm1pNHlseGFUT3phV1pNM21saDdQT2ZXajE3TSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1768854048);
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `termsessions`
 --
 
