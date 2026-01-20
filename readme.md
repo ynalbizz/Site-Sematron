@@ -9,7 +9,7 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 - [PHP](https://www.php.net/) (versão compatível com o projeto)
 - [Composer](https://getcomposer.org/)
 - [Node.js & NPM](https://nodejs.org/)
-- Banco de Dados (MySQL, PostgreSQL, etc.)
+- [XAMPP](https://www.apachefriends.org/) (ou outro gerenciador de banco de dados)
 
 ---
 
@@ -17,12 +17,13 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
 1. **Clone o repositório**
    ```bash
-   git clone https://github.com/ynalbizz/Site-Sematron
+   git clone [https://github.com/ynalbizz/Site-Sematron](https://github.com/ynalbizz/Site-Sematron)
    cd Site-Sematron
+
     ```
 
 2. **Instale as dependências do PHP**
-(Caso o comando mostre algum erro ou aviso, tente atualizar o php com o tutorial presente no arquivo [phpupdate.md](https://github.com/ynalbizz/Site-Sematron/blob/main/phpupdate.md) e após isso rode o comando composer update)
+Caso o comando abaixo mostre algum erro ou aviso, tente atualizar o PHP seguindo o tutorial presente no arquivo [phpupdate.md](https://github.com/ynalbizz/Site-Sematron/blob/main/phpupdate.md) e, após isso, rode `composer update`.
 ```bash
 composer install
 
@@ -60,20 +61,28 @@ php artisan key:generate
 
 
 6. **Configure o Banco de Dados (NO VSCODE)**
-Crie um banco de dados vazio no seu gerenciador (phpMyAdmin, Workbench, DBeaver). Em seguida, abra o arquivo `.env` e ajuste as credenciais:
+Crie um banco de dados vazio no seu gerenciador (phpMyAdmin, Workbench, DBeaver). Em seguida, abra o arquivo `.env` (no VS Code) e ajuste as credenciais:
 ```ini
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=nome_do_seu_banco
 DB_USERNAME=root
-DB_PASSWORD=sua_senha
+DB_PASSWORD=
 
 ```
 
 
-7. **Rode as Migrations**
-Para criar as tabelas no banco de dados e inserir os dados Teste:
+7. **Configuração do XAMPP e Migrations**
+⚠️ **Atenção (Usuários de XAMPP):** Antes de rodar as migrations, é necessário aumentar o limite de pacotes do MySQL para evitar erros.
+1. Abra o painel do XAMPP.
+2. Clique no botão **Config** na linha do MySQL e selecione **my.ini**.
+3. Pressione `Ctrl + F` e procure por: `max_allowed_packet`.
+4. Altere o valor para: `max_allowed_packet=256M`.
+5. Salve o arquivo e **reinicie o módulo MySQL** no painel do XAMPP (Stop > Start).
+
+
+Agora, rode o comando para criar as tabelas e inserir os dados de teste:
 ```bash
 php artisan migrate:fresh --seed
 
