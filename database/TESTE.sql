@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19-Jan-2026 às 21:23
+-- Tempo de geração: 20-Jan-2026 às 20:29
 -- Versão do servidor: 10.4.32-MariaDB
 -- versão do PHP: 8.2.12
 
@@ -1163,25 +1163,6 @@ INSERT INTO `groups` (`gid`, `id`, `name`, `permissions`) VALUES
 (1, 'root', 'Organizador', '{\"grant\":[\"#.*#\"], \"deny\":[]}'),
 (2, 'org', 'Organizador', '{\"grant\":[\"#admin\\\\.org\\\\.viewInfo#\",\"#admin\\\\.org\\\\.status#\",\"#admin\\\\.org\\\\.viewUsers#\"],\"deny\":[]}'),
 (3, 'attendee', 'Participante', '{\"grant\": [], \"deny\": []}');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `migrations`
---
-
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Extraindo dados da tabela `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2026_01_19_201804_create_sessions_table', 1);
 
 -- --------------------------------------------------------
 
@@ -13138,12 +13119,6 @@ ALTER TABLE `groups`
   ADD PRIMARY KEY (`gid`);
 
 --
--- Índices para tabela `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Índices para tabela `pack`
 --
 ALTER TABLE `pack`
@@ -13173,14 +13148,6 @@ ALTER TABLE `sales`
 --
 ALTER TABLE `sematrons`
   ADD PRIMARY KEY (`sid`);
-
---
--- Índices para tabela `sessions`
---
-ALTER TABLE `sessions`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `sessions_user_id_index` (`user_id`),
-  ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
 -- Índices para tabela `thimk`
@@ -13236,12 +13203,6 @@ ALTER TABLE `events`
 --
 ALTER TABLE `groups`
   MODIFY `gid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de tabela `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `pack`
