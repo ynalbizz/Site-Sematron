@@ -53,7 +53,7 @@ php artisan key:generate
 ```
 
 
-6. **Configure o Banco de Dados (NO VSCODE)**
+6. **Configure o Banco de Dados**
 Crie um banco de dados vazio no seu gerenciador (phpMyAdmin, Workbench, DBeaver). Em seguida, abra o arquivo `.env` (no VS Code) e ajuste as credenciais:
 ```ini
 DB_CONNECTION=mysql
