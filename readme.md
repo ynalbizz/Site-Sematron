@@ -22,7 +22,7 @@ Certifique-se de ter as seguintes ferramentas instaladas:
     ```
 
 2. **Instale as dependências do PHP**
-(Caso o comando mostre algum erro ou aviso, tente atualizar o php com o tutorial presente no arquivo phpupdate.md e após isso rode o comando composer update)
+(Caso o comando mostre algum erro ou aviso, tente atualizar o php com o tutorial presente no arquivo [phpupdate.md](https://github.com/ynalbizz/Site-Sematron/blob/main/phpupdate.md) e após isso rode o comando composer update)
 ```bash
 composer install
 
