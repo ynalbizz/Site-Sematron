@@ -50,7 +50,7 @@
 
     <div>
         <label>horario que termina</label>
-        <input type="number" name="horario_fim" required>
+        <input type="time" name="horario_fim" required>
     </div>
 
     <div>
