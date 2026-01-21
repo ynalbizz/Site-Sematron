@@ -32,7 +32,7 @@
                     <a class="Link-Do-Topo" href="/minicursos">Minicursos</a>
                     <a class="Link-Do-Topo" href="/visitas">Visitas</a>
                     <a class="Link-Do-Topo" href="/login">Login</a>
-                    <a class="Link-Do-Topo" href="/cadastro">Cadastro</a>
+                    <a class="Link-Do-Topo" href="/cadastro/create">Cadastro</a>
                     <a class="Link-Do-Topo" href="/maisSematron">Mais Sematron</a>
                     <a class="Link-Do-Topo Direita" href="/contato">Contato</a>
                 </div>
@@ -51,7 +51,7 @@
 
 
 
-            <form action="{{ route('cadastro.salvar') }}" method="POST" class="duas-colunas-cadastro">
+            <form action={{ route('cadastro.store') }} method="POST" class="duas-colunas-cadastro">
                 @csrf
                 <div class="borda-cadastro">
 

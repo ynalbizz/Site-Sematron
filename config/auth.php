@@ -62,7 +62,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent-salt+sha256',
-            'model' => env('AUTH_MODEL', App\Models\userlogin::class),
+            'model' => env('AUTH_MODEL', App\Models\Userlogin::class),
         ],
 
         // 'users' => [
