@@ -23,9 +23,7 @@ Route::get('/login', fn () => view('login'))->name('login');
 
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.autenticar');
 
-Route::get('/cadastro', [CadastroController::class, 'index'])->name('cadastro');
-
-Route::post('/cadastro', [CadastroController::class, 'store'])->name('cadastro.salvar');
+Route::resource('cadastro', CadastroController::class) ->only(['create', 'store']);
 
 Route::get('/maisSematron', fn () => view('maisSematron'))->name('maisSematron');
 

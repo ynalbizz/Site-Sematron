@@ -11,7 +11,7 @@ use App\Http\Controllers\StringGenerator;
 
 class CadastroController extends Controller
 {
-    public function index(){
+    public function create(){
         return view('cadastro');
     }
     
