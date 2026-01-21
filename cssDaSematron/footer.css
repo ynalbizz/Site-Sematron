@@ -1,0 +1,71 @@
+/*
+    Tá tudo baguncado, da um control+f pra achar
+*/
+
+.espacamento-rodape{
+    margin-top: 12vh;
+    margin-bottom: 3vh;
+}
+
+.Rodape{
+    margin-left: 3.5vh;
+}
+
+.Creditos-Rodape{
+    font-family: var(--fonte-inter);
+    color: var(--laranja);
+    font-size: 16px;
+    margin-bottom: 1.2vh;
+}
+
+.Copyright-Rodape{
+    font-family: var(--fonte-inter);
+    color: var(--branco);
+    font-size: 11px;
+    margin-bottom: 0.8vh;
+}
+
+.Av-Trabalhador{
+    font-family: var(--fonte-inter);
+    color: var(--branco);
+    font-size: 11px;
+    margin-bottom: 0.8vh;
+}
+
+.Telefone{
+    font-family: var(--fonte-inter);
+    color: var(--branco);
+    font-size: 11px;
+    margin-bottom: 1.5vh;
+}
+
+.Redes-Sociais-Rodape{
+    display: flex;
+    margin-bottom: 3vh;
+}
+
+.Borda-Rodape{
+    padding: 0.8vh 1vh;
+    border: 1px solid var(--laranja);
+    margin-right: 5vh;
+    border-radius: 999px;
+    color: var(--laranja);
+    font-family: var(--fonte-inter);
+    font-size: 11px;
+    transition: transform 0.3s ease;
+}
+
+.Borda-Rodape:hover{
+    transform: scale(1.25);
+}
+
+.Borda-Rodape-Gigante{
+    padding: 0.8vh 1vh;
+    border: 1px solid var(--preto);
+    margin-right: 5vh;
+    margin-left: auto;
+    border-radius: 999px;
+    color: var(--preto);
+    font-family: var(--fonte-inter);
+    font-size: 11px;
+}

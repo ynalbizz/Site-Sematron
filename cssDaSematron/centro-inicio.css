@@ -1,0 +1,129 @@
+/*
+    Tá tudo baguncado, da um control+f pra achar
+*/
+
+.container-centro{
+    display: grid;
+    grid-template-columns: 27vw 45vw 27vw;
+    margin-top: 2vh;
+}
+
+.tamanhos{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 52vh;
+}
+
+.tres-linhas{
+    display: grid;
+    grid-template-rows: max-content;
+    row-gap: 6vh;
+    align-content: start;
+}
+
+.informacoes{
+    display: grid;
+    text-align: left;
+    padding: 1.5vh 7vh 1.5vh 1.5vh;
+    background-color: #111111;
+    border-radius: 16px;
+    transform: translateX(-4vw);
+}
+
+.Numero-centro{
+    color: var(--laranja);
+    font-size: 22px;
+    font-family: var(--fonte-inter);
+    padding: 0.1vw;
+}
+
+.Texto-centro{
+    color: var(--branco);
+    font-size: 12px;
+    font-family: var(--fonte-inter);
+    padding: 0.1vw;
+    margin-top: 3px;
+}
+
+.topo{
+    margin-top: 6vh;
+}
+
+.baixo{
+    margin-bottom: 6vw;
+}
+
+.duas-linhas{
+    display: grid;
+    grid-template-rows: max-content;
+    row-gap: 10vh;
+    align-content: start;
+}
+
+.Inscrições-Bloco{
+    display: flex;
+    padding: 0.7vw 3vw 0.7vw 3vw;
+    background-color: var(--laranja);
+    border-radius: 14px;
+    transform: translateX(2vw);
+    color: var(--preto);
+    font-size: 20px;
+    font-family: var(--fonte-inter);
+    transition: transform 0.3s ease;
+}
+
+.Inscrições-Bloco:hover{
+    transform: translateX(2vw) scale(1.25);
+
+}
+
+.Ver-Atividade-Bloco{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 0.7vw 2vw 0.7vw 2vw;
+    border-radius: 14px;
+    border: 1px solid var(--laranja);
+    transform: translateX(2vw);
+    color: var(--laranja);
+    font-size: 20px;
+    font-family: var(--fonte-inter);
+    transition: transform 0.3s ease;
+}
+
+.Ver-Atividade-Bloco:hover{
+    transform: translateX(2vw) scale(1.25);
+}
+
+.top{
+    margin-top: 16vh;
+}
+
+.Texto-EmCima-Logo{
+    color: var(--laranja);
+    font-size: 52px;
+    font-family: var(--fonte-Gotica);
+    margin-top: 3vh;
+}
+
+.texto-foto-texto{
+    display: grid;
+    grid-template-rows: max-content;
+    row-gap: 0.5vh;
+    align-content: start;
+}
+
+.logo-central{
+    margin-top: -11vh;
+    margin-bottom: -14vh;
+    max-width: 58vh;
+    max-height: 58vh;
+}
+
+.Texto-EmBaixo-Logo{
+    font-family: var(--fonte-Gotica);
+    font-size: 20px;
+    color: var(--laranja);
+}

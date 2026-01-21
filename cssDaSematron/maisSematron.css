@@ -1,0 +1,77 @@
+.Palavra-MAISSSS{
+    margin-left: 5.1vw;
+    font-family: var(--fonte-Gotica);
+    font-size: 30px;
+    color: var(--laranja);
+}
+
+.tamanho-min{
+    min-height: 47vh;
+}
+
+.textao{
+    font-family: var(--fonte-inter);
+    font-size: 20px;
+    color: var(--laranja);
+    line-height: 1.5;
+}
+
+.texto-pra-porra{
+    width: 90vw;
+    margin-left: 5vw;
+}
+
+.Sub-Mais-Sematron{
+    color: var(--branco);
+    font-size: 16px;
+    font-family: var(--fonte-inter);
+    margin-top: 3vh;
+    text-align: center;
+}
+
+.links{
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+}
+
+.borda-Mais-Sematron{
+    text-decoration: none;
+    display: flex;
+    padding: 1vh 1vw 1vh 0.5vw;
+    border: 1px solid var(--laranja);
+    border-radius: 18px;
+    transition: transform 0.3s ease;
+    align-items: center;
+}
+
+.borda-Mais-Sematron:hover{
+    transform: scale(1.25);
+}
+
+.link-mais-semat{
+    color: var(--branco);
+    font-size: 20px;
+    font-family: var(--fonte-inter);
+}
+
+.Circulo-mais{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4vh;
+    height: 4vh;
+    border-radius: 50%;
+    background-color: var(--laranja);
+    margin-right: 1vw;
+}
+
+.Mini-Logo-Preto-mais{
+    width: 75%;
+    height: 75%;
+    margin: 0;
+}
+
+.diretcha{
+    margin-right: 3vw;
+}

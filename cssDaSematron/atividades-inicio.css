@@ -1,0 +1,111 @@
+/*
+    Tá tudo baguncado, da um control+f pra achar
+*/
+
+.Palavra-Atividades_Traco-Laranja{
+    margin-top: 5vh;
+}
+
+.Palavra-Atividades{
+    font-family: var(--fonte-Gotica);
+    color: var(--branco);
+    font-size: 26px;
+    font-weight: 100;
+    margin-left: 5.1vw;
+}
+
+.traco-laranja{
+    display: flex;
+    width: 120px;
+    height: 0.4vh;
+    background-color: var(--laranja);
+    margin-left: 5.1vw;
+    border-radius: 4px;
+}
+
+.Atividades{
+    display: grid;
+    grid-template-columns: 24vw 24vw 24vw 24vw;
+    margin-top: 2vh;
+    margin-left: 2vw;
+}
+
+.Colunas{
+    height: 38vh;
+}
+
+.Circulo-atividades{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6vh;
+    width: 6vh;
+    border-radius: 50%;
+    background-color: var(--laranja);
+    margin-left: 1.5vw;
+    margin-top: 1.5vw;
+}
+
+.Mini-Logo-Preto-Atividades{
+    width: 75%;
+    height: 75%;
+    margin-top: 0vh;
+    margin-left: 0vh;
+}
+
+.Titulo-Libertadores{
+    font-family: var(--fonte-Gotica);
+    font-size: 18px;
+    color: var(--branco);
+    display: flex;
+    text-align: left;
+    margin-left: 1.5vw;
+    margin-top: 1.5vw;
+}
+
+.Resumo{
+    font-family: var(--fonte-inter);
+    font-size: 13px;
+    color: var(--branco);
+    display: flex;
+    text-align: left;
+    margin-left: 1.5vw;
+    margin-top: 1vw;
+}
+
+.Saiba-Mais-Botao{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7vw 0vw;
+    border-radius: 12px;
+    background-color: var(--laranja);
+    width: 7vw;
+    margin-left: 1.5vw;
+    margin-top: 3vw;
+    font-family: var(--fonte-inter);
+    font-size: 13px;
+    color: var(--preto);
+    transition: transform 0.3s ease;
+}
+
+.Saiba-Mais-Botao:hover{
+    transform: scale(1.25);
+}
+
+.Borda-Atividades{
+    text-align: left;
+    text-align: center;
+    align-items: start;
+    border-radius: 18px;
+    border: 1px solid var(--laranja);
+    width: 18vw;
+    margin-left: 2vw;
+    height: 30vh;
+    margin-top: 4vh;
+}
+
+.Esquerdinha{
+    margin-left: 3vw;
+}

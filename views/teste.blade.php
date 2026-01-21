@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Participantes - SEMATRON</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Container Principal */
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 120px 20px 40px 20px;
+        }
+
+        /* Título da Página */
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 40px;
+            color: #fb9a03;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .page-subtitle {
+            font-size: 14px;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        /* Card da Tabela */
+        .table-card {
+            background-color: #050505;
+            border: 1px solid #fb9a03;
+            border-radius: 22px;
+            padding: 30px;
+            width: 100%;
+            max-width: 900px; /* Mais largo que o formulário */
+            box-shadow: 0 0 20px rgba(251, 154, 3, 0.15);
+            overflow-x: auto; /* Permite rolagem lateral no celular */
+        }
+
+        /* Estilização da Tabela */
+        .cyber-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        /* Cabeçalho da Tabela */
+        .cyber-table th {
+            font-family: 'Orbitron', sans-serif;
+            color: #fb9a03;
+            font-weight: 500;
+            padding: 15px;
+            border-bottom: 2px solid #fb9a03;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        /* Linhas da Tabela */
+        .cyber-table td {
+            padding: 15px;
+            border-bottom: 1px solid #222;
+            color: #ddd;
+            font-size: 15px;
+        }
+
+        /* Efeito Hover na Linha */
+        .cyber-table tr:hover td {
+            background-color: rgba(251, 154, 3, 0.05);
+            color: #fff;
+        }
+
+        /* Última linha sem borda */
+        .cyber-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Estado Vazio */
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Botão de Voltar (Opcional) */
+        .btn-back {
+            margin-top: 30px;
+            text-decoration: none;
+            color: #fb9a03;
+            border: 1px solid #fb9a03;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            transition: all 0.3s;
+        }
+
+        .btn-back:hover {
+            background-color: #fb9a03;
+            color: #000;
+        }
+
+    </style>
+</head>
+<body>
+
+    <main class="main-container">
+        
+        <div class="page-header">
+            <h1 class="page-title">Inscritos</h1>
+            <div class="page-subtitle">Visualização de dados do banco</div>
+        </div>
+
+        <div class="table-card">
+            <table class="cyber-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome Completo</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(count($participantes) > 0)
+                        @foreach($participantes as $p)
+                        <tr>
+                            <td>#{{ $p->uid ?? $p->id_usuario }}</td>
+                            <td>{{ $p->name ?? $p->nome_usuario ?? $p->nome }}</td> 
+                            <td>{{ $p->email ?? $p->email_usuario }}</td>
+                        </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td colspan="3" class="empty-state">
+                                Nenhum registro encontrado no banco de dados.
+                            </td>
+                        </tr>
+                    @endif
+                </tbody>
+            </table>
+        </div>
+
+        <a href="/" class="btn-back">VOLTAR PARA HOME</a>
+
+    </main>
+
+    </body>
+</html>

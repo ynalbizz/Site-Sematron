@@ -1,0 +1,44 @@
+.Parte-De-Cima-Contato{
+    display: grid;
+    grid-template-columns: 30% 40%;
+    height: 40vh;
+}
+
+.Imagem-Contato{
+    position: relative;
+}
+
+.Imagem-Contato::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("/Imagens/logo-Photoroom.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 65vh;
+
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.texto-contato{
+    display: flex;         
+    flex-direction: column;     
+    justify-content: center;   
+    align-items: center;        
+    text-align: center; 
+}
+
+.Tit-Cont{
+    color: var(--laranja);
+    font-size: 52px;
+    font-family: var(--fonte-Gotica);
+}
+
+.Sub-Cont{
+    color: var(--branco);
+    font-size: 18px;
+    font-family: var(--fonte-Gotica);
+    margin-top: 3vh;
+}
