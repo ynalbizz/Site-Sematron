@@ -21,7 +21,7 @@
     background: url("/Imagens/logo-Photoroom.png") center / contain no-repeat;
     opacity: 0.4;
     pointer-events: none; 
-    z-index: 0;
+    z-index: -10;
 }
 
 .duas-colunas-cadastro{
@@ -64,7 +64,7 @@
 }
 
 .input-group input {
-    width: 70%;
+    width: 100%;
     height: 44px;
     background-color: transparent;
     border: 1px solid #fb9a03;
@@ -116,6 +116,7 @@
 .input-group {
     margin-bottom: 20px;
     display: flex;
+    flex-direction: column; 
     align-items: center;
     justify-content: space-between;
 }
@@ -125,7 +126,44 @@
     font-weight: 300;
     font-size: 14px;
     color: #fff;
-    width: 30%; /* Espaço para o label */
+    width: 100%; /* Espaço para o label */
     text-align: right;
     padding-right: 15px;
+    margin-bottom: 4px;
+}
+
+.input-group select {
+    width: 100%;
+    height: 44px;
+
+    background-color: transparent;
+    border: 1px solid #fb9a03;
+    border-radius: 12px;
+
+    color: #fff;
+    padding: 0 15px;
+    padding-right: 45px;
+
+    font-family: var(--fonte-inter);
+    outline: none;
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23fb9a03' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px;
+}
+
+.input-group select:focus {
+    box-shadow: 0 0 8px rgba(251, 154, 3, 0.6);
+    border-color: #fff;
+}
+
+.input-group select option {
+    background-color: var(--preto);
+    border: var(--laranja);
 }

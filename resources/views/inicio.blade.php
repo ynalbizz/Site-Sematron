@@ -300,7 +300,7 @@
             <div class="Redes-Sociais-Rodape">
                 <a class="Borda-Rodape" href="https://www.instagram.com/sematronusp/">Instagram</a>
                 <a class="Borda-Rodape" href="https://www.youtube.com/@sematronusp">YouTube</a>
-                <a class="Borda-Rodape" href="{{asset('/htmlDaSematron/inicio.blade.php')}}">Site</a>
+                <a class="Borda-Rodape" href="/inicio">Site</a>
                 <!--Por favor não apague esse EasterEgg foi feito com muito carinho por mim ;)-->
                 <a class="Borda-Rodape-Gigante" href="https://www.ubirata.pr.gov.br/">Ubiratã</a>
             </div>

@@ -43,6 +43,7 @@
 
         <!--Muito dos css estão no cadastro.css, pq fiquei com preguiça de copiar tudo dnv-->
         <section class="trem-principal">
+            
             <div class="teste Parte-da-Esquerda">
                 <h1 class="Login-grande">Login</h1>
                 <h1 class="Sub-Login">Acesse sua conta para XXXX e XXXX.</h1>
@@ -65,6 +66,7 @@
                     </form>
                 <div class="display-flex"><a href="" class="Esqueceu-Senha">Esqueceu a senha?</a></div>
             </div>
+
         </section>
 
 
@@ -81,7 +83,7 @@
             <div class="Redes-Sociais-Rodape">
                 <a class="Borda-Rodape" href="https://www.instagram.com/sematronusp/">Instagram</a>
                 <a class="Borda-Rodape" href="https://www.youtube.com/@sematronusp">YouTube</a>
-                <a class="Borda-Rodape" href="{{asset('/htmlDaSematron/inicio.blade.php')}}">Site</a>
+                <a class="Borda-Rodape" href="/inicio">Site</a>
                 <!--Por favor não apague esse EasterEgg foi feito com muito carinho por mim ;)-->
                 <a class="Borda-Rodape-Gigante" href="https://www.ubirata.pr.gov.br/">Ubiratã</a>
             </div>

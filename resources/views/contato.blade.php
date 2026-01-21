@@ -42,6 +42,41 @@
 
 
 
+        <section class="Parte-De-Cima-Contato">
+            <div class="texto-contato">
+                <h1 class="Tit-Cont">Contato</h1>
+                <h1 class="Sub-Cont">Fale com a equipe SEMATRON.</h1>
+            </div>
+            <div class="Imagem-Contato"></div>
+        </section>
+
+
+
+
+
+        <section>
+
+            <form action="https://formsubmit.co/bielzingamesplay@gmail.com" method="POST">
+                    <label for="name">Nome</label>
+                    <input type="text" name="name" id="name" required>
+
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" required>
+
+                    <label for="Assunto">Assunto</label>
+                    <textarea name="Assunto" id="Assunto" required></textarea>
+
+                    <label for="message">Mensagem</label>
+                    <textarea name="message" id="message" required></textarea>
+
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html"/>
+                <button type="submit">Enviar</button>
+            </form>
+
+        </section>
+
+
 
 
 
@@ -58,7 +93,7 @@
             <div class="Redes-Sociais-Rodape">
                 <a class="Borda-Rodape" href="https://www.instagram.com/sematronusp/">Instagram</a>
                 <a class="Borda-Rodape" href="https://www.youtube.com/@sematronusp">YouTube</a>
-                <a class="Borda-Rodape" href="{{asset('/htmlDaSematron/inicio.blade.php')}}">Site</a>
+                <a class="Borda-Rodape" href="/inicio">Site</a>
                 <!--Por favor não apague esse EasterEgg foi feito com muito carinho por mim ;)-->
                 <a class="Borda-Rodape-Gigante" href="https://www.ubirata.pr.gov.br/">Ubiratã</a>
             </div>
