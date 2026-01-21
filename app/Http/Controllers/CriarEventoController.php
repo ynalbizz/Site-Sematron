@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Evento;
 use Illuminate\Http\Request;
 
-class EventoController extends Controller
+class CriarEventoController extends Controller
 {
     public function index()
     {
@@ -21,7 +21,7 @@ class EventoController extends Controller
             'max_vagas' => 'required|integer|min:1',
             'data' => 'required|date',
             'horario_inicio' => 'required',
-            'horario_fim' => 'required|integer|min:1',
+            'horario_fim' => 'required',
             'descricao' => 'required|string',
             'observacao' => 'nullable|string',
         ]);
