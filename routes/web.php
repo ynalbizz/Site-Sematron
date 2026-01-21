@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
 use App\Http\Controllers\testeController;
+use App\Http\Controllers\UserInfoController;
 
 Route::get('/', fn () => view('inicio'))->name('home');
 
@@ -17,7 +18,8 @@ Route::get('/visitas', fn () => view('visitas'))->name('visitas');
 
 Route::get('/login', fn () => view('login'))->name('login');
 
-Route::get('/cadastro', fn () => view('cadastro'))->name('cadastro');
+Route::get('/cadastro', [UserInfoController::class, 'create'])->name('cadastro.create');
+Route::post('/cadastro', [UserInfoController::class, 'store'])->name('cadastro.store');
 
 Route::get('/maisSematron', fn () => view('maisSematron'))->name('maisSematron');
 

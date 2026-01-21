@@ -51,7 +51,8 @@
 
 
 
-            <form action="#" method="POST" class="duas-colunas-cadastro">
+            <form action="{{ route('cadastro.store') }}" method="POST" class="duas-colunas-cadastro">
+                @csrf
                 <div class="borda-cadastro">
 
                     <h1 class="Champions-do-Forms">Dados de Acesso</h1>
