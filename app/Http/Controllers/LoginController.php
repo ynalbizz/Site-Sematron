@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Session;
-use App\Models\userinfo;
+use App\Models\Userinfo;
 
 
 class LoginController extends Controller
@@ -22,16 +22,16 @@ class LoginController extends Controller
 
         ]);
 
-        $user = userinfo::where('email', $credentials['email'])->first();
+        $User = Userinfo::where('email', $credentials['email'])->first();
 
-        if (!$user)
+        if (!$User)
         {
             return back()->withErrors([
                 'email' => 'O e-mail informado não foi encontrado.',
             ])->onlyInput('email');
         }
 
-        $dados['uid'] = $user -> uid ;
+        $dados['uid'] = $User -> uid ;
         $dados['password'] = $credentials['senha'];
 
 

@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Participante;
-use App\Models\userinfo;
-use App\Models\userlogin;
+use App\Models\Userinfo;
+use App\Models\Userlogin;
 
 use App\Http\Controllers\StringGenerator;
 
@@ -20,7 +20,7 @@ class CadastroController extends Controller
             'email' => 'required|email|unique:userinfos',
             'cpf'   => 'required|unique:userinfos',
         ]);
-        userinfo::create([
+        Userinfo::create([
             'email' => $request->email,
             'name' => $request->nome,
             'cpf' => $request->cpf,
@@ -42,7 +42,7 @@ class CadastroController extends Controller
 
         $salt = StringGenerator::get(64);
 
-        userlogin::create([
+        Userlogin::create([
             'username' => $request->usuario,
             'salt' =>  $salt,
             'password' => hash('sha256', $request->senha . $salt),
