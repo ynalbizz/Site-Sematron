@@ -12,10 +12,10 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('tipo');
-            $table->integer('max_participantes');
+            $table->integer('max_vagas');
             $table->date('data');
-            $table->time('horario');
-            $table->integer('duracao');
+            $table->time('horario_inicio');
+            $table->integer('horario_fim');
             $table->text('descricao');
             $table->text('observacao')->nullable();
             $table->timestamps();

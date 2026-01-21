@@ -11,10 +11,10 @@ class Evento extends Model
     protected $fillable = [
         'nome',
         'tipo',
-        'max_participantes',
+        'max_vagas',
         'data',
-        'horario',
-        'duracao',
+        'horario_inicio',
+        'horario_fim',
         'descricao',
         'observacao',
     ];

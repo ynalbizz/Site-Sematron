@@ -17,11 +17,11 @@ class EventoController extends Controller
     {
         $validated = $request->validate([
             'nome' => 'required|string|max:255',
-            'tipo' => 'required|in:X,Y',
-            'max_participantes' => 'required|integer|min:1',
+            'tipo' => 'required|in:minicurso,visita,palestra',
+            'max_vagas' => 'required|integer|min:1',
             'data' => 'required|date',
-            'horario' => 'required',
-            'duracao' => 'required|integer|min:1',
+            'horario_inicio' => 'required',
+            'horario_fim' => 'required|integer|min:1',
             'descricao' => 'required|string',
             'observacao' => 'nullable|string',
         ]);

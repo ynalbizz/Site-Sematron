@@ -18,34 +18,39 @@
     <div>
     <label>Tipo</label><br>
     <label>
-        <input type="radio" name="tipo" value="X" required>
-        X
+        <input type="radio" name="tipo" value="minicurso" required>
+        Minicurso
     </label>
 
     <label>
-        <input type="radio" name="tipo" value="Y">
-        Y
+        <input type="radio" name="tipo" value="visita">
+        Visita
+    </label>
+
+    <label>
+        <input type="radio" name="tipo" value="palestra">
+        Palestra
     </label>
     </div>
 
     <div>
-        <label>Max Participantes</label>
-        <input type="number" name="max_participantes" required>
+        <label>Max vagas</label>
+        <input type="number" name="max_vagas" required>
     </div>
 
     <div>
-        <label>Event Data</label>
+        <label>Data</label>
         <input type="date" name="data" required>
     </div>
 
     <div>
-        <label>Event Tempo</label>
-        <input type="time" name="horario" required>
+        <label>Horário que inicia</label>
+        <input type="time" name="horario_inicio" required>
     </div>
 
     <div>
-        <label>Duração</label>
-        <input type="number" name="duracao" required>
+        <label>horario que termina</label>
+        <input type="number" name="horario_fim" required>
     </div>
 
     <div>
@@ -70,10 +75,10 @@
         <tr>
             <th>Nome</th>
             <th>Tipo</th>
-            <th>Max</th>
+            <th>Max vagas</th>
             <th>Data</th>
-            <th>Tempo</th>
-            <th>Duração</th>
+            <th>Horário que inicia</th>
+            <th>Horário que termina</th>
             <th>Descrição</th>
             <th>Observação</th>
         </tr>
@@ -83,10 +88,10 @@
             <tr>
                 <td>{{ $evento->nome }}</td>
                 <td>{{ $evento->tipo }}</td>
-                <td>{{ $evento->max_participantes }}</td>
-                <td>{{ $evento->evento_data }}</td>
-                <td>{{ $evento->evento_tempo }}</td>
-                <td>{{ $evento->duracao }}</td>
+                <td>{{ $evento->max_vagas }}</td>
+                <td>{{ $evento->data }}</td>
+                <td>{{ $evento->horario_inicio }}</td>
+                <td>{{ $evento->horario_fim }}</td>
                 <td>{{ $evento->descricao }}</td>
                 <td>{{ $evento->observacao ?? '—' }}</td>
             </tr>
