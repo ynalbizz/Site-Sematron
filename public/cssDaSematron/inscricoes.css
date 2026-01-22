@@ -1,0 +1,102 @@
+.Parte-De-Cima-Insc{
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    height: 40vh;
+}
+
+.Imagem-Insc{
+    position: relative;
+}
+
+.Imagem-Insc::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("/Imagens/logo-Photoroom.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 65vh;
+
+    pointer-events: none;
+}
+
+.texto-Insc{
+    display: flex;         
+    flex-direction: column;     
+    justify-content: center;   
+    align-items: center;        
+    text-align: center; 
+}
+
+.Tit-Insc{
+    color: var(--laranja);
+    font-size: 52px;
+    font-family: var(--fonte-Gotica);
+}
+
+.Sub-Insc{
+    color: var(--branco);
+    font-size: 18px;
+    font-family: var(--fonte-Gotica);
+    margin-top: 3vh;
+}
+
+.tres-colunas-insc{
+    width: 100%;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    justify-content: center;
+    height: 40vh;
+}
+
+.deu-toque{
+    transform: translateX(-2.25vw);
+}
+
+.submit-btn-insc {
+    width: 80%;
+    height: 46px;
+    background-color: #fb9a03;
+    border: none;
+    border-radius: 14px;
+    color: #000;
+    font-family: var(--fonte-inter);
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center;
+}
+
+.submit-btn-insc:hover {
+    background-color: #ffaa33;
+    transform: scale(1.10);
+}
+
+.campo-botao{
+    display: grid;
+    grid-template-columns: 33vw;
+    margin-left: 36vw;
+}
+
+.box{
+    visibility: hidden;
+}
+
+.box.is-visible {
+    visibility: visible;
+}
+
+
+.borda-insc{
+    display: flex;         
+    flex-direction: column;   
+    margin: 2vw 3vw;
+    border: 1px solid var(--laranja);
+    border-radius: 22px;
+    padding: 2vw;
+}
+
