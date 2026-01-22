@@ -59,3 +59,10 @@
 .Esqueceu-Senha:hover{
     transform: scale(1.25);
 }
+
+#olhinho{
+    position: absolute;
+    right: 23px;
+    top: 50%;
+    cursor: pointer;
+}
