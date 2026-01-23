@@ -9,7 +9,8 @@ class EventoController extends Controller
 {
     public function index()
     {
-        $eventos = Evento::latest('created_at')->get();
+        $eventos = Evento::latest('created_at')->paginate(4);
+        
         return view('eventos.index', compact('eventos'));
     }
 
@@ -28,6 +29,7 @@ class EventoController extends Controller
 
         Evento::create($validated);
 
-        return redirect()->back();
+        // Add success message
+        return redirect()->back()->with('success', 'Evento criado com sucesso!');
     }
 }
