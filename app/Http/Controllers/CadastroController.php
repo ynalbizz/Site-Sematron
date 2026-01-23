@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Participante;
-use App\Models\userinfo;
-use Illuminate\Support\Facades\Hash;
+use App\Models\Userinfo;
+use App\Models\Userlogin;
+
+use App\Http\Controllers\StringGenerator;
 
 class CadastroController extends Controller
 {
-    public function index(){
+    public function create(){
         return view('cadastro');
     }
     
@@ -18,23 +20,34 @@ class CadastroController extends Controller
             'email' => 'required|email|unique:userinfos',
             'cpf'   => 'required|unique:userinfos',
         ]);
-        userinfo::create([
+        Userinfo::create([
             'email' => $request->email,
-            'usuario' => $request->usuario,
-            'senha' => Hash::make($request->senha),
-            'nome' => $request->nome,
+            'name' => $request->nome,
             'cpf' => $request->cpf,
             'rg' => $request->rg,
-            'nascimento' => $request->nascimento,
-            'telefone' => $request->telefone,
+            'nasc' => $request->nascimento,
+            'tel' => $request->telefone,
             'cep' => $request->cep,
             'cidade' => $request->cidade,
-            'endereco' => $request->endereco,
-            'escolaridade' => $request->escolaridade,
-            'num_usp' => $request->num_usp,
-            'instituicao' => $request->instituicao,
+            'uf' => 'SP' ,
+            'address' => $request->endereco,
+            'grau' => 0,
+            'nusp' => $request->num_usp,
+            'inst' => $request->instituicao,
             'curso' => $request->curso,
+            'exp' => 'pqp',
+            'badges' => '[6]',
+            'verified' => 0,
         ]);
+
+        $salt = StringGenerator::get(64);
+
+        Userlogin::create([
+            'username' => $request->usuario,
+            'salt' =>  $salt,
+            'password' => hash('sha256', $request->senha . $salt),
+        ]);
+        
         return redirect()->back()->with('success', 'Cadastro realizado com sucesso!');
     }
 }
