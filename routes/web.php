@@ -29,7 +29,13 @@ Route::get('/maisSematron', fn () => view('maisSematron'))->name('maisSematron')
 
 Route::get('/contato', fn () => view('contato'))->name('contato');
 
+Route::get('/esqueceu-a-senha', fn () => view('esqueceu-a-senha'))->name('esqueceu-a-senha');
+
+Route::get('/pao', fn () => view('pao'))->name('pao');
+
 Route::get('/adm/list', [App\Http\Controllers\admController::class, 'showInscList'])->name('adm.list');
+
+Route::post('/inscricoes', [InscricaoController::class, 'store']);
 
 Route::get('/teste',[testeController::class,'show']);
 
