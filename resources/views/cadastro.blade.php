@@ -11,11 +11,7 @@
 
 
 
-<<<<<<< HEAD
-            <form action="{{ route('cadastro.salvar') }}" method="POST" class="duas-colunas-cadastro">
-=======
             <form action={{ route('cadastro.store') }} method="POST" class="duas-colunas-cadastro">
->>>>>>> 0fec458ca82e1e85903b69d7ef248ac850a57f8a
                 @csrf
                 <div class="borda-cadastro">
 
