@@ -1,125 +1,32 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts.layout-basico')           <!--IMPORTANDO LAYOUT DA PASTA LAYOUT-->
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Minicursos</title>
-        <link rel="stylesheet" href="{{asset('/sematron.css')}}">
-        <link rel="stylesheet" href="{{asset('/reset.css')}}">
-        <!--Aqui em baixo importa a fonte. POR QUE CARALHOS INTER???????????? AQUI É GRÊMIO PORRA!!!!!!-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    </head>
+@section('title', 'Minicursos')        <!--AQUI TU BOTA O NEGOCIO QUE APARECE NA ABA LÁ EM CIMA-->
 
-    <body class="Corpo">
+@section('content')                         <!--AQUI COMEÇA O CONTEÚDO ESPECÍFICO DA PÁGINA-->
+    <!--SLK NUM COMPENSA FAZER DNV-->
+    <section class="Palavra-Atividades_Traco-Laranja Palavra-Programacao">
+        <h1 class="Palavra-Atividades">Minicursos</h1>
+        <div class="traco-laranja"></div>
+    </section>
 
-        <header>
-            <!--É literal só a listra laranja-->
-            <div class="listra-laranja"></div>
 
-            <!--Aqui estão os links, na versão desktop-->
 
-            <div class="Parte-De-Cima">
 
-                <div class="Centraliza"><img class="Logo-Inicio" src="{{asset('/Imagens/logo-Photoroom.png')}}" alt="Logo da Sematron"></div>
-                <div class="Centraliza"><h1 class="Sematron-Inicio">SEMATRON XXII</h1></div>
+
+    <section class="espaco-no-topo margem-esquerda">
+        <div class="imagem-de-fundo">
                 
-                <div class="Links">
-                    <a class="Link-Do-Topo" href="/inicio">Página Inicial</a>
-                    <a class="Link-Do-Topo" href="/inscricoes">Inscrições</a>
-                    <a class="Link-Do-Topo" href="/minicursos">Minicursos</a>
-                    <a class="Link-Do-Topo" href="/visitas">Visitas</a>
-                    <a class="Link-Do-Topo" href="/login">Login</a>
-                    <a class="Link-Do-Topo" href="/cadastro">Cadastro</a>
-                    <a class="Link-Do-Topo" href="/maisSematron">Mais Sematron</a>
-                    <a class="Link-Do-Topo Direita" href="/contato">Contato</a>
+            <div class="borda-minicursos">
+
+                <div class="texto-na-esquerda">
+                    <h1 class="nome-do-minicurso">NOME DO MINICURSO</h1>
+                    <h1 class="horarios-minicursos">C.H.: 3h • Início: 30/11 • Horário: 19:00 • Vagas: 25</h1>
                 </div>
-            </div>
-        </header>
-
-
-
-
-
-        <!--SLK NUM COMPENSA FAZER DNV-->
-        <section class="Palavra-Atividades_Traco-Laranja Palavra-Programacao">
-            <h1 class="Palavra-Atividades">Minicursos</h1>
-            <div class="traco-laranja"></div>
-        </section>
-
-
-
-
-
-        <section class="espaco-no-topo margem-esquerda">
-            <div class="imagem-de-fundo">
-                
-                <div class="borda-minicursos">
-
-                    <div class="texto-na-esquerda">
-                        <h1 class="nome-do-minicurso">NOME DO MINICURSO</h1>
-                        <h1 class="horarios-minicursos">C.H.: 3h • Início: 30/11 • Horário: 19:00 • Vagas: 25</h1>
-                    </div>
                     
-                    <a href="" class="botao-inscrever">Inscrever</a>
-
-                </div>
-
-
-
-                <div class="borda-minicursos">
-
-                    <div class="texto-na-esquerda">
-                        <h1 class="nome-do-minicurso">NOME DO MINICURSO</h1>
-                        <h1 class="horarios-minicursos">C.H.: 3h • Início: 30/11 • Horário: 19:00 • Vagas: 25</h1>
-                    </div>
-                    
-                    <a href="" class="botao-inscrever">Inscrever</a>
-
-                </div>
-
-
-
-                <div class="borda-minicursos">
-
-                    <div class="texto-na-esquerda">
-                        <h1 class="nome-do-minicurso">NOME DO MINICURSO</h1>
-                        <h1 class="horarios-minicursos">C.H.: 3h • Início: 30/11 • Horário: 19:00 • Vagas: 25</h1>
-                    </div>
-                    
-                    <a href="" class="botao-inscrever">Inscrever</a>
-
-                </div>
+                <a href="/inscricoes" class="botao-inscrever">Inscrever</a>
 
             </div>
-        </section>
 
-
-
-
-
-
-        <!--É literal só a listra laranja-->
-        <div class="listra-laranja espacamento-rodape"></div>
-
-        <footer class="Rodape">
-
-            <h1 class="Creditos-Rodape">Créditos</h1>
-            <h1 class="Copyright-Rodape">Copyright © 2014–2025 Grupo SEMATRON. Todos os direitos reservados.</h1>
-            <h1 class="Av-Trabalhador">Av. Trabalhador São-Carlense, 400 • EESC/USP • São Carlos — SP</h1>
-            <h1 class="Telefone">Tel: +55 (61) 98172-5281 • Email: sematron@eesc.usp.br</h1>
-
-            <div class="Redes-Sociais-Rodape">
-                <a class="Borda-Rodape" href="https://www.instagram.com/sematronusp/">Instagram</a>
-                <a class="Borda-Rodape" href="https://www.youtube.com/@sematronusp">YouTube</a>
-                <a class="Borda-Rodape" href="{{asset('/htmlDaSematron/inicio.blade.php')}}">Site</a>
-                <!--Por favor não apague esse EasterEgg foi feito com muito carinho por mim ;)-->
-                <a class="Borda-Rodape-Gigante" href="https://www.ubirata.pr.gov.br/">Ubiratã</a>
-            </div>
-        </footer>
-        
-    </body>
-
-</html>
+        </div>
+    </section>
+@endsection                                 <!--AQUI ACABA O CONTEÚDO ESPECÍFICO DA PÁGINA-->

@@ -1,69 +1,83 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts.layout-basico')           <!--IMPORTANDO LAYOUT DA PASTA LAYOUT-->
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Inscrições</title>
-        <link rel="stylesheet" href="{{asset('/sematron.css')}}">
-        <link rel="stylesheet" href="{{asset('/reset.css')}}">
-        <!--Aqui em baixo importa a fonte. POR QUE CARALHOS INTER???????????? AQUI É GRÊMIO PORRA!!!!!!-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    </head>
+@section('title', 'Inscrições')             <!--AQUI TU BOTA O NEGOCIO QUE APARECE NA ABA LÁ EM CIMA-->
 
-    <body class="Corpo">
-
-        <header>
-            <!--É literal só a listra laranja-->
-            <div class="listra-laranja"></div>
-
-            <!--Aqui estão os links, na versão desktop-->
-
-            <div class="Parte-De-Cima">
-
-                <div class="Centraliza"><img class="Logo-Inicio" src="{{asset('/Imagens/logo-Photoroom.png')}}" alt="Logo da Sematron"></div>
-                <div class="Centraliza"><h1 class="Sematron-Inicio">SEMATRON XXII</h1></div>
-                
-                <div class="Links">
-                    <a class="Link-Do-Topo" href="/inicio">Página Inicial</a>
-                    <a class="Link-Do-Topo" href="/inscricoes">Inscrições</a>
-                    <a class="Link-Do-Topo" href="/minicursos">Minicursos</a>
-                    <a class="Link-Do-Topo" href="/visitas">Visitas</a>
-                    <a class="Link-Do-Topo" href="/login">Login</a>
-                    <a class="Link-Do-Topo" href="/cadastro">Cadastro</a>
-                    <a class="Link-Do-Topo" href="/maisSematron">Mais Sematron</a>
-                    <a class="Link-Do-Topo Direita" href="/contato">Contato</a>
-                </div>
-            </div>
-        </header>
+@section('content')                         <!--AQUI COMEÇA O CONTEÚDO ESPECÍFICO DA PÁGINA-->
+<section class="Parte-De-Cima-Insc">
+        <div class="texto-Insc">
+            <h1 class="Tit-Insc">Inscrição</h1>
+            <h1 class="Sub-Insc">Faça a sua inscrição.</h1>
+        </div>
 
 
 
+        <div class="Imagem-Insc"></div>
 
 
 
-
-        <!--É literal só a listra laranja-->
-        <div class="listra-laranja espacamento-rodape"></div>
-
-        <footer class="Rodape">
-
-            <h1 class="Creditos-Rodape">Créditos</h1>
-            <h1 class="Copyright-Rodape">Copyright © 2014–2025 Grupo SEMATRON. Todos os direitos reservados.</h1>
-            <h1 class="Av-Trabalhador">Av. Trabalhador São-Carlense, 400 • EESC/USP • São Carlos — SP</h1>
-            <h1 class="Telefone">Tel: +55 (61) 98172-5281 • Email: sematron@eesc.usp.br</h1>
-
-            <div class="Redes-Sociais-Rodape">
-                <a class="Borda-Rodape" href="https://www.instagram.com/sematronusp/">Instagram</a>
-                <a class="Borda-Rodape" href="https://www.youtube.com/@sematronusp">YouTube</a>
-                <a class="Borda-Rodape" href="{{asset('/htmlDaSematron/inicio.blade.php')}}">Site</a>
-                <!--Por favor não apague esse EasterEgg foi feito com muito carinho por mim ;)-->
-                <a class="Borda-Rodape-Gigante" href="https://www.ubirata.pr.gov.br/">Ubiratã</a>
-            </div>
-        </footer>
         
-    </body>
+        <div class="borda-cadastro deu-toque">
+            <h1 class="Champions-do-Forms">Escolha o Pacote</h1>
+    <form action="#" method="POST">
+                <div class="input-group">
+                    <label>Pacote</label>
+                        <select id="PACOTAO" name="pacote-dos-guri" required>
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="pacote-basico">Básico R$</option>
+                            <option value="pacote-completo">Completo R$</option>
+                        </select>
+                </div>
+        </div>
+</section>
+<section class="tres-colunas-insc box" data-show="pacote-basico pacote-completo">
 
-</html>
+
+
+        <div class="borda-insc box" data-show="pacote-completo">                                                        <!--BOX-->
+            <h1 class="Champions-do-Forms">Escolha a Visita</h1>
+                <div class="input-group">
+                    <label>Visita</label>
+                        <select name="visita-a-Ubirata" required>
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="pao">Básico R$</option>
+                            <option value="agua">Completo R$</option>
+                            
+                        </select>
+                </div>
+        </div>
+
+
+
+        <div class="borda-insc box" data-show="pacote-basico pacote-completo">
+            <h1 class="Champions-do-Forms">Escolha o Minicurso</h1>
+                <div class="input-group">
+                    <label>Minicurso</label>
+                        <select name="minicurso-escolha" required>
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="pao">Básico R$</option>
+                            <option value="agua">Completo R$</option>
+                        </select>
+                </div>
+        </div>
+
+
+
+        <div class="borda-insc box" data-show="pacote-completo">
+            <h1 class="Champions-do-Forms">Escolha o Tamanho</h1>
+                <div class="input-group">
+                    <label>Tamanho da Camiseta</label>
+                        <select name="tamanho-da-camisa" required>
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="pao">Básico R$</option>
+                            <option value="agua">Completo R$</option>
+                        </select>
+                </div>
+        </div>
+</section>
+
+<section class="campo-botao box" data-show="pacote-basico pacote-completo">
+    <button type="submit" class="submit-btn-insc">IR PARA PAGAMENTO</button>
+</section>
+    </form>
+
+@endsection                                 <!--AQUI ACABA O CONTEÚDO ESPECÍFICO DA PÁGINA-->

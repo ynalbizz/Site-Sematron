@@ -21,7 +21,7 @@
     background: url("/Imagens/logo-Photoroom.png") center / contain no-repeat;
     opacity: 0.4;
     pointer-events: none; 
-    z-index: 0;
+    z-index: -10;
 }
 
 .Login-grande{
@@ -53,4 +53,16 @@
     margin-top: 10px;
     text-decoration: none;
     color: var(--branco);
+    transition: transform 0.3s ease;
+}
+
+.Esqueceu-Senha:hover{
+    transform: scale(1.25);
+}
+
+#olhinho{
+    position: absolute;
+    right: 23px;
+    top: 50%;
+    cursor: pointer;
 }
