@@ -13,7 +13,8 @@
         <div class="teste borda-cadastro">
             <h1 class="Champions-do-Forms">LOGIN</h1>
 
-                <form action="#" method="POST">
+                <form action={{ route('login.autenticar') }} method="POST">
+                    @csrf
                     <div>
                         <div class="input-group">
                             <label>Email</label>
