@@ -17,5 +17,6 @@ class Evento extends Model
         'horario_fim',
         'descricao',
         'observacao',
+        'foto',
     ];
 }

@@ -23,7 +23,7 @@
 <div class="container">
     <h1 class="mb-4">Adicionar Evento</h1>
 
-    <form method="POST" action="/eventos" class="mb-5">
+    <form method="POST" action="/eventos" class="mb-5" enctype="multipart/form-data">
         @csrf
 
         <div class="row g-3">
@@ -79,6 +79,12 @@
             </div>
 
             <div class="col-12">
+               <label class="form-label">Foto do Evento (Opcional)</label>
+                <input type="file" name="foto" class="form-control" accept="image/*">
+               <small class="text-muted">Formatos aceitos: JPG, PNG, GIF. Tamanho máximo: 2MB</small>
+            </div>
+
+            <div class="col-12">
                 <button type="submit" class="btn btn-primary">Adicionar Evento</button>
             </div>
         </div>
@@ -94,7 +100,7 @@
         </div>
     @endif
 
-    <!-- Show pagination info -->
+    <!-- Mostra pagination info -->
     <div class="alert alert-info">
         Mostrando <strong>{{ $eventos->firstItem() ?: 0 }}</strong> a 
         <strong>{{ $eventos->lastItem() ?: 0 }}</strong> de 
@@ -109,6 +115,21 @@
             @foreach($eventos as $evento)
                 <div class="col-md-6 mb-4">
                     <div class="card h-100">
+                        @if($evento->foto)
+                            <div class="card-img-top position-relative" style="padding-top: 56.25%;"> <!-- 16:9 ratio -->
+                                <img src="{{ asset('storage/' . $evento->foto) }}" 
+                                    class="position-absolute top-0 start-0 w-100 h-100"
+                                    alt="{{ $evento->nome }}"
+                                    style="object-fit: cover;">
+                            </div>
+                        @else
+                            <div class="card-img-top bg-light" style="padding-top: 56.25%; position: relative;">
+                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                    <i class="fas fa-image fa-2x text-muted"></i>
+                                    <span class="text-muted small">Sem imagem</span>
+                                </div>
+                            </div>
+                        @endif
                         <div class="card-body">
                             <span class="evento-tipo {{ $evento->tipo }}">
                                 {{ ucfirst($evento->tipo) }}

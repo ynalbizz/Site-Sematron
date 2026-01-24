@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('descricao');
             $table->text('observacao')->nullable();
             $table->timestamps();
+            $table->string('foto')->nullable();
         });
     }
 

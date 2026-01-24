@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Evento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class EventoController extends Controller
 {
@@ -25,11 +26,25 @@ class EventoController extends Controller
             'horario_fim' => 'required',
             'descricao' => 'required|string',
             'observacao' => 'nullable|string',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048'
         ]);
+
+        //Cuida do upload da foto se houver
+        if ($request->hasFile('foto')) {
+
+        //Gera um nome unico para a foto
+        $filename = time() . '_' . Str::random(10) . '.' . $request->foto->extension();
+
+        //armazena a foto na pasta 'eventos' dentro do storage/app/public
+        $path = $request->foto->storeAs('eventos', $filename, 'public');
+        
+        //Salva o caminho da foto no array validado
+        $validated['foto'] = $path;
+        }
 
         Evento::create($validated);
 
-        // Add success message
+        //adiciona mensagem de sucesso
         return redirect()->back()->with('success', 'Evento criado com sucesso!');
     }
 }
