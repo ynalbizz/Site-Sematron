@@ -154,7 +154,19 @@
                                     {{ $evento->observacao }}
                                 </p>
                             @endif
-                        </div>
+
+                            <form method="POST" 
+                                    action="{{ route('eventos.destroy', $evento->id) }}" 
+                                    class="mt-3 pt-3 border-top">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" 
+                                        class="btn btn-outline-danger btn-sm w-100" 
+                                        onclick="return confirm('Tem certeza que deseja excluir o evento \"{{ addslashes($evento->nome) }}\"?')">
+                                    <i class="fas fa-trash me-1"></i> Excluir
+                                </button>
+                            </form>
+                        </div>                       
                         <div class="card-footer">
                             <small class="text-muted">
                                 Criado em: {{ $evento->created_at->format('d/m/Y H:i') }}

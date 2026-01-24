@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Evento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class EventoController extends Controller
 {
@@ -47,4 +48,19 @@ class EventoController extends Controller
         //adiciona mensagem de sucesso
         return redirect()->back()->with('success', 'Evento criado com sucesso!');
     }
+
+    public function destroy($id)
+{
+    $evento = Evento::findOrFail($id);
+    
+    // Deleta a foto do storage se existir
+    if ($evento->foto && Storage::disk('public')->exists($evento->foto)) {
+        Storage::disk('public')->delete($evento->foto);
+    }
+
+    // Deleta do database
+    $evento->delete();
+    
+    return redirect()->back()->with('success', 'Evento excluído com sucesso!');
+}
 }
