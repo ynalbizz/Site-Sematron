@@ -18,7 +18,7 @@
         
         <div class="borda-cadastro deu-toque">
             <h1 class="Champions-do-Forms">Escolha o Pacote</h1>
-    <form action={{ route('inscricao.store') }} method="POST">
+    <form action={{ route('inscricao.store')}} method="POST">
         @csrf
                 <div class="input-group">
                     <label>Pacote</label>
@@ -30,15 +30,15 @@
                 </div>
         </div>
 </section>
-<section class="tres-colunas-insc box" data-show="pacote-basico pacote-completo">
+<section class="tres-colunas-insc box" data-show="137 138">
 
 
 
-        <div class="borda-insc box" data-show="pacote-completo">                                                        <!--BOX-->
+        <div class="borda-insc box" data-show="138">                                                        <!--BOX-->
             <h1 class="Champions-do-Forms">Escolha a Visita</h1>
                 <div class="input-group">
                     <label>Visita</label>
-                        <select name="visita" required>
+                        <select name="visita">
                             <option value="" disabled selected>Selecione...</option>
                             <option value=0>Básico R$</option>
                             <option value=1>Completo R$</option>
@@ -49,11 +49,11 @@
 
 
 
-        <div class="borda-insc box" data-show="pacote-basico pacote-completo">
+        <div class="borda-insc box" data-show="137 138">
             <h1 class="Champions-do-Forms">Escolha o Minicurso</h1>
                 <div class="input-group">
                     <label>Minicurso</label>
-                        <select name="minicurso" required>
+                        <select name="minicurso">
                             <option value="" disabled selected>Selecione...</option>
                             <option value=0>Básico R$</option>
                             <option value=1>Completo R$</option>
@@ -63,20 +63,20 @@
 
 
 
-        <div class="borda-insc box" data-show="pacote-completo">
+        <div class="borda-insc box" data-show="138">
             <h1 class="Champions-do-Forms">Escolha o Tamanho</h1>
                 <div class="input-group">
                     <label>Tamanho da Camiseta</label>
-                        <select name="tamanho-da-camisa" required>
+                        <select name="tamanho-da-camisa">
                             <option value="" disabled selected>Selecione...</option>
-                            <option value='p'>Básico R$</option>
-                            <option value='m'>Completo R$</option>
+                            <option value='p'>P</option>
+                            <option value='m'>M</option>
                         </select>
                 </div>
         </div>
 </section>
 
-<section class="campo-botao box" data-show="pacote-basico pacote-completo">
+<section class="campo-botao box" data-show="137 138">
     <button type="submit" class="submit-btn-insc">IR PARA PAGAMENTO</button>
 </section>
     </form>
