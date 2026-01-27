@@ -18,4 +18,5 @@ class Pack extends Model
         'visita',
         'kit',
     ];
+
 }

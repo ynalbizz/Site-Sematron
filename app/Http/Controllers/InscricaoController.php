@@ -16,12 +16,12 @@ class InscricaoController extends Controller
     public function store(Request $request)
     {
         $dados = $request->validate([
-            'pack_id' => 'required',
+            'pack_id' => 'required|exists:pack,id',
         ]);
 
-        $pack = Pack::find($dados['pack_id']);
+        $pack = Pack::findOrFail($dados['pack_id']);
 
-        $dados['kit'] = $request->kit;
+        $dados['kit'] = $request->kit ?? 0;
 
         if ($dados['kit'] == 1){
             $request->validate(['camiseta' => 'required']);
@@ -29,23 +29,22 @@ class InscricaoController extends Controller
         }
 
         if ($pack->visita == 1) {
-            $request->validate(['visita' => 'required']);
-            $dados['visita'] = $request->visita;
+            $request->validate(['visita' => 'required|array|min:1']);
+            $choices['v'] = $request->visitas;
         }
 
         if ($pack->minicurso == 1) {
-            $request->validate(['minicurso' => 'required']);
-            $dados['minicurso'] = $request->minicurso;
+            $request->validate(['minicurso' => 'required|array|min:1']);
+            $choices['m'] = $request->minicurso;
         }
 
         $dados['uid'] = auth()->user()->uid;
         $dados['sid'] = 22;
 
-        $choices = [
-            'v' => [$dados['visita']],
-            'm' => [$dados['minicurso']],
-        ];
-        $dados['choices'] = json_encode($choices);
+        $dados['choices'] = $choices;
+
+        $dados['minicurso'] = 0;
+        $dados['viagem'] = 0; 
 
         Inscricao::create($dados);
         return redirect()->route('inicio')->with('success', 'Inscrição realizada com sucesso!');

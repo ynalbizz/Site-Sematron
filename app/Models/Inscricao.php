@@ -28,4 +28,9 @@ class Inscricao extends Model
         'time',
         'reserveTime'
     ];
+
+    protected $casts = [
+        'choices' => 'array',
+        'presence' => 'array',
+    ];
 }
