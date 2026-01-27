@@ -5,17 +5,27 @@ select.addEventListener("change", () => {
     const value = select.value;
 
     boxes.forEach(box => {
+        if (!box.dataset.show) return;
+
         const options = box.dataset.show.split(" ");
-        const selectInsideBox = box.querySelector("select");
+        const selects = box.querySelectorAll("select");
 
         if (options.includes(value)) {
             box.classList.add("is-visible");
 
-            if (selectInsideBox) selectInsideBox.required = true;
+            selects.forEach(s => {
+                s.required = true;
+                s.disabled = false;
+            });
+
         } else {
             box.classList.remove("is-visible");
 
-            if (selectInsideBox) selectInsideBox.required = false;
+            selects.forEach(s => {
+                s.required = false;
+                s.disabled = true;
+                s.value = ""; // limpa seleção escondida
+            });
         }
     });
 });
