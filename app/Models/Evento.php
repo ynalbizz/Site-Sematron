@@ -18,5 +18,20 @@ class Evento extends Model
         'descricao',
         'observacao',
         'foto',
+        'inscritos',
     ];
+
+    protected $casts = [
+        'inscritos' => 'array',
+    ];
+
+    public function getVagasPreenchidasAttribute()
+    {
+        if (!$this->inscritos) {
+            return 0;
+            }
+
+            return count(array_unique($this->inscritos));
+    }
+
 }

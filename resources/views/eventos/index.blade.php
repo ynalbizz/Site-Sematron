@@ -140,7 +140,12 @@
                             <p class="card-text">
                                 <strong>📅 Data:</strong> {{ date('d/m/Y', strtotime($evento->data)) }}<br>
                                 <strong>⏰ Horário:</strong> {{ $evento->horario_inicio }} - {{ $evento->horario_fim }}<br>
-                                <strong>👥 Vagas:</strong> {{ $evento->max_vagas }}
+                                @php
+                                    $preenchidas = $evento->vagas_preenchidas;
+                                    $vagasRestantes = $evento->max_vagas - $preenchidas;
+                                @endphp
+                                <strong>👥 Vagas:</strong> {{ $vagasRestantes }} disponíveis 
+                                <span class="text-muted">(de {{ $evento->max_vagas }})</span>
                             </p>
                             
                             <p class="card-text">

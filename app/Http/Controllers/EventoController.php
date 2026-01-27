@@ -27,7 +27,9 @@ class EventoController extends Controller
             'horario_fim' => 'required',
             'descricao' => 'required|string',
             'observacao' => 'nullable|string',
-            'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048'
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'inscritos' => 'nullable|array',
+            'vagas_preenchidas' => 'nullable|integer',
         ]);
 
         //Cuida do upload da foto se houver

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('observacao')->nullable();
             $table->timestamps();
             $table->string('foto')->nullable();
+            $table->json('inscritos')->nullable();
         });
     }
 
