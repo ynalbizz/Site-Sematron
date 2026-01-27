@@ -23,7 +23,7 @@ return new class extends Migration
         });
     }
 
-    //automaticamente deleta a tabela ao fazer rollback ja que estamos so testando
+    //deleta a tabela eventos se usar o rollback
     public function down()
     {
         Schema::dropIfExists('eventos');
