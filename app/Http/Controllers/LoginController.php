@@ -39,7 +39,7 @@ class LoginController extends Controller
 
             $request->session()->regenerate();
 
-            return redirect()->route('inscricoes');
+            return redirect()->route('inscricao.create');
 
         }
 

@@ -1,3 +1,15 @@
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
+
 @extends('layouts.layout-basico')           <!--IMPORTANDO LAYOUT DA PASTA LAYOUT-->
 
 @section('title', 'Inscrições')             <!--AQUI TU BOTA O NEGOCIO QUE APARECE NA ABA LÁ EM CIMA-->
@@ -22,7 +34,7 @@
         @csrf
                 <div class="input-group">
                     <label>Pacote</label>
-                        <select id="PACOTAO" name="pack" required>
+                        <select id="PACOTAO" name="pack_id" required>
                             <option value="" disabled selected>Selecione...</option>
                             <option value=137>Básico R$</option>
                             <option value=138>Completo R$</option>

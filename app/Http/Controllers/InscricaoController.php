@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Pack;
 use App\Models\Inscricao;
 
+use Illuminate\Support\Facades\Log;
+
 class InscricaoController extends Controller
 {
 
@@ -22,29 +24,43 @@ class InscricaoController extends Controller
         $pack = Pack::findOrFail($dados['pack_id']);
 
         $dados['kit'] = $request->kit ?? 0;
+        
+        $dados['camiseta'] = '-';
+        $dados['minicurso'] = null;
+        $dados['viagem'] = null;
+
 
         if ($dados['kit'] == 1){
             $request->validate(['camiseta' => 'required']);
             $dados['camiseta'] = $request->camiseta;
         }
 
+        $choices = [];
+
         if ($pack->visita == 1) {
-            $request->validate(['visita' => 'required|array|min:1']);
-            $choices['v'] = $request->visitas;
+            $request->validate(['visita' => 'required']);
+            $choices['v'] = [$request->visita];
         }
 
         if ($pack->minicurso == 1) {
-            $request->validate(['minicurso' => 'required|array|min:1']);
-            $choices['m'] = $request->minicurso;
+            $request->validate(['minicurso' => 'required']);
+            $choices['m'] = [$request->minicurso];
         }
 
         $dados['uid'] = auth()->user()->uid;
         $dados['sid'] = 22;
 
-        $dados['choices'] = $choices;
+        $dados['choices'] = json_encode($choices);
 
         $dados['minicurso'] = 0;
-        $dados['viagem'] = 0; 
+        $dados['viagem'] = 0;
+        $dados['gid'] = 3;
+        $dados['permissions'] = 0;
+        $dados['presence'] = json_encode([]);
+        $dados['time'] = now();
+        $dados['reserveTime'] = now();
+
+        Log::info('Tentando criar inscrição', ['user_id' => auth()->id(), 'dados' => $dados]);
 
         Inscricao::create($dados);
         return redirect()->route('inicio')->with('success', 'Inscrição realizada com sucesso!');

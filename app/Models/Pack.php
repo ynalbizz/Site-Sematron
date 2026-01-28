@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pack extends Model
 {
     public $timestamps = false;
-    protected $table = 'packs';
+    protected $table = 'pack';
     protected $fillable = [
         'id',
         'sid',
