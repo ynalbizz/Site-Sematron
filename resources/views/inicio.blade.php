@@ -44,7 +44,7 @@
             <!--Parte da Direita-->
             <div class="tamanhos duas-linhas">
                 <div class="top">
-                    <a class="Inscrições-Bloco" href="/inscricoes">Inscrições</a>
+                    <a class="Inscrições-Bloco" href="/inscricao">Inscrições</a>
                 </div>
                 <a class="Ver-Atividade-Bloco" href="#activity">Ver Atividades</a>
             </div>

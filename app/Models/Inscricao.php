@@ -21,7 +21,7 @@ class Inscricao extends Model
         'permissions',
         'presence',
         'choices',
-        'pack',
+        'pack_id',
         'minicurso',
         'viagem',
         'kit',

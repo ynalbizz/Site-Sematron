@@ -79,7 +79,7 @@
             <h1 class="Champions-do-Forms">Escolha o Tamanho</h1>
                 <div class="input-group">
                     <label>Tamanho da Camiseta</label>
-                        <select name="tamanho-da-camisa">
+                        <select name="camiseta">
                             <option value="" disabled selected>Selecione...</option>
                             <option value='p'>P</option>
                             <option value='m'>M</option>

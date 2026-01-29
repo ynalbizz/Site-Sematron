@@ -11,26 +11,46 @@ use Illuminate\Support\Facades\Log;
 class InscricaoController extends Controller
 {
 
+    public function controle()
+    {
+        if (auth()->check()) {
+
+            if (Inscricao::where('uid', auth()->user()->uid)->where('sid', 22)->exists())
+            {
+                return redirect()->route('inicio');
+            }
+            else
+            {
+                return redirect()->route('inscricao.create');
+            }
+        }
+
+        else
+        {
+            return redirect()->route('login');
+        }      
+    }
+
     public function create()
     {
         return view('inscricoes');
     }
+
     public function store(Request $request)
     {
         $dados = $request->validate([
-            'pack_id' => 'required|exists:pack,id',
+            'pack_id' => 'required',
         ]);
 
         $pack = Pack::findOrFail($dados['pack_id']);
 
-        $dados['kit'] = $request->kit ?? 0;
         
         $dados['camiseta'] = '-';
         $dados['minicurso'] = null;
         $dados['viagem'] = null;
 
 
-        if ($dados['kit'] == 1){
+        if ($pack->kit == 1) {
             $request->validate(['camiseta' => 'required']);
             $dados['camiseta'] = $request->camiseta;
         }

@@ -15,7 +15,11 @@ Route::get('/', fn () => view('inicio'))->name('home');
 
 Route::get('/inicio', fn () => view('inicio'))->name('inicio');
 
+
+Route::get('/inscricao', [InscricaoController::class, 'controle'])->name('inscricao.controle');
+
 Route::resource('inscricao', InscricaoController::class) ->only(['create', 'store']);
+
 
 Route::resource('cadastro', CadastroController::class) ->only(['create', 'store']);
 
@@ -26,8 +30,6 @@ Route::get('/visitas', fn () => view('visitas'))->name('visitas');
 Route::get('/login', fn () => view('login'))->name('login');
 
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.autenticar');
-
-Route::resource('cadastro', CadastroController::class) ->only(['create', 'store']);
 
 
 Route::get('/maisSematron', fn () => view('maisSematron'))->name('maisSematron');
