@@ -50,7 +50,7 @@
             <h1 class="Champions-do-Forms">Escolha a Visita</h1>
                 <div class="input-group">
                     <label>Visita</label>
-                        <select name="visita[]" multiple>
+                        <select name="visita[]">
                             <option value="" disabled selected>Selecione...</option>
                             <option value=0>Básico R$</option>
                             <option value=1>Completo R$</option>
@@ -65,7 +65,7 @@
             <h1 class="Champions-do-Forms">Escolha o Minicurso</h1>
                 <div class="input-group">
                     <label>Minicurso</label>
-                        <select name="minicurso[]" multiple>
+                        <select name="minicurso[]">
                             <option value="" disabled selected>Selecione...</option>
                             <option value=0>Básico R$</option>
                             <option value=1>Completo R$</option>
