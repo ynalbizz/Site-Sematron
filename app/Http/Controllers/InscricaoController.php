@@ -11,25 +11,6 @@ use Illuminate\Support\Facades\Log;
 class InscricaoController extends Controller
 {
 
-    public function controle()
-    {
-        if (auth()->check()) {
-
-            if (Inscricao::where('uid', auth()->user()->uid)->where('sid', 22)->exists())
-            {
-                return redirect()->route('inicio');
-            }
-            else
-            {
-                return redirect()->route('inscricao.create');
-            }
-        }
-
-        else
-        {
-            return redirect()->route('login');
-        }      
-    }
 
     public function create()
     {
@@ -59,12 +40,12 @@ class InscricaoController extends Controller
 
         if ($pack->visita == 1) {
             $request->validate(['visita' => 'required']);
-            $choices['v'] = [$request->visita];
+            $choices['v'] = $request->visita;
         }
 
         if ($pack->minicurso == 1) {
             $request->validate(['minicurso' => 'required']);
-            $choices['m'] = [$request->minicurso];
+            $choices['m'] = $request->minicurso;
         }
 
         $dados['uid'] = auth()->user()->uid;

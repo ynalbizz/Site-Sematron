@@ -8,6 +8,8 @@ use App\Http\Controllers\admController;
 use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\InscricaoController;
+use App\Http\Middleware\AutenticacaoInscricao;
+
 
 
 
@@ -15,10 +17,8 @@ Route::get('/', fn () => view('inicio'))->name('home');
 
 Route::get('/inicio', fn () => view('inicio'))->name('inicio');
 
-
-Route::get('/inscricao', [InscricaoController::class, 'controle'])->name('inscricao.controle');
-
-Route::resource('inscricao', InscricaoController::class) ->only(['create', 'store']);
+Route::get('/inscricao' , fn () => redirect('inscricao/create'));
+Route::resource('inscricao', InscricaoController::class) ->only(['create', 'store']) ->middleware(AutenticacaoInscricao::class);
 
 
 Route::resource('cadastro', CadastroController::class) ->only(['create', 'store']);
