@@ -7,7 +7,6 @@
         <title>Login</title>
         <link rel="stylesheet" href="{{asset('/sematron.css')}}">
         <link rel="stylesheet" href="{{asset('/reset.css')}}">
-        <!--Aqui em baixo importa a fonte. POR QUE CARALHOS INTER???????????? AQUI É GRÊMIO PORRA!!!!!!-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -15,10 +14,7 @@
 
     <body class="Corpo">
         <header>
-            <!--É literal só a listra laranja-->
             <div class="listra-laranja"></div>
-
-            <!--Aqui estão os links, na versão desktop-->
 
             <div class="Parte-De-Cima">
 
@@ -38,10 +34,6 @@
             </div>
         </header>
 
-
-
-
-        <!--Muito dos css estão no cadastro.css, pq fiquei com preguiça de copiar tudo dnv-->
         <section class="trem-principal">
             <div class="teste Parte-da-Esquerda">
                 <h1 class="Login-grande">Login</h1>
@@ -50,25 +42,38 @@
             <div class="teste borda-cadastro">
                 <h1 class="Champions-do-Forms">LOGIN</h1>
 
-                    <form action="#" method="POST">
+                    <form action="{{ route('login') }}" method="POST">
+    
+                        @csrf 
+
                         <div>
                             <div class="input-group">
                                 <label>Email</label>
-                                <input type="email" name="email" required placeholder="ex: aluno@usp.br">
+                                <input type="email" name="email" required placeholder="ex: aluno@usp.br" value="{{ old('email') }}">
                             </div>
+                            
                             <div class="input-group">
                                 <label>Senha</label>
-                                <input type="password" name="senha" required>
+                                <input type="password" name="password" required>
                             </div>
+
+                            @if ($errors->any())
+                                <div style="color: red; margin-top: 10px; font-size: 0.9em;">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                         </div>
-                    <button type="submit" class="submit-btn cima-espacamento">ENTRAR</button>
+
+                        <button type="submit" class="submit-btn cima-espacamento">ENTRAR</button>
                     </form>
                 <div class="display-flex"><a href="" class="Esqueceu-Senha">Esqueceu a senha?</a></div>
             </div>
         </section>
 
-
-        <!--É literal só a listra laranja-->
         <div class="listra-laranja espacamento-rodape"></div>
 
         <footer class="Rodape">
@@ -82,7 +87,6 @@
                 <a class="Borda-Rodape" href="https://www.instagram.com/sematronusp/">Instagram</a>
                 <a class="Borda-Rodape" href="https://www.youtube.com/@sematronusp">YouTube</a>
                 <a class="Borda-Rodape" href="{{asset('/htmlDaSematron/inicio.blade.php')}}">Site</a>
-                <!--Por favor não apague esse EasterEgg foi feito com muito carinho por mim ;)-->
                 <a class="Borda-Rodape-Gigante" href="https://www.ubirata.pr.gov.br/">Ubiratã</a>
             </div>
         </footer>
