@@ -1,4 +1,6 @@
-@extends('layouts.layout-basico')           <!--IMPORTANDO LAYOUT DA PASTA LAYOUT-->
+@extends('layouts.layout-basico') 
+
+@section('content')
 
     <head>
         <meta charset="UTF-8">
@@ -14,9 +16,7 @@
     <body class="Corpo">
         <header>
             <div class="listra-laranja"></div>
-
             <div class="Parte-De-Cima">
-
                 <div class="Centraliza"><img class="Logo-Inicio" src="{{asset('/Imagens/logo-Photoroom.png')}}" alt="Logo da Sematron"></div>
                 <div class="Centraliza"><h1 class="Sematron-Inicio">SEMATRON XXII</h1></div>
                 
@@ -36,47 +36,45 @@
         <section class="trem-principal">
             <div class="teste Parte-da-Esquerda">
                 <h1 class="Login-grande">Login</h1>
-                <h1 class="Sub-Login">Acesse sua conta para XXXX e XXXX.</h1>
+                <h1 class="Sub-Login">Acesse sua conta para realizar sua inscrição e acompanhar seus pedidos.</h1>
             </div>
+            
             <div class="teste borda-cadastro">
                 <h1 class="Champions-do-Forms">LOGIN</h1>
 
-                    <form action="{{ route('login') }}" method="POST">
-    
-                        @csrf 
-
-                        <div>
-                            <div class="input-group">
-                                <label>Email</label>
-                                <input type="email" name="email" required placeholder="ex: aluno@usp.br" value="{{ old('email') }}">
-                            </div>
-                            
-                            <div class="input-group">
-                                <label>Senha</label>
-                                <input type="password" name="password" required>
-                            </div>
-
-                            @if ($errors->any())
-                                <div style="color: red; margin-top: 10px; font-size: 0.9em;">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
+                <form action="{{ route('login') }}" method="POST">
+                    @csrf 
+                    <div>
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="email" name="email" required placeholder="ex: aluno@usp.br" value="{{ old('email') }}">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Senha</label>
+                            <input type="password" name="password" required>
                         </div>
 
-                        <button type="submit" class="submit-btn cima-espacamento">ENTRAR</button>
-                    </form>
-                <div class="display-flex"><a href="" class="Esqueceu-Senha">Esqueceu a senha?</a></div>
+                        @if ($errors->any())
+                            <div style="color: red; margin-top: 10px; font-size: 0.9em;">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                    </div>
+
+                    <button type="submit" class="submit-btn cima-espacamento">ENTRAR</button>
+                </form>
+                <div class="display-flex"><a href="/esqueceu-a-senha" class="Esqueceu-Senha">Esqueceu a senha?</a></div>
             </div>
         </section>
 
         <div class="listra-laranja espacamento-rodape"></div>
 
         <footer class="Rodape">
-
             <h1 class="Creditos-Rodape">Créditos</h1>
             <h1 class="Copyright-Rodape">Copyright © 2014–2025 Grupo SEMATRON. Todos os direitos reservados.</h1>
             <h1 class="Av-Trabalhador">Av. Trabalhador São-Carlense, 400 • EESC/USP • São Carlos — SP</h1>
@@ -85,35 +83,10 @@
             <div class="Redes-Sociais-Rodape">
                 <a class="Borda-Rodape" href="https://www.instagram.com/sematronusp/">Instagram</a>
                 <a class="Borda-Rodape" href="https://www.youtube.com/@sematronusp">YouTube</a>
-                <a class="Borda-Rodape" href="{{asset('/htmlDaSematron/inicio.blade.php')}}">Site</a>
+                <a class="Borda-Rodape" href="/inicio">Site</a>
                 <a class="Borda-Rodape-Gigante" href="https://www.ubirata.pr.gov.br/">Ubiratã</a>
             </div>
         </footer>
-        
-        <div class="teste Parte-da-Esquerda">
-            <h1 class="Login-grande">Login</h1>
-            <h1 class="Sub-Login">Acesse sua conta para XXXX e XXXX.</h1>
-        </div>
-        <div class="teste borda-cadastro">
-            <h1 class="Champions-do-Forms">LOGIN</h1>
+    </body>
 
-                <form action="#" method="POST">
-                    <div>
-                        <div class="input-group">
-                            <label>Email</label>
-                            <input type="email" name="email" required placeholder="ex: aluno@usp.br">
-                        </div>
-                        <div class="input-group">
-                            <label>Senha</label>
-                            <input type="password" name="senha" id="senha" required>
-                            <i class="fas fa-eye" id="olhinho"></i>
-                        </div>
-                    </div>
-                    <button type="submit" class="submit-btn cima-espacamento">ENTRAR</button>
-                </form>
-            <div class="display-flex"><a href="/esqueceu-a-senha" class="Esqueceu-Senha">Esqueceu a senha?</a></div>
-        </div>
-
-    </section>
-@endsection                                 <!--AQUI ACABA O CONTEÚDO ESPECÍFICO DA PÁGINA-->
-        
+@endsection
