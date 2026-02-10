@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\Rules\Password;
 
+use Illuminate\Support\Facades\Auth;
+use App\Extensions\EloquentUserProvider_salt_sha256;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -24,6 +27,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->configureDefaults();
+        
+        Auth::provider('eloquent-salt+sha256', function ($app, array $config) {
+        return new EloquentUserProvider_salt_sha256($app['hash'], $config['model']);
+        });
     }
 
     protected function configureDefaults(): void

@@ -11,11 +11,11 @@
                 
         <div class="Links">
             <a class="Link-Do-Topo" href="/inicio">Página Inicial</a>
-            <a class="Link-Do-Topo" href="/inscricoes">Inscrições</a>
+            <a class="Link-Do-Topo" href="/inscricao">Inscrições</a>
             <a class="Link-Do-Topo" href="/minicursos">Minicursos</a>
             <a class="Link-Do-Topo" href="/visitas">Visitas</a>
             <a class="Link-Do-Topo" href="/login">Login</a>
-            <a class="Link-Do-Topo" href="/cadastro">Cadastro</a>
+            <a class="Link-Do-Topo" href="/cadastro/create">Cadastro</a>
             <a class="Link-Do-Topo" href="/maisSematron">Mais Sematron</a>
             <a class="Link-Do-Topo Direita" href="/contato">Contato</a>
         </div>

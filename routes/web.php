@@ -4,12 +4,24 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
 use App\Http\Controllers\testeController;
+use App\Http\Controllers\admController; 
+use App\Http\Controllers\CadastroController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\InscricaoController;
+use App\Http\Middleware\AutenticacaoInscricao;
+
+
+
 
 Route::get('/', fn () => view('inicio'))->name('home');
 
 Route::get('/inicio', fn () => view('inicio'))->name('inicio');
 
-Route::get('/inscricoes', fn () => view('inscricoes'))->name('inscricoes');
+Route::get('/inscricao' , fn () => redirect('inscricao/create'));
+Route::resource('inscricao', InscricaoController::class) ->only(['create', 'store']) ->middleware(AutenticacaoInscricao::class);
+
+
+Route::resource('cadastro', CadastroController::class) ->only(['create', 'store']);
 
 Route::get('/minicursos', fn () => view('minicursos'))->name('minicursos');
 
@@ -17,7 +29,8 @@ Route::get('/visitas', fn () => view('visitas'))->name('visitas');
 
 Route::get('/login', fn () => view('login'))->name('login');
 
-Route::get('/cadastro', fn () => view('cadastro'))->name('cadastro');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login.autenticar');
+
 
 Route::get('/maisSematron', fn () => view('maisSematron'))->name('maisSematron');
 
