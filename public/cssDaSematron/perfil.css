@@ -1,0 +1,221 @@
+.separa-em-tres{
+    display: grid;
+    grid-template-columns: 33vw 33vw 33vw;
+    min-height: 55vh;
+}
+
+.separa-em-tres::before {
+    content: "";
+    position: fixed;        
+    top: 50%;
+    left: 50%;
+    transform: translate(-110%, -60%);
+    
+    width: 110vh;
+    height: 110vh;
+
+    background: url("/Imagens/logo-Photoroom.png") center / contain no-repeat;
+    opacity: 0.4;
+    pointer-events: none; 
+    z-index: -10;
+}
+
+.teste{
+    border: 1px solid aqua;
+}
+
+.borda-perfil{
+    position: relative;             
+    border: 1px solid #f5a000;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 1.5vw; 
+    margin: 3vh 3vw;
+}
+
+.borda-perfil::before{
+    content: "";
+    left: 0;
+    position: absolute;
+    text-align: left;
+    top: -6px;         
+    height: 6px;
+    width: 100%;
+    background-color: #f5a000;
+    border-radius: 6px;
+}
+
+.texto-perfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.nome-bendito{
+    font-family: var(--fonte-Gotica);
+    font-size: 30px;
+    color: var(--laranja);
+}
+
+.curso-que-faz{
+    margin-top: 6vh;
+    font-family: var(--fonte-inter);
+    font-size: 20px;
+    color: var(--branco);
+}
+
+.situacao-do-pix{
+    font-family: var(--fonte-inter);
+    font-size: 15px;
+    color: var(--branco);
+    padding: 1.5vh 1vw;
+    background-color: green;
+    border-radius: 14px;
+    margin-top: 7vh;
+}
+
+.email-do-ser{
+    margin-top: 3vh;
+    font-family: var(--fonte-inter);
+    font-size: 17px;
+    color: var(--branco);
+}
+
+.texto-badges{
+    font-family: var(--fonte-inter);
+    font-size: 17px;
+    color: var(--branco);
+}
+
+.infos-pessoas{
+    display: inline-block;
+    text-decoration: none;
+    margin-top: auto;
+    margin-bottom: 2vh;
+    color: var(--branco);
+    font-family: var(--fonte-inter);
+    font-size: 15px;
+    padding: 1.5vh 1vw;
+    background-color: var(--laranja);
+    border-radius: 14px;
+    transition: transform 0.3s ease;
+}
+
+.infos-pessoas:hover{
+    transform: scale(1.25);
+}
+
+.segue-o-lider{
+    color: var(--laranja);
+    font-family: var(--fonte-Gotica);
+    font-size: 30px;
+}
+
+.palavras-bonitas{
+    font-family: var(--fonte-inter);
+    color: var(--branco);
+    font-size: 20px;
+    margin-top: 10vh;
+}
+
+.perfil-bagulho{
+    margin-top: 3vh;
+    width: 100%;
+}
+
+.vaiSumir{
+    display: none;
+    grid-template-columns: 33% 33% 33%;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    border: 2px solid var(--laranja);
+    border-radius: 30px;
+    margin-left: 10vw;
+    margin-top: 5vh;
+    padding: 4vh 2vw;
+}
+
+.vaiSumir.is-visible {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    border: 2px solid var(--laranja);
+    border-radius: 30px;
+    margin-left: 10vw;
+    margin-top: 5vh;
+    padding: 4vh 2vw;
+}
+
+.textos-perfil{
+    display: flex;
+    flex-direction: column;
+    margin: 0 3vw;
+}
+
+.div-Perfil{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+
+.Tit-Perfil{
+    color: var(--laranja);
+    font-family: var(--fonte-Gotica);
+    font-size: 25px;
+}
+
+.SubTit-Perfil{
+    color: var(--branco);
+    font-family: var(--fonte-inter);
+    font-size: 17px;
+    margin-left: auto;
+}
+
+.certificados{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vh 0;
+    flex-direction: column;
+}
+
+.botoes-perfil{
+    display: inline-block;
+    padding: 1vh 0.6vw;
+    background-color: var(--laranja);
+    color: var(--preto);
+    font-family: var(--fonte-inter);
+    font-size: 15px;
+    border-radius: 14px;
+    transition: transform 0.3s ease;
+}
+
+.botoes-perfil:hover{
+    transform: scale(1.25);
+}
+
+.palavra-certificado{
+    color: var(--branco);
+    font-family: var(--fonte-Gotica);
+    font-size: 25px;
+    margin-bottom: 4vh;
+}
+
+.borda-certificado{
+    padding: 2vh 1vw;
+    border: 1px solid var(--laranja);
+    border-radius: 30px;
+}
+
+.espacamento-boto{
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,4 +1,4 @@
-@extends('layouts.layout-basico')
+@extends('layouts.layout-logado')
 
 @section('title', 'Página Inicial')
 
