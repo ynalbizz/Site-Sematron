@@ -21,7 +21,7 @@ Route::get('/inicio', fn () => view('inicio'))->name('inicio');
 Route::get('/inscricao' , fn () => redirect('inscricao/create'));
 Route::resource('inscricao', InscricaoController::class) ->only(['create', 'store']) ->middleware(AutenticacaoInscricao::class);
 
-
+Route::get('/cadastro' , fn () => redirect('cadastro/create'));
 Route::resource('cadastro', CadastroController::class) ->only(['create', 'store']);
 
 Route::get('/minicursos', fn () => view('minicursos'))->name('minicursos');
