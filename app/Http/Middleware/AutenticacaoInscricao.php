@@ -22,7 +22,7 @@ class AutenticacaoInscricao
         }
 
         if (Inscricao::where('uid', auth()->user()->uid)->where('sid', 22)->exists()) {
-            return redirect()->route('inicio');
+            return redirect()->route('perfil');
         }
         
         return $next($request);

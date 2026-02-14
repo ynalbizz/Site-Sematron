@@ -9,7 +9,8 @@ use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\InscricaoController;
 use App\Http\Middleware\AutenticacaoInscricao;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 
 
@@ -30,6 +31,13 @@ Route::get('/visitas', fn () => view('visitas'))->name('visitas');
 Route::get('/login', fn () => view('login'))->name('login');
 
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.autenticar');
+
+Route::post('/logout', function (Request $request) {
+    Auth::logout();
+    $request.session()->invalidate();
+    $request.session()->regenerateToken();
+    return redirect('/inicio');
+})->name('logout');
 
 
 Route::get('/maisSematron', fn () => view('maisSematron'))->name('maisSematron');

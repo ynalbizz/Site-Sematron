@@ -1,4 +1,5 @@
-@extends('layouts.layout-logado')
+
+@extends(auth()->check() ? 'layouts.layout-logado' : 'layouts.layout-basico')
 
 @section('title', 'Página Inicial')
 
@@ -44,7 +45,7 @@
             <!--Parte da Direita-->
             <div class="tamanhos duas-linhas">
                 <div class="top">
-                    <a class="Inscrições-Bloco" href="/inscricao">Inscrições</a>
+                    <a class="Inscrições-Bloco" href="/inscricao">Inscrição</a>
                 </div>
                 <a class="Ver-Atividade-Bloco" href="#activity">Ver Atividades</a>
             </div>
