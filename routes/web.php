@@ -65,6 +65,4 @@ require __DIR__.'/settings.php';
 //rotas para os eventos (deixei aqui no final do web.php para organizar melhor)
 use App\Http\Controllers\EventoController;
 
-Route::get('/eventos', [EventoController::class, 'index']);
-Route::post('/eventos', [EventoController::class, 'store']);
-Route::delete('/eventos/{evento}', [EventoController::class, 'destroy'])->name('eventos.destroy');
+Route::resource('eventos', EventoController::class);

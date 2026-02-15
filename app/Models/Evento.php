@@ -23,15 +23,15 @@ class Evento extends Model
 
     protected $casts = [
         'inscritos' => 'array',
+        'data' => 'date', // ADICIONE ESTA LINHA
     ];
 
     public function getVagasPreenchidasAttribute()
     {
         if (!$this->inscritos) {
             return 0;
-            }
+        }
 
-            return count(array_unique($this->inscritos));
+        return count(array_unique($this->inscritos));
     }
-
 }

@@ -1,237 +1,288 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Criação de Evento</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-     <style>
-        body { padding: 20px; }
-        .evento-tipo {
-            display: inline-block;
-            padding: 3px 8px;
-            border-radius: 3px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .minicurso { background-color: #d1ecf1; color: #0c5460; }
-        .visita { background-color: #d4edda; color: #155724; }
-        .palestra { background-color: #f8d7da; color: #721c24; }
-    </style>
-</head>
-<body>
+@extends(auth()->check() ? 'layouts.layout-logado' : 'layouts.layout-basico')
 
-<div class="container">
-    <h1 class="mb-4">Adicionar Evento</h1>
+@section('title', 'Gestão de Eventos')
 
-    <form method="POST" action="/eventos" class="mb-5" enctype="multipart/form-data">
-        @csrf
+@section('content')
 
-        <div class="row g-3">
-            <div class="col-md-6">
-                <label class="form-label">Nome do Evento</label>
-                <input type="text" name="nome" class="form-control" required>
-            </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="{{ asset('cssDaSematron/eventos.css') }}">
 
-            <div class="col-md-6">
-                <label class="form-label">Tipo de Evento</label><br>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="tipo" value="minicurso" id="minicurso" required>
-                    <label class="form-check-label" for="minicurso">Minicurso</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="tipo" value="visita" id="visita">
-                    <label class="form-check-label" for="visita">Visita</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="tipo" value="palestra" id="palestra">
-                    <label class="form-check-label" for="palestra">Palestra</label>
-                </div>
-            </div>
+<section class="pagina-eventos">
 
-            <div class="col-md-6">
-                <label class="form-label">Máximo de Vagas</label>
-                <input type="number" name="max_vagas" class="form-control" min="1" required>
-            </div>
+    <h1 class="titulo-pagina text-center">
+        <i class="fas fa-calendar-alt me-2"></i>
+        Gestão de Eventos
+    </h1>
 
-            <div class="col-md-6">
-                <label class="form-label">Data do Evento</label>
-                <input type="date" name="data" class="form-control" required>
-            </div>
-
-            <div class="col-md-6">
-                <label class="form-label">Horário de Início</label>
-                <input type="time" name="horario_inicio" class="form-control" required>
-            </div>
-
-            <div class="col-md-6">
-                <label class="form-label">Horário de Término</label>
-                <input type="time" name="horario_fim" class="form-control" required>
-            </div>
-
-            <div class="col-12">
-                <label class="form-label">Descrição</label>
-                <textarea name="descricao" class="form-control" rows="3" required></textarea>
-            </div>
-
-            <div class="col-12">
-                <label class="form-label">Observação (Opcional)</label>
-                <textarea name="observacao" class="form-control" rows="2"></textarea>
-            </div>
-
-            <div class="col-12">
-               <label class="form-label">Foto do Evento (Opcional)</label>
-                <input type="file" name="foto" class="form-control" accept="image/*">
-               <small class="text-muted">Formatos aceitos: JPG, PNG, GIF. Tamanho máximo: 2MB</small>
-            </div>
-
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Adicionar Evento</button>
-            </div>
+    <!-- ============================================= -->
+    <!-- FORMULÁRIO PARA CRIAR NOVO EVENTO            -->
+    <!-- ============================================= -->
+    <div class="card card-formulario mb-5">
+        <div class="card-header">
+            <h4>
+                <i class="fas fa-plus-circle me-2"></i>
+                Adicionar Novo Evento
+            </h4>
         </div>
-    </form>
+        <div class="card-body">
 
-    <hr class="my-5">
+            <form method="POST" action="/eventos" enctype="multipart/form-data">
+                @csrf <!-- Proteção contra ataques CSRF -->
 
-    <h2 class="mb-4">Eventos Salvos</h2>
-    
-    @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
+                <div class="row">
+                    <!-- ========== NOME DO EVENTO ========== -->
+                    <!-- mb-5 cria um espaçamento grande entre este campo e o próximo -->
+                    <div class="col-12 mb-5">
+                        <label class="form-label">
+                            <i class="fas fa-tag me-1"></i>
+                            Nome do Evento
+                        </label>
+                        <input type="text" name="nome" class="form-control" 
+                               placeholder="Ex: Introdução à Programação" required>
+                    </div>
 
-    <!-- Mostra pagination info -->
-    <div class="alert alert-info">
-        Mostrando <strong>{{ $eventos->firstItem() ?: 0 }}</strong> a 
-        <strong>{{ $eventos->lastItem() ?: 0 }}</strong> de 
-        <strong>{{ $eventos->total() }}</strong> eventos
-        @if(request()->has('page'))
-            (Página {{ $eventos->currentPage() }})
-        @endif
-    </div>
-
-    @if($eventos->count() > 0)
-        <div class="row">
-            @foreach($eventos as $evento)
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        @if($evento->foto)
-                            <div class="card-img-top position-relative" style="padding-top: 56.25%;"> <!-- 16:9 ratio -->
-                                <img src="{{ asset('storage/' . $evento->foto) }}" 
-                                    class="position-absolute top-0 start-0 w-100 h-100"
-                                    alt="{{ $evento->nome }}"
-                                    style="object-fit: cover;">
+                    <!-- ========== TIPO DE EVENTO ========== -->
+                    <!-- mb-5 cria espaço entre este campo e o próximo -->
+                    <div class="col-12 mb-5">
+                        <label class="form-label">
+                            <i class="fas fa-calendar-alt me-1"></i>
+                            Tipo de Evento
+                        </label>
+                        <div class="d-flex flex-wrap gap-3 mt-2">
+                            <!-- Radio buttons para escolher o tipo -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipo" 
+                                       value="minicurso" id="minicurso" required>
+                                <label class="form-check-label" for="minicurso">
+                                    <span class="badge-tipo minicurso" style="position: static; display: inline-block; background: #fb9a03; color: #000000;">
+                                        <i class="fas fa-laptop-code me-1"></i> Minicurso
+                                    </span>
+                                </label>
                             </div>
-                        @else
-                            <div class="card-img-top bg-light" style="padding-top: 56.25%; position: relative;">
-                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                    <i class="fas fa-image fa-2x text-muted"></i>
-                                    <span class="text-muted small">Sem imagem</span>
-                                </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipo" 
+                                       value="visita" id="visita">
+                                <label class="form-check-label" for="visita">
+                                    <span class="badge-tipo visita" style="position: static; display: inline-block; background: #fb9a03; color: #000000;">
+                                        <i class="fas fa-building me-1"></i> Visita
+                                    </span>
+                                </label>
                             </div>
-                        @endif
-                        <div class="card-body">
-                            <span class="evento-tipo {{ $evento->tipo }}">
-                                {{ ucfirst($evento->tipo) }}
-                            </span>
-                            
-                            <h5 class="card-title">{{ $evento->nome }}</h5>
-                            
-                            <p class="card-text">
-                                <strong>📅 Data:</strong> {{ date('d/m/Y', strtotime($evento->data)) }}<br>
-                                <strong>⏰ Horário:</strong> {{ $evento->horario_inicio }} - {{ $evento->horario_fim }}<br>
-                                @php
-                                    $preenchidas = $evento->vagas_preenchidas;
-                                    $vagasRestantes = $evento->max_vagas - $preenchidas;
-                                @endphp
-                                <strong>👥 Vagas:</strong> {{ $vagasRestantes }} disponíveis 
-                                <span class="text-muted">(de {{ $evento->max_vagas }})</span>
-                            </p>
-                            
-                            <p class="card-text">
-                                <strong>Descrição:</strong><br>
-                                {{ $evento->descricao }}
-                            </p>
-                            
-                            @if($evento->observacao)
-                                <p class="card-text text-muted">
-                                    <strong>Observação:</strong><br>
-                                    {{ $evento->observacao }}
-                                </p>
-                            @endif
-
-                            <form method="POST" 
-                                    action="{{ route('eventos.destroy', $evento->id) }}" 
-                                    class="mt-3 pt-3 border-top">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" 
-                                        class="btn btn-outline-danger btn-sm w-100" 
-                                        onclick="return confirm('Tem certeza que deseja excluir o evento \"{{ addslashes($evento->nome) }}\"?')">
-                                    <i class="fas fa-trash me-1"></i> Excluir
-                                </button>
-                            </form>
-                        </div>                       
-                        <div class="card-footer">
-                            <small class="text-muted">
-                                Criado em: {{ $evento->created_at->format('d/m/Y H:i') }}
-                            </small>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipo" 
+                                       value="palestra" id="palestra">
+                                <label class="form-check-label" for="palestra">
+                                    <span class="badge-tipo palestra" style="position: static; display: inline-block; background: #fb9a03; color: #000000;">
+                                        <i class="fas fa-microphone-alt me-1"></i> Palestra
+                                    </span>
+                                </label>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="col-12" style="height: 25px;"></div>
+
+                    <!-- NÚMERO MÁXIMO DE VAGAS -->
+                    <div class="col-md-6 mb-5">
+                        <label class="form-label">
+                            <i class="fas fa-users me-1"></i>
+                            Número Máximo de Vagas
+                        </label>
+                        <input type="number" name="max_vagas" class="form-control" 
+                               min="1" placeholder="Ex: 50" required>
+                    </div>
+
+                    <!-- DATA -->
+                    <div class="col-md-6 mb-5">
+                        <label class="form-label">
+                            <i class="fas fa-calendar-day me-1"></i>
+                            Data
+                        </label>
+                        <input type="date" name="data" class="form-control" required>
+                    </div>
+
+                    <!-- HORÁRIO INÍCIO -->
+                    <div class="col-md-6 mb-5">
+                        <label class="form-label">
+                            <i class="fas fa-clock me-1"></i>
+                            Horário de Início
+                        </label>
+                        <input type="time" name="horario_inicio" class="form-control" required>
+                    </div>
+
+                    <!-- HORÁRIO TÉRMINO -->
+                    <div class="col-md-6 mb-5">
+                        <label class="form-label">
+                            <i class="fas fa-clock me-1"></i>
+                            Horário de Término
+                        </label>
+                        <input type="time" name="horario_fim" class="form-control" required>
+                    </div>
+
+                    <!-- ========== DESCRIÇÃO ========== -->
+                    <!-- Campo ocupa largura total (col-12) com altura maior (rows="5") -->
+                    <div class="col-12 mb-5">
+                        <label class="form-label">
+                            <i class="fas fa-align-left me-1"></i>
+                            Descrição
+                        </label>
+                        <textarea name="descricao" class="form-control" rows="5" 
+                                placeholder="Descreva o evento, seu conteúdo e objetivos..." required></textarea>
+                    </div>
+
+                    <!-- ========== OBSERVAÇÕES ========== -->
+                    <!-- Campo ocupa largura total (col-12) com altura média (rows="4") -->
+                    <div class="col-12 mb-5">
+                        <label class="form-label">
+                            <i class="fas fa-clipboard-list me-1"></i>
+                            Observações (opcional)
+                        </label>
+                        <textarea name="observacao" class="form-control" rows="4" 
+                                placeholder="Informações adicionais, requisitos, materiais necessários..."></textarea>
+                    </div>
+
+                    <!-- ========== IMAGEM ========== -->
+                    <div class="col-12 mb-5">
+                        <label class="form-label">
+                            <i class="fas fa-image me-1"></i>
+                            Imagem do Evento (opcional)
+                        </label>
+                        <input type="file" name="foto" class="form-control" accept="image/*">
+                        <small class="text-muted">Formatos aceitos: JPG, PNG, GIF. Tamanho máximo: 2MB</small>
+                    </div>
+
+                    <!-- ========== BOTÃO DE ENVIO ========== -->
+                    <!-- mt-4 cria espaço extra acima do botão -->
+                    <div class="col-12 mt-4">
+                        <button type="submit" class="btn btn-sematron w-100">
+                            <i class="fas fa-plus-circle me-2"></i>
+                            Criar Evento
+                        </button>
+                    </div>
+
                 </div>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- LISTAGEM DE EVENTOS CADASTRADOS               -->
+    <!-- ============================================= -->
+    <h3 class="section-title text-center mb-4">
+        <i class="fas fa-calendar-check me-2"></i>
+        Eventos Cadastrados
+    </h3>
+
+    @if($eventos->count() > 0)
+
+        <!-- Grid com 2 cards por linha (configurado no CSS) -->
+        <div class="eventos-grid">
+            @foreach($eventos as $evento)
+
+                <!-- ========== CARD DE CADA EVENTO ========== -->
+                <div class="card-evento">
+
+                    <!-- Imagem do evento (ou ícone padrão) -->
+                    @if($evento->foto)
+                        <div class="event-image-container">
+                            <img src="{{ asset('storage/' . $evento->foto) }}"
+                                 class="event-image"
+                                 alt="{{ $evento->nome }}">
+                            <div class="event-overlay"></div>
+                        </div>
+                    @else
+                        <div class="event-image-container" style="background: linear-gradient(135deg, #333333, #111111);">
+                            <div class="event-image d-flex align-items-center justify-content-center" style="color: #fb9a03;">
+                                <i class="fas fa-calendar-alt fa-4x"></i>
+                            </div>
+                            <div class="event-overlay"></div>
+                        </div>
+                    @endif
+
+                    <!-- Badge com o tipo do evento -->
+                    <span class="badge-tipo {{ $evento->tipo }}">
+                        @if($evento->tipo == 'minicurso')
+                            <i class="fas fa-laptop-code me-1"></i>
+                        @elseif($evento->tipo == 'visita')
+                            <i class="fas fa-building me-1"></i>
+                        @else
+                            <i class="fas fa-microphone-alt me-1"></i>
+                        @endif
+                        {{ ucfirst($evento->tipo) }}
+                    </span>
+
+                    <div class="card-body">
+
+                        <h5 class="event-title">{{ $evento->nome }}</h5>
+
+                        <!-- Metadados do evento (data, horário, vagas) -->
+                        <div class="event-meta">
+                            <span class="event-meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                {{ date('d/m/Y', strtotime($evento->data)) }}
+                            </span>
+                            <span class="event-meta-item">
+                                <i class="fas fa-clock"></i>
+                                {{ substr($evento->horario_inicio, 0, 5) }} - {{ substr($evento->horario_fim, 0, 5) }}
+                            </span>
+                            <span class="event-meta-item">
+                                <i class="fas fa-users"></i>
+                                {{ $evento->max_vagas }} vagas
+                            </span>
+                        </div>
+
+                        <p class="event-description">{{ $evento->descricao }}</p>
+
+                        <!-- Observações (se existirem) -->
+                        @if($evento->observacao)
+                            <div class="alert alert-info py-2 px-3 mb-3" style="font-size: 0.9rem; background-color: #222222; border-color: #fb9a03; color: #cccccc;">
+                                <i class="fas fa-info-circle me-1" style="color: #fb9a03;"></i>
+                                {{ $evento->observacao }}
+                            </div>
+                        @endif
+
+                        <!-- Botões de ação (Editar e Excluir) -->
+                        <div class="event-actions">
+                            <a href="{{ route('eventos.edit', $evento->id) }}" 
+                               class="btn-action btn-edit">
+                                <i class="fas fa-edit me-1"></i>
+                                Editar
+                            </a>
+                            <form method="POST" 
+                                  action="{{ route('eventos.destroy', $evento->id) }}" 
+                                  style="flex: 1;"
+                                  onsubmit="return confirm('Tem certeza que deseja excluir este evento? Esta ação não pode ser desfeita.');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn-action btn-delete w-100">
+                                    <i class="fas fa-trash-alt me-1"></i>
+                                    Excluir
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+
             @endforeach
         </div>
-        
-        <!-- BOOTSTRAP PAGINATION -->
-@if($eventos->hasPages())
-<div class="d-flex justify-content-center mt-4">
-    <nav>
-        <ul class="pagination">
-            {{-- Página anterior --}}
-            @if($eventos->onFirstPage())
-                <li class="page-item disabled">
-                    <span class="page-link">&laquo; Anterior</span>
-                </li>
-            @else
-                <li class="page-item">
-                    <a class="page-link" href="{{ $eventos->previousPageUrl() }}">&laquo; Anterior</a>
-                </li>
-            @endif
 
-            {{-- Número de páginas --}}
-            @for($i = 1; $i <= $eventos->lastPage(); $i++)
-                @if($i == $eventos->currentPage())
-                    <li class="page-item active">
-                        <span class="page-link">{{ $i }}</span>
-                    </li>
-                @else
-                    <li class="page-item">
-                        <a class="page-link" href="{{ $eventos->url($i) }}">{{ $i }}</a>
-                    </li>
-                @endif
-            @endfor
+        <!-- Paginação -->
+        <div class="d-flex justify-content-center mt-5">
+            {{ $eventos->links() }}
+        </div>
 
-            {{-- Próxima pagina --}}
-            @if($eventos->hasMorePages())
-                <li class="page-item">
-                    <a class="page-link" href="{{ $eventos->nextPageUrl() }}">Próxima &raquo;</a>
-                </li>
-            @else
-                <li class="page-item disabled">
-                    <span class="page-link">Próxima &raquo;</span>
-                </li>
-            @endif
-        </ul>
-    </nav>
-</div>
-@endif
-        
     @else
-        <div class="alert alert-warning">
-            Nenhum evento cadastrado ainda. Adicione seu primeiro evento acima!
+        <!-- Mensagem quando não há eventos -->
+        <div class="alert-modern">
+            <i class="fas fa-calendar-times"></i>
+            <h4 class="mt-3">Nenhum evento cadastrado</h4>
+            <p class="mb-0">Comece criando seu primeiro evento utilizando o formulário acima!</p>
         </div>
     @endif
-</div>
 
-</body>
-</html>
+</section>
+
+@endsection
