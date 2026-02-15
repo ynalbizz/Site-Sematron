@@ -1,4 +1,15 @@
-@extends('layouts.layout-basico')           <!--IMPORTANDO LAYOUT DA PASTA LAYOUT-->
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
+@extends(auth()->check() ? 'layouts.layout-logado' : 'layouts.layout-basico')          <!--IMPORTANDO LAYOUT DA PASTA LAYOUT-->
 
 @section('title', 'Login')                  <!--AQUI TU BOTA O NEGOCIO QUE APARECE NA ABA LÁ EM CIMA-->
 
@@ -13,7 +24,8 @@
         <div class="borda-cadastro">
             <h1 class="Champions-do-Forms">LOGIN</h1>
 
-                <form action="#" method="POST">
+                <form action={{ route('login.autenticar') }} method="POST">
+                    @csrf
                     <div>
                         <div class="input-group">
                             <label>Email</label>

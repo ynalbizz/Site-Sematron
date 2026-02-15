@@ -1,4 +1,4 @@
-@extends('layouts.layout-basico')           <!--IMPORTANDO LAYOUT DA PASTA LAYOUT-->
+@extends(auth()->check() ? 'layouts.layout-logado' : 'layouts.layout-basico')          <!--IMPORTANDO LAYOUT DA PASTA LAYOUT-->
 
 @section('title', 'Cadastro')               <!--AQUI TU BOTA O NEGOCIO QUE APARECE NA ABA LÁ EM CIMA-->
 
@@ -11,7 +11,8 @@
 
 
 
-            <form action="#" method="POST" class="duas-colunas-cadastro">
+            <form action={{ route('cadastro.store') }} method="POST" class="duas-colunas-cadastro">
+                @csrf
                 <div class="borda-cadastro">
 
                     <h1 class="Champions-do-Forms">Dados de Acesso</h1>

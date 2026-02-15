@@ -1,6 +1,6 @@
 <!--Isso está aqui literalmente só pra eu dar control + C quando criar uma nova página-->
 
-@extends('layouts.layout-basico')           <!--IMPORTANDO LAYOUT DA PASTA LAYOUT-->
+@extends(auth()->check() ? 'layouts.layout-logado' : 'layouts.layout-basico')           <!--IMPORTANDO LAYOUT DA PASTA LAYOUT-->
 
 @section('title', 'PAAAAAAAAAAAAAO')        <!--AQUI TU BOTA O NEGOCIO QUE APARECE NA ABA LÁ EM CIMA-->
 

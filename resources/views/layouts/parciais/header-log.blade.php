@@ -11,11 +11,15 @@
                 
         <div class="Links">
             <a class="Link-Do-Topo" href="/inicio">Página Inicial</a>
-            <a class="Link-Do-Topo" href="/inscricoes">Inscrições</a>
+            <a class="Link-Do-Topo" href="/inscricao">Inscrição</a>
             <a class="Link-Do-Topo" href="/minicursos">Minicursos</a>
             <a class="Link-Do-Topo" href="/visitas">Visitas</a>
             <a class="Link-Do-Topo" href="/perfil">Perfil</a>
-            <a class="Link-Do-Topo" href="/inicio">Sair</a> <!--Tem que fazer esse botao deslogar a pessoa-->
+            <a class="Link-Do-Topo" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sair</a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+</form>
             <a class="Link-Do-Topo" href="/maisSematron">Mais Sematron</a>
             <a class="Link-Do-Topo Direita" href="/contato">Contato</a>
         </div>
