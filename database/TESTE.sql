@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 06, 2026 at 06:24 PM
+-- Generation Time: Mar 06, 2026 at 06:29 PM
 -- Server version: 8.0.45-0ubuntu0.24.04.1
 -- PHP Version: 8.3.6
 
@@ -51,37 +51,6 @@ INSERT INTO `badges` (`id`, `url`, `title`, `caption`) VALUES
 (14, 'http://i.imgur.com/iqIFlzn.png', '<b style=\"color:#00F\">Abril</b> Azul No Reino do Autismo da Europa', 'True Working Night'),
 (15, 'http://sematron.com.br/images/BatataFeliz.png', 'Tester', 'Eu sou uma batatatester!'),
 (16, '/images/badges/One_Ring_semat.png', 'A system to rule them all', 'Participou da atualização do sistema');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `cache`
---
-
-CREATE TABLE `cache` (
-  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `value` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `expiration` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `cache`
---
-
-INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
-('laravel-cache-boost.roster.scan', 'a:2:{s:6:\"roster\";O:21:\"Laravel\\Roster\\Roster\":3:{s:13:\"\0*\0approaches\";O:29:\"Illuminate\\Support\\Collection\":2:{s:8:\"\0*\0items\";a:1:{i:0;O:23:\"Laravel\\Roster\\Approach\":1:{s:11:\"\0*\0approach\";E:38:\"Laravel\\Roster\\Enums\\Approaches:ACTION\";}}s:28:\"\0*\0escapeWhenCastingToString\";b:0;}s:11:\"\0*\0packages\";O:32:\"Laravel\\Roster\\PackageCollection\":2:{s:8:\"\0*\0items\";a:20:{i:0;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:4:\"^2.0\";s:10:\"\0*\0package\";E:37:\"Laravel\\Roster\\Enums\\Packages:INERTIA\";s:14:\"\0*\0packageName\";s:25:\"inertiajs/inertia-laravel\";s:10:\"\0*\0version\";s:6:\"2.0.19\";s:6:\"\0*\0dev\";b:0;}i:1;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:4:\"^2.0\";s:10:\"\0*\0package\";E:45:\"Laravel\\Roster\\Enums\\Packages:INERTIA_LARAVEL\";s:14:\"\0*\0packageName\";s:25:\"inertiajs/inertia-laravel\";s:10:\"\0*\0version\";s:6:\"2.0.19\";s:6:\"\0*\0dev\";b:0;}i:2;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:5:\"^1.30\";s:10:\"\0*\0package\";E:37:\"Laravel\\Roster\\Enums\\Packages:FORTIFY\";s:14:\"\0*\0packageName\";s:15:\"laravel/fortify\";s:10:\"\0*\0version\";s:6:\"1.33.0\";s:6:\"\0*\0dev\";b:0;}i:3;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:5:\"^12.0\";s:10:\"\0*\0package\";E:37:\"Laravel\\Roster\\Enums\\Packages:LARAVEL\";s:14:\"\0*\0packageName\";s:17:\"laravel/framework\";s:10:\"\0*\0version\";s:7:\"12.47.0\";s:6:\"\0*\0dev\";b:0;}i:4;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:7:\"v0.3.10\";s:10:\"\0*\0package\";E:37:\"Laravel\\Roster\\Enums\\Packages:PROMPTS\";s:14:\"\0*\0packageName\";s:15:\"laravel/prompts\";s:10:\"\0*\0version\";s:6:\"0.3.10\";s:6:\"\0*\0dev\";b:0;}i:5;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:6:\"^0.1.9\";s:10:\"\0*\0package\";E:39:\"Laravel\\Roster\\Enums\\Packages:WAYFINDER\";s:14:\"\0*\0packageName\";s:17:\"laravel/wayfinder\";s:10:\"\0*\0version\";s:6:\"0.1.13\";s:6:\"\0*\0dev\";b:0;}i:6;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:6:\"^0.1.9\";s:10:\"\0*\0package\";E:47:\"Laravel\\Roster\\Enums\\Packages:WAYFINDER_LARAVEL\";s:14:\"\0*\0packageName\";s:17:\"laravel/wayfinder\";s:10:\"\0*\0version\";s:6:\"0.1.13\";s:6:\"\0*\0dev\";b:0;}i:7;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:6:\"v0.5.2\";s:10:\"\0*\0package\";E:33:\"Laravel\\Roster\\Enums\\Packages:MCP\";s:14:\"\0*\0packageName\";s:11:\"laravel/mcp\";s:10:\"\0*\0version\";s:5:\"0.5.2\";s:6:\"\0*\0dev\";b:1;}i:8;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:5:\"^1.24\";s:10:\"\0*\0package\";E:34:\"Laravel\\Roster\\Enums\\Packages:PINT\";s:14:\"\0*\0packageName\";s:12:\"laravel/pint\";s:10:\"\0*\0version\";s:6:\"1.27.0\";s:6:\"\0*\0dev\";b:1;}i:9;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:5:\"^1.41\";s:10:\"\0*\0package\";E:34:\"Laravel\\Roster\\Enums\\Packages:SAIL\";s:14:\"\0*\0packageName\";s:12:\"laravel/sail\";s:10:\"\0*\0version\";s:6:\"1.52.0\";s:6:\"\0*\0dev\";b:1;}i:10;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:4:\"^4.3\";s:10:\"\0*\0package\";E:34:\"Laravel\\Roster\\Enums\\Packages:PEST\";s:14:\"\0*\0packageName\";s:12:\"pestphp/pest\";s:10:\"\0*\0version\";s:5:\"4.3.1\";s:6:\"\0*\0dev\";b:1;}i:11;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:6:\"12.5.4\";s:10:\"\0*\0package\";E:37:\"Laravel\\Roster\\Enums\\Packages:PHPUNIT\";s:14:\"\0*\0packageName\";s:15:\"phpunit/phpunit\";s:10:\"\0*\0version\";s:6:\"12.5.4\";s:6:\"\0*\0dev\";b:1;}i:12;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:0:\"\";s:10:\"\0*\0package\";r:13;s:14:\"\0*\0packageName\";s:16:\"@inertiajs/react\";s:10:\"\0*\0version\";s:6:\"2.3.10\";s:6:\"\0*\0dev\";b:0;}i:13;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:0:\"\";s:10:\"\0*\0package\";E:43:\"Laravel\\Roster\\Enums\\Packages:INERTIA_REACT\";s:14:\"\0*\0packageName\";s:16:\"@inertiajs/react\";s:10:\"\0*\0version\";s:6:\"2.3.10\";s:6:\"\0*\0dev\";b:0;}i:14;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:0:\"\";s:10:\"\0*\0package\";E:35:\"Laravel\\Roster\\Enums\\Packages:REACT\";s:14:\"\0*\0packageName\";s:5:\"react\";s:10:\"\0*\0version\";s:6:\"19.2.3\";s:6:\"\0*\0dev\";b:0;}i:15;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:0:\"\";s:10:\"\0*\0package\";E:41:\"Laravel\\Roster\\Enums\\Packages:TAILWINDCSS\";s:14:\"\0*\0packageName\";s:11:\"tailwindcss\";s:10:\"\0*\0version\";s:6:\"4.1.18\";s:6:\"\0*\0dev\";b:0;}i:16;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:0:\"\";s:10:\"\0*\0package\";r:48;s:14:\"\0*\0packageName\";s:30:\"@laravel/vite-plugin-wayfinder\";s:10:\"\0*\0version\";s:5:\"0.1.7\";s:6:\"\0*\0dev\";b:1;}i:17;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:0:\"\";s:10:\"\0*\0package\";E:44:\"Laravel\\Roster\\Enums\\Packages:WAYFINDER_VITE\";s:14:\"\0*\0packageName\";s:30:\"@laravel/vite-plugin-wayfinder\";s:10:\"\0*\0version\";s:5:\"0.1.7\";s:6:\"\0*\0dev\";b:1;}i:18;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:0:\"\";s:10:\"\0*\0package\";E:36:\"Laravel\\Roster\\Enums\\Packages:ESLINT\";s:14:\"\0*\0packageName\";s:6:\"eslint\";s:10:\"\0*\0version\";s:6:\"9.39.2\";s:6:\"\0*\0dev\";b:1;}i:19;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:0:\"\";s:10:\"\0*\0package\";E:38:\"Laravel\\Roster\\Enums\\Packages:PRETTIER\";s:14:\"\0*\0packageName\";s:8:\"prettier\";s:10:\"\0*\0version\";s:5:\"3.8.0\";s:6:\"\0*\0dev\";b:1;}}s:28:\"\0*\0escapeWhenCastingToString\";b:0;}s:21:\"\0*\0nodePackageManager\";E:43:\"Laravel\\Roster\\Enums\\NodePackageManager:NPM\";}s:9:\"timestamp\";i:1769514961;}', 1769601361);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `cache_locks`
---
-
-CREATE TABLE `cache_locks` (
-  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `owner` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `expiration` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -633,8 +602,7 @@ INSERT INTO `engday` (`id`, `sid`, `name`, `sch`, `rg`, `curso`, `email`, `ano`,
 (555, 14, 'Túlio Lima Prado', 'Novo Colégio', '', '', '', '', 'C', 'ONNCEP'),
 (556, 14, 'GABRIEL DE CAMARGO ZACCARIOTTO', 'Coopel', '', '', '', '', 'C', 'PHEWSS'),
 (557, 14, 'Víctor Martins Pereira', 'Novo Colégio', '', '', '', '', 'C', 'UPDZNC'),
-(558, 14, 'Victor Pereira Parreira', 'Novo Colégio', '', '', '', '', 'C', 'GQYAQQ');
-INSERT INTO `engday` (`id`, `sid`, `name`, `sch`, `rg`, `curso`, `email`, `ano`, `tour`, `hash`) VALUES
+(558, 14, 'Victor Pereira Parreira', 'Novo Colégio', '', '', '', '', 'C', 'GQYAQQ'),
 (559, 14, 'GIULIA FREITAS', 'Coopel', '', '', '', '', 'C', 'GUAHDW'),
 (560, 14, 'GUILHERME DIPLES MARTINS', 'Coopel', '', '', '', '', 'C', 'VFCMKY'),
 (561, 14, 'Yvie Takayama', 'Novo Colégio', '', '', '', '', 'A', 'HWXCJP'),
@@ -875,8 +843,7 @@ INSERT INTO `events` (`eid`, `type`, `start`, `end`, `name`, `info`, `extra`, `s
 (69, 'palestra', '2016-05-10 19:30:00', '2016-05-10 21:00:00', 'Beyond Human Vision', '', '{\"location\":\"\",\"desc\":\"\",\"palestrantes\":\"\",\"pic\":\"\",\"vagas\":\"\",\"m\":{\"ch\":\"\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"alert\":\"\"}}', 12, ''),
 (70, 'palestra', '2016-05-09 09:00:00', '2016-05-09 10:15:00', 'Abertura', '', '{\"location\":\"\",\"desc\":\"\",\"palestrantes\":\"\",\"pic\":\"\",\"vagas\":\"\",\"m\":{\"ch\":\"\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"alert\":\"\"}}', 12, ''),
 (71, 'palestra', '2016-05-09 10:45:00', '2016-05-09 12:00:00', 'Segurança alimentar no planeta e as oportunidades para engenharia no Brasil', '', '{\"location\":\"\",\"desc\":\"\",\"palestrantes\":\"\",\"pic\":\"\",\"vagas\":\"\",\"m\":{\"ch\":\"\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"alert\":\"\"}}', 12, ''),
-(72, 'palestra', '2016-05-09 14:00:00', '2016-05-09 15:15:00', 'Robôs colaborativos desembarcam no Brasil', '', '{\"location\":\"\",\"desc\":\"\",\"palestrantes\":\"\",\"pic\":\"\",\"vagas\":\"\",\"m\":{\"ch\":\"\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"alert\":\"\"}}', 12, '');
-INSERT INTO `events` (`eid`, `type`, `start`, `end`, `name`, `info`, `extra`, `sid`, `ts`) VALUES
+(72, 'palestra', '2016-05-09 14:00:00', '2016-05-09 15:15:00', 'Robôs colaborativos desembarcam no Brasil', '', '{\"location\":\"\",\"desc\":\"\",\"palestrantes\":\"\",\"pic\":\"\",\"vagas\":\"\",\"m\":{\"ch\":\"\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"alert\":\"\"}}', 12, ''),
 (73, 'palestra', '2016-05-09 15:45:00', '2016-05-09 17:15:00', 'O Brasil e as oportunidades na área de Engenharia Mecatrônica', '', '{\"location\":\"\",\"desc\":\"\",\"palestrantes\":\"\",\"pic\":\"\",\"vagas\":\"\",\"m\":{\"ch\":\"\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"alert\":\"\"}}', 12, ''),
 (74, 'palestra', '2016-05-10 09:00:00', '2016-05-10 10:30:00', 'Mente inovadora nos negócios e na vida / Prioridade não tem S', '', '{\"location\":\"\",\"desc\":\"\",\"palestrantes\":\"\",\"pic\":\"\",\"vagas\":\"\",\"m\":{\"ch\":\"\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"alert\":\"\"}}', 12, ''),
 (75, 'palestra', '2016-05-10 11:00:00', '2016-05-10 12:15:00', 'Engenharia de Sistemas Complexos', '', '{\"location\":\"\",\"desc\":\"\",\"palestrantes\":\"\",\"pic\":\"\",\"vagas\":\"\",\"m\":{\"ch\":\"\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"alert\":\"\"}}', 12, ''),
@@ -954,8 +921,7 @@ INSERT INTO `events` (`eid`, `type`, `start`, `end`, `name`, `info`, `extra`, `s
 (148, 'palestra', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'IoT e analises para manutenção e operações', '', '{\"location\":\"\",\"desc\":\"\",\"palestrantes\":\"\",\"pic\":\"\",\"vagas\":\"\",\"m\":{\"ch\":\"\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"alert\":\"\"}}', 14, ''),
 (149, 'palestra', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'vulnerabilidade da urna eletrônica brasileira', '', '{\"location\":\"\",\"desc\":\"\",\"palestrantes\":\"\",\"pic\":\"\",\"vagas\":\"\",\"m\":{\"ch\":\"\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"alert\":\"\"}}', 14, ''),
 (150, 'palestra', '2018-05-10 19:00:56', '2018-05-10 21:00:05', 'Exploração espacial: do projeto à prática', '', '{\"location\":\"\",\"desc\":\"\",\"palestrantes\":\"\",\"pic\":\"\",\"vagas\":\"\",\"m\":{\"ch\":\"\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"alert\":\"\"}}', 14, ''),
-(152, 'palestra', '2019-05-27 14:00:00', '2019-05-27 15:15:00', 'Materiais Piezoelétricos: Fundamentos e Aplicações em Engenharia', 'Materiais piezelétricos possuem uma quantidade considerável de aplicações em diversas áreas da engenharia contemporânea. Esta palestra tem como principal objetivo apresentar ao estudante uma revisão de conceitos fundamentais relacionados com o funcionamento de tais materiais, bem como discutir aplicações tecnológicas usando materiais piezelétricos. Ao final, espera-se que o estudante entenda sobre o funcionamento das cerâmicas piezelétricas bem como dos princípios físicos que governam as aplicações discutidas.', '{\"location\":\"Anfiteatro Jorge Caron\",\"desc\":\"\",\"palestrantes\":\"Paulo S. Varoto\",\"pic\":\"\",\"vagas\":\"\",\"m\":{\"ch\":\"\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"alert\":\"\"}}', 15, '');
-INSERT INTO `events` (`eid`, `type`, `start`, `end`, `name`, `info`, `extra`, `sid`, `ts`) VALUES
+(152, 'palestra', '2019-05-27 14:00:00', '2019-05-27 15:15:00', 'Materiais Piezoelétricos: Fundamentos e Aplicações em Engenharia', 'Materiais piezelétricos possuem uma quantidade considerável de aplicações em diversas áreas da engenharia contemporânea. Esta palestra tem como principal objetivo apresentar ao estudante uma revisão de conceitos fundamentais relacionados com o funcionamento de tais materiais, bem como discutir aplicações tecnológicas usando materiais piezelétricos. Ao final, espera-se que o estudante entenda sobre o funcionamento das cerâmicas piezelétricas bem como dos princípios físicos que governam as aplicações discutidas.', '{\"location\":\"Anfiteatro Jorge Caron\",\"desc\":\"\",\"palestrantes\":\"Paulo S. Varoto\",\"pic\":\"\",\"vagas\":\"\",\"m\":{\"ch\":\"\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"alert\":\"\"}}', 15, ''),
 (153, 'palestra', '2019-05-27 10:45:00', '2019-05-27 12:00:00', 'Tecnologias Emergentes na Indústria 4.0', 'A indústria 4.0 é um pilar da Internet das Coisas e envolve diversas tecnologias. A palestra &amp;amp;quot;Tecnologias Emergentes na Indústria 4.0&amp;amp;quot; inicia com uma breve explicação do conceito de Internet das Coisas e seus exemplos, apresenta os ambientes priorizados pelo governo brasileiro, e principalmente, foca na Indústria 4.0 com destaque na Digital Supply Chain e as tecnologias emergentes que compõe este cenário.', '{\"location\":\"Anfiteatro Jorge Caron\",\"desc\":\"\",\"palestrantes\":\"Renata Rampim\",\"pic\":\"\",\"vagas\":\"\",\"m\":{\"ch\":\"\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"alert\":\"\"}}', 15, ''),
 (155, 'palestra', '2019-05-31 17:00:00', '2019-05-31 18:00:00', 'Plataforma robótica para ajudar pessoas com deficiência a recuperar sua autonomia', 'Interfaces cérebro-máquina que auxiliem na locomoção e independência de deficientes físicos', '{\"location\":\"Anfiteatro Jorge Caron\",\"desc\":\"\",\"palestrantes\":\"Eric Rohmer\",\"pic\":\"\",\"vagas\":\"\",\"m\":{\"ch\":\"\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"alert\":\"\"}}', 15, ''),
 (156, 'palestra', '2019-05-28 10:45:00', '2019-05-28 12:00:00', 'Visão Geral sobre a Economia na Área Espacial - “Space Economy”', 'Neste seminário será apresentada uma visão geral do tema “Space Economy”. Durante a Corrida Espacial, os projetos nesse setor foram financiados basicamente pelos governos que se enfrentavam na Guerra Fria. Superado esse período, e com o decorrer dos anos, a dinâmica do setor comercial espacial atingiu maturidade suficiente, para que diversas empresas pudessem se firmar de forma mais consistente no mercado. No cenário internacional, mesmo antes dos anos 2000 já era nítida, tanto a retração dos financiamentos públicos na área espacial, quanto uma maior participação de empresas privadas buscando estabelecer seus negócios. Atualmente o setor espacial internacional movimenta em torno de 330 bilhões de dólares por ano, inclusive possibilitando um considerável volume de negócios de atores que não pertencem à área espacial propriamente dita. A inovação tecnológica desempenha um importante papel para os avanços do setor. Novas propostas de acesso ao espaço vão gerar planos de negócios que atuarão inclusive no turismo espacial. Há uma previsão de que na próxima década deverão ser lançados por volta de 16.000 novos satélites, considerando-se os micro e nano-satélites de interesse de vários países. Enfim, um futuro promissor de negócios no segmento espacial pode ocorrer em diversas áreas.', '{\"location\":\"Anfiteatro Jorge Caron\",\"desc\":\"\",\"palestrantes\":\"Antonio Yukio Ueta\",\"pic\":\"\",\"vagas\":\"\",\"m\":{\"ch\":\"\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"alert\":\"\"}}', 15, ''),
@@ -1001,8 +967,7 @@ INSERT INTO `events` (`eid`, `type`, `start`, `end`, `name`, `info`, `extra`, `s
 (197, 'minicurso', '2021-10-28 09:00:00', '2021-10-28 12:30:00', 'Construção de currículo', 'Para os ingressantes do mercado de trabalho ou para aqueles em transição de posição, sempre resta a dúvida: como eu me apresento para a vaga que estou aplicando? A resposta não é simples e a porta de entrada para o tão sonhado emprego conta com diversos fatores de dependência. Com isso em mente, o grupo Sematron traz o curso de Construção de Currículo com a hands-on experience de atualizar a primeira visão que a maioria dos recrutadores têm de profissionais. Ao fim do evento, cada participante obterá importantes informações de gerenciamento de plataformas profissionais, como o Linkedin, do comportamento em etapas de processo seletivo e de diferenciação de hábitos benéficos e prejudiciais para a rotina de quem procura emprego.', '{\"location\":\"O Link ser\\u00e1 disponibilizado ap\\u00f3s a inscri\\u00e7\\u00e3o\",\"desc\":\"Para os ingressantes do mercado de trabalho ou para aqueles em transi\\u00e7\\u00e3o de posi\\u00e7\\u00e3o, sempre resta a d\\u00favida: como eu me apresento para a vaga que estou aplicando? A resposta n\\u00e3o \\u00e9 simples e a porta de entrada para o t\\u00e3o sonhado emprego conta com diversos fatores de depend\\u00eancia. Com isso em mente, o grupo Sematron traz o curso de Constru\\u00e7\\u00e3o de Curr\\u00edculo com a hands-on experience de atualizar a primeira vis\\u00e3o que a maioria dos recrutadores t\\u00eam de profissionais. Ao fim do evento, cada participante obter\\u00e1 importantes informa\\u00e7\\u00f5es de gerenciamento de plataformas profissionais, como o Linkedin, do comportamento em etapas de processo seletivo e de diferencia\\u00e7\\u00e3o de h\\u00e1bitos ben\\u00e9ficos e prejudiciais para a rotina de quem procura emprego.\",\"palestrantes\":\"\",\"pic\":\"\",\"vagas\":\"100\",\"m\":{\"ch\":\"3h30\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"ch\":\"3h30\",\"alert\":\"\",\"cont\":\"\"}}', 17, ''),
 (198, 'viagem', '2021-10-28 14:00:00', '2021-10-28 17:00:00', 'Matlab', 'O Matlab (acrônimo para &quot;Matrix Laboratory&quot;, ou &quot;laboratório de matrizes&quot;) é um software de linguagem interpretada própria que oferece diversas funcionalidades prontas para facilitar cálculos para o estudante de engenharia, sendo também utilizado na indústria. Neste minicurso serão apresentados temas introdutórios, como interface gráfica do software, sintaxe de funções, laços de iteração, estruturas condicionais, leitura e escrita de arquivos etc.Ao fim do minicurso, espera-se que o participante seja capaz de programar rotinas de cálculo que o ajudem a resolver problemas de engenharia e que esteja familiarizado o suficiente para tornar-se autossuficiente no uso do software, através da leitura e interpretação da documentação do MATLAB, que será abordada no curso.Observação: Não serão apresentados os toolboxes do Matlab, devido ao seu grande número e extensão.', '{\"location\":\"O Link ser\\u00e1 disponibilizado ap\\u00f3s a inscri\\u00e7\\u00e3o\",\"desc\":\"O Matlab (acrônimo para &quot;Matrix Laboratory&quot;, ou &quot;laboratório de matrizes&quot;) é um software de linguagem interpretada própria que oferece diversas funcionalidades prontas para facilitar cálculos para o estudante de engenharia, sendo também utilizado na indústria. Neste minicurso serão apresentados temas introdutórios, como interface gráfica do software, sintaxe de funções, laços de iteração, estruturas condicionais, leitura e escrita de arquivos etc.Ao fim do minicurso, espera-se que o participante seja capaz de programar rotinas de cálculo que o ajudem a resolver problemas de engenharia e que esteja familiarizado o suficiente para tornar-se autossuficiente no uso do software, através da leitura e interpretação da documentação do MATLAB, que será abordada no curso.Observação: Não serão apresentados os toolboxes do Matlab, devido ao seu grande número e extensão.\",\"palestrantes\":\"\",\"pic\":\"\",\"vagas\":\"75\",\"m\":{\"ch\":\"3h\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"ch\":\"3h\",\"alert\":\"\",\"cont\":\"\"}}', 17, ''),
 (199, 'viagem', '2021-10-28 14:00:00', '2021-10-28 17:00:00', 'Python', 'Minicurso Básico-Intermediário sobre a linguagem de programação Python, no qual desenvolveremos um Bot para o Discord. Durante a aula passaremos por conceitos básicos da linguagem, como utilização de ferramentas fundamentais para um programador (IDE e Git) e também alguns módulos mais avançados, como asyncio e regular expressions. Ao final do minicurso, o participante terá conhecido um pouco melhor a linguagem Python e um exemplo muito popular de sua utilização. Ele também terá tido contato com um fluxo de trabalho que abarca a utilização de versionamento de código, que é uma habilidade muito requisitada no mercado de trabalho.', '{\"location\":\"O Link ser\\u00e1 disponibilizado ap\\u00f3s a inscri\\u00e7\\u00e3o\",\"desc\":\"Minicurso B\\u00e1sico-Intermedi\\u00e1rio sobre a linguagem de programa\\u00e7\\u00e3o Python, no qual desenvolveremos um Bot para o Discord. Durante a aula passaremos por conceitos b\\u00e1sicos da linguagem, como utiliza\\u00e7\\u00e3o de ferramentas fundamentais para um programador (IDE e Git) e tamb\\u00e9m alguns m\\u00f3dulos mais avan\\u00e7ados, como asyncio e regular expressions. Ao final do minicurso, o participante ter\\u00e1 conhecido um pouco melhor a linguagem Python e um exemplo muito popular de sua utiliza\\u00e7\\u00e3o. Ele tamb\\u00e9m ter\\u00e1 tido contato com um fluxo de trabalho que abarca a utiliza\\u00e7\\u00e3o de versionamento de c\\u00f3digo, que \\u00e9 uma habilidade muito requisitada no mercado de trabalho.\",\"palestrantes\":\"Henrique\",\"pic\":\"\",\"vagas\":\"25\",\"m\":{\"ch\":\"3h\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"ch\":\"3h\",\"alert\":\"\",\"cont\":\"\"}}', 17, ''),
-(200, 'viagem', '2021-10-28 14:00:00', '2021-10-28 17:00:00', 'Análise de Dados', 'O curso de análise de dados passará para os inscritos a experiência completa de obtenção, manuseio, filtragem, visualização e storytelling de dados tão recorrente no mercado profissional. Dados são o novo petróleo, quem já ouviu essa? Pensando em atualizar os participantes de uma das grandes tendências nos últimos anos, será proposta a resolução de problemas encontrados no mercado de trabalho para aplicação dos conceitos aprendidos. Ao final do curso, espera-se que os inscritos tenham boa base de cada etapa do ciclo de vida de dados e consigam gerar insights a partir da manutenção dos mesmos.', '{\"location\":\"O Link ser\\u00e1 disponibilizado ap\\u00f3s a inscri\\u00e7\\u00e3o\",\"desc\":\"O curso de an\\u00e1lise de dados passar\\u00e1 para os inscritos a experi\\u00eancia completa de obten\\u00e7\\u00e3o, manuseio, filtragem, visualiza\\u00e7\\u00e3o e storytelling de dados t\\u00e3o recorrente no mercado profissional. Dados s\\u00e3o o novo petr\\u00f3leo, quem j\\u00e1 ouviu essa? Pensando em atualizar os participantes de uma das grandes tend\\u00eancias nos \\u00faltimos anos, ser\\u00e1 proposta a resolu\\u00e7\\u00e3o de problemas encontrados no mercado de trabalho para aplica\\u00e7\\u00e3o dos conceitos aprendidos. Ao final do curso, espera-se que os inscritos tenham boa base de cada etapa do ciclo de vida de dados e consigam gerar insights a partir da manuten\\u00e7\\u00e3o dos mesmos.\",\"palestrantes\":\"\",\"pic\":\"\",\"vagas\":\"0\",\"m\":{\"ch\":\"3h\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"ch\":\"3h\",\"alert\":\"\",\"cont\":\"\"}}', 1, '');
-INSERT INTO `events` (`eid`, `type`, `start`, `end`, `name`, `info`, `extra`, `sid`, `ts`) VALUES
+(200, 'viagem', '2021-10-28 14:00:00', '2021-10-28 17:00:00', 'Análise de Dados', 'O curso de análise de dados passará para os inscritos a experiência completa de obtenção, manuseio, filtragem, visualização e storytelling de dados tão recorrente no mercado profissional. Dados são o novo petróleo, quem já ouviu essa? Pensando em atualizar os participantes de uma das grandes tendências nos últimos anos, será proposta a resolução de problemas encontrados no mercado de trabalho para aplicação dos conceitos aprendidos. Ao final do curso, espera-se que os inscritos tenham boa base de cada etapa do ciclo de vida de dados e consigam gerar insights a partir da manutenção dos mesmos.', '{\"location\":\"O Link ser\\u00e1 disponibilizado ap\\u00f3s a inscri\\u00e7\\u00e3o\",\"desc\":\"O curso de an\\u00e1lise de dados passar\\u00e1 para os inscritos a experi\\u00eancia completa de obten\\u00e7\\u00e3o, manuseio, filtragem, visualiza\\u00e7\\u00e3o e storytelling de dados t\\u00e3o recorrente no mercado profissional. Dados s\\u00e3o o novo petr\\u00f3leo, quem j\\u00e1 ouviu essa? Pensando em atualizar os participantes de uma das grandes tend\\u00eancias nos \\u00faltimos anos, ser\\u00e1 proposta a resolu\\u00e7\\u00e3o de problemas encontrados no mercado de trabalho para aplica\\u00e7\\u00e3o dos conceitos aprendidos. Ao final do curso, espera-se que os inscritos tenham boa base de cada etapa do ciclo de vida de dados e consigam gerar insights a partir da manuten\\u00e7\\u00e3o dos mesmos.\",\"palestrantes\":\"\",\"pic\":\"\",\"vagas\":\"0\",\"m\":{\"ch\":\"3h\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"ch\":\"3h\",\"alert\":\"\",\"cont\":\"\"}}', 1, ''),
 (201, 'viagem', '2021-10-28 14:00:00', '2021-10-28 16:00:00', 'Introdução às finanças pessoais', 'Minicurso introdutório para todos aqueles que procuram independência para cuidar do seu patrimônio e buscar o investimento que cabe na sua realidade. Júlia abordará conceitos importantes e mostrará que é possível investir, sem medo, e diversificando a carteira.', '{\"location\":\"O Link ser\\u00e1 disponibilizado ap\\u00f3s a inscri\\u00e7\\u00e3o\",\"desc\":\"Minicurso introdutório para todos aqueles que procuram independência para cuidar do seu patrimônio e buscar o investimento que cabe na sua realidade. Júlia abordará conceitos importantes e mostrará que é possível investir, sem medo, e diversificando a carteira.\",\"palestrantes\":\"J\\u00falia Abi-S\\u00e2mara\",\"pic\":\"\",\"vagas\":\"100\",\"m\":{\"ch\":\"2h\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"ch\":\"2h\",\"alert\":\"\",\"cont\":\"\"}}', 17, ''),
 (202, 'evento', '2021-10-27 19:00:00', '2021-10-27 21:00:00', 'McKinsey & QuantumBlack: Aplicando Advanced Analytics no Mundo', '', '{\"location\":\"\",\"desc\":\"\",\"palestrantes\":\"\",\"pic\":\"\",\"vagas\":\"500\",\"m\":{\"ch\":\"2h\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"alert\":\"\"}}', 17, ''),
 (205, 'minicurso', '2022-10-06 10:00:56', '2022-10-06 12:30:03', 'Elementos Finitos', 'O horário e sala do minicurso serão divulgados no decorrer do mês', '{\"location\":\"STI Sala G1\",\"desc\":\"\",\"palestrantes\":\"\",\"pic\":\"\",\"vagas\":\"25\",\"m\":{\"ch\":\"8h\",\"alert\":\"\",\"cont\":\"\"},\"v\":{\"ch\":\"8h\",\"alert\":\"\",\"cont\":\"\"}}', 18, ''),
@@ -1221,27 +1186,6 @@ INSERT INTO `groups` (`gid`, `id`, `name`, `permissions`) VALUES
 (1, 'root', 'Organizador', '{\"grant\":[\"#.*#\"], \"deny\":[]}'),
 (2, 'org', 'Organizador', '{\"grant\":[\"#admin\\\\.org\\\\.viewInfo#\",\"#admin\\\\.org\\\\.status#\",\"#admin\\\\.org\\\\.viewUsers#\"],\"deny\":[]}'),
 (3, 'attendee', 'Participante', '{\"grant\": [], \"deny\": []}');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `migrations`
---
-
-CREATE TABLE `migrations` (
-  `id` int UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2026_01_19_201804_create_sessions_table', 1),
-(2, '2026_01_20_044337_create_cache_table', 2),
-(3, '2026_01_21_035022_tabela_eventos', 3);
 
 -- --------------------------------------------------------
 
@@ -3998,8 +3942,7 @@ INSERT INTO `sales` (`code`, `pid`, `path`, `uid`, `status`, `time`) VALUES
 ('PAGS-00727-RU309B411TZO20XCZDR92KYLY', 684, NULL, 0, 'confirmed', '2016-04-29 12:01:30'),
 ('PAGS-00728-C4BVIUX9VPSNRTTI2H86D0FH6', 685, NULL, 0, 'confirmed', '2016-04-29 13:41:52'),
 ('PAGS-00729-EKGH8U0FAQA60AGFZ2H6LQUD5', 689, NULL, 0, 'confirmed', '2016-04-30 14:44:33'),
-('PAGS-00729-TFIVGOHWFJJ3HVHSCVVL1F32I', 689, NULL, 0, 'waiting', '2016-04-30 11:06:15');
-INSERT INTO `sales` (`code`, `pid`, `path`, `uid`, `status`, `time`) VALUES
+('PAGS-00729-TFIVGOHWFJJ3HVHSCVVL1F32I', 689, NULL, 0, 'waiting', '2016-04-30 11:06:15'),
 ('PAGS-00732-09AF2WALZ5639CXP1CBX4K96V', 690, NULL, 0, 'waiting', '2016-04-30 15:54:40'),
 ('PAGS-00733-3DSTRKH8BCY0QGLC642F1RNPP', 691, NULL, 0, 'confirmed', '2016-04-30 19:32:44'),
 ('PAGS-00733-4EFG3J94HJU5E53A52GDCRHBC', 806, NULL, 0, 'confirmed', '2017-05-03 16:04:04'),
@@ -4554,8 +4497,7 @@ INSERT INTO `sales` (`code`, `pid`, `path`, `uid`, `status`, `time`) VALUES
 ('PAGS-01393-GLZTGJDP48XGZOSX9GVHWTBV9', 1784, NULL, 0, 'expired', '2019-05-07 01:26:42'),
 ('PAGS-01394-H6LFW0TGZQY7VI97OYZURGCS5', 1783, NULL, 0, 'expired', '2019-05-07 01:16:31'),
 ('PAGS-01394-KFCTT4W9U1P4C31EKZ181IZZT', 1783, NULL, 0, 'waiting', '2019-05-07 01:04:38'),
-('PAGS-01395-RPIA1GJZE9IW5EI2IMKL0E1ZT', 1787, NULL, 0, 'confirmed', '2019-05-08 13:25:51');
-INSERT INTO `sales` (`code`, `pid`, `path`, `uid`, `status`, `time`) VALUES
+('PAGS-01395-RPIA1GJZE9IW5EI2IMKL0E1ZT', 1787, NULL, 0, 'confirmed', '2019-05-08 13:25:51'),
 ('PAGS-01396-2RLCB3FSXRH1KSSMN1M2F4S3P', 1790, NULL, 0, 'expired', '2019-05-08 12:23:29'),
 ('PAGS-01396-2WOCVR5NKZDH429VD39FP2E0L', 1790, NULL, 0, 'waiting', '2019-05-08 12:32:52'),
 ('PAGS-01396-3AXFRI7EG2FNHT9304H1Y0US6', 1790, NULL, 0, 'waiting', '2019-05-08 12:29:13'),
@@ -5107,8 +5049,7 @@ INSERT INTO `sales` (`code`, `pid`, `path`, `uid`, `status`, `time`) VALUES
 ('PRES-00006-WNWBTOYPF31QDWVT5RKMTUFAO', 110, NULL, 0, 'confirmed', '2015-05-13 14:31:39'),
 ('PRES-00009-0F2RDNDCWRM3311ICL4AV239R', 371, NULL, 0, 'confirmed', '2015-05-15 16:51:57'),
 ('PRES-00009-0STT4EYKXU2SMCO6ITXIMX4CB', 88, NULL, 0, 'confirmed', '2015-05-06 16:14:40'),
-('PRES-00009-2UZWR2HIY0TBC3BPTFGFNOVGT', 50, NULL, 0, 'confirmed', '2015-05-06 16:27:52');
-INSERT INTO `sales` (`code`, `pid`, `path`, `uid`, `status`, `time`) VALUES
+('PRES-00009-2UZWR2HIY0TBC3BPTFGFNOVGT', 50, NULL, 0, 'confirmed', '2015-05-06 16:27:52'),
 ('PRES-00009-3KPQQ4LD9PPPJC81YN2NPWFFM', 131, NULL, 0, 'confirmed', '2015-05-06 16:08:31'),
 ('PRES-00009-6F3IFDEUEIR8PLM54WP8Z1333', 223, NULL, 0, 'confirmed', '2015-05-06 16:16:46'),
 ('PRES-00009-6I3XJYSMM5AHPCBDPO8L0P6PL', 1113, NULL, 0, 'confirmed', '2017-05-23 21:52:32'),
@@ -5660,8 +5601,7 @@ INSERT INTO `sales` (`code`, `pid`, `path`, `uid`, `status`, `time`) VALUES
 ('PRES-00280-KNJOQRWJSV82QH4MHW3TVMBCY', 978, NULL, 0, 'confirmed', '2017-05-03 12:42:45'),
 ('PRES-00280-LOH3PSK5K2K2MW3D266TC61Z1', 998, NULL, 0, 'confirmed', '2017-05-03 16:57:20'),
 ('PRES-00280-N0K579BMM56PT6RIMQH4GK1AS', 812, NULL, 0, 'confirmed', '2017-05-03 16:08:56'),
-('PRES-00280-O29PXX5L5ZH67L08BKHYVVHO4', 768, NULL, 0, 'confirmed', '2017-05-03 16:17:40');
-INSERT INTO `sales` (`code`, `pid`, `path`, `uid`, `status`, `time`) VALUES
+('PRES-00280-O29PXX5L5ZH67L08BKHYVVHO4', 768, NULL, 0, 'confirmed', '2017-05-03 16:17:40'),
 ('PRES-00280-QF7LCK3QHR6HNNMNIIYK4RPUU', 782, NULL, 0, 'confirmed', '2017-05-03 16:10:20'),
 ('PRES-00280-R8GBS12N44ILHY7YTV176FLOM', 824, NULL, 0, 'confirmed', '2017-05-03 16:11:33'),
 ('PRES-00280-UQFQFI5HT1VBZ97SQDCMKJMWW', 831, NULL, 0, 'confirmed', '2017-05-03 16:14:35'),
@@ -6209,8 +6149,7 @@ INSERT INTO `sales` (`code`, `pid`, `path`, `uid`, `status`, `time`) VALUES
 ('PRES-01586-X7N4XW98OF31HTFCEA43299UI', 2555, NULL, 0, 'confirmed', '2024-04-25 23:07:07'),
 ('PRES-01586-XDIZBTSALO1V2B8Z8Y7UD6G42', 2479, NULL, 0, 'confirmed', '2024-04-22 23:42:05'),
 ('PRES-01586-XH0J37WLL3KI578CYRRFLC7UG', 2421, NULL, 0, 'confirmed', '2024-04-22 22:34:26'),
-('PRES-01586-XN0SMVO5VWEF8PPD1UWUR4529', 2616, NULL, 0, 'confirmed', '2024-05-20 22:37:59');
-INSERT INTO `sales` (`code`, `pid`, `path`, `uid`, `status`, `time`) VALUES
+('PRES-01586-XN0SMVO5VWEF8PPD1UWUR4529', 2616, NULL, 0, 'confirmed', '2024-05-20 22:37:59'),
 ('PRES-01586-XT72RKRD1X6SKQEJCFJHU8M9H', 2456, NULL, 0, 'confirmed', '2024-05-06 13:45:56'),
 ('PRES-01586-YOCONLD4JJHUNZMUWDELTWVOT', 2470, NULL, 0, 'confirmed', '2024-04-22 23:10:21'),
 ('PRES-01586-ZM2PB5X4P4L2G61RKZTZFHWRP', 2580, NULL, 0, 'confirmed', '2024-05-08 00:31:08'),
@@ -6332,28 +6271,6 @@ INSERT INTO `sematrons` (`sid`, `name`, `insc`, `pre`) VALUES
 (22, 'XXII  SEMATRON', 1, 0),
 (1001, '4º ThiMK', 0, 0),
 (1002, 'CaseFactory2', 0, 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sessions`
---
-
-CREATE TABLE `sessions` (
-  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_id` bigint UNSIGNED DEFAULT NULL,
-  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_agent` text COLLATE utf8mb4_unicode_ci,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_activity` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `sessions`
---
-
-INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('Xne08e0ABw2pAEmSQGjC4LkzWp6OdQLstDh1gbL9', 2073, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiNXFrc1RJTHBDVXJtRGhVTDRXc0dONmx6eElLZHNYRTk1UWtmaW42eiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9pbmljaW8iO3M6NToicm91dGUiO3M6NjoiaW5pY2lvIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MjA3Mzt9', 1772818410);
 
 -- --------------------------------------------------------
 
@@ -6752,8 +6669,7 @@ INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `
 (284, 11, 310, 3, '', '[\"48\",\"33\",29]', '{\"k\":\"XIminicurso\",\"m\":[19],\"v\":[],\"c\":\"-\"}', 71, 19, 0, 0, '-', '2015-05-06 17:45:08', '2015-05-06 17:45:09'),
 (285, 11, 312, 3, '', '[\"48\",\"43\",\"30\",29]', '{\"k\":\"XIviagem\",\"m\":[],\"v\":[14,28,27],\"c\":\"-\"}', 72, 0, 14, 0, '-', '2015-05-06 17:56:03', '2015-05-06 17:56:04'),
 (288, 11, 314, 3, '', '[\"48\",\"43\",\"31\",\"47\",\"46\",\"32\",\"45\",\"33\",\"35\",\"34\",29,30]', '{\"k\":\"XIpalestrakit\",\"m\":[],\"v\":[],\"c\":\"m\"}', 74, 0, 0, 0, 'm', '2015-05-06 18:38:32', '2015-05-06 18:38:32'),
-(292, 11, 317, 3, '', '[\"48\",\"43\",\"31\",\"47\",\"46\",\"32\",\"49\",\"44\",\"45\",\"33\",\"35\",\"34\",29,30]', '{\"k\":\"XIkit\",\"m\":[23,21,19],\"v\":[39,28],\"c\":\"g\"}', 75, 23, 39, 0, 'g', '2015-05-06 20:53:33', '2015-05-06 20:53:34');
-INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `choices`, `pack_id`, `minicurso`, `viagem`, `kit`, `camiseta`, `time`, `reserveTime`) VALUES
+(292, 11, 317, 3, '', '[\"48\",\"43\",\"31\",\"47\",\"46\",\"32\",\"49\",\"44\",\"45\",\"33\",\"35\",\"34\",29,30]', '{\"k\":\"XIkit\",\"m\":[23,21,19],\"v\":[39,28],\"c\":\"g\"}', 75, 23, 39, 0, 'g', '2015-05-06 20:53:33', '2015-05-06 20:53:34'),
 (293, 11, 318, 3, '', '[\"48\",29]', '{\"k\":\"XIpalestrakit\",\"m\":[],\"v\":[],\"c\":\"p\"}', 74, 0, 0, 0, 'p', '2015-05-06 21:31:14', '2015-05-06 21:31:15'),
 (294, 11, 319, 3, '', '[\"48\",\"43\",\"31\",\"32\",\"49\",\"34\",29,30]', '{\"k\":\"XIkit\",\"m\":[19,42,23],\"v\":[39,14],\"c\":\"m\"}', 75, 19, 39, 0, 'm', '2015-05-06 22:22:11', '2015-05-06 22:22:12'),
 (295, 11, 148, 3, '', '[\"48\",\"43\",\"31\",\"47\",\"46\",\"32\",\"49\",\"35\",\"34\",29,30]', '{\"k\":\"XIkit\",\"m\":[42,21,23],\"v\":[16,24,14,27],\"c\":\"m\"}', 75, 42, 16, 0, 'm', '2015-05-06 23:13:16', '2015-05-06 23:13:16'),
@@ -6975,8 +6891,7 @@ INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `
 (584, 12, 634, 3, '', '[\"50\",\"72\",\"73\",\"74\",\"75\",\"69\",\"78\",70,\"79\",\"81\",\"80\"]', '{\"k\":\"XIIviagem\",\"m\":[],\"v\":[67,63,60,62,64,66,65,61],\"c\":\"-\"}', 78, 0, 67, 0, '-', '2016-04-26 02:34:05', '2016-04-27 16:08:03'),
 (585, 12, 503, 3, '', '[\"50\",\"71\",\"72\",\"73\",\"74\",\"75\",\"69\",\"78\",70,\"79\",\"82\",\"81\",\"80\"]', '{\"k\":\"XIIminicurso\",\"m\":[58,51,59,55,68,52,57,53,54,56],\"v\":[],\"c\":\"-\"}', 77, 58, 0, 0, '-', '2016-04-26 02:41:56', '2016-04-27 16:10:31'),
 (586, 12, 635, 3, '', '[\"50\",\"71\",\"72\",\"73\",\"74\",\"75\",\"69\",\"78\",70,\"79\"]', '{\"k\":\"XIIminicurso\",\"m\":[57,54,52,68,51,58,56,53,55,59],\"v\":[],\"c\":\"-\"}', 77, 57, 0, 0, '-', '2016-04-26 03:23:58', '2016-04-27 16:07:54'),
-(587, 12, 98, 3, '', '[\"50\",\"71\",\"72\",\"73\",\"75\",\"77\",\"69\",\"78\",70,\"79\",\"81\",\"80\"]', '{\"k\":\"XIIkit\",\"m\":[68],\"v\":[65,66],\"c\":\"m\"}', 81, 68, 65, 0, 'm', '2016-04-26 06:04:19', '2016-05-05 22:32:24');
-INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `choices`, `pack_id`, `minicurso`, `viagem`, `kit`, `camiseta`, `time`, `reserveTime`) VALUES
+(587, 12, 98, 3, '', '[\"50\",\"71\",\"72\",\"73\",\"75\",\"77\",\"69\",\"78\",70,\"79\",\"81\",\"80\"]', '{\"k\":\"XIIkit\",\"m\":[68],\"v\":[65,66],\"c\":\"m\"}', 81, 68, 65, 0, 'm', '2016-04-26 06:04:19', '2016-05-05 22:32:24'),
 (588, 12, 637, 3, '', '[\"50\",\"71\",\"73\",\"74\",\"76\",\"77\",\"69\",\"78\",70,\"79\",\"82\",\"81\"]', '{\"k\":\"XIIkit\",\"m\":[52,54],\"v\":[61,64,67,65,63],\"c\":\"m\"}', 81, 52, 61, 0, 'm', '2016-04-26 11:41:12', '2016-04-29 00:11:44'),
 (589, 12, 103, 3, '', '[\"50\",\"71\",\"72\",\"73\",\"74\",\"75\",\"76\",\"77\",70,\"79\",\"82\"]', '{\"k\":\"XIIminiviagem\",\"m\":[68,58,59,55,54],\"v\":[67,62,61,63],\"c\":\"-\"}', 79, 68, 67, 0, '-', '2016-04-26 12:08:43', '2016-04-27 16:08:20'),
 (590, 12, 97, 3, '', '[\"50\",\"71\",\"72\",\"73\",\"75\",\"76\",\"77\",\"69\",\"78\",70,\"81\",\"80\"]', '{\"k\":\"XIIkit\",\"m\":[52,51,59,55],\"v\":[67,61,66,60],\"c\":\"m\"}', 81, 52, 67, 0, 'm', '2016-04-26 12:20:49', '2016-04-27 16:17:16'),
@@ -7207,8 +7122,7 @@ INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `
 (876, 13, 839, 3, '', '[\"83\",\"85\",\"86\",\"87\",\"89\",\"90\",\"88\",\"112\",\"113\"]', '{\"k\":\"XIIIkit\",\"m\":[106,109],\"v\":[99,93,94,100],\"c\":\"m\"}', 87, 106, 99, 0, 'm', '2017-05-02 02:08:22', '2017-05-03 16:19:50'),
 (882, 13, 537, 3, '', '[\"83\",\"85\",\"86\",\"87\",\"91\",\"89\",\"90\",\"88\",\"92\",\"114\",\"111\",\"112\",\"113\"]', '{\"k\":\"XIIIkit\",\"m\":[101,102,107,108],\"v\":[95,99,96,97],\"c\":\"p\"}', 87, 101, 99, 0, 'p', '2017-05-02 11:05:13', '2017-05-03 16:00:52'),
 (883, 13, 74, 3, '', '[\"83\",\"86\",\"87\",\"89\",\"90\",\"88\",\"114\",\"113\"]', '{\"k\":\"XIIIkit\",\"m\":[101,109,110],\"v\":[99,96],\"c\":\"m\"}', 87, 101, 99, 0, 'm', '2017-05-02 11:55:06', '2017-05-03 16:02:32'),
-(884, 13, 874, 3, '', '[\"83\",\"85\",\"86\",\"87\",\"91\",\"89\",\"90\",\"88\",\"92\",\"111\",\"113\"]', '{\"k\":\"XIIIminiviagem\",\"m\":[107,106,102,104,108,105,109,101,110,103],\"v\":[93,100,98,96,95,94,97,99],\"c\":\"-\"}', 85, 107, 93, 0, '-', '2017-05-02 13:34:01', '2017-05-03 16:19:19');
-INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `choices`, `pack_id`, `minicurso`, `viagem`, `kit`, `camiseta`, `time`, `reserveTime`) VALUES
+(884, 13, 874, 3, '', '[\"83\",\"85\",\"86\",\"87\",\"91\",\"89\",\"90\",\"88\",\"92\",\"111\",\"113\"]', '{\"k\":\"XIIIminiviagem\",\"m\":[107,106,102,104,108,105,109,101,110,103],\"v\":[93,100,98,96,95,94,97,99],\"c\":\"-\"}', 85, 107, 93, 0, '-', '2017-05-02 13:34:01', '2017-05-03 16:19:19'),
 (885, 13, 815, 3, '', '[\"83\",\"85\",\"91\",\"89\",\"90\",\"92\",\"114\",\"111\",\"112\"]', '{\"k\":\"XIIIminiviagem\",\"m\":[104,107,102,110,109,106,101,105,103,108],\"v\":[93,96,99,100,98,95,94,97],\"c\":\"-\"}', 85, 104, 93, 0, '-', '2017-05-02 15:10:44', '2017-05-03 16:06:25'),
 (886, 13, 623, 3, '', '[\"83\",\"85\",\"86\",\"89\",\"90\",\"88\",\"92\",\"114\"]', '{\"k\":\"XIIIminiviagem\",\"m\":[102,110,104,106,103,107,108,105,101,109],\"v\":[98,96,99,95,97,100,94,93],\"c\":\"-\"}', 85, 0, 98, 0, '-', '2017-05-02 15:31:35', '2017-05-03 16:03:17'),
 (887, 13, 850, 3, '', '[\"83\",\"89\",\"90\",\"114\",\"111\",\"112\"]', '{\"k\":\"XIIIkit\",\"m\":[106,104,101],\"v\":[93,96,94],\"c\":\"m\"}', 87, 106, 93, 0, 'm', '2017-05-02 15:32:39', '2017-05-03 16:02:43'),
@@ -7436,8 +7350,7 @@ INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `
 (1192, 14, 93, 3, '', '[\"139\",\"145\"]', '{\"k\":\"XIVminicurso\",\"m\":[121,120,122,124],\"v\":[],\"c\":\"g\"}', 92, 121, 0, 0, 'g', '2018-04-08 23:12:17', '2018-04-11 16:52:44'),
 (1193, 14, 101, 3, '', '[\"139\",\"140\"]', '{\"k\":\"XIVpalestra\",\"m\":[],\"v\":[],\"c\":\"-\"}', 88, 0, 0, 0, '-', '2018-04-08 23:25:16', '2018-04-12 16:42:11'),
 (1194, 14, 617, 3, '', '[\"137\",\"138\",\"139\",\"140\",\"141\",\"142\",\"143\",\"144\",\"150\",\"148\"]', '{\"k\":\"XIVcompleto\",\"m\":[121,126,135,117],\"v\":[132,129,130],\"c\":\"g\"}', 94, 121, 132, 0, 'g', '2018-04-08 23:26:59', '2018-04-11 16:05:15'),
-(1195, 14, 1047, 3, '', '[\"139\",\"141\",\"143\",\"150\",\"146\"]', '{\"k\":\"XIVviagem\",\"m\":[],\"v\":[133,127,129,130,131,132],\"c\":\"mb\"}', 93, 0, 127, 0, 'mb', '2018-04-08 23:30:20', '2018-04-11 16:20:23');
-INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `choices`, `pack_id`, `minicurso`, `viagem`, `kit`, `camiseta`, `time`, `reserveTime`) VALUES
+(1195, 14, 1047, 3, '', '[\"139\",\"141\",\"143\",\"150\",\"146\"]', '{\"k\":\"XIVviagem\",\"m\":[],\"v\":[133,127,129,130,131,132],\"c\":\"mb\"}', 93, 0, 127, 0, 'mb', '2018-04-08 23:30:20', '2018-04-11 16:20:23'),
 (1196, 14, 1062, 3, '', '[\"141\",\"144\"]', '{\"k\":\"XIVcompleto\",\"m\":[135,119,122],\"v\":[127,131,129],\"c\":\"m\"}', 94, 135, 127, 0, 'm', '2018-04-08 23:52:32', '2018-04-11 16:06:57'),
 (1197, 14, 804, 3, '', '[\"141\",\"142\",\"143\",\"144\"]', '{\"k\":\"XIVcompleto\",\"m\":[134,117,116],\"v\":[127,132,129,130,128,133,131],\"c\":\"m\"}', 94, 134, 127, 0, 'm', '2018-04-09 00:02:27', '2018-04-11 16:00:58'),
 (1198, 14, 122, 3, '', '[\"137\",\"138\",\"139\",\"140\",\"141\",\"142\",\"144\",\"143\",\"145\",\"146\",\"147\",\"148\",\"149\"]', '{\"k\":\"XIVcompleto\",\"m\":[134,135,119,117,125],\"v\":[130,132,133,129,131,128],\"c\":\"m\"}', 94, 134, 130, 0, 'm', '2018-04-09 00:15:32', '2018-04-11 16:02:29'),
@@ -7656,8 +7569,7 @@ INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `
 (1440, 14, 1200, 3, '', '', '{\"k\":\"XIVcompleto\",\"m\":[116,124],\"v\":[127],\"c\":\"-\"}', 94, 116, 127, 0, '-', '2018-04-26 15:46:58', '2018-04-26 15:46:59'),
 (1441, 14, 1201, 3, '', '', '{\"k\":\"XIVmini\",\"m\":[116,124],\"v\":[],\"c\":\"-\"}', 90, 116, 0, 0, '-', '2018-04-27 02:17:06', '2018-04-27 02:17:06'),
 (1442, 14, 1203, 3, '', '[\"142\"]', '{\"k\":\"XIVmini\",\"m\":[124,116],\"v\":[],\"c\":\"-\"}', 90, 124, 0, 0, '-', '2018-05-03 13:42:52', '2018-05-03 13:42:53'),
-(1443, 14, 1204, 3, '', '[\"141\",\"142\"]', '{\"k\":\"XIVpalestra\",\"m\":[],\"v\":[],\"c\":\"-\"}', 88, 0, 0, 0, '-', '2018-05-03 22:58:47', '2018-05-03 22:58:48');
-INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `choices`, `pack_id`, `minicurso`, `viagem`, `kit`, `camiseta`, `time`, `reserveTime`) VALUES
+(1443, 14, 1204, 3, '', '[\"141\",\"142\"]', '{\"k\":\"XIVpalestra\",\"m\":[],\"v\":[],\"c\":\"-\"}', 88, 0, 0, 0, '-', '2018-05-03 22:58:47', '2018-05-03 22:58:48'),
 (1444, 14, 754, 3, '', '[\"137\",\"138\",\"139\"]', '{\"k\":\"XIVpalestra\",\"m\":[],\"v\":[],\"c\":\"-\"}', 88, 0, 0, 0, '-', '2018-05-04 00:37:30', '2018-05-04 00:37:30'),
 (1445, 14, 950, 3, '', '[\"137\",\"138\",\"141\",\"142\"]', '{\"k\":\"XIVcompleto\",\"m\":[116],\"v\":[128],\"c\":\"-\"}', 94, 116, 128, 0, '-', '2018-05-04 15:55:12', '2018-05-04 15:55:13'),
 (1446, 14, 277, 3, '', '[\"147\"]', '{\"k\":\"XIVpalestra\",\"m\":[],\"v\":[],\"c\":\"-\"}', 88, 0, 0, 0, '-', '2018-05-04 16:01:44', '2018-05-04 16:01:44'),
@@ -7873,8 +7785,7 @@ INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `
 (1708, 15, 908, 3, '', '[\"184\",\"153\",\"152\",\"156\",\"169\"]', '{\"k\":\"XVviagem\",\"m\":[],\"v\":[162,161,174],\"c\":\"gg\"}', 100, 0, 162, 0, 'gg', '2019-04-25 15:08:01', '2019-04-25 16:07:50'),
 (1709, 15, 1073, 3, '', '[\"156\"]', '{\"k\":\"XVcompleto\",\"m\":[172,175,157,176,171,167,158,166,182,183,159,165],\"v\":[160,161,181,174,164,162,163,168,179,180],\"c\":\"p\"}', 102, 0, 160, 0, 'p', '2019-04-25 15:08:50', '2019-04-25 15:08:51'),
 (1710, 15, 1101, 3, '', '[\"184\",\"153\",\"152\",\"185\",\"156\",\"169\",\"186\",\"177\",\"178\"]', '{\"k\":\"XVcompletosem\",\"m\":[171,165,176],\"v\":[168,164],\"c\":\"-\"}', 101, 171, 168, 0, '-', '2019-04-25 15:22:21', '2019-05-02 16:51:59'),
-(1711, 15, 1098, 3, '', '', '{\"k\":\"XVpalestrakit\",\"m\":[],\"v\":[],\"c\":\"p\"}', 96, 0, 0, 0, 'p', '2019-04-25 15:23:23', '2019-04-25 16:22:31');
-INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `choices`, `pack_id`, `minicurso`, `viagem`, `kit`, `camiseta`, `time`, `reserveTime`) VALUES
+(1711, 15, 1098, 3, '', '', '{\"k\":\"XVpalestrakit\",\"m\":[],\"v\":[],\"c\":\"p\"}', 96, 0, 0, 0, 'p', '2019-04-25 15:23:23', '2019-04-25 16:22:31'),
 (1712, 15, 1116, 3, '', '[\"184\",\"153\",\"152\",\"156\",\"169\",\"177\",\"178\",\"155\"]', '{\"k\":\"XVcompleto\",\"m\":[158,166],\"v\":[161,174],\"c\":\"m\"}', 102, 158, 161, 0, 'm', '2019-04-25 15:33:30', '2019-04-25 16:20:25'),
 (1713, 15, 838, 3, '', '[\"155\"]', '{\"k\":\"XVcompleto\",\"m\":[158,172,166,157],\"v\":[179,168,181],\"c\":\"p\"}', 102, 0, 179, 0, 'p', '2019-04-25 15:33:42', '2019-04-25 16:14:01'),
 (1714, 15, 1346, 3, '', '', '{\"k\":\"XVcompleto\",\"m\":[158,166,176,172,157,167],\"v\":[161,174,163,168,164],\"c\":\"m\"}', 102, 0, 161, 0, 'm', '2019-04-25 15:39:05', '2019-04-25 16:01:21'),
@@ -8182,8 +8093,7 @@ INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `
 (2047, 17, 1557, 3, '', '', '{\"k\":\"XVIIcompleto\",\"m\":[196,197,195],\"v\":[199,198,201],\"c\":\"-\"}', 110, 196, 199, 0, '-', '2021-10-08 22:42:12', '2021-10-08 22:42:13'),
 (2048, 17, 1559, 3, '', '[\"202\"]', '{\"k\":\"XVIIcompleto\",\"m\":[196,195,197],\"v\":[199,198,201],\"c\":\"-\"}', 110, 196, 199, 0, '-', '2021-10-08 22:48:03', '2021-10-08 22:48:03'),
 (2049, 17, 1043, 3, '', '', '{\"k\":\"XVIIcompleto\",\"m\":[197,196,195],\"v\":[199,198,201],\"c\":\"-\"}', 110, 197, 199, 0, '-', '2021-10-08 22:48:30', '2021-10-08 22:48:31'),
-(2050, 17, 1199, 3, '', '', '{\"k\":\"XVIIcompleto\",\"m\":[196,197,195],\"v\":[199,198,201],\"c\":\"-\"}', 110, 196, 199, 0, '-', '2021-10-08 22:51:31', '2021-10-08 22:51:32');
-INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `choices`, `pack_id`, `minicurso`, `viagem`, `kit`, `camiseta`, `time`, `reserveTime`) VALUES
+(2050, 17, 1199, 3, '', '', '{\"k\":\"XVIIcompleto\",\"m\":[196,197,195],\"v\":[199,198,201],\"c\":\"-\"}', 110, 196, 199, 0, '-', '2021-10-08 22:51:31', '2021-10-08 22:51:32'),
 (2051, 17, 1560, 3, '', '', '{\"k\":\"XVIIcompleto\",\"m\":[197,196],\"v\":[201],\"c\":\"-\"}', 110, 197, 201, 0, '-', '2021-10-08 22:55:06', '2021-10-08 22:55:06'),
 (2052, 17, 1561, 3, '', '', '{\"k\":\"XVIIcompleto\",\"m\":[196,195],\"v\":[201,199],\"c\":\"-\"}', 110, 196, 201, 0, '-', '2021-10-08 22:58:38', '2021-10-08 22:58:38'),
 (2053, 17, 1562, 3, '', '', '{\"k\":\"XVIIcompleto\",\"m\":[],\"v\":[199],\"c\":\"-\"}', 110, 0, 199, 0, '-', '2021-10-08 23:23:39', '2021-10-08 23:23:39'),
@@ -8434,8 +8344,7 @@ INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `
 (2310, 19, 1813, 3, '', '[\"225\",\"227\",\"228\",\"240\"]', '{\"k\":\"XIXpremiumVisitas\",\"m\":[],\"v\":[234,238],\"c\":\"m\"}', 123, 0, 234, 0, 'm', '2023-11-18 16:11:48', '0000-00-00 00:00:00'),
 (2311, 19, 1736, 3, '', '[\"225\",\"226\",\"227\",\"230\",\"231\",\"237\",\"236\",\"239\",\"240\"]', '{\"k\":\"XIXstandardplusMinicursos\",\"m\":[232,233],\"v\":[],\"c\":\"-\"}', 120, 232, 0, 0, '-', '2023-11-18 16:12:12', '0000-00-00 00:00:00'),
 (2312, 19, 1043, 3, '', '', '{\"k\":\"XIXpremiumMinicursos\",\"m\":[233,232,242],\"v\":[],\"c\":\"m\"}', 122, 233, 0, 0, 'm', '2023-11-18 16:37:32', '0000-00-00 00:00:00'),
-(2313, 19, 1638, 3, '', '[\"225\",\"226\",\"227\",\"228\",\"229\",\"230\",\"231\",\"237\",\"239\",\"240\"]', '{\"k\":\"XIXpremiumVisitas\",\"m\":[],\"v\":[238,234],\"c\":\"g\"}', 123, 0, 238, 0, 'g', '2023-11-18 16:55:35', '0000-00-00 00:00:00');
-INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `choices`, `pack_id`, `minicurso`, `viagem`, `kit`, `camiseta`, `time`, `reserveTime`) VALUES
+(2313, 19, 1638, 3, '', '[\"225\",\"226\",\"227\",\"228\",\"229\",\"230\",\"231\",\"237\",\"239\",\"240\"]', '{\"k\":\"XIXpremiumVisitas\",\"m\":[],\"v\":[238,234],\"c\":\"g\"}', 123, 0, 238, 0, 'g', '2023-11-18 16:55:35', '0000-00-00 00:00:00'),
 (2314, 19, 1729, 3, '', '[\"227\",\"231\",\"236\",\"239\",\"240\"]', '{\"k\":\"XIXpremiumplus\",\"m\":[233,232,242],\"v\":[238,234,235],\"c\":\"m\"}', 125, 233, 238, 0, 'm', '2023-11-18 17:04:40', '0000-00-00 00:00:00'),
 (2315, 19, 1815, 3, '', '[\"225\",\"226\"]', '{\"k\":\"XIXpremiumplus\",\"m\":[233,242,232],\"v\":[234,238,235],\"c\":\"m\"}', 125, 233, 234, 0, 'm', '2023-11-18 17:08:16', '0000-00-00 00:00:00'),
 (2316, 19, 1755, 3, '', '[\"225\",\"226\"]', '{\"k\":\"XIXpremiumplus\",\"m\":[233,242,232],\"v\":[234,238,235],\"c\":\"g\"}', 125, 233, 234, 0, 'g', '2023-11-18 17:09:52', '0000-00-00 00:00:00'),
@@ -8638,8 +8547,7 @@ INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `
 (2536, 20, 1964, 3, '', '[\"250\",\"251\",\"252\",\"254\",\"249\",\"253\",\"262\",\"257\",\"260\",\"258\",\"255\",\"261\",\"256\",\"259\"]', '{\"k\":\"XXcomplete\",\"m\":[269,273,268],\"v\":[246,247,245,275],\"c\":\"m\"}', 133, 263, 246, 0, 'm', '2024-04-23 04:39:53', '2024-04-23 04:39:53'),
 (2537, 20, 1967, 3, '', '[\"250\",\"251\",\"252\",\"254\",\"249\",\"253\",\"262\",\"257\"]', '{\"k\":\"XXcomplete\",\"m\":[273,270,265,272],\"v\":[245,246,275,247],\"c\":\"p\"}', 133, 273, 245, 0, 'p', '2024-04-23 12:20:55', '2024-04-23 12:20:56'),
 (2538, 20, 1861, 3, '', '[\"249\",\"250\",\"251\",\"252\",\"253\",\"254\",\"255\",\"256\",\"257\",\"258\",\"259\",\"260\",\"261\",\"262\"]', '{\"k\":\"XXcomplete\",\"m\":[266,269,273,272],\"v\":[247,246,248,275,243,245],\"c\":\"g\"}', 133, 266, 247, 0, 'g', '2024-04-23 12:29:45', '2024-04-23 12:29:45'),
-(2539, 20, 1965, 3, '', '[\"250\",\"251\",\"252\",\"254\",\"249\",\"253\",\"262\",\"257\",\"260\",\"258\",\"255\",\"261\",\"256\",\"259\"]', '{\"k\":\"XXcomplete\",\"m\":[273,272,266],\"v\":[245,275],\"c\":\"p\"}', 133, 273, 245, 0, 'p', '2024-04-23 14:42:04', '2024-04-23 14:42:05');
-INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `choices`, `pack_id`, `minicurso`, `viagem`, `kit`, `camiseta`, `time`, `reserveTime`) VALUES
+(2539, 20, 1965, 3, '', '[\"250\",\"251\",\"252\",\"254\",\"249\",\"253\",\"262\",\"257\",\"260\",\"258\",\"255\",\"261\",\"256\",\"259\"]', '{\"k\":\"XXcomplete\",\"m\":[273,272,266],\"v\":[245,275],\"c\":\"p\"}', 133, 273, 245, 0, 'p', '2024-04-23 14:42:04', '2024-04-23 14:42:05'),
 (2540, 20, 1969, 3, '', '[\"250\",\"251\",\"252\",\"254\",\"249\",\"253\",\"262\",\"257\",\"260\",\"258\",\"261\",\"256\",\"259\"]', '{\"k\":\"XXcomplete\",\"m\":[273,270,266],\"v\":[248,245,246],\"c\":\"gg\"}', 133, 273, 244, 0, 'gg', '2024-04-23 14:44:15', '2024-04-23 14:44:15'),
 (2541, 20, 1945, 3, '', '[\"251\",\"252\",\"254\",\"249\",\"253\",\"262\",\"257\",\"258\",\"255\",\"261\",\"256\",\"259\"]', '{\"k\":\"XXcomplete\",\"m\":[269,272,268,265,266,270,273],\"v\":[247,246,275,248,243,245],\"c\":\"g\"}', 133, 269, 247, 0, 'g', '2024-04-23 15:52:08', '2024-04-23 15:52:08'),
 (2542, 20, 1970, 3, '', '[\"251\",\"252\",\"254\",\"249\",\"253\"]', '{\"k\":\"XXcomplete\",\"m\":[269,272,265,273],\"v\":[247,246,275,248],\"c\":\"m\"}', 133, 269, 247, 0, 'm', '2024-04-23 15:57:24', '2024-04-23 15:57:25'),
@@ -9067,8 +8975,7 @@ INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibilit
 (210, '[16]', 'Ayrton dos Reis Silva', 'ayrtonreis8@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (211, '', 'Eduardo Fukumoto', 'eduardo.fukumoto@usp.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (212, '', 'Rodrigo Jorge Daher Filho ', 'Rjdfilho@hotmail.com', 'Rodaher', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UTFPR', 1),
-(213, '', 'Gabriel Silva Marcatto', 'gabriel.marcatto7@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UNIFEI', 1);
-INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+(213, '', 'Gabriel Silva Marcatto', 'gabriel.marcatto7@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UNIFEI', 1),
 (214, '', 'Isaak de Oliveira Machado', 'isaak_machado3000@hotmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (215, '', 'Henrique Tomeo Matuoka', 'henriquetm6@hotmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (216, '', 'Bianca Gogoy Biancardi', 'biancardibianc@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
@@ -9274,8 +9181,7 @@ INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibilit
 (416, '', 'fabiana auad de avellar', 'fabiana@openship.com.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 8, 'FASM', 1),
 (417, '', 'Tiago Trocoli', 'tiago1trocoli@gmail.com', 'Cuparra', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (418, '', 'Mauricio Alves Correa', 'mauricio1514@hotmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
-(419, '', 'Hauanni Pastini Paula Leite', 'hauanni@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'IFSP', 1);
-INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+(419, '', 'Hauanni Pastini Paula Leite', 'hauanni@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'IFSP', 1),
 (420, '', 'Lorenzo A. Buscaglia', 'lorenzo.buscaglia@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (421, '', 'Pedro Henrique Ribeiro Abrahao', 'phribeiroabrahao@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (422, '', 'Rene Luis Casarin', 'rene.casarin@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 8, 'USP', 1),
@@ -9480,8 +9386,7 @@ INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibilit
 (624, '', 'guilherme morais', 'morais3295@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, 'UFSJ', 1),
 (625, '', 'RITLER DE MACEDO ALVES', 'ric299@hotmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'IFMT', 1),
 (626, '', 'Larissa Teodoro da Silva', 'larissateodoro095@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFU', 1),
-(627, '', 'asdadqwd', 'dasdsa@asdsa.asd', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 0);
-INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+(627, '', 'asdadqwd', 'dasdsa@asdsa.asd', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 0),
 (628, '', 'Oton Papa', 'ootonpapa@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (629, '', 'Camila Pereira', 'ctspereira@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFLA', 1),
 (630, '', 'Gabriel Mauricio Marques', 'gmmarques97@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
@@ -9685,8 +9590,7 @@ INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibilit
 (831, '', 'Luiz Guilherme Moraes da Silva', 'luizmoraesgui@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'IFMT', 1),
 (832, '', 'Amanda de Oliveira Marinho', 'Amanda.marinho@usp.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (833, '', 'Pedro Rua Neto', 'pedroruaneto@hotmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
-(834, '', 'Priscila Soares de Queirós', 'priscila.s.queiros@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFSJ', 1);
-INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+(834, '', 'Priscila Soares de Queirós', 'priscila.s.queiros@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFSJ', 1),
 (835, '', 'Vinícius Garibaldi Rigon', 'vinigrigon@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFSC', 1),
 (836, '', 'Nicholas Wagner', 'Nicholas.w@grad.ufsc.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFSC', 1),
 (837, '', 'Caio Henrique Braga Santos', 'caiobraga303@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFSJ', 1),
@@ -9890,8 +9794,7 @@ INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibilit
 (1038, '', 'Maria Clara da Silva Morais', 'mariaclaramorais1@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'IFPI', 1),
 (1039, '', 'Felipe Maciel Viana ', 'fmacielviana@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFLA', 1),
 (1040, '', 'Henrique Corrêa da Rosa', 'Henriquecorrea@usp.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'EESC-USP', 1),
-(1041, '', 'Luís Henrique Azevedo Sales', 'rickmkt88@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, 'SENAI', 1);
-INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+(1041, '', 'Luís Henrique Azevedo Sales', 'rickmkt88@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, 'SENAI', 1),
 (1042, '', 'Vinícius Lança de Almeida', 'viniciuslancadealmeida@yahoo.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Usp', 1),
 (1043, '', 'Enzo Rocha Paranaguá', 'Enzoqwe@usp.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Usp sao carlos', 1),
 (1044, '', 'Lívia Silva Rosa', 'liviasilvarosa@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Universidade Federal de Uberlâdia', 1),
@@ -10085,8 +9988,7 @@ INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibilit
 (1235, '', 'hipoeutetoide hipereutetoide', '23a6bd699f@mailboxy.fun', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 20, 'Eutetoidia', 1),
 (1237, '', 'XupaCU de Goianinha', 'xupacu_666@jegue.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, 'numsei', 1),
 (1238, '', 'Hudson de Pádua Lima', 'hudsonpadua@hotmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
-(1239, '', 'Nilmar Lanna da Silva', 'nilmarlanna@hotmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFSJ', 1);
-INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+(1239, '', 'Nilmar Lanna da Silva', 'nilmarlanna@hotmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFSJ', 1),
 (1240, '', 'Benito Palma Miele Aniceto', 'benitopma@hotmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP São Carlos', 1),
 (1241, '', 'Laura Queiroz Soares ', 'laura.q.s@usp.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP São Carlos ', 1),
 (1242, '', 'Pedro Augusto Bianchini Marolde', 'pedromarolde@usp.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP ', 1),
@@ -10278,8 +10180,7 @@ INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibilit
 (1428, '', 'Eric Rohmer', 'rohmer@palestrante.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 1),
 (1429, '', 'Antonio Yukio Ueta', 'yukio@palestrante.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 1),
 (1430, '', 'Thiago Cabrelon', 'cabrelon@palestrante.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 1),
-(1431, '', 'Glauco Caurin', 'glauco@palestrante.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 1);
-INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+(1431, '', 'Glauco Caurin', 'glauco@palestrante.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 1),
 (1432, '', 'Jorge Bidinotto', 'bidinoto@palestrante.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 1),
 (1433, '', 'Denise Pomaleski', 'pomaleski@palestrante.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 1),
 (1434, '', 'Sabrina Faceroli Tridico', 'tridico@palestrante.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 1),
@@ -10483,8 +10384,7 @@ INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibilit
 (1639, '', 'BERNARDO SILVA FORTES', 'fortes.be@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFES', 1),
 (1640, '', 'William Natan Dorner', 'sintetise@hotmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 0),
 (1641, '', 'Renan Soares Pellosi', 'renan.pellosi@unesp.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'FEG/unesp', 1),
-(1642, '', 'Wallace Albert da Silva Antonio', 'wallacealbert4@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Centro Universitário da FEI', 1);
-INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+(1642, '', 'Wallace Albert da Silva Antonio', 'wallacealbert4@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Centro Universitário da FEI', 1),
 (1643, '', 'Andrey Felipe Casas Pulido', 'andreydelascasas06@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 6, 'UNICAMP', 1),
 (1644, '', 'Renato Santos Fernandes De Medeiros', 'renatosfmedeiros@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Universidade de Brasília', 1),
 (1645, '', 'EDUARDO MORELLI FARES', 'eduardo.fares@usp.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP EESC', 1),
@@ -10682,8 +10582,7 @@ INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibilit
 (1839, '', 'Gabriel Paraguassu', 'gabriel.paraguassu@usp.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (1840, '', 'João Pedro Baltieca Garcia', 'joao_garciajp@usp.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (1841, '', 'Lucas Briliano Pedroso', 'lucas.bpedroso@usp.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Universidade de São Paulo ', 1),
-(1842, '', 'Rian Silva Guerra ', 'Riansilvaguerra@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Universidade nove de julho ', 1);
-INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+(1842, '', 'Rian Silva Guerra ', 'Riansilvaguerra@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Universidade nove de julho ', 1),
 (1843, '', 'Paulo Ricardo de Sousa Nascimento', 'pauloricardodesnascimento@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'EESC- USP ', 1),
 (1844, '', 'Vitthor Fernandes de Sousa Dias', 'vitthordias@hotmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'IFG campus Goiânia', 1),
 (1845, '', 'Luan Dias Rodrigues', 'luandiasrodrigues@estudante.ufscar.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 8, 'UFSCAR', 1),
@@ -10878,8 +10777,7 @@ INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibilit
 (2038, '', 'Ian Vicente Tavares', 'ian.tavares@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP - EEL', 1),
 (2039, '', 'Fernanda Elias', 'f259427@dac.unicamp.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Unicamp', 1),
 (2040, '', 'Eduardo Barata', 'e220072@dac.unicamp.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Unicamp ', 1),
-(2041, '', 'Brenda Bruno ', 'brendagoncalvesbruno@estudante.ufscar.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFSCar ', 1);
-INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+(2041, '', 'Brenda Bruno ', 'brendagoncalvesbruno@estudante.ufscar.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFSCar ', 1),
 (2042, '', 'João Victor Neves', 'joaovmvmneves@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Universidade de São Paulo', 1),
 (2043, '', 'Felipe Sene Januário', 'philjan@usp.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (2044, '', 'Fernanda Rezende Silva Carneiro ', 'fernandarsc0805@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 0),
@@ -11347,8 +11245,7 @@ INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
 (327, 'giulioaa', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (328, 'maiarabolzan', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (329, 'saulo.negri.negri', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
-(330, 'KarinTargas', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P');
-INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
+(330, 'KarinTargas', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (331, 'fpinheiro', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (332, 'Jonatas', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (333, 'MarceloBD', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
@@ -11670,8 +11567,7 @@ INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
 (651, 'Cristhian', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (652, 'josegracioli', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (653, 'edsonjr', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
-(654, 'luizalves', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P');
-INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
+(654, 'luizalves', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (655, 'fernando.capucini', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (656, 'ailin', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (657, 'AmandaMalimpensa', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
@@ -11992,8 +11888,7 @@ INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
 (972, 'Gabriela', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (973, 'thiagosm', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (974, 'pauloestevaotm', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
-(975, 'felipedeoliveira', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P');
-INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
+(975, 'felipedeoliveira', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (976, 'joaovictorp', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (977, 'fernnandodib', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (978, 'Tawana', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
@@ -12312,8 +12207,7 @@ INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
 (1291, 'wainerlopes', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1292, 'materito', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1293, 'dudueduardo11', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
-(1294, 'Pedro.opt', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P');
-INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
+(1294, 'Pedro.opt', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1295, 'mariaemiliacastello', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1296, 'Barbar', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1297, 'Nykolas001', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
@@ -12631,8 +12525,7 @@ INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
 (1611, 'paps', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1612, 'MarcusReis', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1613, 'Betina', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
-(1614, 'ajsouza', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P');
-INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
+(1614, 'ajsouza', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1615, 'joaopedrocunhadosantos', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1616, 'arthur.ags', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1617, 'gualmeida16', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
@@ -12952,8 +12845,7 @@ INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
 (1933, 'wendy33', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1934, 'Giovana', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1935, 'ThalesChiu', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
-(1936, 'nathaliaaraujo', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P');
-INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
+(1936, 'nathaliaaraujo', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1937, 'Daniel023', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1938, 'Nicolle', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1939, 'Danilo2511', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
@@ -13200,20 +13092,6 @@ ALTER TABLE `badges`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `cache`
---
-ALTER TABLE `cache`
-  ADD PRIMARY KEY (`key`),
-  ADD KEY `cache_expiration_index` (`expiration`);
-
---
--- Indexes for table `cache_locks`
---
-ALTER TABLE `cache_locks`
-  ADD PRIMARY KEY (`key`),
-  ADD KEY `cache_locks_expiration_index` (`expiration`);
-
---
 -- Indexes for table `engday`
 --
 ALTER TABLE `engday`
@@ -13242,12 +13120,6 @@ ALTER TABLE `gntokens`
 --
 ALTER TABLE `groups`
   ADD PRIMARY KEY (`gid`);
-
---
--- Indexes for table `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pack`
@@ -13279,14 +13151,6 @@ ALTER TABLE `sales`
 --
 ALTER TABLE `sematrons`
   ADD PRIMARY KEY (`sid`);
-
---
--- Indexes for table `sessions`
---
-ALTER TABLE `sessions`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `sessions_user_id_index` (`user_id`),
-  ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
 -- Indexes for table `thimk`
@@ -13348,12 +13212,6 @@ ALTER TABLE `events`
 --
 ALTER TABLE `groups`
   MODIFY `gid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pack`
