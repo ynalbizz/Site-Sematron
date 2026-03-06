@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 20-Jan-2026 às 20:29
+-- Host: localhost
+-- Tempo de geração: 12/02/2026 às 03:15
 -- Versão do servidor: 10.4.32-MariaDB
--- versão do PHP: 8.2.12
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `test`
+-- Banco de dados: `BANCODETESTES`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `badges`
+-- Estrutura para tabela `badges`
 --
 
 CREATE TABLE `badges` (
@@ -35,7 +35,7 @@ CREATE TABLE `badges` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `badges`
+-- Despejando dados para a tabela `badges`
 --
 
 INSERT INTO `badges` (`id`, `url`, `title`, `caption`) VALUES
@@ -55,7 +55,38 @@ INSERT INTO `badges` (`id`, `url`, `title`, `caption`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `engday`
+-- Estrutura para tabela `cache`
+--
+
+CREATE TABLE `cache` (
+  `key` varchar(255) NOT NULL,
+  `value` mediumtext NOT NULL,
+  `expiration` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Despejando dados para a tabela `cache`
+--
+
+INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
+('laravel-cache-boost.roster.scan', 'a:2:{s:6:\"roster\";O:21:\"Laravel\\Roster\\Roster\":3:{s:13:\"\0*\0approaches\";O:29:\"Illuminate\\Support\\Collection\":2:{s:8:\"\0*\0items\";a:1:{i:0;O:23:\"Laravel\\Roster\\Approach\":1:{s:11:\"\0*\0approach\";E:38:\"Laravel\\Roster\\Enums\\Approaches:ACTION\";}}s:28:\"\0*\0escapeWhenCastingToString\";b:0;}s:11:\"\0*\0packages\";O:32:\"Laravel\\Roster\\PackageCollection\":2:{s:8:\"\0*\0items\";a:20:{i:0;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:4:\"^2.0\";s:10:\"\0*\0package\";E:37:\"Laravel\\Roster\\Enums\\Packages:INERTIA\";s:14:\"\0*\0packageName\";s:25:\"inertiajs/inertia-laravel\";s:10:\"\0*\0version\";s:6:\"2.0.19\";s:6:\"\0*\0dev\";b:0;}i:1;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:4:\"^2.0\";s:10:\"\0*\0package\";E:45:\"Laravel\\Roster\\Enums\\Packages:INERTIA_LARAVEL\";s:14:\"\0*\0packageName\";s:25:\"inertiajs/inertia-laravel\";s:10:\"\0*\0version\";s:6:\"2.0.19\";s:6:\"\0*\0dev\";b:0;}i:2;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:5:\"^1.30\";s:10:\"\0*\0package\";E:37:\"Laravel\\Roster\\Enums\\Packages:FORTIFY\";s:14:\"\0*\0packageName\";s:15:\"laravel/fortify\";s:10:\"\0*\0version\";s:6:\"1.33.0\";s:6:\"\0*\0dev\";b:0;}i:3;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:5:\"^12.0\";s:10:\"\0*\0package\";E:37:\"Laravel\\Roster\\Enums\\Packages:LARAVEL\";s:14:\"\0*\0packageName\";s:17:\"laravel/framework\";s:10:\"\0*\0version\";s:7:\"12.47.0\";s:6:\"\0*\0dev\";b:0;}i:4;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:7:\"v0.3.10\";s:10:\"\0*\0package\";E:37:\"Laravel\\Roster\\Enums\\Packages:PROMPTS\";s:14:\"\0*\0packageName\";s:15:\"laravel/prompts\";s:10:\"\0*\0version\";s:6:\"0.3.10\";s:6:\"\0*\0dev\";b:0;}i:5;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:6:\"^0.1.9\";s:10:\"\0*\0package\";E:39:\"Laravel\\Roster\\Enums\\Packages:WAYFINDER\";s:14:\"\0*\0packageName\";s:17:\"laravel/wayfinder\";s:10:\"\0*\0version\";s:6:\"0.1.13\";s:6:\"\0*\0dev\";b:0;}i:6;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:6:\"^0.1.9\";s:10:\"\0*\0package\";E:47:\"Laravel\\Roster\\Enums\\Packages:WAYFINDER_LARAVEL\";s:14:\"\0*\0packageName\";s:17:\"laravel/wayfinder\";s:10:\"\0*\0version\";s:6:\"0.1.13\";s:6:\"\0*\0dev\";b:0;}i:7;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:6:\"v0.5.2\";s:10:\"\0*\0package\";E:33:\"Laravel\\Roster\\Enums\\Packages:MCP\";s:14:\"\0*\0packageName\";s:11:\"laravel/mcp\";s:10:\"\0*\0version\";s:5:\"0.5.2\";s:6:\"\0*\0dev\";b:1;}i:8;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:5:\"^1.24\";s:10:\"\0*\0package\";E:34:\"Laravel\\Roster\\Enums\\Packages:PINT\";s:14:\"\0*\0packageName\";s:12:\"laravel/pint\";s:10:\"\0*\0version\";s:6:\"1.27.0\";s:6:\"\0*\0dev\";b:1;}i:9;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:5:\"^1.41\";s:10:\"\0*\0package\";E:34:\"Laravel\\Roster\\Enums\\Packages:SAIL\";s:14:\"\0*\0packageName\";s:12:\"laravel/sail\";s:10:\"\0*\0version\";s:6:\"1.52.0\";s:6:\"\0*\0dev\";b:1;}i:10;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:1;s:13:\"\0*\0constraint\";s:4:\"^4.3\";s:10:\"\0*\0package\";E:34:\"Laravel\\Roster\\Enums\\Packages:PEST\";s:14:\"\0*\0packageName\";s:12:\"pestphp/pest\";s:10:\"\0*\0version\";s:5:\"4.3.1\";s:6:\"\0*\0dev\";b:1;}i:11;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:6:\"12.5.4\";s:10:\"\0*\0package\";E:37:\"Laravel\\Roster\\Enums\\Packages:PHPUNIT\";s:14:\"\0*\0packageName\";s:15:\"phpunit/phpunit\";s:10:\"\0*\0version\";s:6:\"12.5.4\";s:6:\"\0*\0dev\";b:1;}i:12;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:0:\"\";s:10:\"\0*\0package\";r:13;s:14:\"\0*\0packageName\";s:16:\"@inertiajs/react\";s:10:\"\0*\0version\";s:6:\"2.3.10\";s:6:\"\0*\0dev\";b:0;}i:13;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:0:\"\";s:10:\"\0*\0package\";E:43:\"Laravel\\Roster\\Enums\\Packages:INERTIA_REACT\";s:14:\"\0*\0packageName\";s:16:\"@inertiajs/react\";s:10:\"\0*\0version\";s:6:\"2.3.10\";s:6:\"\0*\0dev\";b:0;}i:14;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:0:\"\";s:10:\"\0*\0package\";E:35:\"Laravel\\Roster\\Enums\\Packages:REACT\";s:14:\"\0*\0packageName\";s:5:\"react\";s:10:\"\0*\0version\";s:6:\"19.2.3\";s:6:\"\0*\0dev\";b:0;}i:15;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:0:\"\";s:10:\"\0*\0package\";E:41:\"Laravel\\Roster\\Enums\\Packages:TAILWINDCSS\";s:14:\"\0*\0packageName\";s:11:\"tailwindcss\";s:10:\"\0*\0version\";s:6:\"4.1.18\";s:6:\"\0*\0dev\";b:0;}i:16;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:0:\"\";s:10:\"\0*\0package\";r:48;s:14:\"\0*\0packageName\";s:30:\"@laravel/vite-plugin-wayfinder\";s:10:\"\0*\0version\";s:5:\"0.1.7\";s:6:\"\0*\0dev\";b:1;}i:17;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:0:\"\";s:10:\"\0*\0package\";E:44:\"Laravel\\Roster\\Enums\\Packages:WAYFINDER_VITE\";s:14:\"\0*\0packageName\";s:30:\"@laravel/vite-plugin-wayfinder\";s:10:\"\0*\0version\";s:5:\"0.1.7\";s:6:\"\0*\0dev\";b:1;}i:18;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:0:\"\";s:10:\"\0*\0package\";E:36:\"Laravel\\Roster\\Enums\\Packages:ESLINT\";s:14:\"\0*\0packageName\";s:6:\"eslint\";s:10:\"\0*\0version\";s:6:\"9.39.2\";s:6:\"\0*\0dev\";b:1;}i:19;O:22:\"Laravel\\Roster\\Package\":6:{s:9:\"\0*\0direct\";b:0;s:13:\"\0*\0constraint\";s:0:\"\";s:10:\"\0*\0package\";E:38:\"Laravel\\Roster\\Enums\\Packages:PRETTIER\";s:14:\"\0*\0packageName\";s:8:\"prettier\";s:10:\"\0*\0version\";s:5:\"3.8.0\";s:6:\"\0*\0dev\";b:1;}}s:28:\"\0*\0escapeWhenCastingToString\";b:0;}s:21:\"\0*\0nodePackageManager\";E:43:\"Laravel\\Roster\\Enums\\NodePackageManager:NPM\";}s:9:\"timestamp\";i:1769514961;}', 1769601361);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `cache_locks`
+--
+
+CREATE TABLE `cache_locks` (
+  `key` varchar(255) NOT NULL,
+  `owner` varchar(255) NOT NULL,
+  `expiration` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `engday`
 --
 
 CREATE TABLE `engday` (
@@ -72,7 +103,7 @@ CREATE TABLE `engday` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Extraindo dados da tabela `engday`
+-- Despejando dados para a tabela `engday`
 --
 
 INSERT INTO `engday` (`id`, `sid`, `name`, `sch`, `rg`, `curso`, `email`, `ano`, `tour`, `hash`) VALUES
@@ -741,7 +772,34 @@ INSERT INTO `engday` (`id`, `sid`, `name`, `sch`, `rg`, `curso`, `email`, `ano`,
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `events`
+-- Estrutura para tabela `eventos`
+--
+
+CREATE TABLE `eventos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `tipo` varchar(255) NOT NULL,
+  `max_participantes` int(11) NOT NULL,
+  `data` date NOT NULL,
+  `horario` time NOT NULL,
+  `duracao` int(11) NOT NULL,
+  `descricao` text NOT NULL,
+  `observacao` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Despejando dados para a tabela `eventos`
+--
+
+INSERT INTO `eventos` (`id`, `nome`, `tipo`, `max_participantes`, `data`, `horario`, `duracao`, `descricao`, `observacao`, `created_at`, `updated_at`) VALUES
+(1, 'comer o cu de quem está lendo', 'X', 61292292, '2026-11-23', '20:00:00', 2, 'É exatamente o que você leu', 'traga camisinha', '2026-01-27 22:01:28', '2026-01-27 22:01:28');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `events`
 --
 
 CREATE TABLE `events` (
@@ -757,7 +815,7 @@ CREATE TABLE `events` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `events`
+-- Despejando dados para a tabela `events`
 --
 
 INSERT INTO `events` (`eid`, `type`, `start`, `end`, `name`, `info`, `extra`, `sid`, `ts`) VALUES
@@ -1052,7 +1110,7 @@ INSERT INTO `events` (`eid`, `type`, `start`, `end`, `name`, `info`, `extra`, `s
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `gntokens`
+-- Estrutura para tabela `gntokens`
 --
 
 CREATE TABLE `gntokens` (
@@ -1061,7 +1119,7 @@ CREATE TABLE `gntokens` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Extraindo dados da tabela `gntokens`
+-- Despejando dados para a tabela `gntokens`
 --
 
 INSERT INTO `gntokens` (`pid`, `tokens`) VALUES
@@ -1144,7 +1202,7 @@ INSERT INTO `gntokens` (`pid`, `tokens`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `groups`
+-- Estrutura para tabela `groups`
 --
 
 CREATE TABLE `groups` (
@@ -1155,7 +1213,7 @@ CREATE TABLE `groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `groups`
+-- Despejando dados para a tabela `groups`
 --
 
 INSERT INTO `groups` (`gid`, `id`, `name`, `permissions`) VALUES
@@ -1167,7 +1225,28 @@ INSERT INTO `groups` (`gid`, `id`, `name`, `permissions`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pack`
+-- Estrutura para tabela `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Despejando dados para a tabela `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2026_01_19_201804_create_sessions_table', 1),
+(2, '2026_01_20_044337_create_cache_table', 2),
+(3, '2026_01_21_035022_tabela_eventos', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `pack`
 --
 
 CREATE TABLE `pack` (
@@ -1182,7 +1261,7 @@ CREATE TABLE `pack` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `pack`
+-- Despejando dados para a tabela `pack`
 --
 
 INSERT INTO `pack` (`id`, `sid`, `nome`, `preço`, `palesta`, `minicurso`, `visita`, `kit`) VALUES
@@ -1259,7 +1338,7 @@ INSERT INTO `pack` (`id`, `sid`, `nome`, `preço`, `palesta`, `minicurso`, `visi
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `privacy`
+-- Estrutura para tabela `privacy`
 --
 
 CREATE TABLE `privacy` (
@@ -1268,7 +1347,7 @@ CREATE TABLE `privacy` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Extraindo dados da tabela `privacy`
+-- Despejando dados para a tabela `privacy`
 --
 
 INSERT INTO `privacy` (`pid`, `agreed`) VALUES
@@ -3166,7 +3245,7 @@ INSERT INTO `privacy` (`pid`, `agreed`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `resettokens`
+-- Estrutura para tabela `resettokens`
 --
 
 CREATE TABLE `resettokens` (
@@ -3175,7 +3254,7 @@ CREATE TABLE `resettokens` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Extraindo dados da tabela `resettokens`
+-- Despejando dados para a tabela `resettokens`
 --
 
 INSERT INTO `resettokens` (`token`, `uid`) VALUES
@@ -3344,7 +3423,7 @@ INSERT INTO `resettokens` (`token`, `uid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `sales`
+-- Estrutura para tabela `sales`
 --
 
 CREATE TABLE `sales` (
@@ -3357,7 +3436,7 @@ CREATE TABLE `sales` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `sales`
+-- Despejando dados para a tabela `sales`
 --
 
 INSERT INTO `sales` (`code`, `pid`, `path`, `uid`, `status`, `time`) VALUES
@@ -6224,7 +6303,7 @@ INSERT INTO `sales` (`code`, `pid`, `path`, `uid`, `status`, `time`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `sematrons`
+-- Estrutura para tabela `sematrons`
 --
 
 CREATE TABLE `sematrons` (
@@ -6235,7 +6314,7 @@ CREATE TABLE `sematrons` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `sematrons`
+-- Despejando dados para a tabela `sematrons`
 --
 
 INSERT INTO `sematrons` (`sid`, `name`, `insc`, `pre`) VALUES
@@ -6257,7 +6336,31 @@ INSERT INTO `sematrons` (`sid`, `name`, `insc`, `pre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `termsessions`
+-- Estrutura para tabela `sessions`
+--
+
+CREATE TABLE `sessions` (
+  `id` varchar(255) NOT NULL,
+  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `ip_address` varchar(45) DEFAULT NULL,
+  `user_agent` text DEFAULT NULL,
+  `payload` longtext NOT NULL,
+  `last_activity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Despejando dados para a tabela `sessions`
+--
+
+INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
+('KgDlATiAI9kc8gLIuOcg78nmJ5WRzGijqLu4MzTY', NULL, '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiQ0N4NUhwbmt5MVl1em5qM0xVdVVGZUM5TFVpV1BvSXNhV1pWdkFyOSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2dpbiI7czo1OiJyb3V0ZSI7czo1OiJsb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1770862212),
+('TCgv2Ac67rdYS8oacpyKGKEgpwPV0yahOYiYqARH', 2100, '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiN2pQUzZMalRyOHR4MDZYU2ZUTVVvUlB6Y0dzYkYwUDk4b0RLWEVlVyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9pbmljaW8iO3M6NToicm91dGUiO3M6NjoiaW5pY2lvIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MjEwMDt9', 1770862477),
+('Xev6YH0wPRQ7WIeHafgUw1dmiMTthyWQlWUK4RgL', 2100, '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiNjRyV2ZlSEg0SXZodWJvcUZiOHZMcG9zcHN0UnVoWG96b2lGZWlpdiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9pbmljaW8iO3M6NToicm91dGUiO3M6NjoiaW5pY2lvIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MjEwMDt9', 1770862223);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `termsessions`
 --
 
 CREATE TABLE `termsessions` (
@@ -6269,7 +6372,7 @@ CREATE TABLE `termsessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Extraindo dados da tabela `termsessions`
+-- Despejando dados para a tabela `termsessions`
 --
 
 INSERT INTO `termsessions` (`id`, `saved`, `owner`, `locked`, `data`) VALUES
@@ -6282,7 +6385,7 @@ INSERT INTO `termsessions` (`id`, `saved`, `owner`, `locked`, `data`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `thimk`
+-- Estrutura para tabela `thimk`
 --
 
 CREATE TABLE `thimk` (
@@ -6290,7 +6393,7 @@ CREATE TABLE `thimk` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Extraindo dados da tabela `thimk`
+-- Despejando dados para a tabela `thimk`
 --
 
 INSERT INTO `thimk` (`uid`) VALUES
@@ -6402,7 +6505,7 @@ INSERT INTO `thimk` (`uid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `userdata`
+-- Estrutura para tabela `userdata`
 --
 
 CREATE TABLE `userdata` (
@@ -6416,14 +6519,14 @@ CREATE TABLE `userdata` (
   `pack_id` int(11) DEFAULT NULL,
   `minicurso` int(11) NOT NULL COMMENT 'ID do evento',
   `viagem` int(11) NOT NULL COMMENT 'ID do evento',
-  `kit` tinyint(1) NOT NULL,
+  `kit` tinyint(1) DEFAULT 0,
   `camiseta` varchar(10) NOT NULL,
   `time` timestamp NOT NULL DEFAULT current_timestamp(),
   `reserveTime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci COMMENT='Participantes';
 
 --
--- Extraindo dados da tabela `userdata`
+-- Despejando dados para a tabela `userdata`
 --
 
 INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `choices`, `pack_id`, `minicurso`, `viagem`, `kit`, `camiseta`, `time`, `reserveTime`) VALUES
@@ -8729,15 +8832,21 @@ INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `
 (2760, 17, 3, 3, '', '[\"202\"]', '{\"k\":\"XVIIcompleto\",\"m\":[196,197,195],\"v\":[199,198,201],\"c\":\"-\"}', 110, 196, 199, 0, '-', '2021-10-08 22:21:54', '2021-10-08 22:21:54'),
 (2761, 11, 3, 3, '', '[\"48\",\"43\",\"31\",\"47\",\"46\",\"32\",\"44\",\"45\",\"33\",\"34\",29,30]', '{\"k\":\"XIkit\",\"m\":[36,22,26,25,19],\"v\":[17,38,24,16,28,27,14,39,37],\"c\":\"m\"}', 75, 26, 17, 0, 'm', '2015-05-06 16:06:57', '2015-05-06 16:07:00'),
 (2762, 22, 3, 3, '', '', '{\"k\":\"completo\",\"m\":[273],\"v\":[282],\"c\":\"gg\"}', 135, 273, 282, 0, 'gg', '2026-01-10 18:50:03', '2026-01-10 18:50:03'),
-(2763, 22, 2153, 3, '', '', '{\"k\":\"completo\",\"m\":[],\"v\":[],\"c\":\"m\"}', 135, 0, 0, 0, 'm', '2026-01-15 16:35:30', '2026-01-15 16:35:30');
+(2763, 22, 2153, 3, '', '', '{\"k\":\"completo\",\"m\":[],\"v\":[],\"c\":\"m\"}', 135, 0, 0, 0, 'm', '2026-01-15 16:35:30', '2026-01-15 16:35:30'),
+(2764, 22, 2100, 3, '0', '\"[]\"', '\"{\\\"m\\\":[\\\"1\\\"]}\"', NULL, 0, 0, 0, '-', '2026-01-29 02:21:41', '2026-01-29 02:21:41'),
+(2769, 22, 2123, 3, '0', '\"[]\"', '\"{\\\"m\\\":[\\\"1\\\"]}\"', 137, 0, 0, 0, '-', '2026-01-29 16:02:36', '2026-01-29 16:02:36'),
+(2770, 22, 2124, 3, '0', '\"[]\"', '\"{\\\"v\\\":[\\\"0\\\"],\\\"m\\\":[\\\"0\\\"]}\"', 138, 0, 0, 0, 'p', '2026-01-29 16:03:25', '2026-01-29 16:03:25'),
+(2771, 22, 2150, 3, '0', '\"[]\"', '\"{\\\"v\\\":[\\\"1\\\"],\\\"m\\\":[\\\"0\\\"]}\"', 138, 0, 0, 0, 'p', '2026-01-30 00:51:32', '2026-01-30 00:51:32'),
+(2772, 22, 2125, 3, '0', '\"[]\"', '\"{\\\"v\\\":[\\\"1\\\"],\\\"m\\\":[\\\"1\\\"]}\"', 138, 0, 0, 0, 'p', '2026-01-30 20:19:01', '2026-01-30 20:19:01'),
+(2773, 22, 2073, 3, '0', '\"[]\"', '\"{\\\"v\\\":[\\\"1\\\"],\\\"m\\\":[\\\"0\\\"]}\"', 138, 0, 0, 0, 'p', '2026-02-02 22:49:42', '2026-02-02 22:49:42');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `userinfo`
+-- Estrutura para tabela `userinfos`
 --
 
-CREATE TABLE `userinfo` (
+CREATE TABLE `userinfos` (
   `uid` int(11) NOT NULL COMMENT 'ID do usuario',
   `badges` text NOT NULL COMMENT 'JSON contendo os badges coletados',
   `name` text NOT NULL,
@@ -8761,10 +8870,10 @@ CREATE TABLE `userinfo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `userinfo`
+-- Despejando dados para a tabela `userinfos`
 --
 
-INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
 (1, '[6,5,14,16]', 'João Pedro Finoto', 'jpfm2210@gmail.com', 'finoto', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (3, '[6]', 'root', 'sematron@eesc.usp.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 1),
 (5, '[6]', 'Vitor Laguerra Netto Gioia', 'vitorlngioia@gmail.com', 'vitor.gioia', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
@@ -8969,7 +9078,7 @@ INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility
 (211, '', 'Eduardo Fukumoto', 'eduardo.fukumoto@usp.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (212, '', 'Rodrigo Jorge Daher Filho ', 'Rjdfilho@hotmail.com', 'Rodaher', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UTFPR', 1),
 (213, '', 'Gabriel Silva Marcatto', 'gabriel.marcatto7@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UNIFEI', 1);
-INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
 (214, '', 'Isaak de Oliveira Machado', 'isaak_machado3000@hotmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (215, '', 'Henrique Tomeo Matuoka', 'henriquetm6@hotmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (216, '', 'Bianca Gogoy Biancardi', 'biancardibianc@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
@@ -9176,7 +9285,7 @@ INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility
 (417, '', 'Tiago Trocoli', 'tiago1trocoli@gmail.com', 'Cuparra', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (418, '', 'Mauricio Alves Correa', 'mauricio1514@hotmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (419, '', 'Hauanni Pastini Paula Leite', 'hauanni@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'IFSP', 1);
-INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
 (420, '', 'Lorenzo A. Buscaglia', 'lorenzo.buscaglia@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (421, '', 'Pedro Henrique Ribeiro Abrahao', 'phribeiroabrahao@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (422, '', 'Rene Luis Casarin', 'rene.casarin@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 8, 'USP', 1),
@@ -9382,7 +9491,7 @@ INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility
 (625, '', 'RITLER DE MACEDO ALVES', 'ric299@hotmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'IFMT', 1),
 (626, '', 'Larissa Teodoro da Silva', 'larissateodoro095@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFU', 1),
 (627, '', 'asdadqwd', 'dasdsa@asdsa.asd', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 0);
-INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
 (628, '', 'Oton Papa', 'ootonpapa@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (629, '', 'Camila Pereira', 'ctspereira@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFLA', 1),
 (630, '', 'Gabriel Mauricio Marques', 'gmmarques97@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
@@ -9587,7 +9696,7 @@ INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility
 (832, '', 'Amanda de Oliveira Marinho', 'Amanda.marinho@usp.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (833, '', 'Pedro Rua Neto', 'pedroruaneto@hotmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (834, '', 'Priscila Soares de Queirós', 'priscila.s.queiros@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFSJ', 1);
-INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
 (835, '', 'Vinícius Garibaldi Rigon', 'vinigrigon@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFSC', 1),
 (836, '', 'Nicholas Wagner', 'Nicholas.w@grad.ufsc.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFSC', 1),
 (837, '', 'Caio Henrique Braga Santos', 'caiobraga303@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFSJ', 1),
@@ -9792,7 +9901,7 @@ INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility
 (1039, '', 'Felipe Maciel Viana ', 'fmacielviana@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFLA', 1),
 (1040, '', 'Henrique Corrêa da Rosa', 'Henriquecorrea@usp.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'EESC-USP', 1),
 (1041, '', 'Luís Henrique Azevedo Sales', 'rickmkt88@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, 'SENAI', 1);
-INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
 (1042, '', 'Vinícius Lança de Almeida', 'viniciuslancadealmeida@yahoo.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Usp', 1),
 (1043, '', 'Enzo Rocha Paranaguá', 'Enzoqwe@usp.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Usp sao carlos', 1),
 (1044, '', 'Lívia Silva Rosa', 'liviasilvarosa@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Universidade Federal de Uberlâdia', 1),
@@ -9987,7 +10096,7 @@ INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility
 (1237, '', 'XupaCU de Goianinha', 'xupacu_666@jegue.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, 'numsei', 1),
 (1238, '', 'Hudson de Pádua Lima', 'hudsonpadua@hotmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (1239, '', 'Nilmar Lanna da Silva', 'nilmarlanna@hotmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFSJ', 1);
-INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
 (1240, '', 'Benito Palma Miele Aniceto', 'benitopma@hotmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP São Carlos', 1),
 (1241, '', 'Laura Queiroz Soares ', 'laura.q.s@usp.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP São Carlos ', 1),
 (1242, '', 'Pedro Augusto Bianchini Marolde', 'pedromarolde@usp.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP ', 1),
@@ -10180,7 +10289,7 @@ INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility
 (1429, '', 'Antonio Yukio Ueta', 'yukio@palestrante.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 1),
 (1430, '', 'Thiago Cabrelon', 'cabrelon@palestrante.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 1),
 (1431, '', 'Glauco Caurin', 'glauco@palestrante.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 1);
-INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
 (1432, '', 'Jorge Bidinotto', 'bidinoto@palestrante.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 1),
 (1433, '', 'Denise Pomaleski', 'pomaleski@palestrante.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 1),
 (1434, '', 'Sabrina Faceroli Tridico', 'tridico@palestrante.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 1),
@@ -10385,7 +10494,7 @@ INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility
 (1640, '', 'William Natan Dorner', 'sintetise@hotmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 0),
 (1641, '', 'Renan Soares Pellosi', 'renan.pellosi@unesp.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'FEG/unesp', 1),
 (1642, '', 'Wallace Albert da Silva Antonio', 'wallacealbert4@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Centro Universitário da FEI', 1);
-INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
 (1643, '', 'Andrey Felipe Casas Pulido', 'andreydelascasas06@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 6, 'UNICAMP', 1),
 (1644, '', 'Renato Santos Fernandes De Medeiros', 'renatosfmedeiros@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Universidade de Brasília', 1),
 (1645, '', 'EDUARDO MORELLI FARES', 'eduardo.fares@usp.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP EESC', 1),
@@ -10584,7 +10693,7 @@ INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility
 (1840, '', 'João Pedro Baltieca Garcia', 'joao_garciajp@usp.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (1841, '', 'Lucas Briliano Pedroso', 'lucas.bpedroso@usp.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Universidade de São Paulo ', 1),
 (1842, '', 'Rian Silva Guerra ', 'Riansilvaguerra@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Universidade nove de julho ', 1);
-INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
 (1843, '', 'Paulo Ricardo de Sousa Nascimento', 'pauloricardodesnascimento@gmail.com', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'EESC- USP ', 1),
 (1844, '', 'Vitthor Fernandes de Sousa Dias', 'vitthordias@hotmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'IFG campus Goiânia', 1),
 (1845, '', 'Luan Dias Rodrigues', 'luandiasrodrigues@estudante.ufscar.br', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 8, 'UFSCAR', 1),
@@ -10780,7 +10889,7 @@ INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility
 (2039, '', 'Fernanda Elias', 'f259427@dac.unicamp.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Unicamp', 1),
 (2040, '', 'Eduardo Barata', 'e220072@dac.unicamp.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Unicamp ', 1),
 (2041, '', 'Brenda Bruno ', 'brendagoncalvesbruno@estudante.ufscar.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'UFSCar ', 1);
-INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
+INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
 (2042, '', 'João Victor Neves', 'joaovmvmneves@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Universidade de São Paulo', 1),
 (2043, '', 'Felipe Sene Januário', 'philjan@usp.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'USP', 1),
 (2044, '', 'Fernanda Rezende Silva Carneiro ', 'fernandarsc0805@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 0),
@@ -10903,26 +11012,29 @@ INSERT INTO `userinfo` (`uid`, `badges`, `name`, `email`, `picture`, `visibility
 (2168, '', 'VINICIUS FERREIRA LIMA', 'vini.ferreiralima@usp.br', '', 'private', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 4, 'Usp', 1),
 (2169, '', 'Hello', 'njsrildd@dont-reply.me', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 0),
 (2170, '', 'Marlon Lee Kunieda Castro ', 'Marlonleekc@gmail.com', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 0),
-(2171, '', 'Shraunljm', 'yasmamadoo@bubuk.site', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 0);
+(2171, '', 'Shraunljm', 'yasmamadoo@bubuk.site', '', 'public', '12345678969', 'puta que pariu', 'SP', 'onde judas perdeu as botas', '12345678', '(69)40028922', '12345678', 'mk', '123456789', 'PQP', '01/01/2000', 0, '', 0),
+(2172, '[6]', 'Teste', 'teste@usp.br', '', 'public', '10660995964', 'São Carlos', 'SP', 'Rua Salvador 706', '49247294', '45998374254', '16863802', 'mk', '10660995964', '', '2026-01-22', 0, 'EESC-USP', 0),
+(2173, '[6]', 'Teste@', 'teste2@usp.br', '', 'public', '3114941', 'sao carlos', 'SP', 'rua numero bairro', '7257250', '45998374254', '703103', 'mk', '31313y19', '', '5111-02-04', 0, 'Uniesquina', 0),
+(2174, '[6]', 'Teste teste de teste', 'teste3@usp.br', '', 'public', '5727520', 'João Pessoa', 'SP', 'Rua Endereço bairro', '767469', '853036', '16863802', 'mk', '483929495', '', '2000-03-05', 0, 'eesc - usp', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `userlogin`
+-- Estrutura para tabela `userlogins`
 --
 
-CREATE TABLE `userlogin` (
+CREATE TABLE `userlogins` (
   `uid` int(11) NOT NULL,
   `username` varchar(32) NOT NULL,
-  `pass` varchar(64) NOT NULL,
+  `password` varchar(64) NOT NULL,
   `salt` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `userlogin`
+-- Despejando dados para a tabela `userlogins`
 --
 
-INSERT INTO `userlogin` (`uid`, `username`, `pass`, `salt`) VALUES
+INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
 (1, 'finoto', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (3, 'root', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (4, 'saulo.negri', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
@@ -11246,7 +11358,7 @@ INSERT INTO `userlogin` (`uid`, `username`, `pass`, `salt`) VALUES
 (328, 'maiarabolzan', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (329, 'saulo.negri.negri', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (330, 'KarinTargas', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P');
-INSERT INTO `userlogin` (`uid`, `username`, `pass`, `salt`) VALUES
+INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
 (331, 'fpinheiro', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (332, 'Jonatas', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (333, 'MarceloBD', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
@@ -11569,7 +11681,7 @@ INSERT INTO `userlogin` (`uid`, `username`, `pass`, `salt`) VALUES
 (652, 'josegracioli', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (653, 'edsonjr', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (654, 'luizalves', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P');
-INSERT INTO `userlogin` (`uid`, `username`, `pass`, `salt`) VALUES
+INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
 (655, 'fernando.capucini', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (656, 'ailin', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (657, 'AmandaMalimpensa', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
@@ -11891,7 +12003,7 @@ INSERT INTO `userlogin` (`uid`, `username`, `pass`, `salt`) VALUES
 (973, 'thiagosm', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (974, 'pauloestevaotm', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (975, 'felipedeoliveira', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P');
-INSERT INTO `userlogin` (`uid`, `username`, `pass`, `salt`) VALUES
+INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
 (976, 'joaovictorp', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (977, 'fernnandodib', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (978, 'Tawana', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
@@ -12211,7 +12323,7 @@ INSERT INTO `userlogin` (`uid`, `username`, `pass`, `salt`) VALUES
 (1292, 'materito', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1293, 'dudueduardo11', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1294, 'Pedro.opt', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P');
-INSERT INTO `userlogin` (`uid`, `username`, `pass`, `salt`) VALUES
+INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
 (1295, 'mariaemiliacastello', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1296, 'Barbar', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1297, 'Nykolas001', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
@@ -12530,7 +12642,7 @@ INSERT INTO `userlogin` (`uid`, `username`, `pass`, `salt`) VALUES
 (1612, 'MarcusReis', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1613, 'Betina', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1614, 'ajsouza', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P');
-INSERT INTO `userlogin` (`uid`, `username`, `pass`, `salt`) VALUES
+INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
 (1615, 'joaopedrocunhadosantos', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1616, 'arthur.ags', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1617, 'gualmeida16', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
@@ -12851,7 +12963,7 @@ INSERT INTO `userlogin` (`uid`, `username`, `pass`, `salt`) VALUES
 (1934, 'Giovana', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1935, 'ThalesChiu', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1936, 'nathaliaaraujo', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P');
-INSERT INTO `userlogin` (`uid`, `username`, `pass`, `salt`) VALUES
+INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
 (1937, 'Daniel023', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1938, 'Nicolle', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (1939, 'Danilo2511', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
@@ -13082,102 +13194,139 @@ INSERT INTO `userlogin` (`uid`, `username`, `pass`, `salt`) VALUES
 (2168, 'Vini.ferreiralima', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (2169, 'Alice', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
 (2170, 'Marlonlee', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
-(2171, 'Shraunljm', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P');
+(2171, 'Shraunljm', '00de66f932886da548d3480eae16c682006b8e24c4b3fa30c02c74923fd2a26a', 'zE2bi6Xz0FTl8xJzl5t2Df3ThRSoa6SPBKqjHEZ7KsjIgs7Hnq9qM39tKSYkOr0P'),
+(2172, 'Teste', '$2y$12$UTJvWB6omB9hSX5G4nnobeB/dDjEIhLJrv1/GiURujwZQ3aJFNqyW', 'HNuPJ4FhY3tojEZT4DQYjTDXLi8CzjfjDsg4qQqNgb4BF0sYzdGQxHGhA8bY2eSS'),
+(2173, 'teste2', '$2y$12$A1Nx9NSdGNVJUbaY/i47R.sNHtfC6fPi9oB2ZMpVRGmHrm4Hh9o4y', 'bTohKLqW6sP9foSX1GhZZguAYsADg7awQmJlHaPx8kSRNxzyNXMYzhpk2uK9ijRT'),
+(2174, 'teste3', '$2y$12$T4pMICIHsyIykut9CiuWcuAf6tfKAwCnIqYf1ovIwsAZlnqyqi86K', 'MQtQbPu4kOAkRfFJElo1E5DYLt9wNQMF73T9FxvBtvRH9KGyGaN71UnwdRf8JiMy');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `badges`
+-- Índices de tabela `badges`
 --
 ALTER TABLE `badges`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `engday`
+-- Índices de tabela `cache`
+--
+ALTER TABLE `cache`
+  ADD PRIMARY KEY (`key`),
+  ADD KEY `cache_expiration_index` (`expiration`);
+
+--
+-- Índices de tabela `cache_locks`
+--
+ALTER TABLE `cache_locks`
+  ADD PRIMARY KEY (`key`),
+  ADD KEY `cache_locks_expiration_index` (`expiration`);
+
+--
+-- Índices de tabela `engday`
 --
 ALTER TABLE `engday`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `events`
+-- Índices de tabela `eventos`
+--
+ALTER TABLE `eventos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `events`
 --
 ALTER TABLE `events`
   ADD PRIMARY KEY (`eid`);
 
 --
--- Índices para tabela `gntokens`
+-- Índices de tabela `gntokens`
 --
 ALTER TABLE `gntokens`
   ADD PRIMARY KEY (`pid`);
 
 --
--- Índices para tabela `groups`
+-- Índices de tabela `groups`
 --
 ALTER TABLE `groups`
   ADD PRIMARY KEY (`gid`);
 
 --
--- Índices para tabela `pack`
+-- Índices de tabela `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `pack`
 --
 ALTER TABLE `pack`
   ADD PRIMARY KEY (`id`),
   ADD KEY `sid` (`sid`);
 
 --
--- Índices para tabela `privacy`
+-- Índices de tabela `privacy`
 --
 ALTER TABLE `privacy`
   ADD PRIMARY KEY (`pid`);
 
 --
--- Índices para tabela `resettokens`
+-- Índices de tabela `resettokens`
 --
 ALTER TABLE `resettokens`
   ADD PRIMARY KEY (`token`);
 
 --
--- Índices para tabela `sales`
+-- Índices de tabela `sales`
 --
 ALTER TABLE `sales`
   ADD PRIMARY KEY (`code`);
 
 --
--- Índices para tabela `sematrons`
+-- Índices de tabela `sematrons`
 --
 ALTER TABLE `sematrons`
   ADD PRIMARY KEY (`sid`);
 
 --
--- Índices para tabela `thimk`
+-- Índices de tabela `sessions`
+--
+ALTER TABLE `sessions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `sessions_user_id_index` (`user_id`),
+  ADD KEY `sessions_last_activity_index` (`last_activity`);
+
+--
+-- Índices de tabela `thimk`
 --
 ALTER TABLE `thimk`
   ADD PRIMARY KEY (`uid`);
 
 --
--- Índices para tabela `userdata`
+-- Índices de tabela `userdata`
 --
 ALTER TABLE `userdata`
   ADD PRIMARY KEY (`pid`),
   ADD KEY `fk_userdata_pack_id` (`pack_id`);
 
 --
--- Índices para tabela `userinfo`
+-- Índices de tabela `userinfos`
 --
-ALTER TABLE `userinfo`
+ALTER TABLE `userinfos`
   ADD PRIMARY KEY (`uid`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Índices para tabela `userlogin`
+-- Índices de tabela `userlogins`
 --
-ALTER TABLE `userlogin`
+ALTER TABLE `userlogins`
   ADD PRIMARY KEY (`uid`),
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
@@ -13193,6 +13342,12 @@ ALTER TABLE `engday`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=697;
 
 --
+-- AUTO_INCREMENT de tabela `eventos`
+--
+ALTER TABLE `eventos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de tabela `events`
 --
 ALTER TABLE `events`
@@ -13205,6 +13360,12 @@ ALTER TABLE `groups`
   MODIFY `gid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT de tabela `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de tabela `pack`
 --
 ALTER TABLE `pack`
@@ -13214,26 +13375,32 @@ ALTER TABLE `pack`
 -- AUTO_INCREMENT de tabela `userdata`
 --
 ALTER TABLE `userdata`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID do Participante', AUTO_INCREMENT=2764;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID do Participante', AUTO_INCREMENT=2774;
 
 --
--- AUTO_INCREMENT de tabela `userlogin`
+-- AUTO_INCREMENT de tabela `userinfos`
 --
-ALTER TABLE `userlogin`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2172;
+ALTER TABLE `userinfos`
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID do usuario', AUTO_INCREMENT=2175;
 
 --
--- Restrições para despejos de tabelas
+-- AUTO_INCREMENT de tabela `userlogins`
+--
+ALTER TABLE `userlogins`
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2175;
+
+--
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `pack`
+-- Restrições para tabelas `pack`
 --
 ALTER TABLE `pack`
   ADD CONSTRAINT `pack_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `sematrons` (`sid`);
 
 --
--- Limitadores para a tabela `userdata`
+-- Restrições para tabelas `userdata`
 --
 ALTER TABLE `userdata`
   ADD CONSTRAINT `fk_userdata_pack_id` FOREIGN KEY (`pack_id`) REFERENCES `pack` (`id`);

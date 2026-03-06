@@ -48,6 +48,8 @@ Route::get('/esqueceu-a-senha', fn () => view('esqueceu-a-senha'))->name('esquec
 
 Route::get('/pao', fn () => view('pao'))->name('pao');
 
+Route::get('/perfil', fn () => view('perfil'))->name('perfil');
+
 Route::get('/adm/list', [App\Http\Controllers\admController::class, 'showInscList'])->name('adm.list');
 
 Route::post('/inscricoes', [InscricaoController::class, 'store']);
