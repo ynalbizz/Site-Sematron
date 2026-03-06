@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.1deb3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Tempo de geração: 12/02/2026 às 03:15
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Host: localhost:3306
+-- Generation Time: Mar 06, 2026 at 06:24 PM
+-- Server version: 8.0.45-0ubuntu0.24.04.1
+-- PHP Version: 8.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,24 +18,24 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `BANCODETESTES`
+-- Database: `test`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `badges`
+-- Table structure for table `badges`
 --
 
 CREATE TABLE `badges` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `url` varchar(256) NOT NULL,
   `title` text NOT NULL,
   `caption` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Despejando dados para a tabela `badges`
+-- Dumping data for table `badges`
 --
 
 INSERT INTO `badges` (`id`, `url`, `title`, `caption`) VALUES
@@ -55,17 +55,17 @@ INSERT INTO `badges` (`id`, `url`, `title`, `caption`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cache`
+-- Table structure for table `cache`
 --
 
 CREATE TABLE `cache` (
-  `key` varchar(255) NOT NULL,
-  `value` mediumtext NOT NULL,
-  `expiration` int(11) NOT NULL
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `expiration` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Despejando dados para a tabela `cache`
+-- Dumping data for table `cache`
 --
 
 INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
@@ -74,36 +74,36 @@ INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cache_locks`
+-- Table structure for table `cache_locks`
 --
 
 CREATE TABLE `cache_locks` (
-  `key` varchar(255) NOT NULL,
-  `owner` varchar(255) NOT NULL,
-  `expiration` int(11) NOT NULL
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `owner` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `expiration` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `engday`
+-- Table structure for table `engday`
 --
 
 CREATE TABLE `engday` (
-  `id` int(11) NOT NULL,
-  `sid` int(11) NOT NULL DEFAULT 15,
-  `name` varchar(64) NOT NULL,
-  `sch` varchar(64) NOT NULL,
-  `rg` varchar(16) NOT NULL,
-  `curso` set('mk','ca','aero','ambiental','civil','comp','pro','eletrica','mecanica','eng','outro') NOT NULL,
-  `email` varchar(64) NOT NULL,
-  `ano` set('1','2','3','fund','cursinho','outro') NOT NULL,
-  `tour` set('A','B','C') NOT NULL,
-  `hash` varchar(6) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id` int NOT NULL,
+  `sid` int NOT NULL DEFAULT '15',
+  `name` varchar(64) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `sch` varchar(64) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `rg` varchar(16) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `curso` set('mk','ca','aero','ambiental','civil','comp','pro','eletrica','mecanica','eng','outro') COLLATE utf8mb3_unicode_ci NOT NULL,
+  `email` varchar(64) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `ano` set('1','2','3','fund','cursinho','outro') COLLATE utf8mb3_unicode_ci NOT NULL,
+  `tour` set('A','B','C') COLLATE utf8mb3_unicode_ci NOT NULL,
+  `hash` varchar(6) COLLATE utf8mb3_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Despejando dados para a tabela `engday`
+-- Dumping data for table `engday`
 --
 
 INSERT INTO `engday` (`id`, `sid`, `name`, `sch`, `rg`, `curso`, `email`, `ano`, `tour`, `hash`) VALUES
@@ -772,25 +772,25 @@ INSERT INTO `engday` (`id`, `sid`, `name`, `sch`, `rg`, `curso`, `email`, `ano`,
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `eventos`
+-- Table structure for table `eventos`
 --
 
 CREATE TABLE `eventos` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `nome` varchar(255) NOT NULL,
-  `tipo` varchar(255) NOT NULL,
-  `max_participantes` int(11) NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `nome` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tipo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `max_participantes` int NOT NULL,
   `data` date NOT NULL,
   `horario` time NOT NULL,
-  `duracao` int(11) NOT NULL,
-  `descricao` text NOT NULL,
-  `observacao` text DEFAULT NULL,
+  `duracao` int NOT NULL,
+  `descricao` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `observacao` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Despejando dados para a tabela `eventos`
+-- Dumping data for table `eventos`
 --
 
 INSERT INTO `eventos` (`id`, `nome`, `tipo`, `max_participantes`, `data`, `horario`, `duracao`, `descricao`, `observacao`, `created_at`, `updated_at`) VALUES
@@ -799,23 +799,23 @@ INSERT INTO `eventos` (`id`, `nome`, `tipo`, `max_participantes`, `data`, `horar
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `events`
+-- Table structure for table `events`
 --
 
 CREATE TABLE `events` (
-  `eid` int(11) NOT NULL,
+  `eid` int NOT NULL,
   `type` set('palestra','minicurso','viagem','mesa','feira','evento','coffee') NOT NULL DEFAULT 'palestra',
   `start` datetime NOT NULL,
   `end` datetime NOT NULL,
   `name` text NOT NULL,
   `info` text NOT NULL,
   `extra` text NOT NULL,
-  `sid` int(11) NOT NULL COMMENT 'ID da sematron',
+  `sid` int NOT NULL COMMENT 'ID da sematron',
   `ts` text NOT NULL COMMENT 'Informações para TS'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Despejando dados para a tabela `events`
+-- Dumping data for table `events`
 --
 
 INSERT INTO `events` (`eid`, `type`, `start`, `end`, `name`, `info`, `extra`, `sid`, `ts`) VALUES
@@ -1110,16 +1110,16 @@ INSERT INTO `events` (`eid`, `type`, `start`, `end`, `name`, `info`, `extra`, `s
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `gntokens`
+-- Table structure for table `gntokens`
 --
 
 CREATE TABLE `gntokens` (
-  `pid` int(11) NOT NULL,
-  `tokens` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `pid` int NOT NULL,
+  `tokens` int NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Despejando dados para a tabela `gntokens`
+-- Dumping data for table `gntokens`
 --
 
 INSERT INTO `gntokens` (`pid`, `tokens`) VALUES
@@ -1202,18 +1202,18 @@ INSERT INTO `gntokens` (`pid`, `tokens`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `groups`
+-- Table structure for table `groups`
 --
 
 CREATE TABLE `groups` (
-  `gid` int(11) NOT NULL,
+  `gid` int NOT NULL,
   `id` varchar(32) NOT NULL,
   `name` varchar(64) NOT NULL,
   `permissions` text NOT NULL COMMENT 'JSON contendo permissões'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Despejando dados para a tabela `groups`
+-- Dumping data for table `groups`
 --
 
 INSERT INTO `groups` (`gid`, `id`, `name`, `permissions`) VALUES
@@ -1225,17 +1225,17 @@ INSERT INTO `groups` (`gid`, `id`, `name`, `permissions`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
-  `batch` int(11) NOT NULL
+  `id` int UNSIGNED NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Despejando dados para a tabela `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -1246,22 +1246,22 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `pack`
+-- Table structure for table `pack`
 --
 
 CREATE TABLE `pack` (
-  `id` int(11) NOT NULL,
-  `sid` int(11) NOT NULL,
-  `nome` varchar(255) NOT NULL,
+  `id` int NOT NULL,
+  `sid` int NOT NULL,
+  `nome` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `preço` float(10,2) NOT NULL,
-  `palesta` tinyint(1) DEFAULT 0,
-  `minicurso` tinyint(1) DEFAULT 0,
-  `visita` tinyint(1) DEFAULT 0,
-  `kit` tinyint(1) DEFAULT 0
+  `palesta` tinyint(1) DEFAULT '0',
+  `minicurso` tinyint(1) DEFAULT '0',
+  `visita` tinyint(1) DEFAULT '0',
+  `kit` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `pack`
+-- Dumping data for table `pack`
 --
 
 INSERT INTO `pack` (`id`, `sid`, `nome`, `preço`, `palesta`, `minicurso`, `visita`, `kit`) VALUES
@@ -1338,16 +1338,16 @@ INSERT INTO `pack` (`id`, `sid`, `nome`, `preço`, `palesta`, `minicurso`, `visi
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `privacy`
+-- Table structure for table `privacy`
 --
 
 CREATE TABLE `privacy` (
-  `pid` int(11) NOT NULL,
+  `pid` int NOT NULL,
   `agreed` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Despejando dados para a tabela `privacy`
+-- Dumping data for table `privacy`
 --
 
 INSERT INTO `privacy` (`pid`, `agreed`) VALUES
@@ -3245,16 +3245,16 @@ INSERT INTO `privacy` (`pid`, `agreed`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `resettokens`
+-- Table structure for table `resettokens`
 --
 
 CREATE TABLE `resettokens` (
-  `token` varchar(64) NOT NULL,
-  `uid` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `token` varchar(64) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `uid` int NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Despejando dados para a tabela `resettokens`
+-- Dumping data for table `resettokens`
 --
 
 INSERT INTO `resettokens` (`token`, `uid`) VALUES
@@ -3423,20 +3423,20 @@ INSERT INTO `resettokens` (`token`, `uid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sales`
+-- Table structure for table `sales`
 --
 
 CREATE TABLE `sales` (
   `code` varchar(36) NOT NULL,
-  `pid` int(11) NOT NULL,
+  `pid` int NOT NULL,
   `path` varchar(255) DEFAULT NULL,
-  `uid` int(11) NOT NULL,
+  `uid` int NOT NULL,
   `status` set('waiting','confirmed','expired') NOT NULL,
-  `time` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Despejando dados para a tabela `sales`
+-- Dumping data for table `sales`
 --
 
 INSERT INTO `sales` (`code`, `pid`, `path`, `uid`, `status`, `time`) VALUES
@@ -6303,18 +6303,18 @@ INSERT INTO `sales` (`code`, `pid`, `path`, `uid`, `status`, `time`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sematrons`
+-- Table structure for table `sematrons`
 --
 
 CREATE TABLE `sematrons` (
-  `sid` int(11) NOT NULL,
+  `sid` int NOT NULL,
   `name` varchar(32) NOT NULL,
   `insc` tinyint(1) NOT NULL COMMENT 'Inscrições Abertas',
   `pre` tinyint(1) NOT NULL COMMENT 'Pré inscrição aberta'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Despejando dados para a tabela `sematrons`
+-- Dumping data for table `sematrons`
 --
 
 INSERT INTO `sematrons` (`sid`, `name`, `insc`, `pre`) VALUES
@@ -6336,43 +6336,41 @@ INSERT INTO `sematrons` (`sid`, `name`, `insc`, `pre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sessions`
+-- Table structure for table `sessions`
 --
 
 CREATE TABLE `sessions` (
-  `id` varchar(255) NOT NULL,
-  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `ip_address` varchar(45) DEFAULT NULL,
-  `user_agent` text DEFAULT NULL,
-  `payload` longtext NOT NULL,
-  `last_activity` int(11) NOT NULL
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` bigint UNSIGNED DEFAULT NULL,
+  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` text COLLATE utf8mb4_unicode_ci,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_activity` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Despejando dados para a tabela `sessions`
+-- Dumping data for table `sessions`
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('KgDlATiAI9kc8gLIuOcg78nmJ5WRzGijqLu4MzTY', NULL, '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiQ0N4NUhwbmt5MVl1em5qM0xVdVVGZUM5TFVpV1BvSXNhV1pWdkFyOSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2dpbiI7czo1OiJyb3V0ZSI7czo1OiJsb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1770862212),
-('TCgv2Ac67rdYS8oacpyKGKEgpwPV0yahOYiYqARH', 2100, '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiN2pQUzZMalRyOHR4MDZYU2ZUTVVvUlB6Y0dzYkYwUDk4b0RLWEVlVyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9pbmljaW8iO3M6NToicm91dGUiO3M6NjoiaW5pY2lvIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MjEwMDt9', 1770862477),
-('Xev6YH0wPRQ7WIeHafgUw1dmiMTthyWQlWUK4RgL', 2100, '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiNjRyV2ZlSEg0SXZodWJvcUZiOHZMcG9zcHN0UnVoWG96b2lGZWlpdiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9pbmljaW8iO3M6NToicm91dGUiO3M6NjoiaW5pY2lvIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MjEwMDt9', 1770862223);
+('Xne08e0ABw2pAEmSQGjC4LkzWp6OdQLstDh1gbL9', 2073, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiNXFrc1RJTHBDVXJtRGhVTDRXc0dONmx6eElLZHNYRTk1UWtmaW42eiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9pbmljaW8iO3M6NToicm91dGUiO3M6NjoiaW5pY2lvIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MjA3Mzt9', 1772818410);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `termsessions`
+-- Table structure for table `termsessions`
 --
 
 CREATE TABLE `termsessions` (
-  `id` varchar(32) NOT NULL,
-  `saved` tinyint(1) NOT NULL DEFAULT 0,
-  `owner` int(11) NOT NULL COMMENT 'uid',
-  `locked` tinyint(1) NOT NULL DEFAULT 0,
-  `data` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id` varchar(32) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `saved` tinyint(1) NOT NULL DEFAULT '0',
+  `owner` int NOT NULL COMMENT 'uid',
+  `locked` tinyint(1) NOT NULL DEFAULT '0',
+  `data` text COLLATE utf8mb3_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Despejando dados para a tabela `termsessions`
+-- Dumping data for table `termsessions`
 --
 
 INSERT INTO `termsessions` (`id`, `saved`, `owner`, `locked`, `data`) VALUES
@@ -6385,15 +6383,15 @@ INSERT INTO `termsessions` (`id`, `saved`, `owner`, `locked`, `data`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `thimk`
+-- Table structure for table `thimk`
 --
 
 CREATE TABLE `thimk` (
-  `uid` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `uid` int NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Despejando dados para a tabela `thimk`
+-- Dumping data for table `thimk`
 --
 
 INSERT INTO `thimk` (`uid`) VALUES
@@ -6505,28 +6503,28 @@ INSERT INTO `thimk` (`uid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `userdata`
+-- Table structure for table `userdata`
 --
 
 CREATE TABLE `userdata` (
-  `pid` int(11) NOT NULL COMMENT 'ID do Participante',
-  `sid` int(11) NOT NULL COMMENT 'ID da Sematron',
-  `uid` int(11) NOT NULL COMMENT 'ID do Usuario',
-  `gid` int(11) NOT NULL COMMENT 'ID do Grupo',
+  `pid` int NOT NULL COMMENT 'ID do Participante',
+  `sid` int NOT NULL COMMENT 'ID da Sematron',
+  `uid` int NOT NULL COMMENT 'ID do Usuario',
+  `gid` int NOT NULL COMMENT 'ID do Grupo',
   `permissions` text NOT NULL,
   `presence` text NOT NULL COMMENT 'JSON contendo os ids do eventos comparecidos',
   `choices` text NOT NULL COMMENT 'JSON cotendo as prioridades',
-  `pack_id` int(11) DEFAULT NULL,
-  `minicurso` int(11) NOT NULL COMMENT 'ID do evento',
-  `viagem` int(11) NOT NULL COMMENT 'ID do evento',
-  `kit` tinyint(1) DEFAULT 0,
+  `pack_id` int DEFAULT NULL,
+  `minicurso` int NOT NULL COMMENT 'ID do evento',
+  `viagem` int NOT NULL COMMENT 'ID do evento',
+  `kit` tinyint(1) DEFAULT '0',
   `camiseta` varchar(10) NOT NULL,
-  `time` timestamp NOT NULL DEFAULT current_timestamp(),
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `reserveTime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci COMMENT='Participantes';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='Participantes';
 
 --
--- Despejando dados para a tabela `userdata`
+-- Dumping data for table `userdata`
 --
 
 INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `choices`, `pack_id`, `minicurso`, `viagem`, `kit`, `camiseta`, `time`, `reserveTime`) VALUES
@@ -8830,24 +8828,16 @@ INSERT INTO `userdata` (`pid`, `sid`, `uid`, `gid`, `permissions`, `presence`, `
 (2757, 21, 2164, 3, '', ' [\"306\",305,311,312,313,314,315]', '{\"k\":\"completo\",\"m\":[294,297],\"v\":[284],\"c\":\"g\"}', 135, 0, 284, 0, 'g', '2025-06-01 19:41:29', '2025-06-01 19:41:30'),
 (2758, 21, 2158, 3, '', ' [\"306\",304,305,308,310,311,312,314,315]', '{\"k\":\"completo\",\"m\":[302],\"v\":[277],\"c\":\"p\"}', 135, 302, 277, 0, 'p', '2025-06-02 17:33:29', '2025-06-02 17:33:29'),
 (2760, 17, 3, 3, '', '[\"202\"]', '{\"k\":\"XVIIcompleto\",\"m\":[196,197,195],\"v\":[199,198,201],\"c\":\"-\"}', 110, 196, 199, 0, '-', '2021-10-08 22:21:54', '2021-10-08 22:21:54'),
-(2761, 11, 3, 3, '', '[\"48\",\"43\",\"31\",\"47\",\"46\",\"32\",\"44\",\"45\",\"33\",\"34\",29,30]', '{\"k\":\"XIkit\",\"m\":[36,22,26,25,19],\"v\":[17,38,24,16,28,27,14,39,37],\"c\":\"m\"}', 75, 26, 17, 0, 'm', '2015-05-06 16:06:57', '2015-05-06 16:07:00'),
-(2762, 22, 3, 3, '', '', '{\"k\":\"completo\",\"m\":[273],\"v\":[282],\"c\":\"gg\"}', 135, 273, 282, 0, 'gg', '2026-01-10 18:50:03', '2026-01-10 18:50:03'),
-(2763, 22, 2153, 3, '', '', '{\"k\":\"completo\",\"m\":[],\"v\":[],\"c\":\"m\"}', 135, 0, 0, 0, 'm', '2026-01-15 16:35:30', '2026-01-15 16:35:30'),
-(2764, 22, 2100, 3, '0', '\"[]\"', '\"{\\\"m\\\":[\\\"1\\\"]}\"', NULL, 0, 0, 0, '-', '2026-01-29 02:21:41', '2026-01-29 02:21:41'),
-(2769, 22, 2123, 3, '0', '\"[]\"', '\"{\\\"m\\\":[\\\"1\\\"]}\"', 137, 0, 0, 0, '-', '2026-01-29 16:02:36', '2026-01-29 16:02:36'),
-(2770, 22, 2124, 3, '0', '\"[]\"', '\"{\\\"v\\\":[\\\"0\\\"],\\\"m\\\":[\\\"0\\\"]}\"', 138, 0, 0, 0, 'p', '2026-01-29 16:03:25', '2026-01-29 16:03:25'),
-(2771, 22, 2150, 3, '0', '\"[]\"', '\"{\\\"v\\\":[\\\"1\\\"],\\\"m\\\":[\\\"0\\\"]}\"', 138, 0, 0, 0, 'p', '2026-01-30 00:51:32', '2026-01-30 00:51:32'),
-(2772, 22, 2125, 3, '0', '\"[]\"', '\"{\\\"v\\\":[\\\"1\\\"],\\\"m\\\":[\\\"1\\\"]}\"', 138, 0, 0, 0, 'p', '2026-01-30 20:19:01', '2026-01-30 20:19:01'),
-(2773, 22, 2073, 3, '0', '\"[]\"', '\"{\\\"v\\\":[\\\"1\\\"],\\\"m\\\":[\\\"0\\\"]}\"', 138, 0, 0, 0, 'p', '2026-02-02 22:49:42', '2026-02-02 22:49:42');
+(2761, 11, 3, 3, '', '[\"48\",\"43\",\"31\",\"47\",\"46\",\"32\",\"44\",\"45\",\"33\",\"34\",29,30]', '{\"k\":\"XIkit\",\"m\":[36,22,26,25,19],\"v\":[17,38,24,16,28,27,14,39,37],\"c\":\"m\"}', 75, 26, 17, 0, 'm', '2015-05-06 16:06:57', '2015-05-06 16:07:00');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `userinfos`
+-- Table structure for table `userinfos`
 --
 
 CREATE TABLE `userinfos` (
-  `uid` int(11) NOT NULL COMMENT 'ID do usuario',
+  `uid` int NOT NULL COMMENT 'ID do usuario',
   `badges` text NOT NULL COMMENT 'JSON contendo os badges coletados',
   `name` text NOT NULL,
   `email` varchar(64) NOT NULL,
@@ -8864,13 +8854,13 @@ CREATE TABLE `userinfos` (
   `rg` varchar(12) NOT NULL DEFAULT '',
   `exp` varchar(10) NOT NULL DEFAULT '',
   `nasc` varchar(10) NOT NULL DEFAULT '' COMMENT 'Formato: 00/00/0000',
-  `grau` int(11) NOT NULL DEFAULT 0 COMMENT 'Bitfield. 0: Cursando, Demais: Grau',
+  `grau` int NOT NULL DEFAULT '0' COMMENT 'Bitfield. 0: Cursando, Demais: Grau',
   `inst` varchar(64) NOT NULL DEFAULT '' COMMENT 'Instituição',
-  `verified` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `verified` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Despejando dados para a tabela `userinfos`
+-- Dumping data for table `userinfos`
 --
 
 INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibility`, `cpf`, `cidade`, `uf`, `address`, `cep`, `tel`, `nusp`, `curso`, `rg`, `exp`, `nasc`, `grau`, `inst`, `verified`) VALUES
@@ -11020,18 +11010,18 @@ INSERT INTO `userinfos` (`uid`, `badges`, `name`, `email`, `picture`, `visibilit
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `userlogins`
+-- Table structure for table `userlogins`
 --
 
 CREATE TABLE `userlogins` (
-  `uid` int(11) NOT NULL,
+  `uid` int NOT NULL,
   `username` varchar(32) NOT NULL,
   `password` varchar(64) NOT NULL,
   `salt` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Despejando dados para a tabela `userlogins`
+-- Dumping data for table `userlogins`
 --
 
 INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
@@ -13200,98 +13190,98 @@ INSERT INTO `userlogins` (`uid`, `username`, `password`, `salt`) VALUES
 (2174, 'teste3', '$2y$12$T4pMICIHsyIykut9CiuWcuAf6tfKAwCnIqYf1ovIwsAZlnqyqi86K', 'MQtQbPu4kOAkRfFJElo1E5DYLt9wNQMF73T9FxvBtvRH9KGyGaN71UnwdRf8JiMy');
 
 --
--- Índices para tabelas despejadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices de tabela `badges`
+-- Indexes for table `badges`
 --
 ALTER TABLE `badges`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `cache`
+-- Indexes for table `cache`
 --
 ALTER TABLE `cache`
   ADD PRIMARY KEY (`key`),
   ADD KEY `cache_expiration_index` (`expiration`);
 
 --
--- Índices de tabela `cache_locks`
+-- Indexes for table `cache_locks`
 --
 ALTER TABLE `cache_locks`
   ADD PRIMARY KEY (`key`),
   ADD KEY `cache_locks_expiration_index` (`expiration`);
 
 --
--- Índices de tabela `engday`
+-- Indexes for table `engday`
 --
 ALTER TABLE `engday`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `eventos`
+-- Indexes for table `eventos`
 --
 ALTER TABLE `eventos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `events`
+-- Indexes for table `events`
 --
 ALTER TABLE `events`
   ADD PRIMARY KEY (`eid`);
 
 --
--- Índices de tabela `gntokens`
+-- Indexes for table `gntokens`
 --
 ALTER TABLE `gntokens`
   ADD PRIMARY KEY (`pid`);
 
 --
--- Índices de tabela `groups`
+-- Indexes for table `groups`
 --
 ALTER TABLE `groups`
   ADD PRIMARY KEY (`gid`);
 
 --
--- Índices de tabela `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `pack`
+-- Indexes for table `pack`
 --
 ALTER TABLE `pack`
   ADD PRIMARY KEY (`id`),
   ADD KEY `sid` (`sid`);
 
 --
--- Índices de tabela `privacy`
+-- Indexes for table `privacy`
 --
 ALTER TABLE `privacy`
   ADD PRIMARY KEY (`pid`);
 
 --
--- Índices de tabela `resettokens`
+-- Indexes for table `resettokens`
 --
 ALTER TABLE `resettokens`
   ADD PRIMARY KEY (`token`);
 
 --
--- Índices de tabela `sales`
+-- Indexes for table `sales`
 --
 ALTER TABLE `sales`
   ADD PRIMARY KEY (`code`);
 
 --
--- Índices de tabela `sematrons`
+-- Indexes for table `sematrons`
 --
 ALTER TABLE `sematrons`
   ADD PRIMARY KEY (`sid`);
 
 --
--- Índices de tabela `sessions`
+-- Indexes for table `sessions`
 --
 ALTER TABLE `sessions`
   ADD PRIMARY KEY (`id`),
@@ -13299,108 +13289,108 @@ ALTER TABLE `sessions`
   ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
--- Índices de tabela `thimk`
+-- Indexes for table `thimk`
 --
 ALTER TABLE `thimk`
   ADD PRIMARY KEY (`uid`);
 
 --
--- Índices de tabela `userdata`
+-- Indexes for table `userdata`
 --
 ALTER TABLE `userdata`
   ADD PRIMARY KEY (`pid`),
   ADD KEY `fk_userdata_pack_id` (`pack_id`);
 
 --
--- Índices de tabela `userinfos`
+-- Indexes for table `userinfos`
 --
 ALTER TABLE `userinfos`
   ADD PRIMARY KEY (`uid`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Índices de tabela `userlogins`
+-- Indexes for table `userlogins`
 --
 ALTER TABLE `userlogins`
   ADD PRIMARY KEY (`uid`),
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `badges`
+-- AUTO_INCREMENT for table `badges`
 --
 ALTER TABLE `badges`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT de tabela `engday`
+-- AUTO_INCREMENT for table `engday`
 --
 ALTER TABLE `engday`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=697;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=697;
 
 --
--- AUTO_INCREMENT de tabela `eventos`
+-- AUTO_INCREMENT for table `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de tabela `events`
+-- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=319;
+  MODIFY `eid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=319;
 
 --
--- AUTO_INCREMENT de tabela `groups`
+-- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `gid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `gid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de tabela `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de tabela `pack`
+-- AUTO_INCREMENT for table `pack`
 --
 ALTER TABLE `pack`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 
 --
--- AUTO_INCREMENT de tabela `userdata`
+-- AUTO_INCREMENT for table `userdata`
 --
 ALTER TABLE `userdata`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID do Participante', AUTO_INCREMENT=2774;
+  MODIFY `pid` int NOT NULL AUTO_INCREMENT COMMENT 'ID do Participante', AUTO_INCREMENT=2776;
 
 --
--- AUTO_INCREMENT de tabela `userinfos`
+-- AUTO_INCREMENT for table `userinfos`
 --
 ALTER TABLE `userinfos`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID do usuario', AUTO_INCREMENT=2175;
+  MODIFY `uid` int NOT NULL AUTO_INCREMENT COMMENT 'ID do usuario', AUTO_INCREMENT=2175;
 
 --
--- AUTO_INCREMENT de tabela `userlogins`
+-- AUTO_INCREMENT for table `userlogins`
 --
 ALTER TABLE `userlogins`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2175;
+  MODIFY `uid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2175;
 
 --
--- Restrições para tabelas despejadas
+-- Constraints for dumped tables
 --
 
 --
--- Restrições para tabelas `pack`
+-- Constraints for table `pack`
 --
 ALTER TABLE `pack`
   ADD CONSTRAINT `pack_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `sematrons` (`sid`);
 
 --
--- Restrições para tabelas `userdata`
+-- Constraints for table `userdata`
 --
 ALTER TABLE `userdata`
   ADD CONSTRAINT `fk_userdata_pack_id` FOREIGN KEY (`pack_id`) REFERENCES `pack` (`id`);
