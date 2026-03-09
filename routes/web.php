@@ -10,13 +10,10 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
-use App\Http\Controllers\testeController;
-use App\Http\Controllers\admController; 
 use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\InscricaoController;
 use App\Http\Middleware\AutenticacaoInscricao;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 
