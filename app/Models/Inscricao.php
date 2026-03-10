@@ -38,6 +38,6 @@ class Inscricao extends Model
 
     public function pack(): BelongsTo
     {
-        return $this->belongsTo(Pack::class, 'pack_id', 'id ');
+        return $this->belongsTo(Pack::class, 'pack_id', 'id');
     }
 }
