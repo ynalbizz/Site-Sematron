@@ -10,7 +10,7 @@ class FinanceService
 {
     public static function createMercadoPagoPreference($pid, $title, $price) {
         
-        $baseUrl = "http://127.0.0.1:8000"; 
+        $baseUrl = "https://homologasis.sematron.com.br/"; 
 
         $backUrls = [
             "success" => $baseUrl . "/pagamento/sucesso",

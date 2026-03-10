@@ -78,18 +78,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 //rotas de teste, apagar quando entrar em produção
 Route::get('/testar-pagamento', function () {
-    // Cria ou recupera usuário teste
-    $user = User::firstOrCreate(
-        ['email' => 'teste@sematron.com.br'],
-        [
-            'name' => 'Aluno Teste',
-            'password' => Hash::make('senha123'),
-        ]
-    );
-
-    // Força Login
-    Auth::login($user);
-
     // Redireciona para o checkout real
     return redirect()->route('payment.checkout');
 });
