@@ -41,11 +41,13 @@ class InscricaoController extends Controller
         if ($pack->visita == 1) {
             $request->validate(['visita' => 'required']);
             $choices['v'] = $request->visita;
+            $dados['viagem'] = $request->visita;
         }
 
         if ($pack->minicurso == 1) {
             $request->validate(['minicurso' => 'required']);
             $choices['m'] = $request->minicurso;
+            $dados['minicurso'] = $request->minicurso;
         }
 
         $dados['uid'] = auth()->user()->uid;
@@ -53,8 +55,6 @@ class InscricaoController extends Controller
 
         $dados['choices'] = json_encode($choices);
 
-        $dados['minicurso'] = 0;
-        $dados['viagem'] = 0;
         $dados['gid'] = 3;
         $dados['permissions'] = 0;
         $dados['presence'] = json_encode([]);
