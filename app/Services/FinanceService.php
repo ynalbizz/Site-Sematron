@@ -27,14 +27,14 @@ class FinanceService
         ];
 
         $request = [
-            "items" => array(
+            "items" => array(array(
                 "id" => (string)$pack_id,
                 "title" => "Inscrição Sematron",
                 "description" => $pack_name,
                 "quantity" => 1,
                 "currency_id" => "BRL",
                 "unit_price" => (float)$price
-            ),
+            )),
             "payment_methods" => $paymentMethods,
             "back_urls" => $backUrls,
             "statement_descriptor" => "Inscrição Sematron",
