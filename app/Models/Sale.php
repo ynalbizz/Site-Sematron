@@ -16,9 +16,4 @@ class Sale extends Model
         'status',
         'time',
     ];
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 }
