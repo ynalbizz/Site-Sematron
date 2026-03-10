@@ -25,9 +25,11 @@ class PaymentController extends Controller
         
         Sale::create([
             'code' => $code,
-            'user_id' => $user->id,
-            'preference_id' => 'aguardando_retorno', 
-            'status' => 'pending',
+            'uid' => $user->uid,
+            'pid' => $inscricao->pid,
+            'pref_id' => 'aguardando_retorno', 
+            'status' => 'waiting',
+            'time' => now(),
             'amount' => $preco
         ]);
 
@@ -69,6 +71,6 @@ class PaymentController extends Controller
 
         return Inertia::render('Payment/Failure'); 
         }
-        
+
     public function pending() { return Inertia::render('Payment/Pending'); }
 }
