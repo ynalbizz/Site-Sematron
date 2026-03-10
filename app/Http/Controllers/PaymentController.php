@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Inscricao;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Services\FinanceService;
@@ -11,17 +12,19 @@ use Illuminate\Support\Str;
 
 class PaymentController extends Controller
 {
-    public function checkout()
+    public function checkout(Inscricao $inscricao)
     {
         $user = Auth::user();
-        $titulo = "Inscrição Sematron XXII";
-        $preco = 15.50;
-        $idProduto = "INSCRICAO-001"; 
+        $preco = $inscricao->pack->preço;
+        $pack_id = $inscricao->pack_id;
+        $pack_name = $inscricao->pack->nome;
 
-        $linkPagamento = FinanceService::createMercadoPagoPreference($idProduto, $titulo, $preco);
+        $code = 'SEM-' . strtoupper(Str::random(6));
+
+        $linkPagamento = FinanceService::createMercadoPagoPreference($pack_id, $pack_name, $preco, $code);
         
         Sale::create([
-            'code' => 'SEM-' . strtoupper(Str::random(6)),
+            'code' => $code,
             'user_id' => $user->id,
             'preference_id' => 'aguardando_retorno', 
             'status' => 'pending',
@@ -36,14 +39,12 @@ class PaymentController extends Controller
         $collectionId = $request->query('collection_id');
         $status = $request->query('collection_status');
         $preferenceId = $request->query('preference_id');
+        $code = $request->query('external_reference');
         
         if($status == 'approved'){
-            Sale::where('user_id', Auth::id())
-                ->where('status', 'pending')
-                ->latest()
-                ->first()
-                ?->update([
-                    'status' => 'paid',
+            Sale::where('code', $code)
+                ->update([
+                    'status' => 'confirmed',
                     'preference_id' => $preferenceId
                 ]);
         }
@@ -54,6 +55,20 @@ class PaymentController extends Controller
         ]);
     }
 
-    public function failure() { return Inertia::render('Payment/Failure'); }
+    public function failure(Request $request) {
+                $collectionId = $request->query('collection_id');
+        $status = $request->query('collection_status');
+        $preferenceId = $request->query('preference_id');
+        $code = $request->query('external_reference');
+        
+        Sale::where('code', $code)
+            ->update([
+                'status' => 'failed',
+                'preference_id' => $preferenceId
+            ]);
+
+        return Inertia::render('Payment/Failure'); 
+        }
+        
     public function pending() { return Inertia::render('Payment/Pending'); }
 }

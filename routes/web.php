@@ -67,7 +67,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 
     //Módulo de Pagamento (Mercado Pago)
-    Route::get('/pagar', [PaymentController::class, 'checkout'])->name('pagar');
+    Route::get('inscricoes/{inscricao:pid}/pagar', [PaymentController::class, 'checkout'])->name('pagar');
     
     //Retornos do Mercado Pago
     Route::get('/pagamento/sucesso', [PaymentController::class, 'success'])->name('payment.success');

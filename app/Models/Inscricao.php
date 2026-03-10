@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Inscricao extends Model
 {
@@ -34,4 +35,9 @@ class Inscricao extends Model
         'choices' => 'array',
         'presence' => 'array',
     ];
+
+    public function pack(): BelongsTo
+    {
+        return $this->belongsTo(Pack::class, 'pack_id', 'id ');
+    }
 }
