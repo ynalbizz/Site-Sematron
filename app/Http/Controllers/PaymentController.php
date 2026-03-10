@@ -46,7 +46,7 @@ class PaymentController extends Controller
             Sale::where('code', $code)
                 ->update([
                     'status' => 'confirmed',
-                    'preference_id' => $preferenceId
+                    'pref_id' => $preferenceId
                 ]);
         }
 
@@ -65,7 +65,7 @@ class PaymentController extends Controller
         Sale::where('code', $code)
             ->update([
                 'status' => 'failed',
-                'preference_id' => $preferenceId
+                'pref_id' => $preferenceId
             ]);
 
         return Inertia::render('Payment/Failure'); 
