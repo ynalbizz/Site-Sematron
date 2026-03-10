@@ -29,6 +29,7 @@ class PaymentController extends Controller
             'pid' => $inscricao->pid,
             'pref_id' => 'aguardando_retorno', 
             'status' => 'waiting',
+            'time' => now()
         ]);
 
         return redirect()->away($linkPagamento);
