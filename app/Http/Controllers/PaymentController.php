@@ -50,10 +50,11 @@ class PaymentController extends Controller
                 ]);
         }
 
-        return Inertia::render('Payment/Success', [
-            'payment_id' => $collectionId,
-            'status' => $status
-        ]);
+    //     return Inertia::render('Payment/Success', [
+    //         'payment_id' => $collectionId,
+    //         'status' => $status
+    //     ]);
+    redirect()->route('inicio')->with('success', 'Pagamento realizado com sucesso! Agradecemos sua inscrição.');
     }
 
     public function failure(Request $request) {
@@ -68,7 +69,8 @@ class PaymentController extends Controller
                 'pref_id' => $preferenceId
             ]);
 
-        return Inertia::render('Payment/Failure'); 
+        //return Inertia::render('Payment/Failure');
+        redirect()->route('inicio')->with('error', 'O pagamento foi cancelado ou ocorreu um erro. Por favor, tente novamente.');
         }
 
     public function pending() { return Inertia::render('Payment/Pending'); }
