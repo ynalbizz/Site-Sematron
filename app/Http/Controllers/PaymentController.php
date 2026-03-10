@@ -54,7 +54,7 @@ class PaymentController extends Controller
     //         'payment_id' => $collectionId,
     //         'status' => $status
     //     ]);
-    redirect()->route('inicio')->with('success', 'Pagamento realizado com sucesso! Agradecemos sua inscrição.');
+    redirect('/inicio')->with('success', 'Pagamento realizado com sucesso! Agradecemos sua inscrição.');
     }
 
     public function failure(Request $request) {
@@ -70,7 +70,7 @@ class PaymentController extends Controller
             ]);
 
         //return Inertia::render('Payment/Failure');
-        redirect()->route('inicio')->with('error', 'O pagamento foi cancelado ou ocorreu um erro. Por favor, tente novamente.');
+        redirect('/inicio')->with('error', 'O pagamento foi cancelado ou ocorreu um erro. Por favor, tente novamente.');
         }
 
     public function pending() { return Inertia::render('Payment/Pending'); }
