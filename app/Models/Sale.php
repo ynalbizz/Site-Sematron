@@ -14,6 +14,7 @@ class Sale extends Model
         'code',           
         'pref_id',
         'uid',
+        'pid',
         'status',
         'time'
     ];
