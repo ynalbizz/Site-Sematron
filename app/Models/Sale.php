@@ -14,6 +14,5 @@ class Sale extends Model
         'pref_id',
         'uid',
         'status',
-        'time',
     ];
 }
