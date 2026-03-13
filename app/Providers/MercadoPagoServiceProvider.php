@@ -25,6 +25,7 @@ class MercadoPagoServiceProvider extends ServiceProvider
 
         if ($token) {
             MercadoPagoConfig::setAccessToken($token);
+            //MercadoPagoConfig::setRuntimeEnviroment(MercadoPagoConfig::LOCAL);
         }
     }
 }
