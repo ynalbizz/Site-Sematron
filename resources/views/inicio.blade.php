@@ -9,15 +9,15 @@
             <!--Parte da Esquerda-->
             <div class="tamanhos tres-linhas">
                 <div class="informacoes topo">
-                    <h1 class="Numero-centro">X+</h1>
+                    <h1 class="Numero-centro">{{ $n_palestras }}</h1>
                     <h1 class="Texto-centro">Palestras</h1>
                 </div>
                 <div class="informacoes">
-                    <h1 class="Numero-centro">X+</h1>
+                    <h1 class="Numero-centro">{{ $n_mcursos }}</h1>
                     <h1 class="Texto-centro">Minicursos</h1>
                 </div>
                 <div class="informacoes baixo">
-                    <h1 class="Numero-centro">X+</h1>
+                    <h1 class="Numero-centro">{{ $n_visitas }}</h1>
                     <h1 class="Texto-centro">Visitas</h1>
                 </div>
             </div>
@@ -82,7 +82,7 @@
                         Aulas Práticas e trilhas técnicas.
                     </div>
 
-                    <a class="Saiba-Mais-Botao" href="">Saiba mais</a>
+                    <a class="Saiba-Mais-Botao" href="/minicursos">Saiba mais</a>
                     
                 </div>
             </div>
@@ -104,34 +104,34 @@
                         Visitas técnicas em empresas.
                     </div>
 
-                    <a class="Saiba-Mais-Botao" href="">Saiba mais</a>
+                    <a class="Saiba-Mais-Botao" href="/visitas">Saiba mais</a>
                     
                 </div>
             </div>
-
 
 
             <div class="Colunas">
                 <div class="Borda-Atividades">
-
+                    
                     <div class="Circulo-atividades">
                         <img class="Mini-Logo-Preto-Atividades" src="{{asset('/Imagens/LogoPreta.png')}}" alt="Logo da Sematron">
                     </div>
-
+                    
                     <div class="Titulo-Libertadores">
                         Palestras
                     </div>
-
+                    
                     <div class="Resumo">
                         Convidados e temas atuais.    
                     </div>
-
-                    <a class="Saiba-Mais-Botao" href="">Saiba mais</a>
+                    
+                    <a class="Saiba-Mais-Botao" href="/palestras">Saiba mais</a>
                     
                 </div>
             </div>
-
-
+            
+            
+            <!--
 
             <div class="Colunas">
                 <div class="Borda-Atividades">
@@ -151,7 +151,7 @@
                     <a class="Saiba-Mais-Botao" href="">Saiba mais</a>
                     
                 </div>
-            </div>
+            </div> --->
         </section>
 
 

@@ -11,12 +11,13 @@ use App\Http\Controllers\InscricaoController;
 use App\Http\Middleware\AutenticacaoInscricao;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Http\Controllers\GeneralController;
 
 
 
-Route::get('/', fn () => view('inicio'))->name('home');
+Route::get('/', GeneralController::class . '@inicio')->name('inicio');
 
-Route::get('/inicio', fn () => view('inicio'))->name('inicio');
+Route::get('/inicio', fn () => redirect('/'))->name('inicio.redirect');
 
 Route::get('/inscricao' , fn () => redirect('inscricao/create'));
 Route::resource('inscricao', InscricaoController::class) ->only(['create', 'store']) ->middleware(AutenticacaoInscricao::class);
@@ -24,9 +25,11 @@ Route::resource('inscricao', InscricaoController::class) ->only(['create', 'stor
 Route::get('/cadastro' , fn () => redirect('cadastro/create'));
 Route::resource('cadastro', CadastroController::class) ->only(['create', 'store']);
 
-Route::get('/minicursos', fn () => view('minicursos'))->name('minicursos');
+Route::get('/minicursos', GeneralController::class . '@minicursos')->name('minicursos');
 
-Route::get('/visitas', fn () => view('visitas'))->name('visitas');
+Route::get('/visitas', GeneralController::class . '@visitas')->name('visitas');
+
+Route::get('/palestras', GeneralController::class . '@palestras')->name('palestras');
 
 Route::get('/login', fn () => view('login'))->name('login');
 

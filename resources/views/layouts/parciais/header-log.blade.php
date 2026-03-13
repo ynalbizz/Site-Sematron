@@ -14,6 +14,7 @@
             <a class="Link-Do-Topo" href="/inscricao">Inscrição</a>
             <a class="Link-Do-Topo" href="/minicursos">Minicursos</a>
             <a class="Link-Do-Topo" href="/visitas">Visitas</a>
+            <a class="Link-Do-Topo" href="/palestras">Palestras</a>
             <a class="Link-Do-Topo" href="/perfil">Perfil</a>
             <a class="Link-Do-Topo" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sair</a>
 

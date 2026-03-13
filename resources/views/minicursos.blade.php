@@ -16,16 +16,16 @@
     <section class="espaco-no-topo margem-esquerda">
         <div class="imagem-de-fundo">
                 
+            @foreach ($mcursos as $mcurso)
             <div class="borda-minicursos">
-
                 <div class="texto-na-esquerda">
-                    <h1 class="nome-do-minicurso">NOME DO MINICURSO</h1>
-                    <h1 class="horarios-minicursos">C.H.: 3h • Início: 30/11 • Horário: 19:00 • Vagas: 25</h1>
-                </div>
-                    
+                    <h1 class="nome-do-minicurso"> Minicurso - {{ $mcurso->name }} </h1>
+                    <h1 class="horarios-minicursos">Dia: {{date('d/m', strtotime($mcurso->start))}} • Saída: {{date('H:i', strtotime($mcurso->start))}} • Vagas: 30</h1>
+                    </div>
                 <a href="/inscricoes" class="botao-inscrever">Inscrever</a>
-
             </div>
+            @endforeach
+
 
         </div>
     </section>
