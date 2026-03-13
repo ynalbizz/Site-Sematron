@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'sematron_atual' => env('ACUTUAL_SID'),
+    'sematron_atual' => env('ATUAL_SID'),
 ];
