@@ -15,9 +15,9 @@ class FinanceService
         $baseUrl = config('app.url'); 
 
         $backUrls = [
-            "success" => $baseUrl . "/pagamento/sucesso",
-            "failure" => $baseUrl . "/pagamento/erro",
-            "pending" => $baseUrl . "/pagamento/pendente"
+            "success" => $baseUrl . "pagamento/sucesso",
+            "failure" => $baseUrl . "pagamento/erro",
+            "pending" => $baseUrl . "pagamento/pendente"
         ];
 
         $paymentMethods = [
