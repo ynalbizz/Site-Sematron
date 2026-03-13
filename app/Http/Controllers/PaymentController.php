@@ -19,7 +19,7 @@ class PaymentController extends Controller
         $pack_id = $inscricao->pack_id;
         $pack_name = $inscricao->pack->nome;
 
-        $code = 'SEM-' . strtoupper(Str::random(6));
+        $code = 'SEM-' . strtoupper(Str::random(10)) . '-' . time();
 
         $linkPagamento = FinanceService::createMercadoPagoPreference($pack_id, $pack_name, $preco, $code);
         
