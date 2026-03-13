@@ -9,11 +9,9 @@
             <h1 class="Sub-Login">Veja aqui suas informações.</h1>
         </div>
 
-
-
         <div class="borda-perfil">
             <div class="texto-perfil">
-                <h1 class="nome-bendito">Enzo Marina Lombada</h1>
+                <h1 class="nome-bendito">Erick Jão Adunas</h1>
                 <h1 class="email-do-ser">amigosdogil10@gmail.com</h1>
                 <h1 class="curso-que-faz">EESC-USP | Eng. Mecatrônica</h1>
                 <h1 class="situacao-do-pix">Pagamento Confirmado!</h1>
@@ -75,13 +73,15 @@
         </div>
 
 
+@if($n_palestras)
+
 
         <div class="textos-perfil">
             <div class="div-Perfil">
                 <h1 class="Tit-Perfil">Presença em Palestras:</h1>
-                <h2 class="SubTit-Perfil">X%</h2>
+                <h2 class="SubTit-Perfil">{{$totalPresenca/$n_palestras*100}}%</h2>
             </div>
-
+@endif
             <div class="borda-certificado">
                 <div class="certificados">
                     <h1 class="palavra-certificado">Certificados</h1>
