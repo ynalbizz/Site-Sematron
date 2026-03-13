@@ -63,8 +63,9 @@ class InscricaoController extends Controller
 
         Log::info('Tentando criar inscrição', ['user_id' => auth()->id(), 'dados' => $dados]);
 
-        Inscricao::create($dados);
-        return redirect()->route('inicio')->with('success', 'Inscrição realizada com sucesso!');
+        $inscricao = Inscricao::create($dados);
+
+        return redirect()->route('pagar', ['inscricao' => $inscricao->pid])->with('success', 'Inscrição realizada com sucesso!');
 
     }
 }
