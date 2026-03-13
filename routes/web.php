@@ -27,6 +27,8 @@ Route::resource('cadastro', CadastroController::class) ->only(['create', 'store'
 
 Route::get('/minicursos', GeneralController::class . '@minicursos')->name('minicursos');
 
+Route::get('/perfil', GeneralController::class . '@perfil')->name('perfil');
+
 Route::get('/visitas', GeneralController::class . '@visitas')->name('visitas');
 
 Route::get('/palestras', GeneralController::class . '@palestras')->name('palestras');
@@ -50,8 +52,6 @@ Route::get('/contato', fn () => view('contato'))->name('contato');
 Route::get('/esqueceu-a-senha', fn () => view('esqueceu-a-senha'))->name('esqueceu-a-senha');
 
 Route::get('/pao', fn () => view('pao'))->name('pao');
-
-Route::get('/perfil', fn () => view('perfil'))->name('perfil');
 
 Route::get('/adm/list', [App\Http\Controllers\admController::class, 'showInscList'])->name('adm.list');
 
