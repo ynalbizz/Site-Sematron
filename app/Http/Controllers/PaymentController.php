@@ -27,7 +27,7 @@ class PaymentController extends Controller
             'code' => $code,
             'uid' => $user->uid,
             'pid' => $inscricao->pid,
-            'pref_id' => $pref['id'],
+            'pref_id' => strval($pref['id']),
             'status' => 'waiting',
             'time' => now()
         ]);
