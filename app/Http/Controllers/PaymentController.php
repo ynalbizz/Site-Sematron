@@ -32,7 +32,7 @@ class PaymentController extends Controller
             'time' => now()
         ]);
 
-        return redirect()->away($pref['init_point']);
+        return redirect()->away($pref->init_point);
     }
 
     public function success(Request $request)
