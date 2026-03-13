@@ -11,7 +11,7 @@
 
         <div class="borda-perfil">
             <div class="texto-perfil">
-                <h1 class="nome-bendito">Enzo Marina Lombada</h1>
+                <h1 class="nome-bendito">Erick Jão Adunas</h1>
                 <h1 class="email-do-ser">amigosdogil10@gmail.com</h1>
                 <h1 class="curso-que-faz">EESC-USP | Eng. Mecatrônica</h1>
                 <h1 class="situacao-do-pix">Pagamento Confirmado!</h1>
