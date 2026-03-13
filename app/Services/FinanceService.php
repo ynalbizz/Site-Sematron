@@ -8,11 +8,22 @@ use Illuminate\Support\Facades\Http;
 
 use function Symfony\Component\String\s;
 
+use MercadoPago\Client\Common\RequestOptions;
+use MercadoPago\Client\Order\OrderClient;
+use MercadoPago\MercadoPagoConfig;
+use MercadoPago\Client\Preference;
+use MercadoPago\Client\Preference\PreferenceClient;
+use MercadoPago\Exceptions\MPApiException;
+
+
+
+
+
 class FinanceService
 {
-    public static function createMercadoPagoPreference($pack_id, $pack_name, $price, $code) {
-        
-        $baseUrl = config('app.url'); 
+    public static function createPreferenceRequest($pack_id, $pack_name, $price, $code): array
+    {
+    $baseUrl = config('app.url'); 
 
         $backUrls = [
             "success" => $baseUrl . "pagamento/sucesso",
@@ -42,19 +53,19 @@ class FinanceService
             //"auto_return" => "approved" -> Deixar comentado até começar a produção
         ];
 
+        return $request;
+    }
+
+
+    public static function createMercadoPagoPreference($pack_id, $pack_name, $price, $code) {  
+        //MercadoPagoConfig::setAccessToken(config('integrations.mercadopago.access_token'));
+        $request = self::createPreferenceRequest($pack_id, $pack_name, $price, $code);
+        $client = new PreferenceClient();
+
         try {
-            $response = Http::withOptions(['verify' => false])
-                ->withToken(config('integrations.mercadopago.access_token'))
-                ->post(config('integrations.mercadopago.url'), $request);
-
-            if ($response->successful()) {
-                $preference = $response->json();
-                return $preference['init_point']; 
-            } else {
-                dd("ERRO MP:", $response->json());
-            }
-
-        } catch (\Exception $e) {
+            $preference = $client->create($request);
+            return $preference; 
+        } catch (MPApiException $e) {
             dd("ERRO CRÍTICO:", $e->getMessage());
         }
     }
