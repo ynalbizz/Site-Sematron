@@ -19,7 +19,7 @@
                 <div class="borda-visitas">
                     <div class="texto-na-esquerda">
                         <h1 class="nome-da-visita">Visita Técnica — {{ $visita->name }}</h1>
-                        <h1 class="horarios-visitas">Dia: {{date('d/m', strtotime($visita->start))}} • Saída: {{date('H:i', strtotime($visita->start))}} • Vagas: 30</h1>
+                        <h1 class="horarios-visitas">Dia: {{date('d/m', strtotime($visita->start))}} • Saída: {{date('H:i', strtotime($visita->start))}} • Vagas: {{ $visita->slots }}</h1>
                     </div>
                     <a href="/inscricoes" class="botao-inscrever">Inscrever</a>
                 </div>

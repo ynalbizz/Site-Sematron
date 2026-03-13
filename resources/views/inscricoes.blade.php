@@ -36,8 +36,9 @@
                     <label>Pacote</label>
                         <select id="PACOTAO" name="pack_id" required>
                             <option value="" disabled selected>Selecione...</option>
-                            <option value=137>Básico R$</option>
-                            <option value=138>Completo R$</option>
+                            @foreach ($packs as $pack)
+                                <option value="{{ $pack->id }}">{{ $pack->nome }} R${{$pack->preço }}</option>
+                            @endforeach
                         </select>
                 </div>
         </div>
@@ -52,8 +53,10 @@
                     <label>Visita</label>
                         <select name="visita[]">
                             <option value="" disabled selected>Selecione...</option>
-                            <option value=0>Básico R$</option>
-                            <option value=1>Completo R$</option>
+                            @foreach ($visitas as $visita)
+                                <option value="{{ $visita->id }}"> {{ $visita->name }}</option>
+                            @endforeach
+                            
                             
                         </select>
                 </div>
@@ -67,8 +70,9 @@
                     <label>Minicurso</label>
                         <select name="minicurso[]">
                             <option value="" disabled selected>Selecione...</option>
-                            <option value=0>Básico R$</option>
-                            <option value=1>Completo R$</option>
+                            @foreach ($minicursos as $minicurso)
+                                <option value="{{ $minicurso->id }}"> {{ $minicurso->name }}</option>
+                            @endforeach
                         </select>
                 </div>
         </div>

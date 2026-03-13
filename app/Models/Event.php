@@ -13,5 +13,5 @@ class Event extends Model
 
     protected $table = 'events';
     protected $fillable = ['eid', 'type', 'start', 'end', 'name', 
-        'info', 'extra', 'sid', 'ts'];
+        'info','slots', 'extra', 'sid', 'ts'];
 }

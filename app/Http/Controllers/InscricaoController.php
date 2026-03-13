@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pack;
 use App\Models\Inscricao;
+use \App\Models\Event;
 
 use Illuminate\Support\Facades\Log;
 
@@ -14,7 +15,19 @@ class InscricaoController extends Controller
 
     public function create()
     {
-        return view('inscricoes');
+        $packs = Pack::where('sid', config('general.sematron_atual'))->get();
+
+        $visitas = Event::where([
+            ['type', 'viagem'],
+            ['sid', config('general.sematron_atual')]
+        ])->get();
+
+        $minicursos = Event::where([
+            ['type', 'minicurso'],
+            ['sid', config('general.sematron_atual')]
+        ])->get();
+
+        return view('inscricoes', ['packs' => $packs, 'visitas' => $visitas, 'minicursos' => $minicursos]);
     }
 
     public function store(Request $request)
