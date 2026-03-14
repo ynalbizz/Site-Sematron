@@ -6,7 +6,7 @@
 @section('content')
     <section class="container-centro">
         <!--Versão para Desktop-->
-            <!--Parte da Esquerda-->
+            <!--Parte da Esquerda Esquerda-->
             <div class="tamanhos tres-linhas">
                 <div class="informacoes topo">
                     <h1 class="Numero-centro">{{ $n_palestras }}</h1>
