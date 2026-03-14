@@ -25,13 +25,16 @@
 
 .Atividades{
     display: grid;
-    grid-template-columns: 24vw 24vw 24vw 24vw;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-top: 2vh;
-    margin-left: 2vw;
+    margin: 0vh 10vw;
 }
 
 .Colunas{
     height: 38vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .Circulo-atividades{
@@ -104,8 +107,4 @@
     margin-left: 2vw;
     height: 30vh;
     margin-top: 4vh;
-}
-
-.Esquerdinha{
-    margin-left: 3vw;
 }

@@ -64,7 +64,7 @@
 
 .Inscrições-Bloco{
     display: flex;
-    padding: 0.7vw 3vw 0.7vw 3vw;
+    padding: 0.7vw 3vw;
     background-color: var(--laranja);
     border-radius: 14px;
     transform: translateX(2vw);
@@ -72,6 +72,8 @@
     font-size: 20px;
     font-family: var(--fonte-inter);
     transition: transform 0.3s ease;
+    text-align: center;
+    justify-content: center;
 }
 
 .Inscrições-Bloco:hover{

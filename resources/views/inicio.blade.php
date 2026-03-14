@@ -6,7 +6,7 @@
 @section('content')
     <section class="container-centro">
         <!--Versão para Desktop-->
-            <!--Parte da Esquerda Esquerda-->
+            <!-- Parte da Esquerda -->
             <div class="tamanhos tres-linhas">
                 <div class="informacoes topo">
                     <h1 class="Numero-centro">{{ $n_palestras }}</h1>
@@ -177,7 +177,7 @@
 
                 <h1 class="Dia-Programacao">Dia 1 • Credenciamento + Abertura</h1>
 
-                <a class="Borda-Detalhes-Programacao" href="">Detalhes</a>
+                <!-- <a class="Borda-Detalhes-Programacao" href="">Detalhes</a> -->
 
             </div>
 
@@ -191,7 +191,7 @@
 
                 <h1 class="Dia-Programacao">Dia 2 • Palestras +  Minicursos</h1>
 
-                <a class="Borda-Detalhes-Programacao" href="">Detalhes</a>
+                <!-- <a class="Borda-Detalhes-Programacao" href="">Detalhes</a> -->
 
             </div>
 
@@ -205,7 +205,7 @@
 
                 <h1 class="Dia-Programacao">Dia 3 • Visitas técnicas </h1>
 
-                <a class="Borda-Detalhes-Programacao" href="">Detalhes</a>
+                <!-- <a class="Borda-Detalhes-Programacao" href="">Detalhes</a> -->
 
             </div>
 
@@ -219,7 +219,7 @@
 
                 <h1 class="Dia-Programacao">Dia 4 • xxxxx </h1>
 
-                <a class="Borda-Detalhes-Programacao" href="">Detalhes</a>
+                <!-- <a class="Borda-Detalhes-Programacao" href="">Detalhes</a> -->
 
             </div>
 
@@ -233,7 +233,7 @@
 
                 <h1 class="Dia-Programacao">Dia 5 • Encerramento</h1>
 
-                <a class="Borda-Detalhes-Programacao" href="">Detalhes</a>
+                <!-- <a class="Borda-Detalhes-Programacao" href="">Detalhes</a> -->
 
             </div>
         </section>
