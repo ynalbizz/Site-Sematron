@@ -8,6 +8,7 @@ use App\Http\Controllers\admController;
 use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\InscricaoController;
+use App\Http\Controllers\PerfilController;
 use App\Http\Middleware\AutenticacaoInscricao;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -48,7 +49,7 @@ Route::get('/esqueceu-a-senha', fn () => view('esqueceu-a-senha'))->name('esquec
 
 Route::get('/pao', fn () => view('pao'))->name('pao');
 
-Route::get('/perfil', fn () => view('perfil'))->name('perfil');
+Route::get('/perfil', [PerfilController::class, 'index'])->middleware('auth')->name('perfil');
 
 Route::get('/adm/list', [App\Http\Controllers\admController::class, 'showInscList'])->name('adm.list');
 

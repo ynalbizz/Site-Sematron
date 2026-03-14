@@ -18,6 +18,19 @@
                 <h1 class="curso-que-faz">EESC-USP | Eng. Mecatrônica</h1>
                 <h1 class="situacao-do-pix">Pagamento Confirmado!</h1>
                 <a href="" class="infos-pessoas">Informações Pessoais</a>
+                <h1 class="qrcode">Qr code para marcar sua presença:<br></h1>
+                <div id="qrcode"></div>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        let pid = "{{$participante->pid}}";
+                        new QRCode(document.getElementById("qrcode"),{
+                            text: pid,
+                            width: 150,
+                            height: 150
+                        });
+                    });
+                </script>
             </div>
         </div>
 
