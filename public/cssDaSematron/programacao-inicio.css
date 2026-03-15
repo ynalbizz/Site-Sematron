@@ -2,11 +2,11 @@
     Tá tudo baguncado, da um control+f pra achar
 */
 
-.Palavra-Programacao{
+.Palavra-Programacao {
     margin-bottom: 4vh;
 }
 
-.Borda-Programacao{
+.Borda-Programacao {
     display: flex;
     align-items: center;
     justify-content: left;
@@ -18,7 +18,7 @@
     margin-bottom: 3vh;
 }
 
-.Circulo-programacao{
+.Circulo-programacao {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,29 +29,50 @@
     margin-right: 1vw;
 }
 
-.Mini-Logo-Preto-Programacao{
+.Mini-Logo-Preto-Programacao {
     width: 75%;
     height: 75%;
     margin: 0;
 }
 
-.Dia-Programacao{
+.Dia-Programacao {
     color: var(--branco);
     font-family: var(--fonte-inter);
-    font-size: 14px;
+    font-size: var(--fonte-media-pequena);
 }
 
-.Borda-Detalhes-Programacao{
+.Borda-Detalhes-Programacao {
     background-color: var(--laranja);
     padding: 0.6vw 0.9vw;
     border-radius: 12px;
     margin-left: auto;
     color: var(--preto);
     font-family: var(--fonte-inter);
-    font-size: 12px;
+    font-size: var(--fonte-pequena);
     transition: transform 0.3s ease;
 }
 
-.Borda-Detalhes-Programacao:hover{
+.Borda-Detalhes-Programacao:hover {
     transform: scale(1.25);
+}
+
+@media (max-width: 1400px) {
+    .Dia-Programacao {
+        font-size: var(--fonte-media-pequena-tablet);
+    }
+
+    .Borda-Detalhes-Programacao {
+        font-size: var(--fonte-pequena-tablet);
+    }
+}
+
+@media (max-width: 1050px) {
+    .Dia-Programacao {
+        font-size: var(--fonte-media-pequena-celular);
+    }
+
+    .Borda-Detalhes-Programacao {
+        font-size: var(--fonte-pequena-celular);
+    }
+
 }

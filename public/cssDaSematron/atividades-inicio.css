@@ -2,63 +2,59 @@
     Tá tudo baguncado, da um control+f pra achar
 */
 
-.Palavra-Atividades_Traco-Laranja{
+.Palavra-Atividades_Traco-Laranja {
     margin-top: 5vh;
 }
 
-.Palavra-Atividades{
+.Palavra-Atividades {
     font-family: var(--fonte-Gotica);
     color: var(--branco);
-    font-size: 26px;
+    font-size: var(--fonte-grande);
     font-weight: 100;
     margin-left: 5.1vw;
 }
 
-.traco-laranja{
+.traco-laranja {
     display: flex;
-    width: 120px;
+    width: 7.5vw;
     height: 0.4vh;
     background-color: var(--laranja);
     margin-left: 5.1vw;
     border-radius: 4px;
 }
 
-.Atividades{
+.Atividades {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 2vh;
-    margin: 0vh 10vw;
 }
 
-.Colunas{
-    height: 38vh;
+.Colunas {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.Circulo-atividades{
+.Circulo-atividades {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 6vh;
-    width: 6vh;
+    height: 3.5vw;
+    width: 3.5vw;
     border-radius: 50%;
     background-color: var(--laranja);
     margin-left: 1.5vw;
     margin-top: 1.5vw;
 }
 
-.Mini-Logo-Preto-Atividades{
+.Mini-Logo-Preto-Atividades {
     width: 75%;
     height: 75%;
-    margin-top: 0vh;
-    margin-left: 0vh;
 }
 
-.Titulo-Libertadores{
+.Titulo-Libertadores {
     font-family: var(--fonte-Gotica);
-    font-size: 18px;
+    font-size: var(--fonte-media-grande);
     color: var(--branco);
     display: flex;
     text-align: left;
@@ -66,9 +62,9 @@
     margin-top: 1.5vw;
 }
 
-.Resumo{
+.Resumo {
     font-family: var(--fonte-inter);
-    font-size: 13px;
+    font-size: var(--fonte-media-pequena);
     color: var(--branco);
     display: flex;
     text-align: left;
@@ -76,35 +72,102 @@
     margin-top: 1vw;
 }
 
-.Saiba-Mais-Botao{
-    display: flex;
+.Saiba-Mais-Botao {
+    display: inline-flex;
     text-align: center;
     align-items: center;
     justify-content: center;
-    padding: 0.7vw 0vw;
+    padding: 1vw 1vw;
     border-radius: 12px;
     background-color: var(--laranja);
-    width: 7vw;
     margin-left: 1.5vw;
     margin-top: 3vw;
+    margin-bottom: 2vw;
     font-family: var(--fonte-inter);
-    font-size: 13px;
+    font-size: var(--fonte-media);
     color: var(--preto);
     transition: transform 0.3s ease;
 }
 
-.Saiba-Mais-Botao:hover{
+.Saiba-Mais-Botao:hover {
     transform: scale(1.25);
 }
 
-.Borda-Atividades{
+.Borda-Atividades {
     text-align: left;
-    text-align: center;
     align-items: start;
     border-radius: 18px;
     border: 1px solid var(--laranja);
-    width: 18vw;
-    margin-left: 2vw;
-    height: 30vh;
+    width: 25vw;
     margin-top: 4vh;
+}
+
+@media (max-width: 1400px) {
+    .Circulo-atividades {
+        height: 4vw;
+        width: 4vw;
+    }
+
+    .Palavra-Atividades {
+        font-size: var(--fonte-grande-tablet);
+    }
+
+    .Titulo-Libertadores {
+        font-size: var(--fonte-media-grande-tablet);
+    }
+
+    .Resumo {
+        font-size: var(--fonte-media-pequena-tablet);
+    }
+
+    .Saiba-Mais-Botao {
+        font-size: var(--fonte-media-tablet);
+        padding: 1vw 2vw;
+    }
+
+    .traco-laranja {
+        width: 13vw;
+    }
+}
+
+@media (max-width: 1050px) {
+    .Atividades {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Palavra-Atividades {
+        font-size: var(--fonte-grande-celular);
+    }
+
+    .Titulo-Libertadores {
+        font-size: var(--fonte-media-grande-celular);
+    }
+
+    .Resumo {
+        font-size: var(--fonte-media-pequena-celular);
+    }
+
+    .Saiba-Mais-Botao {
+        font-size: var(--fonte-media-celular);
+    }
+
+    .traco-laranja {
+        width: 19vw;
+    }
+
+    .Borda-Atividades {
+        width: 80vw;
+        margin-top: 1vh;
+    }
+
+    .Colunas {
+        margin-top: 6vw;
+    }
+
+    .Circulo-atividades {
+        height: 6vw;
+        width: 6vw;
+    }
 }

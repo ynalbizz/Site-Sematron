@@ -36,9 +36,29 @@
     --laranja: #FB9A03;
     --preto: #000000;
     --branco: #FFFFFF;
-    --fonte-grande: 25px;
-    --fonte-link: 20px;
-    --fonte-link-celular: 14px;
+
+    --fonte-gigante: 3vw;
+    --fonte-grande: 1.75vw;
+    --fonte-link: 1.075vw;
+    --fonte-media-grande: 1.25vw;
+    --fonte-media: 0.8vw;
+    --fonte-media-pequena: 0.8vw;
+    --fonte-pequena: 0.6vw;
+
+    --fonte-grande-tablet: 3vw;
+    --fonte-link-tablet: 1.7vw;
+    --fonte-media-grande-tablet: 1.8vw;
+    --fonte-media-tablet: 1.3vw;
+    --fonte-media-pequena-tablet: 1vw;
+    --fonte-pequena-tablet: 0.8vw;
+
+    --fonte-gigante-celular: 8vw;
+    --fonte-grande-celular: 4.5vw;
+    --fonte-link-celular: 3.5vw;
+    --fonte-media-grande-celular: 3.5vw;
+    --fonte-media-celular: 2.75vw;
+    --fonte-media-pequena-celular: 2vw;
+    --fonte-pequena-celular: 1.2vw;
 }
 
 /*

@@ -107,7 +107,7 @@
         <section class="Atividades">
             <!--Cada uma das div com class: "Colunas" é uma das colunas-->
             <div class="Colunas">
-                <div class="Borda-Atividades Esquerdinha">
+                <div class="Borda-Atividades">
 
                     <div class="Circulo-atividades">
                         <img class="Mini-Logo-Preto-Atividades" src="{{asset('/Imagens/LogoPreta.png')}}" alt="Logo da Sematron">

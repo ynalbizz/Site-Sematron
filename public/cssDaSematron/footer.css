@@ -2,64 +2,64 @@
     Tá tudo baguncado, da um control+f pra achar
 */
 
-.espacamento-rodape{
+.espacamento-rodape {
     margin-top: 12vh;
     margin-bottom: 3vh;
 }
 
-.Rodape{
+.Rodape {
     margin-left: 3.5vh;
 }
 
-.Creditos-Rodape{
+.Creditos-Rodape {
     font-family: var(--fonte-inter);
     color: var(--laranja);
-    font-size: 16px;
+    font-size: var(--fonte-media);
     margin-bottom: 1.2vh;
 }
 
-.Copyright-Rodape{
+.Copyright-Rodape {
     font-family: var(--fonte-inter);
     color: var(--branco);
-    font-size: 11px;
+    font-size: var(--fonte-pequena);
     margin-bottom: 0.8vh;
 }
 
-.Av-Trabalhador{
+.Av-Trabalhador {
     font-family: var(--fonte-inter);
     color: var(--branco);
-    font-size: 11px;
+    font-size: var(--fonte-pequena);
     margin-bottom: 0.8vh;
 }
 
-.Telefone{
+.Telefone {
     font-family: var(--fonte-inter);
     color: var(--branco);
-    font-size: 11px;
+    font-size: var(--fonte-pequena);
     margin-bottom: 1.5vh;
 }
 
-.Redes-Sociais-Rodape{
+.Redes-Sociais-Rodape {
     display: flex;
     margin-bottom: 3vh;
 }
 
-.Borda-Rodape{
+.Borda-Rodape {
     padding: 0.8vh 1vh;
     border: 1px solid var(--laranja);
     margin-right: 5vh;
     border-radius: 999px;
     color: var(--laranja);
     font-family: var(--fonte-inter);
-    font-size: 11px;
+    font-size: var(--fonte-pequena);
     transition: transform 0.3s ease;
 }
 
-.Borda-Rodape:hover{
+.Borda-Rodape:hover {
     transform: scale(1.25);
 }
 
-.Borda-Rodape-Gigante{
+.Borda-Rodape-Gigante {
     padding: 0.8vh 1vh;
     border: 1px solid var(--preto);
     margin-right: 5vh;
@@ -67,5 +67,33 @@
     border-radius: 999px;
     color: var(--preto);
     font-family: var(--fonte-inter);
-    font-size: 11px;
+    font-size: var(--fonte-pequena);
+}
+
+@media (max-width: 1400px) {
+    .Creditos-Rodape {
+        font-size: var(--fonte-media-tablet);
+    }
+
+    .Copyright-Rodape,
+    .Av-Trabalhador,
+    .Telefone,
+    .Borda-Rodape,
+    .Borda-Rodape-Gigante {
+        font-size: var(--fonte-media-pequena-tablet);
+    }
+}
+
+@media (max-width: 1050px) {
+    .Creditos-Rodape {
+        font-size: var(--fonte-media-celular);
+    }
+
+    .Copyright-Rodape,
+    .Av-Trabalhador,
+    .Telefone,
+    .Borda-Rodape,
+    .Borda-Rodape-Gigante {
+        font-size: var(--fonte-media-pequena-celular);
+    }
 }

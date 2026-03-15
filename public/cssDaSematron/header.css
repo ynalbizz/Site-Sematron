@@ -19,7 +19,6 @@
 }
 
 .Sematron-Inicio {
-    color: var(--branco);
     font-size: var(--fonte-grande);
     font-family: var(--fonte-Gotica);
     color: var(--laranja);
@@ -71,6 +70,7 @@
 }
 
 @media (max-width: 1400px) {
+
     .Links {
         display: none;
     }
@@ -98,7 +98,7 @@
 
     .Link-Do-Topo {
         color: var(--branco);
-        font-size: var(--fonte-link);
+        font-size: var(--fonte-link-tablet);
         font-family: var(--fonte-Gotica);
         text-decoration: none;
         margin: 1.5vh 0;
@@ -137,6 +137,10 @@
 @media (max-width: 1050px) {
     #hamburguer {
         font-size: 6vw;
+    }
+
+    .Link-Do-Topo {
+        font-size: var(--fonte-link-celular);
     }
 }
 
