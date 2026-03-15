@@ -12,6 +12,6 @@ class Userdata extends Model
     use HasFactory;
     protected $table = 'userdata';
     protected $fillable = [
-        'pid','sid','uid','gid','permissions','presence','choices','pack_id','minicurso','viajem','kit','camiseta','time','reserveTime,'
+        'pid','sid','uid','gid','permissions','presence','pack_id','minicurso','viajem','kit','camiseta','time','reserveTime,'
     ];
 }

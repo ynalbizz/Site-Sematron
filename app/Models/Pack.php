@@ -13,7 +13,6 @@ class Pack extends Model
         'sid',
         'nome',
         'preço',
-        'palestra',
         'minicurso',
         'visita',
         'kit',

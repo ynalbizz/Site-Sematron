@@ -68,7 +68,7 @@
             <h1 class="Champions-do-Forms">Escolha o Minicurso</h1>
                 <div class="input-group">
                     <label>Minicurso</label>
-                        <select name="minicurso[]">
+                        <select name="minicurso">
                             <option value="" disabled selected>Selecione...</option>
                             @foreach ($minicursos as $minicurso)
                                 <option value="{{ $minicurso->id }}"> {{ $minicurso->name }}</option>
