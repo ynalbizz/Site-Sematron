@@ -8,10 +8,12 @@
         <script src="{{asset('javaDaSematron/ver-senha.js') }}" defer></script>
         <script src="{{asset('javaDaSematron/inscricao.js') }}" defer></script>
         <script src="{{asset('javaDaSematron/perfil.js') }}" defer></script>
+        <script src="{{asset('javaDaSematron/header.js') }}" defer></script>
         <!--Isso é onde tem o olhinho da senha-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <!--Aqui em baixo importa a fonte. POR QUE CARALHOS INTER???????????? AQUI É GRÊMIO PORRA!!!!!!-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     </head>

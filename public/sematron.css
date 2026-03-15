@@ -30,19 +30,21 @@
     Esse root aqui é pra definir algumas cores e fontes que serão mais usadas no código pra deixar mais fácil de entender
 */
 
-:root{
+:root {
     --fonte-Gotica: "Mecanica-Inferior";
     --fonte-inter: "Inter";
     --laranja: #FB9A03;
     --preto: #000000;
     --branco: #FFFFFF;
+    --fonte-grande: 25px;
+    --fonte-link: 20px;
 }
 
 /*
     Só defini que todo o body tem fundo preto
 */
 
-.Corpo{
+.Corpo {
     background-color: var(--preto);
     z-index: -2;
 }
@@ -51,7 +53,7 @@
     Classe pra usar em tudo que centraliza os bagulho
 */
 
-.Centraliza{
+.Centraliza {
     display: flex;
     align-items: center;
     text-align: center;
@@ -62,7 +64,7 @@
     Pra todo link vir sem o sublinhado
 */
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -72,15 +74,14 @@ a{
     margin: 0 auto;
     padding: 0 15px;
 }
+
 .header {
     background-color: var(--laranja);
     padding: 10px;
 }
+
 .footer {
     background-color: var(--branco);
     padding: 20px;
     text-align: center;
 }
-
-
-
