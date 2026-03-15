@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Models\Event;
 use \App\Models\Userinfo;
+use \App\Models\Pack;
 use \App\Models\Userdata;
 use Illuminate\Support\Facades\Auth;
 
@@ -59,21 +60,47 @@ class GeneralController extends Controller
             ['sid', config('general.sematron_atual')]
         ])->get()->count();
 
-//        $user = Auth::user();
+        $auth = Auth::user();
+        $usuario = Userinfo::where('uid', $auth->uid)
+                            ->first();
 
-        $user = Userdata::where('uid', 3)
+        $user = Userdata::where('uid', $auth->uid)
                             ->where('sid', config('general.sematron_atual'))
                             ->first();
         
         
-        $presence = is_string($user->presence) 
-            ? json_decode($user->presence, true) 
-            : $user->presence;
-        
+        if ($user) {
+            $presence = is_string($user->presence) 
+                ? json_decode($user->presence, true) 
+                : $user->presence;
+                $totalPresenca = is_array($presence) ? count($presence) : 0;
+ 
+
+            $minicurso = Event::where('eid', $user->minicurso)->first()->name ?? 'Não disponível';
+            $viagem = Event::where('eid', $user->viagem)->first()->name ?? 'Não disponível';       
+            $camiseta = strtoupper($user->camiseta) ?? 'Não disponível';
+            $pack_id = Pack::where('id', $user->pack_id)->first()->nome ?? 'Não disponível';
+        } else {
+            // Se usuário não existe, define como 0
+            $totalPresenca = 0;
+            $minicurso = null;
+            $viagem = null;
+            $camiseta = null;
+            $pack_id = null;
+        }
 
         
-        $totalPresenca = count($presence);
+
+
+
         
-        return view('perfil', ['n_palestras' => $n_palestras, 'totalPresenca' => $totalPresenca]);
+        
+        return view('perfil', ['n_palestras' => $n_palestras,
+         'totalPresenca' => $totalPresenca,
+         'minicurso' => $minicurso,
+         'viagem' => $viagem,
+         'camiseta' => $camiseta,
+         'pack_id' => $pack_id,
+         'usuario' => $usuario]);
 }
 }

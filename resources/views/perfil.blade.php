@@ -8,17 +8,17 @@
             <h1 class="Login-grande">Perfil</h1>
             <h1 class="Sub-Login">Veja aqui suas informações.</h1>
         </div>
-
+@if($usuario)
         <div class="borda-perfil">
             <div class="texto-perfil">
-                <h1 class="nome-bendito">Erick Jão Adunas</h1>
-                <h1 class="email-do-ser">amigosdogil10@gmail.com</h1>
-                <h1 class="curso-que-faz">EESC-USP | Eng. Mecatrônica</h1>
+                <h1 class="nome-bendito">{{$usuario->name}}</h1>
+                <h1 class="email-do-ser">{{$usuario->email}}</h1>
+                <h1 class="curso-que-faz">{{$usuario->curso}}</h1>
                 <h1 class="situacao-do-pix">Pagamento Confirmado!</h1>
                 <a href="" class="infos-pessoas">Informações Pessoais</a>
             </div>
         </div>
-
+@endif
 
 
         <div class="borda-perfil">
@@ -44,7 +44,7 @@
         </div>
 
 
-
+@if($usuario)
         <div class="textos-perfil">
             <div class="div-Perfil">
                 <h1 class="Tit-Perfil">Categoria:</h1>
@@ -53,33 +53,33 @@
 
             <div class="div-Perfil">
                 <h1 class="Tit-Perfil">Kit:</h1>
-                <h2 class="SubTit-Perfil">Completo</h2>
+                <h2 class="SubTit-Perfil">{{$pack_id}}</h2>
             </div>
 
             <div class="div-Perfil">
                 <h1 class="Tit-Perfil">Minicursos:</h1>
-                <h2 class="SubTit-Perfil">Jogar Truco</h2>
+                <h2 class="SubTit-Perfil">{{$minicurso}}</h2>
             </div>
 
             <div class="div-Perfil">
                 <h1 class="Tit-Perfil">Visita:</h1>
-                <h2 class="SubTit-Perfil">Ubiratã</h2>
+                <h2 class="SubTit-Perfil">{{$viagem}}</h2>
             </div>
 
             <div class="div-Perfil">
                 <h1 class="Tit-Perfil">Camiseta:</h1>
-                <h2 class="SubTit-Perfil">G</h2>
+                <h2 class="SubTit-Perfil">{{$camiseta}}</h2>
             </div>
         </div>
 
 
-@if($n_palestras)
+
 
 
         <div class="textos-perfil">
             <div class="div-Perfil">
                 <h1 class="Tit-Perfil">Presença em Palestras:</h1>
-                <h2 class="SubTit-Perfil">{{$totalPresenca/$n_palestras*100}}%</h2>
+                <h2 class="SubTit-Perfil">{{ceil($totalPresenca/$n_palestras*100)}}%</h2>
             </div>
 @endif
             <div class="borda-certificado">
