@@ -4,7 +4,7 @@
 @section('title', 'Página Inicial')
 
 @section('content')
-    <section class="container-centro">
+        <section class="container-centro">
         <!--Versão para Desktop-->
             <!-- Parte da Esquerda -->
             <div class="tamanhos tres-linhas">
@@ -48,6 +48,45 @@
                     <a class="Inscrições-Bloco" href="/inscricao">Inscrição</a>
                 </div>
                 <a class="Ver-Atividade-Bloco" href="#activity">Ver Atividades</a>
+            </div>
+
+        </section>
+
+
+
+
+
+        <!-- Container para Celular -->
+        <section class="container-centro-celular">
+            <div>
+                <h1 class="Texto-EmCima-Logo">SEMATRON XXII</h1>
+            </div>
+
+            <div class="Imagem-PaginaInicial">
+                <h1 class="Texto-EmBaixo-Logo">Há mais de 20 anos reunindo</h1>
+                <h1 class="Texto-EmBaixo-Logo">estudantes de engenharia para o</h1>
+                <h1 class="Texto-EmBaixo-Logo">intercâmbio de conhecimento</h1>
+
+
+                <div class="botoes-PaginaInicial">
+                    <a class="Inscrições-Bloco separa" href="/inscricao">Inscrição</a>
+                    <a class="Ver-Atividade-Bloco" href="#activity">Ver Atividades</a>
+                </div>
+            </div>
+
+            <div class="bagulhos-Vagas-PaginaInicial">
+                <div class="informacoes">
+                    <h1 class="Numero-centro">{{ $n_palestras }}</h1>
+                    <h1 class="Texto-centro">Palestras</h1>
+                </div>
+                <div class="informacoes">
+                    <h1 class="Numero-centro">{{ $n_mcursos }}</h1>
+                    <h1 class="Texto-centro">Minicursos</h1>
+                </div>
+                <div class="informacoes">
+                    <h1 class="Numero-centro">{{ $n_visitas }}</h1>
+                    <h1 class="Texto-centro">Visitas</h1>
+                </div>
             </div>
 
         </section>
