@@ -1,14 +1,14 @@
-.espaco-no-topo{
+.espaco-no-topo {
     margin-top: 5vh;
 }
 
-.margem-esquerda{
+.margem-esquerda {
     margin-left: 5vw;
     margin-right: 5vw;
     min-height: 45vh;
 }
 
-.imagem-de-fundo{
+.imagem-de-fundo {
     width: 100%;
     position: relative;
     z-index: 1;
@@ -16,65 +16,110 @@
 
 .imagem-de-fundo::before {
     content: "";
-    position: fixed;        
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -52%);
-    
-    width: 130vh;
-    height: 130vh;
+
+    width: 65vw;
+    height: 65vw;
 
     background: url("/Imagens/logo-Photoroom.png") center / contain no-repeat;
     opacity: 0.4;
-    pointer-events: none; 
+    pointer-events: none;
     z-index: 0;
 }
 
-.borda-visitas, .borda-minicursos{
-    position: relative;             
+.borda-visitas,
+.borda-minicursos {
+    position: relative;
     border: 1px solid #f5a000;
     border-radius: 14px;
     display: flex;
     align-items: center;
-    padding: 1.5vw 1.5vw 1.5vw 2.5vw; 
+    padding: 1.5vw 1.5vw 1.5vw 2.5vw;
     margin: 3vh 0;
 }
 
-.borda-visitas::before, .borda-minicursos::before{
+.borda-visitas::before,
+.borda-minicursos::before {
     content: "";
     position: absolute;
-    left: -6px;         
+    left: -6px;
     height: 100%;
     width: 6px;
     background-color: #f5a000;
     border-radius: 6px;
 }
 
-.botao-inscrever{
+.botao-inscrever {
     margin-left: auto;
     text-decoration: none;
     font-family: var(--fonte-Gotica);
     color: var(--preto);
     padding: 0.6vw 0.9vw;
     background-color: var(--laranja);
-    font-size: 15px;
+    font-size: var(--fonte-media);
     border-radius: 12px;
     font-weight: 400;
     transition: transform 0.3s ease;
 }
 
-.botao-inscrever:hover{
+.botao-inscrever:hover {
     transform: scale(1.25);
 }
 
-.nome-da-visita, .nome-do-minicurso{
+.nome-da-visita,
+.nome-do-minicurso {
     color: var(--branco);
     font-family: var(--fonte-Gotica);
-    font-size: 18px;
+    font-size: var(--fonte-media-grande);
 }
 
-.horarios-visitas, .horarios-minicursos{
+.horarios-visitas,
+.horarios-minicursos {
     color: var(--branco);
     font-family: var(--fonte-inter);
-    font-size: 12px;
+    font-size: var(--fonte-media-media-pequena);
+}
+
+@media(max-width: 1400px) {
+    .botao-inscrever {
+        font-size: var(--fonte-media-tablet);
+    }
+
+    .botao-inscrever:hover {
+        transform: scale(1);
+    }
+
+    .nome-da-visita,
+    .nome-do-minicurso {
+        font-size: var(--fonte-media-grande-tablet);
+    }
+
+    .horarios-visitas,
+    .horarios-minicursos {
+        font-size: var(--fonte-media-media-pequena-tablet);
+    }
+
+}
+
+@media(max-width: 900px) {
+    .botao-inscrever {
+        font-size: var(--fonte-media-celular);
+    }
+
+    .botao-inscrever:hover {
+        transform: scale(1);
+    }
+
+    .nome-da-visita,
+    .nome-do-minicurso {
+        font-size: var(--fonte-media-grande-celular);
+    }
+
+    .horarios-visitas,
+    .horarios-minicursos {
+        font-size: var(--fonte-media-media-pequena-celular);
+    }
 }

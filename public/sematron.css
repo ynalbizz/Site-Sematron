@@ -43,6 +43,7 @@
     --fonte-media-grande: 1.25vw;
     --fonte-media: 0.8vw;
     --fonte-media-pequena: 0.8vw;
+    --fonte-media-media-pequena: 0.7vw;
     --fonte-pequena: 0.6vw;
 
     --fonte-grande-tablet: 3vw;
@@ -50,6 +51,7 @@
     --fonte-media-grande-tablet: 1.8vw;
     --fonte-media-tablet: 1.3vw;
     --fonte-media-pequena-tablet: 1vw;
+    --fonte-media-media-pequena-tablet: 0.9vw;
     --fonte-pequena-tablet: 0.8vw;
 
     --fonte-gigante-celular: 8vw;
@@ -58,6 +60,7 @@
     --fonte-media-grande-celular: 3.5vw;
     --fonte-media-celular: 2.75vw;
     --fonte-media-pequena-celular: 2vw;
+    --fonte-media-media-pequena-celular: 1.6vw;
     --fonte-pequena-celular: 1.2vw;
 }
 
