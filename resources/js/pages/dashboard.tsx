@@ -1,35 +1,52 @@
+import AppLayout from '@/layouts/app-layout';
 import { Head } from '@inertiajs/react';
 
-import { PlaceholderPattern } from '@/components/ui/placeholder-pattern';
-import AppLayout from '@/layouts/app-layout';
-import { dashboard } from '@/routes';
-import { type BreadcrumbItem } from '@/types';
-
-const breadcrumbs: BreadcrumbItem[] = [
-    {
-        title: 'Dashboard',
-        href: dashboard().url,
-    },
-];
-
-export default function Dashboard() {
+export default function Dashboard({ auth }: { auth: any }) {
     return (
-        <AppLayout breadcrumbs={breadcrumbs}>
+        <AppLayout>
             <Head title="Dashboard" />
-            <div className="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
-                <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-                    <div className="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
-                        <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />
-                    </div>
-                    <div className="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
-                        <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />
-                    </div>
-                    <div className="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
-                        <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />
-                    </div>
+
+            {}
+            <div className="shadow" style={{ backgroundColor: '#111111', borderBottom: '1px solid #333' }}>
+                <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <h2 className="font-semibold text-xl leading-tight" style={{ color: '#FB9A03', fontFamily: "'Inter', sans-serif" }}>
+                        Área do Inscrito - SEMATRON XXII
+                    </h2>
                 </div>
-                <div className="relative min-h-[100vh] flex-1 overflow-hidden rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border">
-                    <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />
+            </div>
+
+            {}
+            <div className="py-12" style={{ backgroundColor: '#000000', minHeight: '100vh' }}>
+                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    
+                    <div className="overflow-hidden shadow-sm sm:rounded-lg" 
+                         style={{ backgroundColor: '#111111', border: '1px solid #333' }}>
+                        
+                        <div className="p-6">
+                            <h3 className="text-2xl font-bold mb-4" style={{ color: '#FB9A03' }}>
+                                Bem-vindo(a), {auth.user.name}! 🤖
+                            </h3>
+                            
+                            <p className="mb-6 text-gray-300" style={{ fontFamily: "'Inter', sans-serif" }}>
+                                Para confirmar sua participação, finalize sua inscrição abaixo.
+                            </p>
+
+                            <div className="border-t border-gray-700 my-6"></div>
+
+                            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                                <div>
+                                    <p className="text-gray-400 text-sm">Status Atual:</p>
+                                    <span className="font-bold text-yellow-500 text-lg">⚠️ Pagamento Pendente</span>
+                                </div>
+
+                                <a href="/pagar" 
+                                   className="px-6 py-4 rounded-lg font-bold text-black transition hover:opacity-90 shadow-lg text-center w-full md:w-auto block"
+                                   style={{ backgroundColor: '#FB9A03', textDecoration: 'none', fontFamily: "'Inter', sans-serif" }}>
+                                    PAGAR INSCRIÇÃO (R$ 15,50) ⚡
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </AppLayout>
