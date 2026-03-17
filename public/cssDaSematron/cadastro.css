@@ -1,6 +1,5 @@
-.bagulho-principal{
+.bagulho-principal {
     width: 100%;
-    min-height: 60vh;
     position: relative;
     z-index: 1;
     display: grid;
@@ -10,53 +9,52 @@
 
 .bagulho-principal::before {
     content: "";
-    position: fixed;        
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-25%, -50%);
-    
-    width: 110vh;
-    height: 110vh;
+
+    width: 65vw;
+    height: 65vw;
 
     background: url("/Imagens/logo-Photoroom.png") center / contain no-repeat;
     opacity: 0.4;
-    pointer-events: none; 
+    pointer-events: none;
     z-index: -10;
 }
 
-.duas-colunas-cadastro{
+.duas-colunas-cadastro {
     width: 100%;
-    min-height: 60vh;
     z-index: 1;
     display: grid;
     grid-template-columns: 50% 50%;
 }
 
-.Cadastro-grande{
+.Cadastro-grande {
     color: var(--laranja);
     font-family: var(--fonte-Gotica);
-    font-size: 50px;
+    font-size: var(--fonte-gigante);
 }
 
-.Sub-Cadastro{
+.Sub-Cadastro {
     font-family: var(--fonte-inter);
     color: var(--branco);
-    font-size: 14px;
+    font-size: var(--fonte-media);
     margin-left: 0.5vw;
     margin-top: 3vh;
 }
 
-.Parte-da-Esquerda{
-    display: flex;         
-    flex-direction: column;     
-    justify-content: center;   
-    align-items: center;        
-    text-align: center;         
+.Parte-da-Esquerda {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.Champions-do-Forms{
+.Champions-do-Forms {
     font-family: var(--fonte-Gotica);
-    font-size: 24px;
+    font-size: var(--fonte-grande);
     color: var(--branco);
     margin-bottom: 2vh;
     font-weight: 500;
@@ -65,7 +63,7 @@
 
 .input-group input {
     width: 100%;
-    height: 44px;
+    height: 3vw;
     background-color: transparent;
     border: 1px solid #fb9a03;
     border-radius: 12px;
@@ -81,14 +79,14 @@
     border-color: #fff;
 }
 
-.borda-cadastro{
+.borda-cadastro {
     margin: 2vw 3vw;
     border: 1px solid var(--laranja);
     border-radius: 22px;
     padding: 2vw;
 }
 
-.espacamento-rodape-Cadastro{
+.espacamento-rodape-Cadastro {
     margin-top: 3vh;
     margin-bottom: 3vh;
 }
@@ -102,7 +100,7 @@
     color: #000;
     font-family: var(--fonte-inter);
     font-weight: 600;
-    font-size: 16px;
+    font-size: var(--fonte-media);
     cursor: pointer;
     margin-top: 20px;
     transition: background-color 0.3s, transform 0.2s;
@@ -116,7 +114,7 @@
 .input-group {
     margin-bottom: 20px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     position: relative;
@@ -125,9 +123,10 @@
 .input-group label {
     font-family: var(--fonte-inter);
     font-weight: 300;
-    font-size: 14px;
+    font-size: var(--fonte-media-grande);
     color: #fff;
-    width: 100%; /* Espaço para o label */
+    width: 100%;
+    /* Espaço para o label */
     text-align: right;
     padding-right: 15px;
     margin-bottom: 4px;
@@ -167,4 +166,96 @@
 .input-group select option {
     background-color: var(--preto);
     border: var(--laranja);
+}
+
+@media(max-width: 1400px) {
+    .bagulho-principal {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .borda-cadastro-celular {
+        margin: 2vw 3vw;
+        border: 1px solid var(--laranja);
+        border-radius: 22px;
+        padding: 2vw;
+    }
+
+    .borda-cadastro {
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .duas-colunas-cadastro {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bagulho-principal::before {
+        transform: translate(-50%, -50%);
+    }
+
+    .Cadastro-grande {
+        font-size: var(--fonte-gigante-tablet);
+    }
+
+    .submit-btn,
+    .Sub-Cadastro {
+        font-size: var(--fonte-media-tablet);
+    }
+
+    .Champions-do-Forms {
+        font-size: var(--fonte-grande-tablet);
+    }
+
+    .input-group label {
+        font-size: var(--fonte-media-grande-tablet);
+    }
+
+    .input-group input {
+        height: 4vw;
+    }
+}
+
+@media(max-width: 1050px) {
+    .input-group input {
+        height: 5vw;
+    }
+}
+
+@media(max-width: 900px) {
+    .Cadastro-grande {
+        font-size: var(--fonte-gigante-celular);
+    }
+
+    .submit-btn,
+    .Sub-Cadastro {
+        font-size: var(--fonte-media-celular);
+    }
+
+    .Champions-do-Forms {
+        font-size: var(--fonte-grande-celular);
+    }
+
+    .input-group label {
+        font-size: var(--fonte-media-celular);
+    }
+
+    .input-group input {
+        height: 7vw;
+    }
+}
+
+@media(max-width: 750px) {
+    .input-group input {
+        height: 8vw;
+    }
+}
+
+@media(max-width: 500px) {
+    .input-group input {
+        height: 10vw;
+    }
 }

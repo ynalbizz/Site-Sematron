@@ -21,7 +21,7 @@
             <h1 class="Login-grande">Login</h1>
             <h1 class="Sub-Login">Acesse sua conta para XXXX e XXXX.</h1>
         </div>
-        <div class="borda-cadastro">
+        <div class="borda-login">
             <h1 class="Champions-do-Forms">LOGIN</h1>
 
                 <form action={{ route('login.autenticar') }} method="POST">

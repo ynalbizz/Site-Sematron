@@ -1,41 +1,41 @@
-.Palavra-MAISSSS{
+.Palavra-MAISSSS {
     margin-left: 5.1vw;
     font-family: var(--fonte-Gotica);
-    font-size: 30px;
+    font-size: var(--fonte-grande);
     color: var(--laranja);
 }
 
-.tamanho-min{
+.tamanho-min {
     min-height: 47vh;
 }
 
-.textao{
+.textao {
     font-family: var(--fonte-inter);
-    font-size: 20px;
+    font-size: var(--fonte-media-grande);
     color: var(--laranja);
     line-height: 1.5;
 }
 
-.texto-pra-porra{
+.texto-pra-porra {
     width: 90vw;
     margin-left: 5vw;
 }
 
-.Sub-Mais-Sematron{
+.Sub-Mais-Sematron {
     color: var(--branco);
-    font-size: 16px;
+    font-size: var(--fonte-media-grande);
     font-family: var(--fonte-inter);
     margin-top: 3vh;
     text-align: center;
 }
 
-.links{
+.links {
     display: flex;
     justify-content: center;
     margin-top: 3vh;
 }
 
-.borda-Mais-Sematron{
+.borda-Mais-Sematron {
     text-decoration: none;
     display: flex;
     padding: 1vh 1vw 1vh 0.5vw;
@@ -45,33 +45,81 @@
     align-items: center;
 }
 
-.borda-Mais-Sematron:hover{
+.borda-Mais-Sematron:hover {
     transform: scale(1.25);
 }
 
-.link-mais-semat{
+.link-mais-semat {
     color: var(--branco);
-    font-size: 20px;
+    font-size: var(--fonte-link);
     font-family: var(--fonte-inter);
 }
 
-.Circulo-mais{
+.Circulo-mais {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 4vh;
-    height: 4vh;
+    width: 2vw;
+    height: 2vw;
     border-radius: 50%;
     background-color: var(--laranja);
     margin-right: 1vw;
 }
 
-.Mini-Logo-Preto-mais{
+.Mini-Logo-Preto-mais {
     width: 75%;
     height: 75%;
     margin: 0;
 }
 
-.diretcha{
+.diretcha {
     margin-right: 3vw;
+}
+
+@media(max-width: 1400px) {
+    .Palavra-MAISSSS {
+        font-size: var(--fonte-grande-tablet);
+    }
+
+    .textao {
+        font-size: var(--fonte-media-grande-tablet);
+    }
+
+    .Sub-Mais-Sematron {
+        font-size: var(--fonte-media-grande-tablet);
+    }
+
+    .link-mais-semat {
+        font-size: var(--fonte-link-tablet);
+    }
+
+    .Circulo-mais {
+        width: 3.5vw;
+        height: 3.5vw;
+    }
+}
+
+@media(max-width: 1050px) {
+    .Palavra-MAISSSS {
+        font-size: var(--fonte-grande-celular);
+    }
+}
+
+@media(max-width: 900px) {
+    .textao {
+        font-size: var(--fonte-media-celular);
+    }
+
+    .Sub-Mais-Sematron {
+        font-size: var(--fonte-media-grande-celular);
+    }
+
+    .link-mais-semat {
+        font-size: var(--fonte-link-celular);
+    }
+
+    .Circulo-mais {
+        width: 4.5vw;
+        height: 4.5vw;
+    }
 }

@@ -152,6 +152,12 @@
     }
 }
 
+@media (max-width: 1050px) {
+    .Texto-EmCima-Logo {
+        font-size: var(--fonte-gigante-tablet);
+    }
+}
+
 @media (max-width: 900px) {
     .container-centro {
         display: none;

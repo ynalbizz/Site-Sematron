@@ -80,7 +80,7 @@
     .Telefone,
     .Borda-Rodape,
     .Borda-Rodape-Gigante {
-        font-size: var(--fonte-media-pequena-tablet);
+        font-size: var(--fonte-media-media-pequena-tablet);
     }
 }
 
@@ -94,6 +94,6 @@
     .Telefone,
     .Borda-Rodape,
     .Borda-Rodape-Gigante {
-        font-size: var(--fonte-media-pequena-celular);
+        font-size: var(--fonte-media-media-pequena-celular);
     }
 }

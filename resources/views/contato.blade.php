@@ -3,7 +3,7 @@
 @section('title', 'Contato')                <!--AQUI TU BOTA O NEGOCIO QUE APARECE NA ABA LÁ EM CIMA-->
 
 @section('content')                         <!--AQUI COMEÇA O CONTEÚDO ESPECÍFICO DA PÁGINA-->
-    <section class="Parte-De-Cima-Contato">
+    <section class="Parte-De-Cima-Contato imagem-de-fundo-contato">
         <div class="texto-contato">
             <h1 class="Tit-Cont">Contato</h1>
             <h1 class="Sub-Cont">Fale com a equipe SEMATRON.</h1>

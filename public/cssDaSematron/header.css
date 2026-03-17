@@ -132,6 +132,10 @@
         align-items: center;
         padding: 1vh 0;
     }
+
+    .Sematron-Inicio {
+        font-size: var(--fonte-grande-tablet);
+    }
 }
 
 @media (max-width: 1050px) {
@@ -141,6 +145,12 @@
 
     .Link-Do-Topo {
         font-size: var(--fonte-link-celular);
+    }
+}
+
+@media (max-width: 900px) {
+    .Sematron-Inicio {
+        font-size: var(--fonte-grande-celular);
     }
 }
 

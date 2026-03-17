@@ -37,7 +37,7 @@
     --preto: #000000;
     --branco: #FFFFFF;
 
-    --fonte-gigante: 3vw;
+    --fonte-gigante: 3.5vw;
     --fonte-grande: 1.75vw;
     --fonte-link: 1.075vw;
     --fonte-media-grande: 1.25vw;
@@ -46,6 +46,7 @@
     --fonte-media-media-pequena: 0.7vw;
     --fonte-pequena: 0.6vw;
 
+    --fonte-gigante-tablet: 5vw;
     --fonte-grande-tablet: 3vw;
     --fonte-link-tablet: 1.7vw;
     --fonte-media-grande-tablet: 1.8vw;
@@ -61,7 +62,7 @@
     --fonte-media-celular: 2.75vw;
     --fonte-media-pequena-celular: 2vw;
     --fonte-media-media-pequena-celular: 1.6vw;
-    --fonte-pequena-celular: 1.2vw;
+    --fonte-pequena-celular: 1.4vw;
 }
 
 /*

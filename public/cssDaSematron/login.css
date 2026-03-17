@@ -1,6 +1,5 @@
-.trem-principal{
+.trem-principal {
     width: 100%;
-    min-height: 57vh;
     position: relative;
     z-index: 1;
     display: grid;
@@ -8,61 +7,104 @@
     gap: 25vw;
 }
 
+.borda-login {
+    margin: 2vw 3vw;
+    border: 1px solid var(--laranja);
+    border-radius: 22px;
+    padding: 2vw;
+}
+
 .trem-principal::before {
     content: "";
-    position: fixed;        
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -55%);
-    
-    width: 110vh;
-    height: 110vh;
+
+    width: 65vw;
+    height: 65vw;
 
     background: url("/Imagens/logo-Photoroom.png") center / contain no-repeat;
     opacity: 0.4;
-    pointer-events: none; 
+    pointer-events: none;
     z-index: -10;
 }
 
-.Login-grande{
+.Login-grande {
     color: var(--laranja);
     font-family: var(--fonte-Gotica);
-    font-size: 50px;
+    font-size: var(--fonte-gigante);
 }
 
-.Sub-Login{
+.Sub-Login {
     font-family: var(--fonte-inter);
     color: var(--branco);
-    font-size: 14px;
+    font-size: var(--fonte-media);
     margin-left: 0.5vw;
     margin-top: 3vh;
 }
 
-.cima-espacamento{
+.cima-espacamento {
     margin-top: 19vh;
 }
 
-.display-flex{
+.display-flex {
     display: flex;
 }
 
-.Esqueceu-Senha{
+.Esqueceu-Senha {
     margin-left: auto;
     font-family: var(--fonte-inter);
-    font-size: 12px;
+    font-size: var(--fonte-media-pequena);
     margin-top: 10px;
     text-decoration: none;
     color: var(--branco);
     transition: transform 0.3s ease;
+    transform: translateX(-2vw);
 }
 
-.Esqueceu-Senha:hover{
-    transform: scale(1.25);
+.Esqueceu-Senha:hover {
+    transform: translateX(-2vw) scale(1.25);
 }
 
-#olhinho{
+#olhinho {
     position: absolute;
     right: 23px;
     top: 50%;
     cursor: pointer;
+}
+
+@media(max-width: 1400px) {
+    .trem-principal {
+        display: flex;
+        flex-direction: column;
+        gap: 3vw;
+    }
+
+    .Login-grande {
+        font-size: var(--fonte-gigante-tablet);
+    }
+
+    .Sub-Login {
+        margin-top: 1vw;
+        font-size: var(--fonte-media-tablet);
+    }
+
+    .Esqueceu-Senha {
+        font-size: var(--fonte-media-pequena-tablet);
+    }
+}
+
+@media(max-width: 900px) {
+    .Login-grande {
+        font-size: var(--fonte-gigante-celular);
+    }
+
+    .Sub-Login {
+        font-size: var(--fonte-media-celular);
+    }
+
+    .Esqueceu-Senha {
+        font-size: var(--fonte-media-pequena-celular);
+    }
 }
