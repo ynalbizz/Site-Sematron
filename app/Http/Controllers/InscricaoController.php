@@ -51,7 +51,7 @@ class InscricaoController extends Controller
         $dados['uid'] = auth()->user()->uid;
         $dados['sid'] = 22;
 
-        $dados['choices'] = json_encode($choices);
+        #$dados['choices'] = json_encode($choices);
 
         $dados['minicurso'] = 0;
         $dados['viagem'] = 0;
