@@ -19,7 +19,7 @@
                                 @break
 
                             @case('waiting')
-                                <a class="situacao-do-pix-clicavel" href="/pagamento/retomar" style=" background-color: #c49300;">Aguardando Pagamento...<p>(Clique para continuar Pagando)</p></a>
+                                <a class="spc" href="/pagamento/retomar" style=" background-color: #c49300;">Aguardando Pagamento...<p>(Clique para continuar Pagando)</p></a>
                                 @break
 
                             @case('n_sub')
@@ -58,7 +58,7 @@
         <section class="vaiSumir is-visible">
             <div class="Parte-da-Esquerda">
                 {{-- O nome_edicao agora existe no backend e será exibido aqui --}}
-                <h1 class="Snome-grande">{{ $this->userAtual->nome_edicao }}</h1>
+                <h1 class="sn-grande">{{ $this->userAtual->nome_edicao }}</h1>
             </div>
 
             <div class="textos-perfil">

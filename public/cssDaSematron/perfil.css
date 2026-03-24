@@ -3,7 +3,7 @@
     grid-template-columns: 33vw 33vw 33vw;
     min-height: 55vh;
 }
-.Snome-grande {
+.sn-grande {
     color: var(--laranja);
     font-family: var(--fonte-Gotica);
     font-size: 2.5vw;
@@ -82,7 +82,7 @@
     margin-top: 7vh;
 }
 
-.situacao-do-pix-clicavel{
+.spc{
     font-family: var(--fonte-inter);
     font-size: 15px;
     color: var(--branco);
@@ -122,7 +122,7 @@
     transform: scale(1.25);
 }
 
-.situacao-do-pix-clicavel:hover{
+.spc:hover{
     transform: scale(1.05);
 }
 
