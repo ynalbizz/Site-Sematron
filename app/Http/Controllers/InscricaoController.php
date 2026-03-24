@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pack;
 use App\Models\Inscricao;
+use \App\Models\Event;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Log;
@@ -21,7 +22,19 @@ class InscricaoController extends Controller
                 return redirect('/pagamento/retomar');
             }
         }
-        return view('inscricoes');
+        $packs = Pack::where('sid', config('general.sematron_atual'))->get();
+
+        $visitas = Event::where([
+            ['type', 'viagem'],
+            ['sid', config('general.sematron_atual')]
+        ])->get();
+
+        $minicursos = Event::where([
+            ['type', 'minicurso'],
+            ['sid', config('general.sematron_atual')]
+        ])->get();
+
+        return view('inscricoes', ['packs' => $packs, 'visitas' => $visitas, 'minicursos' => $minicursos]);
     }
 
     public function store(Request $request)
@@ -45,22 +58,22 @@ class InscricaoController extends Controller
             $dados['camiseta'] = $request->camiseta;
         }
 
-        $choices = [];
-
         if ($pack->visita == 1) {
             $request->validate(['visita' => 'required']);
-            $choices['v'] = $request->visita;
+            $visita = $request->visita;
         }
 
         if ($pack->minicurso == 1) {
             $request->validate(['minicurso' => 'required']);
-            $choices['m'] = $request->minicurso;
+            $minicurso = $request->minicurso;
         }
 
         $dados['uid'] = Auth::user()->uid;
         $dados['sid'] = 22;
-        $dados['minicurso'] = 0;
-        $dados['viagem'] = 0;
+
+
+        $dados['minicurso'] = $minicurso ?? 0;
+        $dados['viagem'] = $visita ?? 0;
         $dados['gid'] = 3;
         $dados['permissions'] = 0;
         $dados['presence'] = json_encode([]);

@@ -14,6 +14,7 @@
             <a class="Link-Do-Topo" href="/inscricao">Inscrições</a>
             <a class="Link-Do-Topo" href="/minicursos">Minicursos</a>
             <a class="Link-Do-Topo" href="/visitas">Visitas</a>
+            <a class="Link-Do-Topo" href="/palestras">Palestras</a>
             <a class="Link-Do-Topo" href="/login">Login</a>
             <a class="Link-Do-Topo" href="/cadastro/create">Cadastro</a>
             <a class="Link-Do-Topo" href="/maisSematron">Mais Sematron</a>

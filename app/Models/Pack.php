@@ -9,14 +9,13 @@ use Illuminate\Database\Eloquent\Model;
         public $timestamps = false;
         protected $table = 'pack';
         protected $fillable = [
-            'id',
-            'sid',
-            'nome',
-            'preço',
-            'palestra',
-            'minicurso',
-            'visita',
-            'kit',
+          'id',
+          'sid',
+          'nome',
+          'preço',
+          'minicurso',
+          'visita',
+          'kit',
         ];
         protected $casts = [
             'palestra' => 'boolean',
