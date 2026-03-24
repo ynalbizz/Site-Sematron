@@ -38,9 +38,9 @@ new #[Layout('layouts.layout-logado')] class extends Component
             if($user->temInscricaoCompleta()){
                 return 'confirmed';
             }
-            $user_pids = Userdata::where('uid',$user->uid)->where('sid',config('general.sematon_atual'))->pluck('pid');
+            $user_pids = Userdata::where('uid',$user->uid)->where('sid',config('general.sematron_atual'))->pluck('pid');
             $first_sale = Sale::whereIn('pid',$user_pids)->first();
-            if(!$first_sale){return 'failed';}
+            if($first_sale==null){return 'failed';}
             return $first_sale->status;
         }
         return 'n_sub';
