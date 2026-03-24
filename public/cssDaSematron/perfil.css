@@ -3,6 +3,11 @@
     grid-template-columns: 33vw 33vw 33vw;
     min-height: 55vh;
 }
+.Snome-grande {
+    color: var(--laranja);
+    font-family: var(--fonte-Gotica);
+    font-size: 2.5vw;
+}
 
 .separa-em-tres::before {
     content: "";
@@ -73,7 +78,15 @@
     font-size: 15px;
     color: var(--branco);
     padding: 1.5vh 1vw;
-    background-color: green;
+    border-radius: 14px;
+    margin-top: 7vh;
+}
+
+.situacao-do-pix-clicavel{
+    font-family: var(--fonte-inter);
+    font-size: 15px;
+    color: var(--branco);
+    padding: 1.5vh 1vw;
     border-radius: 14px;
     margin-top: 7vh;
 }
@@ -109,6 +122,10 @@
     transform: scale(1.25);
 }
 
+.situacao-do-pix-clicavel:hover{
+    transform: scale(1.05);
+}
+
 .segue-o-lider{
     color: var(--laranja);
     font-family: var(--fonte-Gotica);
@@ -142,7 +159,7 @@
 
 .vaiSumir.is-visible {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 30% 40% 30%;
     justify-content: center;
     align-items: center;
     width: 80%;
