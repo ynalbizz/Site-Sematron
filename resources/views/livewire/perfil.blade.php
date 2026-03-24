@@ -19,7 +19,7 @@
                                 @break
 
                             @case('waiting')
-                                <a class="spc" href="/pagamento/retomar" style=" background-color: #c49300;">Aguardando Pagamento...<p>(Clique para continuar Pagando)</p></a>
+                                <a class="spc" href="/pagamento/retomar">Aguardando Pagamento...<p>(Clique para continuar Pagando)</p></a>
                                 @break
 
                             @case('n_sub')
