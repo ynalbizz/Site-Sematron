@@ -60,8 +60,6 @@ Route::get('/esqueceu-a-senha', fn () => view('esqueceu-a-senha'))->name('esquec
 
 Route::get('/34st3r3gg', fn () => view('easteregg'))->name('easteregg');
 
-Route::get('/perfil', fn () => view('perfil'))->name('perfil');
-
 Route::get('/adm/list', [admController::class, 'showInscList'])->name('adm.list');
 
 Route::post('/inscricoes', [InscricaoController::class, 'store']);
