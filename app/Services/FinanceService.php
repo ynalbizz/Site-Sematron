@@ -21,7 +21,7 @@ use MercadoPago\Exceptions\MPApiException;
 
 class FinanceService
 {
-    public static function createPreferenceRequest($pack_id, $pack_name, $price, $code): array
+    public static function createPreferenceRequest($pack_id, $pack_name, $price, $code, $title): array
     {
     $baseUrl = config('app.url'); 
 
@@ -40,7 +40,7 @@ class FinanceService
         $request = [
             "items" => array(array(
                 "id" => (string)$pack_id,
-                "title" => "Inscrição Sematron",
+                "title" => $title,
                 "description" => $pack_name,
                 "quantity" => 1,
                 "currency_id" => "BRL",
@@ -57,9 +57,9 @@ class FinanceService
     }
 
 
-    public static function createMercadoPagoPreference($pack_id, $pack_name, $price, $code) {  
+    public static function createMercadoPagoPreference($pack_id, $pack_name, $price, $code, $title) {  
         //MercadoPagoConfig::setAccessToken(config('integrations.mercadopago.access_token'));
-        $request = self::createPreferenceRequest($pack_id, $pack_name, $price, $code);
+        $request = self::createPreferenceRequest($pack_id, $pack_name, $price, $code, $title);  
         $client = new PreferenceClient();
 
         try {
@@ -69,4 +69,15 @@ class FinanceService
             dd("ERRO CRÍTICO:", $e->getMessage());
         }
     }
-}
+
+    public static function get_preference_url($pref_id) {
+        $client = new PreferenceClient();
+        try {
+            $preference = $client->get($pref_id);
+            return $preference->init_point; 
+        } catch (MPApiException $e) {
+            dd("ERRO CRÍTICO:", $e->getMessage());
+            return '/inicio';
+        }
+    }
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       

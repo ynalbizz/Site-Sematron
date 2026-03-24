@@ -21,8 +21,10 @@ class AutenticacaoInscricao
             return redirect()->route('login');
         }
 
-        if (Inscricao::where('uid', auth()->user()->uid)->where('sid', 22)->exists()) {
-            return redirect()->route('perfil');
+        if(Auth::user()->temInscricaoCompleta()){
+            return redirect('/perfil')->with('error', 'Você já está inscrito!');
+        }else{
+            return redirect('/pagamento/retomar');
         }
         
         return $next($request);

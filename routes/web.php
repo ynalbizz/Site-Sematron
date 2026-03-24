@@ -51,7 +51,7 @@ Route::get('/teste', [testeController::class, 'show']);
 
 Route::get('/esqueceu-a-senha', fn () => view('esqueceu-a-senha'))->name('esqueceu-a-senha');
 
-Route::get('/pao', fn () => view('pao'))->name('pao');
+Route::get('/34st3r3gg', fn () => view('easteregg'))->name('easteregg');
 
 Route::get('/perfil', fn () => view('perfil'))->name('perfil');
 
@@ -73,6 +73,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/pagamento/sucesso', [PaymentController::class, 'success'])->name('payment.success');
     Route::get('/pagamento/erro', [PaymentController::class, 'failure'])->name('payment.failure');
     Route::get('/pagamento/pendente', [PaymentController::class, 'pending'])->name('payment.pending');
+    Route::get('/pagamento/retomar', [PaymentController::class, 'resume_payment'])->name('payment.resume');
 });
 
 

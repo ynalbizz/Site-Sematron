@@ -21,19 +21,19 @@ class Inscricao extends Model
         'gid',
         'permissions',
         'presence',
-        'choices',
         'pack_id',
         'minicurso',
         'viagem',
         'kit',
         'camiseta',
+        'alojamento',
         'time',
         'reserveTime'
     ];
 
     protected $casts = [
-        'choices' => 'array',
         'presence' => 'array',
+        'alojamento' => 'boolean',
     ];
 
     public function pack(): BelongsTo

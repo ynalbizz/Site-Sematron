@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Sale;
+use App\Models\Inscricao;
+use Illuminate\Validation\Rules\Exists;
 
 class Userlogin extends Authenticatable
 {
@@ -16,4 +19,21 @@ class Userlogin extends Authenticatable
     protected $fillable = [
         'uid', 'username', 'password', 'salt',
     ];
+
+
+    public function has_insc(){
+        $sid = env('ATUAL_SID');
+        return Inscricao::where('uid',$this->uid)->where('sid',$sid)->exists();
+    }
+
+    public function temInscricaoCompleta() 
+    {
+        $sid = env('ATUAL_SID');
+        $inscs_pid = Inscricao::where('uid',$this->uid)->where('sid',$sid)->pluck('pid');
+        if(!$inscs_pid->isEmpty()){
+            $completed = Sale::whereIn('pid',$inscs_pid)->where('status','confirmed')->exists();
+            return $completed;
+        }
+        return False;
+    }
 }
