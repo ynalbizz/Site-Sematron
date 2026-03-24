@@ -19,22 +19,11 @@ class InscricaoController extends Controller
             if(Auth::user()->temInscricaoCompleta()){
                 return redirect('/perfil')->with('error', 'Você já está inscrito!');
             }else{
-                return redirect('/pagamento/retomar');
+                return redirect()->route('payment.resume');
             }
         }
-        $packs = Pack::where('sid', config('general.sematron_atual'))->get();
 
-        $visitas = Event::where([
-            ['type', 'viagem'],
-            ['sid', config('general.sematron_atual')]
-        ])->get();
-
-        $minicursos = Event::where([
-            ['type', 'minicurso'],
-            ['sid', config('general.sematron_atual')]
-        ])->get();
-
-        return view('inscricoes', ['packs' => $packs, 'visitas' => $visitas, 'minicursos' => $minicursos]);
+        return view('inscricoes');
     }
 
     public function store(Request $request)

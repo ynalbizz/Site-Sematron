@@ -21,7 +21,7 @@
                 <select wire:model.live="selectedPackId" id="PACOTAO" required>
                     <option value="">Selecione...</option>
                     @foreach($this->packs as $pack)
-                        <option value="{{ $pack->id }}">{{ $pack->nome }} - R$ {{ number_format($pack->preço, 2, ',', '.') }}</option>
+                        <option value="{{ $pack->id }}" style=>{{ $pack->nome }} - R$ {{ number_format($pack->preço, 2, ',', '.') }}</option>
                     @endforeach
                 </select>
             </div>
@@ -40,7 +40,7 @@
                             <select wire:model="selectedVisitId">
                                 <option value="">Selecione...</option>
                                 @foreach($this->visits as $visit)
-                                    <option value="{{ $visit->id }}">{{ $visit->nome }}</option>
+                                    <option value="{{ $visit->eid }}">{{ $visit->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -57,7 +57,7 @@
                             <select wire:model="selectedMinicourseId">
                                 <option value="">Selecione...</option>
                                 @foreach($this->minicourses as $mini)
-                                    <option value="{{ $mini->id }}">{{ $mini->nome }}</option>
+                                    <option value="{{ $mini->eid }}">{{ $mini->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -106,8 +106,8 @@
     <form x-ref="postForm" action="{{ route('inscricao.store') }}" method="POST" style="display: none;">
         @csrf
         <input type="hidden" name="pack_id" value="{{ $selectedPackId }}">
-        <input type="hidden" name="visita[]" value="{{ $selectedVisitId ?? '' }}">
-        <input type="hidden" name="minicurso[]" value="{{ $selectedMinicourseId ?? '' }}">
+        <input type="hidden" name="visita" value="{{ $selectedVisitId ?? '' }}">
+        <input type="hidden" name="minicurso" value="{{ $selectedMinicourseId ?? '' }}">
         <input type="hidden" name="camiseta" value="{{ $shirtSize ?? '' }}">
         <input type="hidden" name="alojamento" value="{{ $requiresAccommodation ? 1 : 0 }}">
         <input type="hidden" name="price" value="{{ $this->totalPrice }}">

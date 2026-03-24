@@ -4,6 +4,7 @@ use App\Models\Userinfo;
 use App\Models\Userdata;
 use App\Models\Event;
 use App\Models\Pack;
+use App\Models\Sale;
 use App\Models\Sematron;
 use Livewire\Volt\Component;
 use Livewire\Attributes\Computed;
@@ -32,11 +33,15 @@ new #[Layout('layouts.layout-logado')] class extends Component
     #[Computed]
     public function paymentStatus()
     {
-        if(Auth::user()->has_insc()){
-            if(Auth::user()->temInscricaoCompleta()){
-                return 'complete';
+        $user = Auth::user();
+        if($user->has_insc()){
+            if($user->temInscricaoCompleta()){
+                return 'confirmed';
             }
-            return 'pending';
+            $user_pids = Userdata::where('uid',$user->uid)->where('sid',config('general.sematon_atual'))->pluck('pid');
+            $first_sale = Sale::whereIn('pid',$user_pids)->first();
+            if(!$first_sale){return 'failed';}
+            return $first_sale->status;
         }
         return 'n_sub';
     }

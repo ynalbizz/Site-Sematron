@@ -14,11 +14,11 @@
                     <h1 class="email-do-ser">{{ $this->usuario->email }}</h1>
                     <h1 class="curso-que-faz">{{ $this->usuario->curso }}</h1>
                         @switch($this->paymentStatus)
-                            @case('complete')
+                            @case('confirmed')
                                 <h1 class="situacao-do-pix" style="background-color: #28a745;">Pagamento Confirmado!</h1>
                                 @break
 
-                            @case('pending')
+                            @case('waiting')
                                 <a class="situacao-do-pix-clicavel" href="/pagamento/retomar" style=" background-color: #c49300;">Aguardando Pagamento...<p>(Clique para continuar Pagando)</p></a>
                                 @break
 
@@ -27,7 +27,7 @@
                                 @break
                             
                             @default
-                                <h1 class="situacao-do-pix" style=" background-color: #dc3545;">Erro no processamento... Favor entrar em contato conosco!!</h1>
+                                <h1 class="situacao-do-pix" style=" background-color: #dc3545;">Erro no processamento...<p>Favor entrar em contato conosco!!</p></h1>
                         @endswitch
                     <a href="" class="infos-pessoas">Informações Pessoais</a>
                 </div>
