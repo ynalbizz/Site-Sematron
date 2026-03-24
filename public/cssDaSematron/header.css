@@ -1,26 +1,25 @@
-.listra-laranja{
+.listra-laranja {
     display: flex;
     width: 100vw;
     height: 0.4vh;
     background-color: var(--laranja);
 }
 
-.Parte-De-Cima{
+.Parte-De-Cima {
     display: flex;
     width: 100vw;
     height: 8vh;
 }
 
-.Logo-Inicio{
+.Logo-Inicio {
     margin-left: 1vw;
     margin-right: -0.9vw;
     max-width: 9vh;
     max-height: 9vh;
 }
 
-.Sematron-Inicio{
-    color: var(--branco);
-    font-size: xx-large;
+.Sematron-Inicio {
+    font-size: var(--fonte-grande);
     font-family: var(--fonte-Gotica);
     color: var(--laranja);
     margin-right: 2vw;
@@ -30,9 +29,9 @@
     display: flex;
 }
 
-.Link-Do-Topo{
+.Link-Do-Topo {
     color: var(--branco);
-    font-size: larger;
+    font-size: var(--fonte-link);
     font-family: var(--fonte-Gotica);
     text-decoration: none;
     margin-left: 1vw;
@@ -44,16 +43,119 @@
     transition: transform 0.3s ease;
 }
 
-.Link-Do-Topo:hover{
+.Link-Do-Topo:hover {
     transform: scale(1.25);
 }
 
-.Links{
+.Links {
     display: flex;
     margin-left: auto;
     justify-content: flex-end;
 }
 
-.Direita{
+.Direita {
     margin-right: 3vw;
+}
+
+.Links-Celular {
+    display: none;
+}
+
+#hamburguer {
+    display: none;
+}
+
+.Menu-Celular {
+    display: none;
+}
+
+@media (max-width: 1400px) {
+
+    .Links {
+        display: none;
+    }
+
+    #hamburguer {
+        color: var(--branco);
+        display: flex;
+        height: 6vw;
+        width: 6vw;
+        cursor: pointer;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 4vw;
+        margin-right: 4vw;
+    }
+
+    .Links-Celular {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .Link-Do-Topo {
+        color: var(--branco);
+        font-size: var(--fonte-link-tablet);
+        font-family: var(--fonte-Gotica);
+        text-decoration: none;
+        margin: 1.5vh 0;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        transition: transform 0.3s ease;
+    }
+
+    .Link-Do-Topo:hover {
+        transform: scale(1.25);
+    }
+
+    .Menu-Celular {
+        display: none;
+        margin-top: 2vh;
+        background-color: #111111;
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+        padding: 1vh 0;
+    }
+
+    .Menu-Celular.ativo {
+        display: flex;
+        margin-top: 2vh;
+        background-color: #111111;
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+        padding: 1vh 0;
+    }
+
+    .Sematron-Inicio {
+        font-size: var(--fonte-grande-tablet);
+    }
+}
+
+@media (max-width: 1050px) {
+    #hamburguer {
+        font-size: 6vw;
+    }
+
+    .Link-Do-Topo {
+        font-size: var(--fonte-link-celular);
+    }
+}
+
+@media (max-width: 900px) {
+    .Sematron-Inicio {
+        font-size: var(--fonte-grande-celular);
+    }
+}
+
+@media (max-width: 600px) {
+    #hamburguer {
+        font-size: 8vw;
+    }
 }

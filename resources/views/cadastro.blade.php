@@ -11,6 +11,7 @@
 
 
 
+            <div class="borda-cadastro-celular">
             <form action={{ route('cadastro.store') }} method="POST" class="duas-colunas-cadastro">
                 @csrf
                 <div class="borda-cadastro">
@@ -113,5 +114,6 @@
                     <button type="submit" class="submit-btn">FINALIZAR CADASTRO</button>
                 </div>
             </form>
+            </div>
         </section>
 @endsection                                 <!--AQUI ACABA O CONTEÚDO ESPECÍFICO DA PÁGINA-->

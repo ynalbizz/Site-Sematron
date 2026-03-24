@@ -16,7 +16,7 @@
                 <h1 class="email-do-ser">{{ $usuario->email }}</h1>
                 <h1 class="curso-que-faz">{{ $usuario->curso }}</h1>
                 <h1 class="situacao-do-pix">Pagamento Confirmado!</h1>
-                <a href="" class="infos-pessoas">Informações Pessoais</a>
+                <!-- <a href="" class="infos-pessoas">Informações Pessoais</a> -->
             </div>
         </div>
         @endif

@@ -6,11 +6,11 @@
     <!--Muito dos css estão no cadastro.css, pq fiquei com preguiça de copiar tudo dnv-->
     <section class="trem-principal">
         
-        <div class="teste Parte-da-Esquerda">
+        <div class="Parte-da-Esquerda">
             <h1 class="Login-grande">Recuperar Senha</h1>
             <h1 class="Sub-Login">Recupere a senha do seu e-mail.</h1>
         </div>
-        <div class="teste borda-cadastro">
+        <div class="borda-cadastro">
             <h1 class="Champions-do-Forms">RECUPERAR SENHA</h1>
 
                 <form action="#" method="POST">

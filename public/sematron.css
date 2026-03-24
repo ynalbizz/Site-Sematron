@@ -30,19 +30,46 @@
     Esse root aqui é pra definir algumas cores e fontes que serão mais usadas no código pra deixar mais fácil de entender
 */
 
-:root{
+:root {
     --fonte-Gotica: "Mecanica-Inferior";
     --fonte-inter: "Inter";
     --laranja: #FB9A03;
     --preto: #000000;
     --branco: #FFFFFF;
+
+    --fonte-gigante: 3.5vw;
+    --fonte-grande: 1.75vw;
+    --fonte-link: 1.075vw;
+    --fonte-media-grande: 1.25vw;
+    --fonte-media: 0.8vw;
+    --fonte-media-pequena: 0.8vw;
+    --fonte-media-media-pequena: 0.7vw;
+    --fonte-pequena: 0.6vw;
+
+    --fonte-gigante-tablet: 5vw;
+    --fonte-grande-tablet: 3vw;
+    --fonte-link-tablet: 1.7vw;
+    --fonte-media-grande-tablet: 1.8vw;
+    --fonte-media-tablet: 1.3vw;
+    --fonte-media-pequena-tablet: 1vw;
+    --fonte-media-media-pequena-tablet: 0.9vw;
+    --fonte-pequena-tablet: 0.8vw;
+
+    --fonte-gigante-celular: 8vw;
+    --fonte-grande-celular: 4.5vw;
+    --fonte-link-celular: 3.5vw;
+    --fonte-media-grande-celular: 3.5vw;
+    --fonte-media-celular: 2.75vw;
+    --fonte-media-pequena-celular: 2vw;
+    --fonte-media-media-pequena-celular: 1.6vw;
+    --fonte-pequena-celular: 1.4vw;
 }
 
 /*
     Só defini que todo o body tem fundo preto
 */
 
-.Corpo{
+.Corpo {
     background-color: var(--preto);
     z-index: -2;
 }
@@ -51,7 +78,7 @@
     Classe pra usar em tudo que centraliza os bagulho
 */
 
-.Centraliza{
+.Centraliza {
     display: flex;
     align-items: center;
     text-align: center;
@@ -62,7 +89,7 @@
     Pra todo link vir sem o sublinhado
 */
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -72,15 +99,14 @@ a{
     margin: 0 auto;
     padding: 0 15px;
 }
+
 .header {
     background-color: var(--laranja);
     padding: 10px;
 }
+
 .footer {
     background-color: var(--branco);
     padding: 20px;
     text-align: center;
 }
-
-
-
