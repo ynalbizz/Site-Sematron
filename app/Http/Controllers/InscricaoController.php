@@ -5,15 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pack;
 use App\Models\Inscricao;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Log;
 
 class InscricaoController extends Controller
-{
-
+{   
 
     public function create()
-    {
+    { 
+        if (Auth::user()->has_insc()) {
+            if(Auth::user()->temInscricaoCompleta()){
+                return redirect('/perfil')->with('error', 'Você já está inscrito!');
+            }else{
+                return redirect('/pagamento/retomar');
+            }
+        }
         return view('inscricoes');
     }
 
@@ -21,6 +28,8 @@ class InscricaoController extends Controller
     {
         $dados = $request->validate([
             'pack_id' => 'required',
+            'camiseta' => 'nullable',
+            'alojamento' => 'required|numeric',
         ]);
 
         $pack = Pack::findOrFail($dados['pack_id']);
@@ -48,7 +57,7 @@ class InscricaoController extends Controller
             $choices['m'] = $request->minicurso;
         }
 
-        $dados['uid'] = auth()->user()->uid;
+        $dados['uid'] = Auth::user()->uid;
         $dados['sid'] = 22;
         $dados['minicurso'] = 0;
         $dados['viagem'] = 0;
@@ -58,7 +67,7 @@ class InscricaoController extends Controller
         $dados['time'] = now();
         $dados['reserveTime'] = now();
 
-        Log::info('Tentando criar inscrição', ['user_id' => auth()->id(), 'dados' => $dados]);
+        Log::info('Tentando criar inscrição', ['user_id' => Auth::id(), 'dados' => $dados]);
 
         $inscricao = Inscricao::create($dados);
 

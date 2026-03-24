@@ -18,5 +18,11 @@ use Illuminate\Database\Eloquent\Model;
             'visita',
             'kit',
         ];
+        protected $casts = [
+            'palestra' => 'boolean',
+            'minicurso' => 'boolean',
+            'visita' => 'boolean',
+            'kit' => 'boolean',
+        ];
 
     }

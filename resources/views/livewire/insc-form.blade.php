@@ -1,4 +1,10 @@
-<div>
+<div x-data="{ 
+    submitForm() {
+        this.$nextTick(() => { this.$refs.postForm.submit(); });
+    } 
+}" 
+@post-registration.window="submitForm()">
+
     {{-- BLOCO 1: TOPO ORIGINAL --}}
     <section class="Parte-De-Cima-Insc">
         <div class="texto-Insc">
@@ -22,11 +28,9 @@
         </div>
     </section>
 
-    {{-- BLOCO 2: AS TRÊS COLUNAS --}}
     @if($this->activePack)
+        {{-- BLOCO 2: AS TRÊS COLUNAS --}}
         <section class="tres-colunas-insc box is-visible" style="display: grid !important;">
-            
-            {{-- Coluna Visita --}}
             <div class="col-wrapper">
                 @if($this->activePack->visita)
                     <div class="borda-insc box is-visible" wire:key="v-{{ $selectedPackId }}">
@@ -44,7 +48,6 @@
                 @endif
             </div>
 
-            {{-- Coluna Minicurso --}}
             <div class="col-wrapper">
                 @if($this->activePack->minicurso)
                     <div class="borda-insc box is-visible" wire:key="m-{{ $selectedPackId }}">
@@ -62,7 +65,6 @@
                 @endif
             </div>
 
-            {{-- Coluna Camiseta --}}
             <div class="col-wrapper">
                 @if($this->activePack->kit)
                     <div class="borda-insc box is-visible" wire:key="k-{{ $selectedPackId }}">
@@ -85,8 +87,8 @@
         {{-- BLOCO 3: ALOJAMENTO E PAGAMENTO --}}
         <section class="campo-botao box is-visible">
              <div class="borda-insc" style="display: flex; flex-direction: row; gap: 15px; align-items: center; justify-content: center; width: 100%; max-width: 500px;">
-                <input type="checkbox" wire:model.live="requiresAccommodation" style="width: 25px; height: 25px; cursor: pointer;">
-                <label style="margin: 0; color: white; cursor: pointer;" class="Champions-do-Forms">Incluir Alojamento no Campus (+ R$ 100,00)</label>
+                <input type="checkbox" wire:model.live="requiresAccommodation" id="alojamento_check" style="width: 25px; height: 25px; cursor: pointer;">
+                <label for="alojamento_check" style="margin: 0; color: white; cursor: pointer;" class="Champions-do-Forms">Incluir Alojamento (+ R$ 100,00)</label>
              </div>
 
             <div style="margin-top: 10px; margin-bottom: 10px; font-size: 2rem; font-weight: bold; color: var(--laranja);" class="Champions-do-Forms">
@@ -99,4 +101,15 @@
             </button>
         </section>
     @endif
+
+    {{-- FORMULÁRIO OCULTO --}}
+    <form x-ref="postForm" action="{{ route('inscricao.store') }}" method="POST" style="display: none;">
+        @csrf
+        <input type="hidden" name="pack_id" value="{{ $selectedPackId }}">
+        <input type="hidden" name="visita[]" value="{{ $selectedVisitId ?? '' }}">
+        <input type="hidden" name="minicurso[]" value="{{ $selectedMinicourseId ?? '' }}">
+        <input type="hidden" name="camiseta" value="{{ $shirtSize ?? '' }}">
+        <input type="hidden" name="alojamento" value="{{ $requiresAccommodation ? 1 : 0 }}">
+        <input type="hidden" name="price" value="{{ $this->totalPrice }}">
+    </form>
 </div>

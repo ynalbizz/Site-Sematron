@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Inscricao;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 use App\Services\FinanceService;
 use App\Models\Sale;
 use Illuminate\Support\Facades\Auth;
@@ -15,13 +14,20 @@ class PaymentController extends Controller
     public function checkout(Inscricao $inscricao)
     {
         $user = Auth::user();
-        $preco = $inscricao->pack->preço;
+        if ($inscricao->alojamento) {
+            $preco = $inscricao->pack->preço + 100; // Exemplo de valor adicional para alojamento
+            $pack_name =$inscricao->pack->nome . ' com Alojamento';
+            $title = 'Inscrição Sematron - ' . $pack_name;
+        } else {
+            $preco = $inscricao->pack->preço;
+            $pack_name = $inscricao->pack->nome;
+            $title = 'Inscrição Sematron - ' . $pack_name;
+        }
         $pack_id = $inscricao->pack_id;
-        $pack_name = $inscricao->pack->nome;
 
         $code = 'SEM-' . strtoupper(Str::random(10)) . '-' . time();
 
-        $pref = FinanceService::createMercadoPagoPreference($pack_id, $pack_name, $preco, $code);
+        $pref = FinanceService::createMercadoPagoPreference($pack_id, $pack_name, $preco, $code, $title);
         
         Sale::create([
             'code' => $code,
@@ -33,6 +39,21 @@ class PaymentController extends Controller
         ]);
 
         return redirect()->away($pref->init_point);
+    }
+
+    public function resume_payment()
+    {
+            $user = Auth::user();
+            $sale = Sale::where('uid', $user->uid)->where('status', 'waiting')->first();
+    
+            if (!$sale) {
+                return redirect('/inicio')->with('error', 'Nenhuma inscrição pendente encontrada.');
+            }
+    
+            $prefId = $sale->pref_id;
+
+            $url = FinanceService::get_preference_url($prefId);
+            return redirect()->away($url);
     }
 
     public function success(Request $request)
@@ -49,17 +70,11 @@ class PaymentController extends Controller
                     'pref_id' => $preferenceId
                 ]);
         }
-
-    //     return Inertia::render('Payment/Success', [
-    //         'payment_id' => $collectionId,
-    //         'status' => $status
-    //     ]);
-    return redirect('/inicio')->with('success', 'Pagamento realizado com sucesso! Agradecemos sua inscrição.');
+        return redirect('/inicio')->with('success', 'Pagamento realizado com sucesso! Agradecemos sua inscrição.');
     }
 
-    public function failure(Request $request) {
-                $collectionId = $request->query('collection_id');
-        $status = $request->query('collection_status');
+    public function failure(Request $request)
+    {
         $preferenceId = $request->query('preference_id');
         $code = $request->query('external_reference');
         
@@ -69,11 +84,23 @@ class PaymentController extends Controller
                 'pref_id' => $preferenceId
             ]);
 
-        //return Inertia::render('Payment/Failure');
         return redirect('/inicio')->with('error', 'O pagamento foi cancelado ou ocorreu um erro. Por favor, tente novamente.');
-        }
+    }
 
-    public function pending() { return Inertia::render('Payment/Pending'); }
+    public function pending(Request $request) 
+    {
+        $preferenceId = $request->query('preference_id');
+        $code = $request->query('external_reference');
+        
+        Sale::where('code', $code)
+            ->update([
+                'status' => 'failed',
+                'pref_id' => $preferenceId
+            ]);
+
+        return redirect('/inicio')->with('error', 'O pagamento foi cancelado ou ocorreu um erro. Por favor, tente novamente.');
+    
+    }
 
     public function webhook(Request $request)
     {

@@ -3,67 +3,77 @@
 use Livewire\Volt\Component;
 use App\Models\Pack;
 use App\Models\Event;
+use Livewire\Attributes\Computed;
 
 new class extends Component
 {
-    // Estado do Formulário (Sincronizado com os selects da sua view)
     public $selectedPackId = null;
     public $requiresAccommodation = false;
     public $shirtSize = null;
     public $selectedVisitId = null;
     public $selectedMinicourseId = null;
 
-    public function getPacksProperty()
+    #[Computed]
+    public function packs()
     {
         return Pack::where('sid', env('ATUAL_SID'))->get();
     }
 
-    public function getActivePackProperty()
+    #[Computed]
+    public function activePack()
     {
-        return Pack::find($this->selectedPackId);
+        return $this->selectedPackId ? Pack::find($this->selectedPackId) : null;
     }
 
-    public function getVisitsProperty()
+    #[Computed]
+    public function visits()
     {
         return Event::where('type', 'viagem')->where('sid', env('ATUAL_SID'))->get();
     }
 
-    public function getMinicoursesProperty()
+    #[Computed]
+    public function minicourses()
     {
         return Event::where('type', 'minicurso')->where('sid', env('ATUAL_SID'))->get();
     }
 
-    public function getTotalPriceProperty()
+    #[Computed]
+    public function totalPrice()
     {
-        if (!$this->activePack) return 0.00;
-        $base = (float) $this->activePack->preço;
+        // Uso de () pois estamos chamando internamente na classe PHP
+        $pack = $this->activePack(); 
+        if (!$pack) return 0.00;
+        
+        $base = (float) str_replace(',', '.', $pack->preço);
         $addon = $this->requiresAccommodation ? 100.00 : 0.00;
+        
         return $base + $addon;
     }
 
     public function updatedSelectedPackId()
     {
-        if ($this->activePack) {
-            if (!$this->activePack->visita) $this->selectedVisitId = null;
-            if (!$this->activePack->minicurso) $this->selectedMinicourseId = null;
-            if (!$this->activePack->kit) $this->shirtSize = null;
+        // Uso de () pois estamos chamando internamente na classe PHP
+        $pack = $this->activePack();
+        if ($pack) {
+            if (!$pack->visita) $this->selectedVisitId = null;
+            if (!$pack->minicurso) $this->selectedMinicourseId = null;
+            if (!$pack->kit) $this->shirtSize = null;
         }
     }
 
     public function submit()
     {
-        // Esta função será chamada pelo botão final
-        // Aqui você pode adicionar validação: $this->validate();
+        $pack = $this->activePack();
         
-        // Exemplo de redirecionamento para o controller que você já tem
-        return redirect()->route('inscricao.store', [
-            'pack_id' => $this->selectedPackId,
-            'visita' => [$this->selectedVisitId],
-            'minicurso' => [$this->selectedMinicourseId],
-            'camiseta' => $this->shirtSize,
-            'alojamento' => $this->requiresAccommodation,
-            'total' => $this->totalPrice
+        $this->validate([
+            'selectedPackId' => 'required',
+            'shirtSize' => ($pack && $pack->kit) ? 'required' : 'nullable',
+        ], [
+            'selectedPackId.required' => 'Por favor, selecione um pacote.',
+            'shirtSize.required' => 'Escolha o tamanho da sua camiseta.',
         ]);
+
+        $this->dispatch('post-registration');
     }
 };
 ?>

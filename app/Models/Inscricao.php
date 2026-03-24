@@ -26,13 +26,14 @@ class Inscricao extends Model
         'viagem',
         'kit',
         'camiseta',
+        'alojamento',
         'time',
         'reserveTime'
     ];
 
     protected $casts = [
-        'choices' => 'array',
         'presence' => 'array',
+        'alojamento' => 'boolean',
     ];
 
     public function pack(): BelongsTo
