@@ -1,27 +1,34 @@
-.Parte-De-Cima-Insc{
+/* --- Global / Reset para Livewire --- */
+/* Forçamos o container do Livewire a não interferir no fluxo do Grid */
+[wire\:id], [wire\:snapshot], [wire\:effects] {
+    display: contents !important;
+}
+
+/* --- Seção de Topo --- */
+.Parte-De-Cima-Insc {
     display: grid;
     grid-template-columns: 30% 40% 30%;
     height: 40vh;
+    width: 100%;
 }
 
-.Imagem-Insc{
+.Imagem-Insc {
     position: relative;
+    z-index: 0;
 }
 
-.Imagem-Insc::before{
+.Imagem-Insc::before {
     content: "";
     position: absolute;
     inset: 0;
-
     background-image: url("/Imagens/logo-Photoroom.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto 65vh;
-
     pointer-events: none;
 }
 
-.texto-Insc{
+.texto-Insc {
     display: flex;         
     flex-direction: column;     
     justify-content: center;   
@@ -29,34 +36,69 @@
     text-align: center; 
 }
 
-.Tit-Insc{
+.Tit-Insc {
     color: var(--laranja);
     font-size: 52px;
     font-family: var(--fonte-Gotica);
 }
 
-.Sub-Insc{
+.Sub-Insc {
     color: var(--branco);
     font-size: 18px;
     font-family: var(--fonte-Gotica);
     margin-top: 3vh;
 }
 
-.tres-colunas-insc{
+/* --- Seção de Seleções (CORREÇÃO DO GRID) --- */
+.tres-colunas-insc {
     width: 100%;
     z-index: 1;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
+    display: grid !important;
+    /* Usamos 1fr para garantir que as 3 colunas caibam lado a lado sem erro de pixel */
+    grid-template-columns: repeat(3, 1fr) !important; 
     justify-content: center;
-    height: 40vh;
+    align-items: start; /* Alinha os boxes pelo topo */
+    height: auto !important; 
+    /* min-height: 30vh; */
+    gap: 10px; /* Espaçamento entre as colunas */
 }
 
-.deu-toque{
+.deu-toque {
     transform: translateX(-2.25vw);
 }
 
+/* --- Lógica de Visibilidade --- */
+.box {
+    visibility: visible !important;
+    display: flex !important; 
+    flex-direction: column;
+}
+
+/* Ajuste na borda para não "estourar" o grid */
+.borda-insc {
+    display: flex;         
+    flex-direction: column;   
+    margin: 10px;
+    border: 1px solid var(--laranja);
+    border-radius: 22px;
+    padding: 2vw;
+    background-color: transparent;
+    box-sizing: border-box; /* Fundamental para o grid não quebrar */
+}
+
+/* --- Botão e Campo de Ação --- */
+.campo-botao {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
 .submit-btn-insc {
-    width: 80%;
+    width: 33vw;
     height: 46px;
     background-color: #fb9a03;
     border: none;
@@ -66,37 +108,20 @@
     font-weight: 600;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 20px;
     transition: background-color 0.3s, transform 0.2s;
     text-align: center;
 }
 
 .submit-btn-insc:hover {
     background-color: #ffaa33;
-    transform: scale(1.10);
+    transform: scale(1.05);
 }
 
-.campo-botao{
-    display: grid;
-    grid-template-columns: 33vw;
-    margin-left: 36vw;
+.total-label {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--laranja);
+    font-family: var(--fonte-inter);
+    text-align: center;
 }
-
-.box{
-    visibility: hidden;
-}
-
-.box.is-visible {
-    visibility: visible;
-}
-
-
-.borda-insc{
-    display: flex;         
-    flex-direction: column;   
-    margin: 2vw 3vw;
-    border: 1px solid var(--laranja);
-    border-radius: 22px;
-    padding: 2vw;
-}
-

@@ -4,18 +4,24 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Pack extends Model
-{
-    public $timestamps = false;
-    protected $table = 'pack';
-    protected $fillable = [
-        'id',
-        'sid',
-        'nome',
-        'preço',
-        'minicurso',
-        'visita',
-        'kit',
-    ];
+    class Pack extends Model
+    {
+        public $timestamps = false;
+        protected $table = 'pack';
+        protected $fillable = [
+          'id',
+          'sid',
+          'nome',
+          'preço',
+          'minicurso',
+          'visita',
+          'kit',
+        ];
+        protected $casts = [
+            'palestra' => 'boolean',
+            'minicurso' => 'boolean',
+            'visita' => 'boolean',
+            'kit' => 'boolean',
+        ];
 
-}
+    }

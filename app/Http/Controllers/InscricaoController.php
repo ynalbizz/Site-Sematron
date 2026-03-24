@@ -6,15 +6,22 @@ use Illuminate\Http\Request;
 use App\Models\Pack;
 use App\Models\Inscricao;
 use \App\Models\Event;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Log;
 
 class InscricaoController extends Controller
-{
-
+{   
 
     public function create()
-    {
+    { 
+        if (Auth::user()->has_insc()) {
+            if(Auth::user()->temInscricaoCompleta()){
+                return redirect('/perfil')->with('error', 'Você já está inscrito!');
+            }else{
+                return redirect('/pagamento/retomar');
+            }
+        }
         $packs = Pack::where('sid', config('general.sematron_atual'))->get();
 
         $visitas = Event::where([
@@ -34,6 +41,8 @@ class InscricaoController extends Controller
     {
         $dados = $request->validate([
             'pack_id' => 'required',
+            'camiseta' => 'nullable',
+            'alojamento' => 'required|numeric',
         ]);
 
         $pack = Pack::findOrFail($dados['pack_id']);
@@ -59,7 +68,7 @@ class InscricaoController extends Controller
             $minicurso = $request->minicurso;
         }
 
-        $dados['uid'] = auth()->user()->uid;
+        $dados['uid'] = Auth::user()->uid;
         $dados['sid'] = 22;
 
 
@@ -71,10 +80,11 @@ class InscricaoController extends Controller
         $dados['time'] = now();
         $dados['reserveTime'] = now();
 
-        Log::info('Tentando criar inscrição', ['user_id' => auth()->id(), 'dados' => $dados]);
+        Log::info('Tentando criar inscrição', ['user_id' => Auth::id(), 'dados' => $dados]);
 
-        Inscricao::create($dados);
-        return redirect()->route('inicio')->with('success', 'Inscrição realizada com sucesso!');
+        $inscricao = Inscricao::create($dados);
+
+        return redirect()->route('pagar', ['inscricao' => $inscricao->pid])->with('success', 'Inscrição realizada com sucesso!');
 
     }
 }

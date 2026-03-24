@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Inscricao extends Model
 {
@@ -20,18 +21,23 @@ class Inscricao extends Model
         'gid',
         'permissions',
         'presence',
-        'choices',
         'pack_id',
         'minicurso',
         'viagem',
         'kit',
         'camiseta',
+        'alojamento',
         'time',
         'reserveTime'
     ];
 
     protected $casts = [
-        'choices' => 'array',
         'presence' => 'array',
+        'alojamento' => 'boolean',
     ];
+
+    public function pack(): BelongsTo
+    {
+        return $this->belongsTo(Pack::class, 'pack_id', 'id');
+    }
 }

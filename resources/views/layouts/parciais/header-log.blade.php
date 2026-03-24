@@ -1,3 +1,4 @@
+
 <header>
     <!--É literal só a listra laranja-->
     <div class="listra-laranja"></div>
@@ -11,7 +12,9 @@
                 
         <div class="Links">
             <a class="Link-Do-Topo" href="/inicio">Página Inicial</a>
-            <a class="Link-Do-Topo" href="/inscricao">Inscrição</a>
+            @if(!auth()->user()->temInscricaoCompleta())
+            <a class="Link-Do-Topo" href="/inscricao">Inscrição</a> 
+            @endif
             <a class="Link-Do-Topo" href="/minicursos">Minicursos</a>
             <a class="Link-Do-Topo" href="/visitas">Visitas</a>
             <a class="Link-Do-Topo" href="/palestras">Palestras</a>
