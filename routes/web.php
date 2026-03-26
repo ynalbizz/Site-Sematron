@@ -79,6 +79,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/pagamento/erro', [PaymentController::class, 'failure'])->name('payment.failure');
     Route::get('/pagamento/pendente', [PaymentController::class, 'pending'])->name('payment.pending');
     Route::get('/pagamento/retomar', [PaymentController::class, 'resume_payment'])->name('payment.resume');
+    Route::post('/mercadopago/webhook', [PaymentController::class, 'webhook'])->name('mp.webhook');
 });
 
 

@@ -50,7 +50,10 @@ class FinanceService
             "back_urls" => $backUrls,
             "statement_descriptor" => "Inscrição Sematron",
             "external_reference" => $code,
-            //"auto_return" => "approved" -> Deixar comentado até começar a produção
+            "notification_url"
+             => 'http://test.com',
+            //Testar essa BUDEGA
+            "auto_return" => "approved"
         ];
 
         return $request;
