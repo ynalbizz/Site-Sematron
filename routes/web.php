@@ -81,8 +81,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/pagamento/retomar', [PaymentController::class, 'resume_payment'])->name('payment.resume');
     });
     
-Route::post('/mercadopago/webhook', [PaymentController::class, 'webhook'])->name('mp.webhook');
-
 //rotas de teste, apagar quando entrar em produção
 Route::get('/testar-pagamento', function () {
     // Redireciona para o checkout real

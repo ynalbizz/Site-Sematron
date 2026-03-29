@@ -184,7 +184,7 @@ class PaymentController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'Assinatura HMAC inválida'
-            ], 403);
+            ], 418);
         }
     }
 
