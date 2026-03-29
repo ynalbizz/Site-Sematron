@@ -110,8 +110,8 @@ class PaymentController extends Controller
     {
         $action = $request->query('action'); // "payment.created", "payment.updated", etc.
 
-        $xSignature = $request->header('X-Signature');
-        $xRequestId = $request->header('X-Request-ID');
+        $xSignature = $request->header('HTTP_X_SIGNATURE');
+        $xRequestId = $request->header('HTTP_X_REQUEST_ID');
         $queryParams = $request->query();
         $dataID = isset($queryParams['data.id']) ? $queryParams['data.id'] : '';
 
@@ -136,6 +136,15 @@ class PaymentController extends Controller
         $manifest = "id:$dataID;request-id:$xRequestId;ts:$ts;";
         $sha = hash_hmac('sha256', $manifest, $secret);
         
+        Log::info('Webhook recebido', [
+            'action' => $action,
+            'data_id' => $dataID,
+            'x_signature' => $xSignature,
+            'request_id' => $xRequestId,
+            'computed_hash' => $sha,
+            'received_hash' => $hash
+        ]);
+
         if ($sha === $hash) {
             Log::info('Webhook recebido e validado com sucesso', [
                 'action' => $action,
@@ -184,7 +193,7 @@ class PaymentController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'Assinatura HMAC inválida'
-            ], 418);
+            ], 403);
         }
     }
 
