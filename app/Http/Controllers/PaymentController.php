@@ -62,13 +62,19 @@ class PaymentController extends Controller
     public function success(Request $request)
     {
         $status = $request->query('collection_status');
-        $preferenceId = $request->query('preference_id');
         $code = $request->query('external_reference');
-        
+        $paymentId = $request->query('payment_id'); // Tenta pegar o payment_id primeiro, se não tiver, pega o external_reference
+        Log::info('Retorno de pagamento recebido', [
+            'status' => $status,
+            'code' => $code,
+            'payment_id' => $paymentId
+        ]);
+
+        Log::info($request->all());
+
         if ($status == 'approved') {
             Sale::where('code', $code)->update([
                 'status' => 'confirmed',
-                'pref_id' => $preferenceId
             ]);
         }
         
