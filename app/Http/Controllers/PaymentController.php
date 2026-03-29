@@ -41,7 +41,7 @@ class PaymentController extends Controller
             'time' => now()
         ]);
 
-        return redirect()->away($pref->init_point);
+        return redirect()->away($pref->sandbox_init_point);
     }
 
     public function resume_payment()
