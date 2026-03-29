@@ -108,12 +108,12 @@ class PaymentController extends Controller
 
     public function webhook(Request $request)
     {
-        $action = $request->query('action'); // "payment.created", "payment.updated", etc.
+        $action = $request->input('action'); // "payment.created", "payment.updated", etc.
 
-        $xSignature = $request->header('HTTP_X_SIGNATURE');
-        $xRequestId = $request->header('HTTP_X_REQUEST_ID');
-        $queryParams = $request->query();
-        $dataID = isset($queryParams['data.id']) ? $queryParams['data.id'] : '';
+        $xSignature = $request->header('X_SIGNATURE');
+        $xRequestId = $request->header('X_REQUEST_ID');
+        $queryParams = $request->input();
+        $dataID = $request->input('data.id'); //isset($queryParams['data.id']) ? $queryParams['data.id'] : '';
 
         $parts = explode(',', $xSignature);
         $ts = null;
