@@ -92,11 +92,9 @@ class PaymentController extends Controller
     {
         $preferenceId = $request->query('preference_id');
         $code = $request->query('external_reference');
-        
-        // Nota: Geralmente, em pending, mantemos o status como 'waiting' ao invés de 'failed', 
-        // mas mantive a sua lógica original.
+
         Sale::where('code', $code)->update([
-            'status' => 'failed',
+            'status' => 'waiting',
             'pref_id' => $preferenceId
         ]);
 
@@ -135,42 +133,42 @@ class PaymentController extends Controller
         
         if ($sha === $hash) {
             
-            // // Só fazemos a requisição HTTP se for uma notificação de pagamento mesmo
-            // if (str_starts_with($action, 'payment')) {
-            //     $response = Http::withToken(config('integrations.mercadopago.access_token'))
-            //         ->get("https://api.mercadopago.com/v1/payments/{$dataID}");
+            // Só fazemos a requisição HTTP se for uma notificação de pagamento mesmo
+            if (str_starts_with($action, 'payment')) {
+                $response = Http::withToken(config('integrations.mercadopago.access_token'))
+                    ->get("https://api.mercadopago.com/v1/payments/{$dataID}");
 
-            //     if ($response->successful()) {
-            //         $dadosPagamento = $response->json();
-            //         $statusPagamento = $dadosPagamento['status'];
-            //         $referenciaExterna = $dadosPagamento['external_reference'];
+                if ($response->successful()) {
+                    $dadosPagamento = $response->json();
+                    $statusPagamento = $dadosPagamento['status'];
+                    $referenciaExterna = $dadosPagamento['external_reference'];
 
-            //         // Correção da sintaxe do Eloquent aqui
-            //         switch ($statusPagamento) {
-            //             case 'approved':
-            //                 Sale::where('code', $referenciaExterna)->update(['status' => 'confirmed']);
-            //                 break;
-            //             case 'pending':
-            //             case 'in_process':
-            //                 Sale::where('code', $referenciaExterna)->update(['status' => 'waiting']);
-            //                 break;
-            //             case 'rejected':
-            //             case 'cancelled':
-            //                 Sale::where('code', $referenciaExterna)->update(['status' => 'failed']);
-            //                 break;
-            //         }
-            //     } else {
-            //         // Grava no log se a API do Mercado Pago retornar erro na consulta do pagamento
-            //         Log::error('Erro ao consultar API do Mercado Pago no Webhook', [
-            //             'payment_id' => $dataID,
-            //             'erro' => $response->body()
-            //         ]);
-            //     }
-            // }
+                    // Correção da sintaxe do Eloquent aqui
+                    switch ($statusPagamento) {
+                        case 'approved':
+                            Sale::where('code', $referenciaExterna)->update(['status' => 'confirmed']);
+                            break;
+                        case 'pending':
+                        case 'in_process':
+                            Sale::where('code', $referenciaExterna)->update(['status' => 'waiting']);
+                            break;
+                        case 'rejected':
+                        case 'cancelled':
+                            Sale::where('code', $referenciaExterna)->update(['status' => 'failed']);
+                            break;
+                    }
+                } else {
+                    // Grava no log se a API do Mercado Pago retornar erro na consulta do pagamento
+                    Log::error('Erro ao consultar API do Mercado Pago no Webhook', [
+                        'payment_id' => $dataID,
+                        'erro' => $response->body()
+                    ]);
+                }
+            }
 
-            // // O RETORNO 200 FICA AQUI! 
-            // // Independente do que aconteceu acima (sucesso ou falha na consulta), 
-            // // o Mercado Pago precisa saber que a notificação chegou no seu servidor.
+            // O RETORNO 200 FICA AQUI! 
+            // Independente do que aconteceu acima (sucesso ou falha na consulta), 
+            // o Mercado Pago precisa saber que a notificação chegou no seu servidor.
             return response()->json([
                 'status' => 'success',
                 'message' => 'Notificação processada com sucesso'
