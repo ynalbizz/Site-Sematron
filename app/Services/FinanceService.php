@@ -50,8 +50,11 @@ class FinanceService
             "back_urls" => $backUrls,
             "statement_descriptor" => "Inscrição Sematron",
             "external_reference" => $code,
+            "expires" => true,
+            "expiration_date_from" => now()->toIso8601String(),
+            "expiration_date_to" => now()->addMinutes(5)->toIso8601String(),
             "notification_url"
-             => 'http://test.com',
+             => 'http://homologasis.sematron.com.br/api/webhook/mercadopago',
             //Testar essa BUDEGA
             "auto_return" => "approved"
         ];

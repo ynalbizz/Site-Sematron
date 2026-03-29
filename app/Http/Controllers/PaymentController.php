@@ -80,10 +80,9 @@ class PaymentController extends Controller
         $preferenceId = $request->query('preference_id');
         $code = $request->query('external_reference');
         
-        Sale::where('code', $code)->update([
-            'status' => 'failed',
-            'pref_id' => $preferenceId
-        ]);
+        $pid = Sale::where('code', $code)->get()->first()->pid;
+        Inscricao::where('pid', $pid)->delete();
+        Sale::where('code', $code)->delete();
 
         return redirect('/inicio')->with('error', 'O pagamento foi cancelado ou ocorreu um erro. Por favor, tente novamente.');
     }
@@ -132,6 +131,11 @@ class PaymentController extends Controller
         $sha = hash_hmac('sha256', $manifest, $secret);
         
         if ($sha === $hash) {
+            Log::info('Webhook recebido e validado com sucesso', [
+                'action' => $action,
+                'data_id' => $dataID,
+                'request_id' => $xRequestId
+            ]);
             
             // Só fazemos a requisição HTTP se for uma notificação de pagamento mesmo
             if (str_starts_with($action, 'payment')) {
@@ -144,19 +148,15 @@ class PaymentController extends Controller
                     $referenciaExterna = $dadosPagamento['external_reference'];
 
                     // Correção da sintaxe do Eloquent aqui
-                    switch ($statusPagamento) {
-                        case 'approved':
-                            Sale::where('code', $referenciaExterna)->update(['status' => 'confirmed']);
-                            break;
-                        case 'pending':
-                        case 'in_process':
-                            Sale::where('code', $referenciaExterna)->update(['status' => 'waiting']);
-                            break;
-                        case 'rejected':
-                        case 'cancelled':
-                            Sale::where('code', $referenciaExterna)->update(['status' => 'failed']);
-                            break;
-                    }
+                    match ($statusPagamento) {
+                        'approved' => $this->confirmPayment($referenciaExterna),
+                        'pending', 'in_process' => Sale::where('code', $referenciaExterna)->update(['status' => 'waiting']),
+                        'rejected', 'cancelled' => $this->cancelPayment($referenciaExterna),
+                        default => Log::warning('Status de pagamento desconhecido recebido no Webhook', [
+                            'status' => $statusPagamento,
+                            'payment_id' => $dataID
+                        ])
+                    };
                 } else {
                     // Grava no log se a API do Mercado Pago retornar erro na consulta do pagamento
                     Log::error('Erro ao consultar API do Mercado Pago no Webhook', [
@@ -180,5 +180,19 @@ class PaymentController extends Controller
                 'message' => 'Assinatura HMAC inválida'
             ], 403);
         }
+    }
+
+    private function cancelPayment($code)
+    {
+        $pid = Sale::where('code', $code)->get()->first()->pid;
+        Inscricao::where('pid', $pid)->delete();
+        Sale::where('code', $code)->delete();
+    }
+
+    private function confirmPayment($code)
+    {
+        $pid = Sale::where('code', $code)->get()->first()->pid;
+        Inscricao::where('pid', $pid)->update(['status' => 'confirmed']);
+        Sale::where('code', $code)->update(['status' => 'confirmed']);
     }
 }
