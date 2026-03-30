@@ -29,22 +29,34 @@ new class extends Component
     #[Computed]
     public function visits()
     {
-        return Event::where('type', 'viagem')->where('sid', env('ATUAL_SID'))->get();
+
+
+        $all_visits =  Event::where('type', 'viagem')->where('sid', env('ATUAL_SID'))->get();
+        $available_visits = [];
+        foreach ($all_visits as $event) {
+            $subscribed_count = Inscricao::where('minicurso', $event->id)->count();
+            if ($subscribed_count < $event->slots) {
+                $available_visits[] = $event;
+            }
+        }
+
+        return $available_visits;
+ 
     }
 
     #[Computed]
     public function minicourses()
     {
-        $all_events = Event::where('type', 'minicurso')->where('sid', env('ATUAL_SID'))->get();
-        $avaible_events = [];
-        foreach ($all_events as $event) {
+        $all_minicourses = Event::where('type', 'minicurso')->where('sid', env('ATUAL_SID'))->get();
+        $available_minicourses = [];
+        foreach ($all_minicourses as $event) {
             $subscribed_count = Inscricao::where('minicurso', $event->id)->count();
             if ($subscribed_count < $event->slots) {
-                $avaible_events[] = $event;
+                $available_minicourses[] = $event;
             }
         }
 
-        return $avaible_events;
+        return $available_minicourses;
     }
 
     #[Computed]
