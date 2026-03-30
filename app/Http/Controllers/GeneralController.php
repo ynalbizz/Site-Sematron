@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use \App\Models\Event;
 use \App\Models\Userinfo;
 use \App\Models\Pack;
-use \App\Models\Userdata;
+use \App\Models\Inscricao;
 use Illuminate\Support\Facades\Auth;
 
 class GeneralController extends Controller
@@ -101,7 +101,7 @@ class GeneralController extends Controller
         $usuario = Userinfo::where('uid', $auth->uid)
                             ->first();
         // Todas as sematorns que o usuario já participou
-        $users = Userdata::where('uid', $auth->uid)
+        $users = Inscricao::where('uid', $auth->uid)
                             ->get();
         //pega as informações de cada sematron individualmente
         foreach ($users as $user) {

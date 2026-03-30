@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\Userinfo;
-use App\Models\Userdata;
+use App\Models\Inscricao;
 use App\Models\Event;
 use App\Models\Pack;
 use App\Models\Sale;
@@ -38,7 +38,7 @@ new #[Layout('layouts.layout-logado')] class extends Component
             if($user->temInscricaoCompleta()){
                 return 'confirmed';
             }
-            $user_pids = Userdata::where('uid',$user->uid)->where('sid',config('general.sematron_atual'))->pluck('pid');
+            $user_pids = Inscricao::where('uid',$user->uid)->where('sid',config('general.sematron_atual'))->pluck('pid');
             $first_sale = Sale::whereIn('pid',$user_pids)->first();
             if($first_sale==null){return 'failed';}
             return $first_sale->status;
@@ -49,7 +49,7 @@ new #[Layout('layouts.layout-logado')] class extends Component
     #[Computed]
     public function edicoes()
     {   
-        $participating_ids = Userdata::where('uid', Auth::user()->uid)->pluck('sid');
+        $participating_ids = Inscricao::where('uid', Auth::user()->uid)->pluck('sid');
         
         return Sematron::whereIn('sid', $participating_ids)
                         ->select('sid', 'name') 
@@ -63,7 +63,7 @@ new #[Layout('layouts.layout-logado')] class extends Component
             return null;
         }
 
-        $user = Userdata::where('uid', Auth::user()->uid)
+        $user = Inscricao::where('uid', Auth::user()->uid)
                         ->where('sid', $this->sidSelecionada)
                         ->first();
 

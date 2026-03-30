@@ -19,16 +19,13 @@ class Inscricao extends Model
         'sid',
         'uid',
         'gid',
-        'permissions',
         'presence',
         'pack_id',
         'minicurso',
         'viagem',
         'kit',
         'camiseta',
-        'alojamento',
-        'time',
-        'reserveTime'
+        'alojamento'
     ];
 
     protected $casts = [
