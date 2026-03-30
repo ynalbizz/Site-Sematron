@@ -3,6 +3,7 @@
 use Livewire\Volt\Component;
 use App\Models\Pack;
 use App\Models\Event;
+use App\Models\Inscricao;
 use Livewire\Attributes\Computed;
 
 new class extends Component
@@ -34,7 +35,16 @@ new class extends Component
     #[Computed]
     public function minicourses()
     {
-        return Event::where('type', 'minicurso')->where('sid', env('ATUAL_SID'))->get();
+        $all_events = Event::where('type', 'minicurso')->where('sid', env('ATUAL_SID'))->get();
+        $avaible_events = [];
+        foreach ($all_events as $event) {
+            $subscribed_count = Inscricao::where('event_id', $event->id)->count();
+            if ($subscribed_count < $event->slots) {
+                $avaible_events[] = $event;
+            }
+        }
+
+        return $avaible_events;
     }
 
     #[Computed]

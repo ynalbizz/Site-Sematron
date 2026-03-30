@@ -63,34 +63,24 @@ class PaymentController extends Controller
     {
         $status = $request->query('collection_status');
         $code = $request->query('external_reference');
-        $paymentId = $request->query('payment_id'); // Tenta pegar o payment_id primeiro, se não tiver, pega o external_reference
-        Log::info('Retorno de pagamento recebido', [
-            'status' => $status,
-            'code' => $code,
-            'payment_id' => $paymentId
-        ]);
-
-        Log::info($request->all());
-
         if ($status == 'approved') {
             Sale::where('code', $code)->update([
                 'status' => 'confirmed',
             ]);
         }
         
-        return redirect('/inicio')->with('success', 'Pagamento realizado com sucesso! Agradecemos sua inscrição.');
+        return redirect('/perfil')->with('success', 'Pagamento realizado com sucesso! Agradecemos sua inscrição.');
     }
 
     public function failure(Request $request)
     {
-        $preferenceId = $request->query('preference_id');
         $code = $request->query('external_reference');
         
         $pid = Sale::where('code', $code)->get()->first()->pid;
         Inscricao::where('pid', $pid)->delete();
         Sale::where('code', $code)->delete();
 
-        return redirect('/inicio')->with('error', 'O pagamento foi cancelado ou ocorreu um erro. Por favor, tente novamente.');
+        return redirect('/perfil')->with('error', 'O pagamento foi cancelado ou ocorreu um erro. Por favor, tente novamente.');
     }
 
     public function pending(Request $request) 
@@ -103,7 +93,7 @@ class PaymentController extends Controller
             'pref_id' => $preferenceId
         ]);
 
-        return redirect('/inicio')->with('error', 'O pagamento foi cancelado ou ocorreu um erro. Por favor, tente novamente.');
+        return redirect('/perfil')->with('error', 'O pagamento foi cancelado ou ocorreu um erro. Por favor, tente novamente.');
     }
 
     public function webhook(Request $request)
@@ -135,23 +125,8 @@ class PaymentController extends Controller
         $secret = config('integrations.mercadopago.webhook_key');
         $manifest = "id:$dataID;request-id:$xRequestId;ts:$ts;";
         $sha = hash_hmac('sha256', $manifest, $secret);
-        
-        Log::info('Webhook recebido', [
-            'action' => $action,
-            'data_id' => $dataID,
-            'x_signature' => $xSignature,
-            'request_id' => $xRequestId,
-            'computed_hash' => $sha,
-            'received_hash' => $hash
-        ]);
 
         if ($sha === $hash) {
-            Log::info('Webhook recebido e validado com sucesso', [
-                'action' => $action,
-                'data_id' => $dataID,
-                'request_id' => $xRequestId
-            ]);
-            
             // Só fazemos a requisição HTTP se for uma notificação de pagamento mesmo
             if (str_starts_with($action, 'payment')) {
                 $response = Http::withToken(config('integrations.mercadopago.access_token'))
@@ -165,8 +140,8 @@ class PaymentController extends Controller
                     // Correção da sintaxe do Eloquent aqui
                     match ($statusPagamento) {
                         'approved' => $this->confirmPayment($referenciaExterna),
-                        'pending', 'in_process' => Sale::where('code', $referenciaExterna)->update(['status' => 'waiting']),
-                        'rejected', 'cancelled' => $this->cancelPayment($referenciaExterna),
+                        'authorized','rejected','pending', 'in_process' => Sale::where('code', $referenciaExterna)->update(['status' => 'waiting']),
+                        'cancelled' => $this->cancelPayment($referenciaExterna),
                         default => Log::warning('Status de pagamento desconhecido recebido no Webhook', [
                             'status' => $statusPagamento,
                             'payment_id' => $dataID
@@ -207,7 +182,6 @@ class PaymentController extends Controller
     private function confirmPayment($code)
     {
         $pid = Sale::where('code', $code)->get()->first()->pid;
-        Inscricao::where('pid', $pid)->update(['status' => 'confirmed']);
         Sale::where('code', $code)->update(['status' => 'confirmed']);
     }
 }
