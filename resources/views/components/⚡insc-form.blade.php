@@ -38,7 +38,7 @@ new class extends Component
         $all_events = Event::where('type', 'minicurso')->where('sid', env('ATUAL_SID'))->get();
         $avaible_events = [];
         foreach ($all_events as $event) {
-            $subscribed_count = Inscricao::where('event_id', $event->id)->count();
+            $subscribed_count = Inscricao::where('minicurso', $event->id)->count();
             if ($subscribed_count < $event->slots) {
                 $avaible_events[] = $event;
             }
