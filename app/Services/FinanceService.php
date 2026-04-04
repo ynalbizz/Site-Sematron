@@ -33,7 +33,7 @@ class FinanceService
         ];
 
         $paymentMethods = [
-            "excluded_payment_types" => [],
+            "excluded_payment_types" => [['id' => 'ticket'], ['id' => 'voucher_card'], ['id' => 'crypto_transfer']],
             "installments" => 12,
             "default_installments" => 1
         ];
