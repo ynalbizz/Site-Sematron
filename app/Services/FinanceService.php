@@ -34,8 +34,9 @@ class FinanceService
 
         $paymentMethods = [
             "default_payment_method_id" => "pix",
-            // "excluded_payment_types" => [],
-            // "installments" => 12,
+            "excluded_payment_types" => [['id' => 'ticket']],
+            "default_installments" => 1,
+            "installments" => 12
         ];
 
         $request = [
