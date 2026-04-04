@@ -33,9 +33,9 @@ class FinanceService
         ];
 
         $paymentMethods = [
-            "excluded_payment_types" => [['id' => 'ticket'], ['id' => 'voucher_card'], ['id' => 'crypto_transfer']],
-            "installments" => 12,
-            "default_installments" => 1
+            "default_payment_method_id" => "pix",
+            // "excluded_payment_types" => [],
+            // "installments" => 12,
         ];
 
         $request = [
@@ -54,6 +54,7 @@ class FinanceService
             "expires" => true,
             "expiration_date_from" => now()->toIso8601String(),
             "expiration_date_to" => now()->addMinutes(30)->toIso8601String(),
+            "notification_url" => $baseUrl. "api/mercadopago/webhook",
             //Testar essa BUDEGA
             "auto_return" => "approved"
         ];
@@ -72,7 +73,14 @@ class FinanceService
             $preference = $client->create($request);
             return $preference; 
         } catch (MPApiException $e) {
-            dd("ERRO CRÍTICO:", $e->getMessage());
+            // Aqui pegamos o conteúdo real da resposta de erro da API
+            $erroReal = $e->getApiResponse()->getContent();
+
+            // Damos um dd() para exibir o JSON com os detalhes exatos na tela
+            dd([
+                'Mensagem Genérica' => $e->getMessage(),
+                'Detalhes do Erro na API' => $erroReal
+            ]);
         }
     }
 
