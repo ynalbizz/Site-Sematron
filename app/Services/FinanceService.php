@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\Sale;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 use function Symfony\Component\String\s;
 
@@ -32,7 +33,7 @@ class FinanceService
         ];
 
         $paymentMethods = [
-            "excluded_payment_types" => ['ticket','voucher_card','crypto_transfer'],
+            "excluded_payment_types" => [],
             "installments" => 12,
             "default_installments" => 1
         ];
@@ -63,7 +64,8 @@ class FinanceService
 
     public static function createMercadoPagoPreference($pack_id, $pack_name, $price, $code, $title) {  
         //MercadoPagoConfig::setAccessToken(config('integrations.mercadopago.access_token'));
-        $request = self::createPreferenceRequest($pack_id, $pack_name, $price, $code, $title);  
+        $request = self::createPreferenceRequest($pack_id, $pack_name, $price, $code, $title);
+        Log::info("Criando preferência de pagamento com os seguintes dados:", $request);
         $client = new PreferenceClient();
 
         try {
