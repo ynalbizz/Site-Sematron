@@ -32,7 +32,7 @@ class FinanceService
         ];
 
         $paymentMethods = [
-            "excluded_payment_methods" => [],
+            "excluded_payment_types" => ['ticket','voucher_card','crypto_transfer'],
             "installments" => 12,
             "default_installments" => 1
         ];
@@ -53,8 +53,6 @@ class FinanceService
             "expires" => true,
             "expiration_date_from" => now()->toIso8601String(),
             "expiration_date_to" => now()->addMinutes(30)->toIso8601String(),
-            "notification_url"
-             => 'http://homologasis.sematron.com.br/api/webhook/mercadopago',
             //Testar essa BUDEGA
             "auto_return" => "approved"
         ];
@@ -76,11 +74,11 @@ class FinanceService
         }
     }
 
-    public static function get_preference_url($pref_id) {
+    public static function get_preference($pref_id) {
         $client = new PreferenceClient();
         try {
             $preference = $client->get($pref_id);
-            return $preference->init_point; 
+            return $preference; 
         } catch (MPApiException $e) {
             dd("ERRO CRÍTICO:", $e->getMessage());
             return '/inicio';

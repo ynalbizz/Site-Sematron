@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Inscricao;
 use App\Models\Sale;
+use Illuminate\Support\Carbon;
 use App\Services\FinanceService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,7 +42,7 @@ class PaymentController extends Controller
             'time' => now()
         ]);
 
-        return redirect()->away($pref->sandbox_init_point);
+        return redirect()->away($pref->init_point);
     }
 
     public function resume_payment()
@@ -54,9 +55,13 @@ class PaymentController extends Controller
         }
 
         $prefId = $sale->pref_id;
-        $url = FinanceService::get_preference_url($prefId);
-        
-        return redirect()->away($url);
+        $pref = FinanceService::get_preference($prefId);
+        $expirationDate = Carbon::parse($pref->expiration_date_to);
+        if ($expirationDate->isPast()) {
+            self::cancelPayment($sale->code);
+            return redirect('/inicio')->with('error', 'A preferência de pagamento expirou. Por favor, inicie o processo de pagamento novamente.');
+        }
+        return redirect()->away($pref->init_point);
     }
 
     public function success(Request $request)
@@ -67,6 +72,11 @@ class PaymentController extends Controller
             Sale::where('code', $code)->update([
                 'status' => 'confirmed',
             ]);
+            $pid = Sale::where('code', $code)->get()->first()->pid;
+            Inscricao::where('pid', $pid)->update([
+                'status' => 'confirmed',
+            ]);
+
         }
         
         return redirect('/perfil')->with('success', 'Pagamento realizado com sucesso! Agradecemos sua inscrição.');
@@ -74,12 +84,20 @@ class PaymentController extends Controller
 
     public function failure(Request $request)
     {
-        $code = $request->query('external_reference');
+        $code = $request->query('external_reference');//isso aqui é null por algum motivo.. 
+        //Cancelando o pagamento via uid do usuário, para garantir que o pagamento seja cancelado mesmo que o external_reference esteja vindo null
+        $pid = Inscricao::where('uid', Auth::user()->uid)->where('sid',config('general.sematron_atual'))->get()->first()->pid;
         
-        $pid = Sale::where('code', $code)->get()->first()->pid;
+        $sale = Sale::where('code', $code)->get()->first();
+        if (!$sale) {
+            Inscricao::where('pid', $pid)->delete();
+            return redirect('/perfil')->with('error', 'Inscrição não encontrada.');
+        }
+        $pid = $sale->pid;
+
         Inscricao::where('pid', $pid)->delete();
         Sale::where('code', $code)->delete();
-
+        //ADICIONAR UM POPUP AQUI PARA INFORMAR O USUÁRIO QUE O PAGAMENTO FALHOU, E ORIENTAR A TENTAR NOVAMENTES
         return redirect('/perfil')->with('error', 'O pagamento foi cancelado ou ocorreu um erro. Por favor, tente novamente.');
     }
 
@@ -92,7 +110,10 @@ class PaymentController extends Controller
             'status' => 'waiting',
             'pref_id' => $preferenceId
         ]);
-
+        $pid = Sale::where('code', $code)->get()->first()->pid;
+        Inscricao::where('pid', $pid)->update([
+            'status' => 'waiting',
+        ]);
         return redirect('/perfil')->with('error', 'O pagamento foi cancelado ou ocorreu um erro. Por favor, tente novamente.');
     }
 
@@ -102,8 +123,7 @@ class PaymentController extends Controller
 
         $xSignature = $request->header('X_SIGNATURE');
         $xRequestId = $request->header('X_REQUEST_ID');
-        $queryParams = $request->input();
-        $dataID = $request->input('data.id'); //isset($queryParams['data.id']) ? $queryParams['data.id'] : '';
+        $dataID = $request->input('data.id'); // ID do pagamento que sofreu a alteração de status
 
         $parts = explode(',', $xSignature);
         $ts = null;
@@ -136,7 +156,12 @@ class PaymentController extends Controller
                     $dadosPagamento = $response->json();
                     $statusPagamento = $dadosPagamento['status'];
                     $referenciaExterna = $dadosPagamento['external_reference'];
-
+                    Log::info('Notificação de pagamento recebida', [
+                        'payment_id' => $dataID,
+                        'status' => $statusPagamento,
+                        'external_reference' => $referenciaExterna,
+                        'response' => $dadosPagamento
+                    ]);
                     // Correção da sintaxe do Eloquent aqui
                     match ($statusPagamento) {
                         'approved' => $this->confirmPayment($referenciaExterna),
@@ -183,5 +208,6 @@ class PaymentController extends Controller
     {
         $pid = Sale::where('code', $code)->get()->first()->pid;
         Sale::where('code', $code)->update(['status' => 'confirmed']);
+        Inscricao::where('pid', $pid)->update(['status' => 'confirmed']);
     }
 }
