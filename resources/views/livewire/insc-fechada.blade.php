@@ -5,13 +5,13 @@
         display: flex;
         justify-content: center; 
         align-items: center;      
-        text-align: center;
-        min-height: 100vh; /* Faz o elemento ter no mínimo a altura da tela */
-        width: 100%;       /* Garante que ocupe toda a largura */
-        margin: 0;         /* Remove margens padrão */
+        min-height: calc(100vh); /* Ajusta a altura descontando o Header e Footer */
+        width: 100%;
+        margin: 0;
+        padding: 0;
     ">
     
-    <div class="texto-fechado" style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: bold; color: #797979; text-transform: uppercase;">
+    <div style="font-family: 'Inter', sans-serif; font-size: 2.5rem; font-weight: bold; color: #797979; text-transform: uppercase; text-align: center;">
         Inscrições Fechadas
     </div>
-</main>
+</main>                 
