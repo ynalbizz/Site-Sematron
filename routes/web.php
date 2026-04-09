@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\GeneralController;
 
 
-
+Route::get('/home', [GeneralController::class, 'inicio'])->name('home');
 Route::get('/', GeneralController::class . '@inicio')->name('inicio');
 
 Route::get('/inicio', fn () => redirect('/'))->name('inicio.redirect');
@@ -40,7 +40,7 @@ Route::get('/palestras', GeneralController::class . '@palestras')->name('palestr
 
 Route::get('/login', fn () => view('login'))->name('login');
 
-Route::post('/login', [LoginController::class, 'authenticate'])->name('login.autenticar');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login.store');
 
 Route::post('/logout', function (Request $request) {
     Auth::logout();
