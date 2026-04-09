@@ -19,7 +19,7 @@
         
         <div class="Parte-da-Esquerda">
             <h1 class="Login-grande">Login</h1>
-            <h1 class="Sub-Login">Acesse sua conta para XXXX e XXXX.</h1>
+            <h1 class="Sub-Login">Acesse sua conta</h1>
         </div>
         <div class="borda-login">
             <h1 class="Champions-do-Forms">LOGIN</h1>
@@ -39,7 +39,7 @@
                     </div>
                     <button type="submit" class="submit-btn cima-espacamento">ENTRAR</button>
                 </form>
-            <div class="display-flex"><a href="/esqueceu-a-senha" class="Esqueceu-Senha">Esqueceu a senha?</a></div>
+            <div class="display-flex"><a href="/contato" class="Esqueceu-Senha">Esqueceu a senha? Entre em contato conosco!!</a></div>
         </div>
 
     </section>
