@@ -15,6 +15,9 @@ class InscricaoController extends Controller
 
     public function create()
     { 
+        if (Auth::guest()) {
+            return redirect('/login')->with('error', 'Faça login para se inscrever!');
+        }
         if (Auth::user()->has_insc()) {
             if(Auth::user()->temInscricaoCompleta()){
                 return redirect('/perfil')->with('error', 'Você já está inscrito!');

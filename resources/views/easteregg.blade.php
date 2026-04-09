@@ -84,6 +84,12 @@
             <p>"B.A.M.B.O"</p>  
             <span class="author">— **100 025** (O Enigimatico / Mem#$!%#&!¨ ERROR!)</span>
 
+            <p>"A Diferença de cagar e dar a bunda é apenas vetorial."</p>
+            <span class="author">— **Oscar 024** (O Coringa / Ex-Garoto Propaganda)</span>
+
+            <p>"FRASE FODA DO JUJUBA"</p>
+            <span class="author">— **Jujuba 024** (O Exilado / Ex-Gerente do RE)</span>
+
             <p>"Dodongo dislikes smoke"</p>
             <span class="author">— **Anônimo** (ERROR)</span>
 
