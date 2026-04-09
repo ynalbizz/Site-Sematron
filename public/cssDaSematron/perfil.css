@@ -6,7 +6,8 @@
 .sn-grande {
     color: var(--laranja);
     font-family: var(--fonte-Gotica);
-    font-size: 2.5vw;
+    font-size: var(--fonte-grande-gigante);
+    margin-bottom: 3vw;
 }
 
 .separa-em-tres::before {
@@ -62,29 +63,30 @@
 
 .nome-bendito{
     font-family: var(--fonte-Gotica);
-    font-size: 30px;
+    font-size: var(--fonte-grande-gigante);
     color: var(--laranja);
 }
 
 .curso-que-faz{
     margin-top: 6vh;
     font-family: var(--fonte-inter);
-    font-size: 20px;
+    font-size: var(--fonte-grande);
     color: var(--branco);
 }
 
 .situacao-do-pix{
     font-family: var(--fonte-inter);
-    font-size: 15px;
+    font-size: var(--fonte-link);
     color: var(--branco);
     padding: 1.5vh 1vw;
     border-radius: 14px;
     margin-top: 7vh;
+    margin-bottom: 7vw;
 }
 
 .spc{
     font-family: var(--fonte-inter);
-    font-size: 15px;
+    font-size: var(--fonte-link);
     color: var(--branco);
     padding: 1.5vh 1vw;
     border-radius: 14px;
@@ -95,29 +97,29 @@
 .email-do-ser{
     margin-top: 3vh;
     font-family: var(--fonte-inter);
-    font-size: 17px;
+    font-size: var(--fonte-media-grande);
     color: var(--branco);
 }
 
 .texto-badges{
     font-family: var(--fonte-inter);
-    font-size: 17px;
+    font-size: var(--fonte-media);
     color: var(--branco);
 }
 
-.infos-pessoas{
+/* .infos-pessoas{
     display: inline-block;
     text-decoration: none;
     margin-top: auto;
     margin-bottom: 2vh;
     color: var(--branco);
     font-family: var(--fonte-inter);
-    font-size: 15px;
+    font-size: var(--fonte-media);
     padding: 1.5vh 1vw;
     background-color: var(--laranja);
     border-radius: 14px;
     transition: transform 0.3s ease;
-}
+} */
 
 .infos-pessoas:hover{
     transform: scale(1.25);
@@ -130,14 +132,14 @@
 .segue-o-lider{
     color: var(--laranja);
     font-family: var(--fonte-Gotica);
-    font-size: 30px;
+    font-size: var(--fonte-grande-gigante);
 }
 
 .palavras-bonitas{
     font-family: var(--fonte-inter);
     color: var(--branco);
-    font-size: 20px;
-    margin-top: 10vh;
+    font-size: var(--fonte-media-grande);
+    margin-top: 6vw;
 }
 
 .perfil-bagulho{
@@ -187,13 +189,14 @@
 .Tit-Perfil{
     color: var(--laranja);
     font-family: var(--fonte-Gotica);
-    font-size: 25px;
+    font-size: var(--fonte-grande);
+    margin-right: auto;
 }
 
 .SubTit-Perfil{
     color: var(--branco);
     font-family: var(--fonte-inter);
-    font-size: 17px;
+    font-size: var(--fonte-media-pequena);
     margin-left: auto;
 }
 
@@ -211,7 +214,7 @@
     background-color: var(--laranja);
     color: var(--preto);
     font-family: var(--fonte-inter);
-    font-size: 15px;
+    font-size: var(--fonte-media-pequena);
     border-radius: 14px;
     transition: transform 0.3s ease;
 }
@@ -223,7 +226,7 @@
 .palavra-certificado{
     color: var(--branco);
     font-family: var(--fonte-Gotica);
-    font-size: 25px;
+    font-size: var(--fonte-media-grande);
     margin-bottom: 4vh;
 }
 
@@ -238,4 +241,115 @@
     justify-content: space-between;
 }
 
-/* slk sifude */
+/* slk sifude 
+papo
+*/
+
+@media(max-width: 1400px){
+    .separa-em-tres{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .borda-perfil{
+        width: 80%;
+        margin-left: 8vw;
+    }
+
+    .vaiSumir.is-visible{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sn-grande{
+        font-size: var(--fonte-grande-gigante-tablet);
+    }
+
+    .situacao-do-pix{
+        font-size: var(--fonte-link-tablet);
+    }
+    .spc{
+        font-size: var(--fonte-link-tablet);
+    }
+    .email-do-ser{
+        font-size: var(--fonte-media-tablet);
+    }
+    .texto-badges{
+        font-size: var(--fonte-media-tablet);
+    }
+    .infos-pessoas{
+        font-size: var(--fonte-media-tablet);
+    }
+    .segue-o-lider{
+        font-size: var(--fonte-grande-gigante-tablet);
+    }
+    .palavras-bonitas{
+        font-size: var(--fonte-media-grande-tablet);
+    }
+    .botoes-perfil{
+        font-size: var(--fonte-media-pequena-tablet);
+    }
+    .palavra-certificado{
+        font-size: var(--fonte-media-grande-tablet);
+    }
+    .nome-bendito{
+        font-size: var(--fonte-grande-gigante-tablet);
+    }
+    .curso-que-faz{
+        font-size: var(--fonte-grande-tablet);
+    }
+    .Tit-Perfil{
+        font-size: var(--fonte-grande-tablet);
+    }
+    .SubTit-Perfil{
+        font-size: var(--fonte-media-tablet);
+    }
+}
+
+@media(max-width: 900px){
+    .sn-grande{
+        font-size: var(--fonte-grande-gigante-celular);
+    }
+
+    .situacao-do-pix{
+        font-size: var(--fonte-link-celular);
+    }
+    .spc{
+        font-size: var(--fonte-link-celular);
+    }
+    .email-do-ser{
+        font-size: var(--fonte-media-celular);
+    }
+    .texto-badges{
+        font-size: var(--fonte-media-celular);
+    }
+    .infos-pessoas{
+        font-size: var(--fonte-media-celular);
+    }
+    .segue-o-lider{
+        font-size: var(--fonte-grande-gigante-celular);
+    }
+    .palavras-bonitas{
+        font-size: var(--fonte-media-grande-celular);
+    }
+    .botoes-perfil{
+        font-size: var(--fonte-media-celular);
+    }
+    .palavra-certificado{
+        font-size: var(--fonte-media-grande-celular);
+    }
+    .nome-bendito{
+        font-size: var(--fonte-grande-gigante-celular);
+    }
+    .curso-que-faz{
+        font-size: var(--fonte-grande-celular);
+    }
+    .Tit-Perfil{
+        font-size: var(--fonte-grande-celular);
+    }
+    .SubTit-Perfil{
+        font-size: var(--fonte-media-celular);
+    }
+
+
+}

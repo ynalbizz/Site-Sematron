@@ -29,7 +29,7 @@
                             @default
                                 <h1 class="situacao-do-pix" style=" background-color: #dc3545;">Erro no processamento...<p>Favor entrar em contato conosco!!</p></h1>
                         @endswitch
-                    <a href="" class="infos-pessoas">Informações Pessoais</a>
+                    <!-- <a href="" class="infos-pessoas">Informações Pessoais</a> -->
                 </div>
             </div>
         @endif
