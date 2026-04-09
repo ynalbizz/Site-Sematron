@@ -67,7 +67,7 @@ new class extends Component
         if (!$pack) return 0.00;
         
         $base = (float) str_replace(',', '.', $pack->preço);
-        $addon = $this->requiresAccommodation ? 85.00 : 0.00;
+        $addon = $this->requiresAccommodation ? 80.00 : 0.00;
         
         return $base + $addon;
     }

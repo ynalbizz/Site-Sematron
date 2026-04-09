@@ -88,7 +88,7 @@
         <section class="campo-botao box is-visible">
              <div class="borda-insc" style="display: flex; flex-direction: row; gap: 15px; align-items: center; justify-content: center; width: 100%; max-width: 500px;">
                 <input type="checkbox" wire:model.live="requiresAccommodation" id="alojamento_check" style="width: 25px; height: 25px; cursor: pointer;">
-                <label for="alojamento_check" style="margin: 0; color: white; cursor: pointer;" class="Champions-do-Forms">Incluir Alojamento (+ R$ 85,00)</label>
+                <label for="alojamento_check" style="margin: 0; color: white; cursor: pointer;" class="Champions-do-Forms">Incluir Alojamento (+ R$ 80,00)</label>
              </div>
 
             <div style="margin-top: 10px; margin-bottom: 10px; font-size: 2rem; font-weight: bold; color: var(--laranja);" class="Champions-do-Forms">
