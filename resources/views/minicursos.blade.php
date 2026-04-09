@@ -21,6 +21,7 @@
                 <div class="texto-na-esquerda">
                     <h1 class="nome-do-minicurso"> Minicurso - {{ $mcurso->name }} </h1>
                     <h1 class="horarios-minicursos">Dia: {{date('d/m', strtotime($mcurso->start))}} • Hora: {{date('H:i', strtotime($mcurso->start))}} • Vagas: {{ $mcurso->slots}}</h1>
+                    <h1 class="horarios-minicursos">Descrição: {{ $mcurso->info }}</h1>
                     </div>
                 <a href="/inscricoes" class="botao-inscrever">Inscrever</a>
             </div>
