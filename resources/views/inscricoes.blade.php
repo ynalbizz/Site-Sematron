@@ -3,5 +3,5 @@
 @section('title', 'Inscrições')
 
 @section('content')
-    @livewire(config('general.inscricoes_abertas') ? 'insc-form' : 'insc-fechada.blade.php')
+    @livewire(config('general.inscricoes_abertas') ? 'insc-form' : 'insc-fechada')
 @endsection
