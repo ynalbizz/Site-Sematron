@@ -1,1 +1,3 @@
-Inscricao Fechada
+<div>
+    Inscricao Fechada
+</div>
