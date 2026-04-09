@@ -1,12 +1,4 @@
 <style>
-
-body.Corpo {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-}
-
 main {
     flex: 1; 
     display: flex;
@@ -15,7 +7,6 @@ main {
     text-align: center;
 }
 
-/* Estilização do texto */
 .texto-fechado {
     font-family: 'Inter', sans-serif;
     font-size: 2rem;
