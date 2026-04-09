@@ -23,17 +23,10 @@ Route::get('/', GeneralController::class . '@inicio')->name('inicio');
 
 Route::get('/inicio', fn () => redirect('/'))->name('inicio.redirect');
 
-Route::get('/inscricao' , fn () => redirect('inscricao/create'));##if config('app.inscricoes_abertas') == false, redirect para página de inscrições fechadas
-// Route::get('/inscricao', function () {
-//     if (config('app.inscricoes_abertas')) {
-//         return redirect()->route('inscricao.create');
-//     } else {
-//         return view('livewire.insc-fechada');
-//     }
-// })->name('inscricao');
-// Route::resource('inscricao', InscricaoController::class) ->only(['create', 'store']) ->middleware(AutenticacaoInscricao::class);
+Route::get('/inscricao' , fn () => redirect('inscricao/create'));
 
 Route::get('/cadastro' , fn () => redirect('cadastro/create'));
+
 Route::resource('cadastro', CadastroController::class) ->only(['create', 'store']);
 
 Route::get('/minicursos', GeneralController::class . '@minicursos')->name('minicursos');
