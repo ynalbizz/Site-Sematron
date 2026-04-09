@@ -114,9 +114,9 @@
         </section>
     @else
         <section>
-            <div class="textos-perfil" style="margin-top: 20px;">
+            <!-- <div class="textos-perfil" style="margin-top: 20px;">
                 <p>Nenhum dado encontrado ou selecione uma edição acima.</p>
-            </div>
+            </div> -->
         </section>
     @endif
 </div>
