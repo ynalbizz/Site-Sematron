@@ -1,5 +1,5 @@
 <style>
-/* Garante que o corpo ocupe a altura toda */
+
 body.Corpo {
     display: flex;
     flex-direction: column;
@@ -7,12 +7,11 @@ body.Corpo {
     margin: 0;
 }
 
-/* Faz o main crescer e virar um container flexível centralizado */
 main {
-    flex: 1; /* Ocupa o espaço entre o header e o footer */
+    flex: 1; 
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center;     /* Centraliza verticalmente */
+    justify-content: center; 
+    align-items: center;     
     text-align: center;
 }
 
@@ -21,7 +20,7 @@ main {
     font-family: 'Inter', sans-serif;
     font-size: 2rem;
     font-weight: bold;
-    color: #333;
+    color: #797979;
     text-transform: uppercase;
 }
 
