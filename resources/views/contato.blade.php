@@ -22,7 +22,7 @@
                 <h1 class="textinho-foda-contato">Av. Trabalhador São-Carlense, 400</h1>
                 <h1 class="textinho-foda-contato">Pq. Arnold Schimidt — São Carlos</h1>
                 <h1 class="textinho-foda-contato">CEP: 13566-590</h1>
-                <h1 class="textinho-foda-contato">Tel: +55 (61) 98172-5281</h1>
+                <h1 class="textinho-foda-contato">Tel: +55 (61) 9838-3855</h1>
                 <h1 class="textinho-foda-contato">Email: sematron@eesc.usp.br</h1>
             </div>
         </div>

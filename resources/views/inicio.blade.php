@@ -256,7 +256,7 @@
                         <img class="Mini-Logo-Preto-Programacao" src="{{asset('/Imagens/LogoPreta.png')}}" alt="Logo da Sematron">
                 </div>
 
-                <h1 class="Dia-Programacao">Dia 4 • xxxxx </h1>
+                <h1 class="Dia-Programacao">Dia 4 • Palestras +  Minicursos </h1>
 
                 <!-- <a class="Borda-Detalhes-Programacao" href="">Detalhes</a> -->
 
