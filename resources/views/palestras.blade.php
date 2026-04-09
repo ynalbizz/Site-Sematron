@@ -24,7 +24,6 @@
                                 Dia: {{ date('d/m', strtotime($palestra->start)) }} • 
                                 Hora: {{ date('H:i', strtotime($palestra->start)) }} 
                             </h1>
-                            <h1 class="horarios-visitas">Vagas: {{ $palestra->slots }}</h1>
                         </div>
                         <a href="/inscricao" class="botao-inscrever">Inscrever</a>
                     </div>
