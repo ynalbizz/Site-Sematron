@@ -24,7 +24,7 @@ class GeneralController extends Controller
         $n_palestras = Event::where([
             ['type', 'palestra'],
             ['sid', config('general.sematron_atual')]
-        ])->get()->count();
+        ])->where('slots', '>', 0)->get()->count();
         return view('inicio', ['n_visitas' => $n_visitas, 'n_mcursos' => $n_mcursos, 'n_palestras' => $n_palestras]);
     }
     public function minicursos()
@@ -98,6 +98,9 @@ class GeneralController extends Controller
 
         // Informaçoes do usuário logado
         $auth = Auth::user();
+        if (!$auth) {
+            return redirect('/login')->with('error', 'Por favor, faça login para acessar seu perfil.');
+        }
         $usuario = Userinfo::where('uid', $auth->uid)
                             ->first();
         // Todas as sematorns que o usuario já participou

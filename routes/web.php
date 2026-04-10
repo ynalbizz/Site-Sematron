@@ -23,16 +23,11 @@ Route::get('/', GeneralController::class . '@inicio')->name('inicio');
 
 Route::get('/inicio', fn () => redirect('/'))->name('inicio.redirect');
 
-Route::get('/inscricao' , fn () => redirect('inscricao/create'));
-Route::resource('inscricao', InscricaoController::class) ->only(['create', 'store']) ->middleware(AutenticacaoInscricao::class);
-
 Route::get('/cadastro' , fn () => redirect('cadastro/create'));
 
 Route::resource('cadastro', CadastroController::class) ->only(['create', 'store']);
 
 Route::get('/minicursos', GeneralController::class . '@minicursos')->name('minicursos');
-
-Route::get('/perfil', GeneralController::class . '@perfil')->name('perfil');
 
 Route::get('/visitas', GeneralController::class . '@visitas')->name('visitas');
 
@@ -41,14 +36,6 @@ Route::get('/palestras', GeneralController::class . '@palestras')->name('palestr
 Route::get('/login', fn () => view('login'))->name('login');
 
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.store');
-
-Route::post('/logout', function (Request $request) {
-    Auth::logout();
-    $request.session()->invalidate();
-    $request.session()->regenerateToken();
-    return redirect('/inicio');
-})->name('logout');
-
 
 Route::get('/maisSematron', fn () => view('maisSematron'))->name('maisSematron');
 Route::get('/contato', fn () => view('contato'))->name('contato');
@@ -72,6 +59,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return Inertia::render('dashboard');
     })->name('dashboard');
 
+    Route::get('/inscricao' , fn () => redirect('inscricao/create'));
+    Route::resource('inscricao', InscricaoController::class) ->only(['create', 'store']) ->middleware(AutenticacaoInscricao::class);
+    Route::get('/perfil', GeneralController::class . '@perfil')->name('perfil');
+
     //Módulo de Pagamento (Mercado Pago)
     Route::get('inscricoes/{inscricao:pid}/pagar', [PaymentController::class, 'checkout'])->name('pagar');
     
@@ -80,6 +71,16 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/pagamento/erro', [PaymentController::class, 'failure'])->name('payment.failure');
     Route::get('/pagamento/pendente', [PaymentController::class, 'pending'])->name('payment.pending');
     Route::get('/pagamento/retomar', [PaymentController::class, 'resume_payment'])->name('payment.resume');
+    
+    
+    Route::post('/logout', function (Request $request) {
+        Auth::logout();
+        $request.session()->invalidate();
+        $request.session()->regenerateToken();
+        return redirect('/inicio');
+    })->name('logout');
+
+    
     });
     
 //rotas de teste, apagar quando entrar em produção

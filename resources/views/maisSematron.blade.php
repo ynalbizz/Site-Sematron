@@ -10,7 +10,9 @@
     </section>
 
     <section class="texto-pra-porra imagem-de-fundo tamanho-min">
-        <h1 class="textao">A SEMATRON é a maior semana acadêmica na área de Engenharia Mecatrônica A SEMATRON é a maior semana acadêmica na área de Engenharia Mecatrônica A SEMATRON é a maior semana acadêmica na área de Engenharia Mecatrônica A SEMATRON é a maior semana acadêmica na área de Engenharia Mecatrônica A SEMATRON é a maior semana acadêmica na área de Engenharia Mecatrônica A SEMATRON é a maior semana acadêmica na área de Engenharia Mecatrônica A SEMATRON é a maior semana acadêmica na área de Engenharia Mecatrônica A SEMATRON é a maior semana acadêmica na área de Engenharia Mecatrônica A SEMATRON é a maior semana acadêmica na área de Engenharia Mecatrônica A SEMATRON é a maior semana acadêmica na área de Engenharia Mecatrônica A SEMATRON é a maior semana acadêmica na área de Engenharia MecatrônicaA SEMATRON é a maior semana acadêmica na área de Engenharia Mecatrônica A SEMATRON é a maior semana acadêmica na área de Engenharia Mecatrônica A SEMATRON é a maior semana acadêmica na área de Engenharia Mecatrônica</h1>
+        <h1 class="textao">
+            A Semana Acadêmica de Engenharia Mecatrônica ou Sematron é um evento sem fins lucrativos planejado, organizado e gerenciado pelo Grupo Sematron, com apoio da coordenação do curso de Engenharia Mecatrônica e da Escola de Engenharia de São Carlos da USP. Atualmente, destaca-se como a maior semana acadêmica de Engenharia Mecatrônica da América Latina, com planejamento realizado integralmente por alunos e reunindo principalmente estudantes de engenharia de diferentes regiões do Brasil, além de participantes vindos de países vizinhos. O evento também atrai alunos do ensino médio e entusiastas de tecnologia, interessados em conhecer de perto o universo da mecatrônica e suas aplicações.
+        </h1>
         <h1 class="Sub-Mais-Sematron">Acompanhe as redes sociais e confira a programação.</h1>
 
 
