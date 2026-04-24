@@ -52,8 +52,6 @@ Route::post('/inscricoes', [InscricaoController::class, 'store']);
 
 Route::get('/teste',[testeController::class,'show']);
 
-Route::get('/adm/list', [admController::class, 'showInscList'])->name('adm.list');
-
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return Inertia::render('dashboard');

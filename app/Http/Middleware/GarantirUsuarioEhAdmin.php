@@ -17,8 +17,8 @@ class GarantirUsuarioEhAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->uid !== config('general.uid_admin')) {
-            return redirect()->route('perfil');
+        if (Auth::user()->uid != config('general.uid_admin')) {
+            return redirect()->route('inicio');
         }
         return $next($request);
     }
