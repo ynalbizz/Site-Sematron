@@ -16,7 +16,8 @@ use App\Http\Controllers\InscricaoController;
 use App\Http\Middleware\AutenticacaoInscricao;
 use Illuminate\Http\Request;
 use App\Http\Controllers\GeneralController;
-
+use App\Http\Middleware\GarantirUsuarioEhAdmin;
+use App\Http\Middleware\GarantirNaoEstaInscrito;
 
 Route::get('/home', [GeneralController::class, 'inicio'])->name('home');
 Route::get('/', GeneralController::class . '@inicio')->name('inicio');
@@ -35,32 +36,31 @@ Route::get('/palestras', GeneralController::class . '@palestras')->name('palestr
 
 Route::get('/login', fn () => view('login'))->name('login');
 
-Route::post('/login', [LoginController::class, 'authenticate'])->name('login.store');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login.autenticar');
 
 Route::get('/maisSematron', fn () => view('maisSematron'))->name('maisSematron');
 Route::get('/contato', fn () => view('contato'))->name('contato');
 Route::get('/login', fn () => view('login'))->name('login');
 Route::get('/cadastro', fn () => view('cadastro'))->name('cadastro');
-Route::get('/adm/list', [admController::class, 'showInscList'])->name('adm.list');
 Route::get('/teste', [testeController::class, 'show']);
 
 Route::get('/esqueceu-a-senha', fn () => view('esqueceu-a-senha'))->name('esqueceu-a-senha');
 
 Route::get('/34st3r3gg', fn () => view('easteregg'))->name('easteregg');
 
-Route::get('/adm/list', [admController::class, 'showInscList'])->name('adm.list');
-
 Route::post('/inscricoes', [InscricaoController::class, 'store']);
 
 Route::get('/teste',[testeController::class,'show']);
+
+Route::get('/adm/list', [admController::class, 'showInscList'])->name('adm.list');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return Inertia::render('dashboard');
     })->name('dashboard');
 
-    Route::get('/inscricao' , fn () => redirect('inscricao/create'));
-    Route::resource('inscricao', InscricaoController::class) ->only(['create', 'store']) ->middleware(AutenticacaoInscricao::class);
+    Route::get('/inscricao' , fn () => redirect('inscricao/create'))-> name('inscricao');
+    Route::resource('inscricao', InscricaoController::class) ->only(['create', 'store']) ->middleware(GarantirNaoEstaInscrito::class);
     Route::get('/perfil', GeneralController::class . '@perfil')->name('perfil');
 
     //Módulo de Pagamento (Mercado Pago)
@@ -72,7 +72,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/pagamento/pendente', [PaymentController::class, 'pending'])->name('payment.pending');
     Route::get('/pagamento/retomar', [PaymentController::class, 'resume_payment'])->name('payment.resume');
     
-    
+    Route::middleware([GarantirUsuarioEhAdmin::class]) -> group(function(){
+        Route::get('/adm/list', [admController::class, 'showInscList'])->name('adm.list');
+    });
+
     Route::post('/logout', function (Request $request) {
         Auth::logout();
         $request.session()->invalidate();
@@ -86,7 +89,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 //rotas de teste, apagar quando entrar em produção
 Route::get('/testar-pagamento', function () {
     // Redireciona para o checkout real
-    return redirect()->route('payment.checkout');
+    return redirect()->route('pagar');
 });
 
 // Carrega configurações extras (se houver)
