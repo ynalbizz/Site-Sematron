@@ -35,7 +35,7 @@ Route::get('/palestras', GeneralController::class . '@palestras')->name('palestr
 
 Route::get('/login', fn () => view('login'))->name('login');
 
-Route::post('/login', [LoginController::class, 'authenticate'])->name('login.store');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login.autenticar');
 
 Route::get('/maisSematron', fn () => view('maisSematron'))->name('maisSematron');
 Route::get('/contato', fn () => view('contato'))->name('contato');
