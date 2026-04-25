@@ -66,6 +66,8 @@
                             <td>#{{ $p->uid ?? $p->id_usuario }}</td>
                             <td>{{ $p->name ?? $p->nome_usuario ?? $p->nome }}</td> 
                             <td>{{ $p->email ?? $p->email_usuario }}</td>
+                            <td>{{ $p->cpf ?? $p->cpf_usuario }}</td>
+                            <td>{{ $p->code ?? $p->code_usuario }}</td>
                         </tr>
                         @endforeach
                     @else
