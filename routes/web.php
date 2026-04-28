@@ -15,7 +15,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\InscricaoController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Middleware\AutenticacaoInscricao;
+use App\Http\Controllers\LeitorController;
 use Illuminate\Http\Request;
+
 
 
 
@@ -30,6 +32,9 @@ Route::resource('cadastro', CadastroController::class) ->only(['create', 'store'
 
 Route::get('/minicursos', fn () => view('minicursos'))->name('minicursos');
 Route::get('/visitas', fn () => view('visitas'))->name('visitas');
+
+Route::get('/leitor', [LeitorController::class, 'index'])->middleware('auth');
+Route::post('/presenca', [LeitorController::class, 'registrar']) ->name('registrar.presenca')->middleware('auth');
 
 Route::get('/login', fn () => view('login'))->name('login');
 
